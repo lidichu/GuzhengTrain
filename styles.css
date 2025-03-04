@@ -1,0 +1,445 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "微軟正黑體", Arial, sans-serif;
+}
+
+:root {
+  --primary: #8B5A2B;
+  --secondary: #D2B48C;
+  --light: #F5F5DC;
+  --dark: #4A3520;
+  --white: #FFFFFF;
+}
+
+body {
+  background-color: var(--light);
+  color: var(--dark);
+  line-height: 1.6;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* 頁首 */
+header {
+  background-color: var(--primary);
+  color: var(--white);
+  text-align: center;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://images.unsplash.com/photo-1586152628321-3e9f4b7c9fb5?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+  background-size: cover;
+  background-position: center;
+  padding: 100px 0;
+}
+
+header h1 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+header p {
+  font-size: 1.2rem;
+  max-width: 800px;
+  margin: 0 auto;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+/* 導航欄 */
+nav {
+  background-color: var(--dark);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+nav ul {
+  display: flex;
+  justify-content: center;
+  list-style: none;
+  flex-wrap: wrap;
+}
+
+nav ul li {
+  padding: 15px 20px;
+}
+
+nav ul li a {
+  color: var(--white);
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s;
+}
+
+nav ul li a:hover {
+  color: var(--secondary);
+}
+
+/* 區塊樣式 */
+section {
+  padding: 60px 0;
+}
+
+section:nth-child(even) {
+  background-color: var(--white);
+}
+
+.section-title {
+  text-align: center;
+  margin-bottom: 40px;
+  color: var(--primary);
+  position: relative;
+}
+
+.section-title::after {
+  content: "";
+  display: block;
+  width: 80px;
+  height: 3px;
+  background-color: var(--secondary);
+  margin: 10px auto;
+}
+
+/* 關於我們 */
+.about-content {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  align-items: center;
+}
+
+.about-image {
+  flex: 1;
+  min-width: 300px;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.about-image img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.about-text {
+  flex: 1;
+  min-width: 300px;
+}
+
+/* 課程資訊 */
+.courses {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+.course-card {
+  background-color: var(--white);
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  width: 300px;
+  transition: transform 0.3s;
+}
+
+.course-card:hover {
+  transform: translateY(-5px);
+}
+
+.course-card h3 {
+  color: var(--primary);
+  margin-bottom: 10px;
+}
+
+/* 師資介紹 */
+.teachers {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  justify-content: center;
+}
+
+.teacher-card {
+  background-color: var(--white);
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  width: 280px;
+  text-align: center;
+}
+
+.teacher-image {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  margin: 0 auto 15px;
+  overflow: hidden;
+}
+
+.teacher-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* 學生成果 */
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+.gallery-item {
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.gallery-item img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.3s;
+}
+
+.gallery-item:hover img {
+  transform: scale(1.05);
+}
+
+/* YouTube 區塊 */
+.youtube-section {
+  background-color: var(--white);
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  margin-top: 40px;
+}
+
+.youtube-title {
+  color: var(--primary);
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.youtube-videos {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+.youtube-video {
+  width: 300px;
+  margin-bottom: 20px;
+}
+
+.youtube-video iframe {
+  width: 100%;
+  height: 169px;
+  border-radius: 10px;
+  border: none;
+}
+
+.youtube-video h4 {
+  margin: 10px 0;
+  color: var(--primary);
+}
+
+.youtube-button {
+  display: block;
+  text-align: center;
+  margin: 20px auto 0;
+  padding: 12px 25px;
+  background-color: #FF0000;
+  color: white;
+  text-decoration: none;
+  border-radius: 50px;
+  font-weight: bold;
+  transition: background-color 0.3s;
+  width: fit-content;
+}
+
+.youtube-button:hover {
+  background-color: #CC0000;
+}
+
+/* 聯絡資訊 */
+.contact-info {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+}
+
+.contact-details {
+  flex: 1;
+  min-width: 300px;
+}
+
+.contact-details ul {
+  list-style: none;
+}
+
+.contact-details ul li {
+  margin-bottom: 15px;
+  display: flex;
+  align-items: flex-start;
+}
+
+.contact-details ul li i {
+  margin-right: 10px;
+  color: var(--primary);
+  width: 20px;
+  text-align: center;
+}
+
+.map {
+  flex: 1;
+  min-width: 300px;
+  height: 300px;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.map iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+/* 社交媒體按鈕 */
+.social-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin: 30px 0;
+}
+
+.social-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 25px;
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: all 0.3s;
+}
+
+.facebook-button {
+  background-color: #3b5998;
+  color: white;
+}
+
+.facebook-button:hover {
+  background-color: #2d4373;
+}
+
+.line-button {
+  background-color: #00c300;
+  color: white;
+}
+
+.line-button:hover {
+  background-color: #009a00;
+}
+
+.youtube-social-button {
+  background-color: #FF0000;
+  color: white;
+}
+
+.youtube-social-button:hover {
+  background-color: #CC0000;
+}
+
+.register-button {
+  background-color: var(--primary);
+  color: white;
+}
+
+.register-button:hover {
+  background-color: var(--dark);
+}
+
+/* 表單樣式 */
+.form-section {
+  background-color: var(--white);
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  padding: 30px;
+  margin-top: 40px;
+}
+
+.form-section h3 {
+  color: var(--primary);
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.form-iframe {
+  width: 100%;
+  height: 600px;
+  border: none;
+}
+
+/* 優惠方案 */
+.promo-box {
+  background-color: var(--primary);
+  color: var(--white);
+  padding: 20px;
+  border-radius: 10px;
+  margin: 30px 0;
+  text-align: center;
+}
+
+.promo-box h3 {
+  margin-bottom: 15px;
+  font-size: 1.5rem;
+}
+
+.promo-price {
+  font-size: 1.8rem;
+  font-weight: bold;
+  margin: 15px 0;
+}
+
+/* 頁尾 */
+footer {
+  background-color: var(--dark);
+  color: var(--white);
+  text-align: center;
+  padding: 20px 0;
+}
+
+.citation {
+  font-size: 0.8rem;
+  color: #888;
+  margin-top: 30px;
+}
+
+/* 響應式設計 */
+@media (max-width: 768px) {
+  nav ul {
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  header {
+    padding: 60px 0;
+  }
+  
+  header h1 {
+    font-size: 2rem;
+  }
+  
+  .social-buttons {
+    flex-direction: column;
+    align-items: center;
+  }
+}
