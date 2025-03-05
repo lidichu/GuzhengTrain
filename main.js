@@ -1,5 +1,50 @@
 // 等待 DOM 完全載入後執行
 document.addEventListener('DOMContentLoaded', function() {
+	// 導航選單折疊功能
+const menuIcon = document.querySelector('.menu-icon');
+const navMenu = document.querySelector('.nav-menu');
+
+if (menuIcon) {
+    menuIcon.addEventListener('click', function() {
+        navMenu.classList.toggle('active');
+        
+        // 切換圖標
+        const icon = this.querySelector('i');
+        if (navMenu.classList.contains('active')) {
+            icon.classList.remove('fa-bars');
+            icon.classList.add('fa-times');
+        } else {
+            icon.classList.remove('fa-times');
+            icon.classList.add('fa-bars');
+        }
+    });
+    
+    // 點擊選單項目後自動收起選單
+    document.querySelectorAll('.nav-menu a').forEach(item => {
+        item.addEventListener('click', () => {
+            if (window.innerWidth <= 768) {
+                navMenu.classList.remove('active');
+                const icon = menuIcon.querySelector('i');
+                icon.classList.remove('fa-times');
+                icon.classList.add('fa-bars');
+            }
+        });
+    });
+}
+
+// 調整視窗大小時重置選單狀態
+window.addEventListener('resize', function() {
+    if (window.innerWidth > 768) {
+        if (navMenu && navMenu.classList.contains('active')) {
+            navMenu.classList.remove('active');
+            const icon = menuIcon.querySelector('i');
+            if (icon) {
+                icon.classList.remove('fa-times');
+                icon.classList.add('fa-bars');
+            }
+        }
+    }
+});
     // 導航欄滾動效果
     const nav = document.querySelector('nav');
     window.addEventListener('scroll', function() {

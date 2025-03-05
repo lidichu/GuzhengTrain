@@ -79,6 +79,71 @@ nav ul li a:hover {
   color: var(--secondary);
 }
 
+.nav-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo-container {
+  display: none; /* 預設隱藏，只在手機版顯示 */
+}
+
+.logo-container h2 {
+  color: var(--white);
+  font-size: 1.2rem;
+  margin: 0;
+}
+
+.menu-icon {
+  display: none;
+  color: var(--white);
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+/* 響應式設計 - 導航選單 */
+@media (max-width: 768px) {
+  .nav-container {
+    padding: 15px 0;
+  }
+  
+  .logo-container {
+    display: block;
+  }
+  
+  .menu-icon {
+    display: block;
+  }
+  
+  .nav-menu {
+    position: absolute;
+    flex-direction: column;
+    background-color: var(--dark);
+    width: 100%;
+    left: 0;
+    top: 60px;
+    padding: 0;
+    margin: 0;
+    height: 0;
+    overflow: hidden;
+    transition: height 0.3s ease;
+    z-index: 100;
+  }
+  
+  .nav-menu.active {
+    height: auto;
+    padding: 10px 0;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+  }
+  
+  .nav-menu li {
+    width: 100%;
+    text-align: center;
+    padding: 10px 0;
+  }
+}
+
 /* 區塊樣式 */
 section {
   padding: 60px 0;
