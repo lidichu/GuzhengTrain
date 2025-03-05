@@ -262,3 +262,42 @@ body {
         height: 48px;
     }
 }
+.tuner-footer {
+    margin-top: 40px;
+    padding: 20px;
+    text-align: center;
+    border-top: 1px solid #eee;
+    background-color: #f5f6fa;
+}
+
+.credits {
+    color: #2c3e50;
+    font-size: 0.9rem;
+    line-height: 1.8;
+}
+
+.social-links {
+    margin-top: 15px;
+}
+
+.social-links a {
+    color: #4a90e2;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.social-links a:hover {
+    color: #2779bd;
+    text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+    .tuner-footer {
+        margin-top: 20px;
+        padding: 15px;
+    }
+    
+    .credits {
+        font-size: 0.8rem;
+    }
+}
