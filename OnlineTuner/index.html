@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>21弦古箏調音器</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="tuner-header">
+            <h1>21弦古箏調音器</h1>
+            <div class="mode-switch">
+                <button class="mode-button active" data-mode="D">D調</button>
+                <button class="mode-button" data-mode="G">G調</button>
+            </div>
+        </div>
+
+        <div class="tuner-display">
+            <div class="current-string">第 -- 弦</div>
+            <div class="frequency-display">
+                <div class="current-frequency">0 Hz</div>
+                <div class="target-frequency">目標: 0 Hz</div>
+            </div>
+            <div class="tuning-indicator">
+                <div class="indicator-needle"></div>
+            </div>
+            <div class="cents-display">偏差: 0 cents</div>
+            <div class="status-message">請允許使用麥克風</div>
+            <div class="strings-display">
+                <!-- 弦的顯示將由JavaScript動態生成 -->
+            </div>
+        </div>
+
+        <div class="controls">
+            <button class="control-button" id="startButton">開始調音</button>
+            <button class="control-button" id="playReference">播放參考音</button>
+        </div>
+    </div>
+
+    <!-- 麥克風權限提示彈窗 -->
+    <div id="micPermissionModal" class="modal">
+        <div class="modal-content">
+            <h2>需要麥克風權限</h2>
+            <div id="deviceSpecificMessage"></div>
+            <div id="permissionSteps"></div>
+            <button class="modal-close-btn">了解</button>
+        </div>
+    </div>
+
+    <script src="tuner.js"></script>
+</body>
+</html>
