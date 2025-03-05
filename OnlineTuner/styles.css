@@ -256,3 +256,9 @@ body {
         padding: 15px;
     }
 }
+@media (max-width: 768px) {
+    .mode-switch button,
+    .controls button {
+        height: 48px;
+    }
+}
