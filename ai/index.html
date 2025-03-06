@@ -158,6 +158,7 @@
       }
     }
   </style>
+
 </head>
 <body>
   <div class="container">
@@ -207,7 +208,7 @@
   </div>
 
   <script>
-    const WORKER_URL = "https://sweet-dew-4bdo.workers.dev";
+    const WORKER_URL = 'https://sweet-dew-4bdo.workers.dev';
     let conversationHistory = [];
 
     function startNewChat() {
@@ -234,51 +235,41 @@
       }
     }
 
-    async function sendMessage() {
-      const input = document.getElementById('user-input');
-      const message = input.value.trim();
-      
-      if (message === '') return;
+	async function sendMessage() {
+	  const input = document.getElementById('user-input');
+	  const message = input.value.trim();
+	  
+	  if (message === '') return;
 
-      // 添加用戶消息
-      appendMessage(message, 'user');
-      input.value = '';
-      input.style.height = '60px';
+	  try {
+		console.log('Sending request to:', WORKER_URL); // 添加日誌
+		const response = await fetch(WORKER_URL, {
+		  method: 'POST',
+		  headers: {
+			'Content-Type': 'application/json',
+		  },
+		  body: JSON.stringify({
+			message,
+			history: conversationHistory
+		  })
+		});
 
-      try {
-        // 調用 Worker
-        const response = await fetch(WORKER_URL, {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-          },
-          body: JSON.stringify({
-            message,
-            history: conversationHistory
-          })
-        });
+		console.log('Response status:', response.status); // 添加狀態碼日誌
 
-        if (!response.ok) {
-          throw new Error('Network response was not ok');
-        }
+		if (!response.ok) {
+		  throw new Error(`HTTP error! status: ${response.status}`);
+		}
 
-        const data = await response.json();
-        appendMessage(data.response, 'bot');
-        
-        // 更新對話歷史
-        conversationHistory.push({
-          role: 'user',
-          content: message
-        }, {
-          role: 'assistant',
-          content: data.response
-        });
-
-      } catch (error) {
-        console.error('Error:', error);
-        appendMessage('抱歉，系統暫時無法處理您的請求，請稍後再試。', 'bot');
-      }
-    }
+		const data = await response.json();
+		console.log('Response data:', data); // 添加響應數據日誌
+		
+		appendMessage(data.response, 'bot');
+		
+	  } catch (error) {
+		console.error('Detailed error:', error); // 更詳細的錯誤日誌
+		appendMessage('抱歉，系統暫時無法處理您的請求，請稍後再試。', 'bot');
+	  }
+	}
 
     function appendMessage(content, type) {
       const messagesDiv = document.getElementById('chat-messages');
