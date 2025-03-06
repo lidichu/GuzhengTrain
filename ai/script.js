@@ -2,7 +2,10 @@ const WORKER_URL = 'https://sweet-dew-4bd0.lidichu.workers.dev';
 let conversationHistory = [];
 
 function startNewChat() {
-  conversationHistory = [];
+  conversationHistory = [{
+    role: 'system',
+    content: '請使用繁體中文回答所有問題。'
+  }];
   document.getElementById('chat-messages').innerHTML = `
     <div class="message bot">
       <div class="avatar">箏</div>
@@ -46,7 +49,11 @@ async function sendMessage() {
       },
       body: JSON.stringify({
         message,
-        history: conversationHistory
+        history: conversationHistory,
+		language: 'zh-TW',  // 添加語言設定
+        preference: {
+          language: 'zh-TW'  // 添加語言偏好
+        }
       })
     });
 
