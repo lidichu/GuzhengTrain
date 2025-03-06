@@ -235,14 +235,23 @@
       }
     }
 
+	// 修改 sendMessage 函數
 	async function sendMessage() {
 	  const input = document.getElementById('user-input');
 	  const message = input.value.trim();
 	  
 	  if (message === '') return;
 
+	  // 顯示用戶訊息
+	  appendMessage(message, 'user');
+	  
+	  // 清空輸入框並禁用
+	  input.value = '';
+	  input.disabled = true;
+	  const sendButton = document.querySelector('.send-button');
+	  sendButton.disabled = true;
+
 	  try {
-		console.log('Sending request to:', WORKER_URL); // 添加日誌
 		const response = await fetch(WORKER_URL, {
 		  method: 'POST',
 		  headers: {
@@ -254,20 +263,30 @@
 		  })
 		});
 
-		console.log('Response status:', response.status); // 添加狀態碼日誌
-
-		if (!response.ok) {
-		  throw new Error(`HTTP error! status: ${response.status}`);
+		const data = await response.json();
+		
+		if (data.success) {
+		  // 將對話加入歷史記錄
+		  conversationHistory.push(
+			{ role: 'user', content: message },
+			{ role: 'assistant', content: data.response }
+		  );
+		  
+		  // 顯示助手回應
+		  appendMessage(data.response, 'bot');
+		} else {
+		  // 顯示錯誤訊息
+		  appendMessage('抱歉，處理您的請求時發生錯誤：' + (data.error || '未知錯誤'), 'bot');
 		}
 
-		const data = await response.json();
-		console.log('Response data:', data); // 添加響應數據日誌
-		
-		appendMessage(data.response, 'bot');
-		
 	  } catch (error) {
-		console.error('Detailed error:', error); // 更詳細的錯誤日誌
+		console.error('Error:', error);
 		appendMessage('抱歉，系統暫時無法處理您的請求，請稍後再試。', 'bot');
+	  } finally {
+		// 重新啟用輸入框和按鈕
+		input.disabled = false;
+		sendButton.disabled = false;
+		input.focus();
 	  }
 	}
 
