@@ -4,7 +4,7 @@ let conversationHistory = [];
 function startNewChat() {
   conversationHistory = [{
     role: 'system',
-    content: '請使用繁體中文回答所有問題。'
+    content: '你是箏心古箏音樂教室的AI助手，必須使用繁體中文回答所有問題。'
   }];
   document.getElementById('chat-messages').innerHTML = `
     <div class="message bot">
