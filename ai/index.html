@@ -189,14 +189,18 @@
 
       <!-- 輸入區域 -->
       <div class="input-container">
-        <div class="input-box">
-          <textarea 
-            id="user-input" 
-            class="input-field" 
-            placeholder="輸入您的問題..."
-            onkeydown="handleKeyPress(event)"
-          ></textarea>
-          <button class="send-button" onclick="sendMessage()">發送</button>
+		<!-- 在 input-field 中添加 aria 標籤 -->
+		<textarea 
+		  id="user-input" 
+		  class="input-field" 
+		  placeholder="輸入您的問題..."
+		  onkeydown="handleKeyPress(event)"
+		  aria-label="聊天輸入框"
+		></textarea>
+
+		<!-- 發送按鈕添加 aria 標籤 -->
+		<button class="send-button" onclick="sendMessage()" aria-label="發送訊息">發送</button>
+
         </div>
       </div>
     </div>
