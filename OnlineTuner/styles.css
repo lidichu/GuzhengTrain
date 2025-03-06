@@ -398,3 +398,31 @@ body {
         text-align: center;
     }
 }
+.volume-meter {
+    width: 100%;
+    height: 60px;
+    background: #f5f6fa;
+    border-radius: 8px;
+    padding: 10px;
+    margin: 20px 0;
+    position: relative;
+}
+
+.volume-bars-container {
+    display: flex;
+    align-items: flex-end;
+    height: 100%;
+    gap: 2px;
+}
+
+.volume-bar {
+    flex: 1;
+    background: var(--primary-color);
+    transition: height 0.1s ease;
+    border-radius: 2px;
+    opacity: 0.3;
+}
+
+.volume-bar.active {
+    opacity: 1;
+}
