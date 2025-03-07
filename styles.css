@@ -194,6 +194,32 @@ section:nth-child(even) {
   flex: 1;
   min-width: 300px;
 }
+.about-text h3 {
+  color: #8B4513; /* 溫暖的棕色標題 */
+  margin-top: 18px;
+  margin-bottom: 10px;
+  font-size: 1.1em;
+  border-left: 3px solid #D2B48C; /* 左側邊框 */
+  padding-left: 10px;
+}
+
+.about-text p {
+  line-height: 1.3; /* 增加行高 */
+  margin-bottom: 8px; /* 段落間距 */
+  text-align: justify; /* 文字兩端對齊 */
+  font-size: 1em; /* 略微增大字體 */
+}
+
+.about-text strong {
+  color: #8B4513; /* 強調文字顏色 */
+}
+
+/* 社群按鈕上方增加間距 */
+.social-buttons {
+  margin-top: 25px;
+  padding-top: 15px;
+  border-top: 1px dashed #D2B48C; /* 上方分隔線 */
+}
 
 /* 課程資訊 */
 .courses {
