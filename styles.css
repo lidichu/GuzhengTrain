@@ -196,8 +196,8 @@ section:nth-child(even) {
 }
 .about-text h3 {
   color: #8B4513; /* 溫暖的棕色標題 */
-  margin-top: 18px;
-  margin-bottom: 10px;
+  margin-top: 16px;
+  margin-bottom: 8px;
   font-size: 1.1em;
   border-left: 3px solid #D2B48C; /* 左側邊框 */
   padding-left: 10px;
@@ -205,9 +205,9 @@ section:nth-child(even) {
 
 .about-text p {
   line-height: 1.3; /* 增加行高 */
-  margin-bottom: 8px; /* 段落間距 */
+  margin-bottom: 6px; /* 段落間距 */
   text-align: justify; /* 文字兩端對齊 */
-  font-size: 1em; /* 略微增大字體 */
+  font-size: 0.9em; /* 略微增大字體 */
 }
 
 .about-text strong {
