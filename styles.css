@@ -204,16 +204,46 @@ section:nth-child(even) {
 }
 
 .about-text p {
-  line-height: 1.3; /* 增加行高 */
-  margin-bottom: 6px; /* 段落間距 */
+  line-height: 1.2; /* 增加行高 */
+  margin-bottom: 4px; /* 段落間距 */
   text-align: justify; /* 文字兩端對齊 */
-  font-size: 0.9em; /* 略微增大字體 */
+  font-size: 0.98em; /* 略微增大字體 */
 }
 
 .about-text strong {
   color: #8B4513; /* 強調文字顏色 */
 }
+/* 輪播圖樣式調整 */
+.carousel {
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
 
+.carousel-item img {
+  height: 400px;
+  object-fit: cover;
+}
+
+.carousel-control-prev,
+.carousel-control-next {
+  width: 10%;
+}
+
+.carousel-indicators {
+  margin-bottom: 0.5rem;
+}
+
+.carousel-indicators button {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.5);
+}
+
+.carousel-indicators .active {
+  background-color: var(--primary);
+}
 /* 社群按鈕上方增加間距 */
 .social-buttons {
   margin-top: 25px;
