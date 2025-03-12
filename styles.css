@@ -60,12 +60,17 @@ nav {
 nav ul {
   display: flex;
   justify-content: center;
+  align-items: center; /* 加入垂直置中 */
   list-style: none;
   flex-wrap: wrap;
+  margin: 0; /* 重置邊距 */
+  height: 100%; /* 確保選單高度填滿導航欄 */
 }
 
 nav ul li {
   padding: 15px 20px;
+  display: flex; /* 加入 flex 布局 */
+  align-items: center; /* 文字垂直置中 */
 }
 
 nav ul li a {
@@ -73,16 +78,15 @@ nav ul li a {
   text-decoration: none;
   font-weight: bold;
   transition: color 0.3s;
-}
-
-nav ul li a:hover {
-  color: var(--secondary);
+  font-size: 1.1rem; /* 加大字體尺寸 */
+  line-height: 1; /* 調整行高 */
 }
 
 .nav-container {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  min-height: 60px; /* 設定最小高度確保足夠空間 */
 }
 
 .logo-container {
