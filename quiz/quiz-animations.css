@@ -1,0 +1,359 @@
+/* 額外的動畫和互動元素 */
+
+/* 古箏背景裝飾 */
+.guzheng-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: -2;
+  opacity: 0.05;
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><path d="M10,50 L90,50 M20,30 L80,30 M20,70 L80,70" stroke="%238B5A2B" stroke-width="1" fill="none"/></svg>');
+  background-size: 100px 100px;
+}
+
+/* 古箏音符裝飾 */
+.music-notes-decoration {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: -1;
+  opacity: 0.1;
+}
+
+.music-note-bg {
+  position: absolute;
+  font-size: 3rem;
+  color: var(--primary);
+  opacity: 0.5;
+}
+
+/* 選項選擇效果增強 */
+.option.selected .option-marker {
+  animation: markerPulse 1.5s infinite;
+}
+
+@keyframes markerPulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(139, 90, 43, 0.7);
+  }
+  70% {
+    box-shadow: 0 0 0 10px rgba(139, 90, 43, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(139, 90, 43, 0);
+  }
+}
+
+/* 進度條動畫增強 */
+.quiz-progress-bar {
+  background: linear-gradient(90deg, var(--primary) 0%, var(--secondary) 100%);
+  background-size: 200% 100%;
+  animation: progressGradient 2s linear infinite;
+}
+
+@keyframes progressGradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* 答對/答錯動畫 */
+.option.correct {
+  border-color: var(--correct);
+  background-color: rgba(76, 175, 80, 0.1);
+  animation: correctAnswer 0.5s;
+}
+
+.option.incorrect {
+  border-color: var(--incorrect);
+  background-color: rgba(244, 67, 54, 0.1);
+  animation: incorrectAnswer 0.5s;
+}
+
+@keyframes correctAnswer {
+  0% {
+    transform: translateX(0);
+  }
+  25% {
+    transform: translateX(5px);
+  }
+  50% {
+    transform: translateX(-5px);
+  }
+  75% {
+    transform: translateX(5px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+@keyframes incorrectAnswer {
+  0% {
+    transform: translateX(0);
+  }
+  25% {
+    transform: translateX(10px);
+  }
+  50% {
+    transform: translateX(-10px);
+  }
+  75% {
+    transform: translateX(10px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+/* 結果頁面增強 */
+.score-circle {
+  overflow: hidden;
+}
+
+.score-circle::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: conic-gradient(
+    transparent 0deg,
+    rgba(255, 255, 255, 0.1) 0deg,
+    rgba(255, 255, 255, 0.1) 180deg,
+    transparent 180deg,
+    transparent 360deg
+  );
+  animation: rotateGradient 4s linear infinite;
+}
+
+@keyframes rotateGradient {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* 3D 翻轉效果 */
+.option {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transform-style: preserve-3d;
+  perspective: 1000px;
+}
+
+.option:hover {
+  transform: translateX(5px) rotateY(5deg);
+  box-shadow: -5px 5px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* 按鈕懸浮效果增強 */
+.btn-primary, .btn-secondary, .btn-success {
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-primary::after, .btn-secondary::after, .btn-success::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 5px;
+  height: 5px;
+  background: rgba(255, 255, 255, 0.5);
+  opacity: 0;
+  border-radius: 100%;
+  transform: scale(1, 1) translate(-50%);
+  transform-origin: 50% 50%;
+}
+
+.btn-primary:hover::after, .btn-secondary:hover::after, .btn-success:hover::after {
+  animation: ripple 1s ease-out;
+}
+
+@keyframes ripple {
+  0% {
+    transform: scale(0, 0);
+    opacity: 0.5;
+  }
+  20% {
+    transform: scale(25, 25);
+    opacity: 0.3;
+  }
+  100% {
+    opacity: 0;
+    transform: scale(40, 40);
+  }
+}
+
+/* 加載動畫 */
+.loading-spinner {
+  display: inline-block;
+  width: 50px;
+  height: 50px;
+  border: 3px solid rgba(210, 180, 140, 0.3);
+  border-radius: 50%;
+  border-top-color: var(--primary);
+  animation: spin 1s ease-in-out infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* 古箏弦動畫增強 */
+.string-1 { animation-delay: 0.1s; }
+.string-2 { animation-delay: 0.2s; }
+.string-3 { animation-delay: 0.3s; }
+.string-4 { animation-delay: 0.4s; }
+.string-5 { animation-delay: 0.5s; }
+
+/* 測驗完成彩帶效果 */
+.confetti {
+  position: fixed;
+  width: 10px;
+  height: 20px;
+  background-color: var(--primary);
+  opacity: 0.8;
+  animation: confettiFall linear forwards;
+}
+
+@keyframes confettiFall {
+  0% {
+    transform: translateY(-100vh) rotate(0deg);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(100vh) rotate(360deg);
+    opacity: 0;
+  }
+}
+
+/* 提交按鈕特效 */
+#submit-btn {
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+}
+
+#submit-btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: 0.5s;
+  z-index: -1;
+}
+
+#submit-btn:hover::before {
+  left: 100%;
+  animation: shine 1.5s infinite;
+}
+
+@keyframes shine {
+  0% {
+    left: -100%;
+  }
+  100% {
+    left: 100%;
+  }
+}
+
+/* 分享按鈕特效 */
+#share-btn {
+  position: relative;
+  overflow: hidden;
+}
+
+#share-btn::after {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.3) 0%, transparent 70%);
+  opacity: 0;
+  transform: scale(0.5);
+  transition: transform 0.3s, opacity 0.3s;
+}
+
+#share-btn:hover::after {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* 測驗結果等級標誌動畫 */
+.level-icon {
+  display: inline-block;
+  animation: levelIconFloat 3s ease-in-out infinite;
+}
+
+@keyframes levelIconFloat {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+/* 答題詳情展開動畫 */
+.review-item {
+  overflow: hidden;
+  max-height: 300px;
+  transition: max-height 0.5s ease;
+}
+
+.review-item.collapsed {
+  max-height: 40px;
+}
+
+/* 頁面切換過渡效果 */
+.page-transition {
+  animation: pageTransition 0.8s ease-in-out;
+}
+
+@keyframes pageTransition {
+  0% {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* 響應式調整 */
+@media (max-width: 768px) {
+  .music-notes-decoration {
+    display: none;
+  }
+  
+  .option:hover {
+    transform: translateX(3px) rotateY(3deg);
+  }
+}

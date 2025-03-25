@@ -1,0 +1,665 @@
+/* 古箏能力測驗 CSS 樣式 */
+:root {
+  --primary: #8B5A2B;
+  --secondary: #D2B48C;
+  --light: #F5F5DC;
+  --dark: #4A3520;
+  --white: #FFFFFF;
+  --correct: #4CAF50;
+  --incorrect: #F44336;
+}
+
+/* 測驗頁面標題 */
+#quiz-header {
+  text-align: center;
+  padding: 60px 0;
+  background-color: var(--white);
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  margin: 20px auto;
+  max-width: 800px;
+}
+
+.quiz-intro {
+  font-size: 1.2rem;
+  margin: 20px auto;
+  max-width: 600px;
+  color: var(--dark);
+  line-height: 1.6;
+}
+
+.quiz-start-container {
+  margin-top: 40px;
+}
+
+.btn-primary {
+  background-color: var(--primary);
+  color: var(--white);
+  border: none;
+  padding: 12px 30px;
+  border-radius: 30px;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 8px rgba(139, 90, 43, 0.3);
+}
+
+.btn-primary:hover {
+  background-color: #7B4A1B;
+  transform: translateY(-3px);
+  box-shadow: 0 6px 12px rgba(139, 90, 43, 0.4);
+}
+
+.btn-secondary {
+  background-color: var(--secondary);
+  color: var(--dark);
+  border: none;
+  padding: 12px 30px;
+  border-radius: 30px;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 8px rgba(210, 180, 140, 0.3);
+}
+
+.btn-secondary:hover {
+  background-color: #C2A47C;
+  transform: translateY(-3px);
+  box-shadow: 0 6px 12px rgba(210, 180, 140, 0.4);
+}
+
+.btn-secondary:disabled {
+  background-color: #E5D5C0;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+.btn-success {
+  background-color: #4CAF50;
+  color: var(--white);
+  border: none;
+  padding: 12px 30px;
+  border-radius: 30px;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 8px rgba(76, 175, 80, 0.3);
+}
+
+.btn-success:hover {
+  background-color: #3C9F40;
+  transform: translateY(-3px);
+  box-shadow: 0 6px 12px rgba(76, 175, 80, 0.4);
+}
+
+/* 測驗內容 */
+#quiz-content {
+  background-color: var(--white);
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  margin: 20px auto;
+  max-width: 800px;
+  padding: 30px;
+}
+
+.quiz-progress-container {
+  margin-bottom: 30px;
+}
+
+.quiz-progress {
+  height: 8px;
+  background-color: #E5D5C0;
+  border-radius: 4px;
+  overflow: hidden;
+  margin-bottom: 10px;
+}
+
+.quiz-progress-bar {
+  height: 100%;
+  background-color: var(--primary);
+  width: 5%;
+  transition: width 0.5s ease;
+}
+
+.quiz-progress-text {
+  text-align: right;
+  font-size: 0.9rem;
+  color: var(--dark);
+}
+
+.quiz-section-indicator {
+  display: inline-block;
+  background-color: var(--secondary);
+  color: var(--dark);
+  padding: 5px 15px;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  margin-bottom: 15px;
+  font-weight: bold;
+}
+
+.quiz-question-container {
+  margin-bottom: 30px;
+}
+
+.question-text {
+  font-size: 1.3rem;
+  color: var(--dark);
+  margin-bottom: 20px;
+  line-height: 1.5;
+}
+
+.options-container {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.option {
+  display: flex;
+  align-items: center;
+  padding: 15px;
+  border-radius: 8px;
+  background-color: var(--light);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border: 2px solid transparent;
+}
+
+.option:hover {
+  background-color: #F0EBD8;
+  transform: translateX(5px);
+}
+
+.option.selected {
+  border-color: var(--primary);
+  background-color: rgba(139, 90, 43, 0.1);
+}
+
+.option-marker {
+  width: 30px;
+  height: 30px;
+  background-color: var(--primary);
+  color: var(--white);
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  margin-right: 15px;
+  flex-shrink: 0;
+}
+
+.option-text {
+  flex-grow: 1;
+}
+
+.quiz-navigation {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 30px;
+}
+
+/* 測驗結果 */
+#quiz-result {
+  background-color: var(--white);
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  margin: 20px auto;
+  max-width: 800px;
+  padding: 30px;
+}
+
+.result-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.result-score {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.score-circle {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  background-color: var(--primary);
+  color: var(--white);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto 20px;
+  position: relative;
+  box-shadow: 0 5px 15px rgba(139, 90, 43, 0.3);
+}
+
+#score-value {
+  font-size: 3rem;
+  font-weight: bold;
+  line-height: 1;
+}
+
+.score-total {
+  font-size: 1.2rem;
+  opacity: 0.8;
+}
+
+.score-text {
+  font-size: 1.2rem;
+  color: var(--dark);
+}
+
+.result-level {
+  text-align: center;
+  margin-bottom: 40px;
+  padding: 20px;
+  background-color: var(--light);
+  border-radius: 10px;
+  width: 100%;
+  max-width: 600px;
+}
+
+.result-level h3 {
+  color: var(--primary);
+  margin-bottom: 15px;
+  font-size: 1.5rem;
+}
+
+.level-icon {
+  font-size: 3rem;
+  margin: 15px 0;
+}
+
+.result-details {
+  width: 100%;
+  margin-bottom: 40px;
+}
+
+.result-details h3 {
+  color: var(--primary);
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.questions-review {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.review-item {
+  padding: 15px;
+  border-radius: 8px;
+  background-color: var(--light);
+  border-left: 4px solid var(--secondary);
+}
+
+.review-item.correct {
+  border-left-color: var(--correct);
+}
+
+.review-item.incorrect {
+  border-left-color: var(--incorrect);
+}
+
+.review-question {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 10px;
+}
+
+.review-number {
+  font-weight: bold;
+  margin-right: 10px;
+  color: var(--dark);
+}
+
+.review-text {
+  flex-grow: 1;
+  color: var(--dark);
+}
+
+.review-result {
+  margin-left: 10px;
+  font-size: 1.1rem;
+}
+
+.review-result.correct {
+  color: var(--correct);
+}
+
+.review-result.incorrect {
+  color: var(--incorrect);
+}
+
+.review-answer {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+  font-size: 0.9rem;
+}
+
+.review-your-answer, .review-correct-answer {
+  background-color: rgba(255, 255, 255, 0.5);
+  padding: 5px 10px;
+  border-radius: 4px;
+}
+
+.review-explanation {
+  font-size: 0.9rem;
+  color: #666;
+  font-style: italic;
+  background-color: rgba(255, 255, 255, 0.5);
+  padding: 10px;
+  border-radius: 4px;
+}
+
+.result-actions {
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+/* 古箏裝飾元素 */
+.guzheng-decoration {
+  position: fixed;
+  top: 50%;
+  right: 0;
+  transform: translateY(-50%);
+  height: 70vh;
+  width: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  z-index: -1;
+}
+
+.guzheng-string {
+  height: 2px;
+  background-color: var(--primary);
+  width: 100%;
+  position: relative;
+  opacity: 0.6;
+  transform-origin: right center;
+}
+
+.guzheng-string::before {
+  content: '';
+  position: absolute;
+  left: -5px;
+  top: -3px;
+  width: 8px;
+  height: 8px;
+  background-color: var(--secondary);
+  border-radius: 50%;
+}
+
+.guzheng-string.pluck {
+  animation: pluck 1s ease-out;
+}
+
+@keyframes pluck {
+  0% {
+    transform: scaleX(1);
+  }
+  10% {
+    transform: scaleX(1.05);
+  }
+  20% {
+    transform: scaleX(0.98);
+  }
+  30% {
+    transform: scaleX(1.02);
+  }
+  40% {
+    transform: scaleX(0.99);
+  }
+  50% {
+    transform: scaleX(1.01);
+  }
+  60% {
+    transform: scaleX(0.995);
+  }
+  100% {
+    transform: scaleX(1);
+  }
+}
+
+/* 動畫效果 */
+.fade-in {
+  animation: fadeIn 0.8s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.slide-left {
+  animation: slideLeft 0.5s ease-in-out;
+}
+
+@keyframes slideLeft {
+  from {
+    opacity: 0.5;
+    transform: translateX(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.slide-right {
+  animation: slideRight 0.5s ease-in-out;
+}
+
+@keyframes slideRight {
+  from {
+    opacity: 0.5;
+    transform: translateX(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.pulse-animation {
+  animation: pulse 0.5s ease-in-out;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+/* 音符動畫 */
+.music-note {
+  position: fixed;
+  font-size: 2rem;
+  color: var(--primary);
+  animation: floatUp 2s ease-out;
+  z-index: 100;
+  pointer-events: none;
+}
+
+@keyframes floatUp {
+  0% {
+    bottom: 20%;
+    opacity: 0;
+  }
+  20% {
+    opacity: 1;
+  }
+  80% {
+    opacity: 1;
+  }
+  100% {
+    bottom: 80%;
+    opacity: 0;
+    transform: translateX(20px) rotate(20deg);
+  }
+}
+
+/* 煙花動畫 */
+.firework {
+  position: fixed;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  animation: explode 2s ease-out;
+  z-index: 100;
+  pointer-events: none;
+}
+
+@keyframes explode {
+  0% {
+    transform: scale(0);
+    opacity: 0;
+  }
+  20% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  80% {
+    transform: scale(15);
+    opacity: 0.8;
+  }
+  100% {
+    transform: scale(20);
+    opacity: 0;
+  }
+}
+
+/* 飄落音符 */
+.floating-note {
+  position: fixed;
+  font-size: 2rem;
+  color: var(--primary);
+  top: -50px;
+  animation: floatDown 7s linear;
+  z-index: 100;
+  pointer-events: none;
+}
+
+@keyframes floatDown {
+  0% {
+    top: -50px;
+    opacity: 0;
+    transform: translateX(0) rotate(0deg);
+  }
+  10% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    top: 110vh;
+    opacity: 0;
+    transform: translateX(100px) rotate(360deg);
+  }
+}
+
+/* 返回頂部按鈕 */
+.back-to-top {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: var(--primary);
+  color: var(--white);
+  border: none;
+  font-size: 1.2rem;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+  z-index: 99;
+}
+
+.back-to-top:hover {
+  background-color: #7B4A1B;
+  transform: translateY(-5px);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* 響應式設計 */
+@media (max-width: 768px) {
+  #quiz-header, #quiz-content, #quiz-result {
+    margin: 10px;
+    padding: 20px;
+  }
+  
+  .quiz-intro {
+    font-size: 1rem;
+  }
+  
+  .question-text {
+    font-size: 1.1rem;
+  }
+  
+  .option {
+    padding: 12px;
+  }
+  
+  .option-marker {
+    width: 25px;
+    height: 25px;
+    font-size: 0.9rem;
+  }
+  
+  .quiz-navigation {
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .quiz-navigation button {
+    width: 100%;
+  }
+  
+  .score-circle {
+    width: 120px;
+    height: 120px;
+  }
+  
+  #score-value {
+    font-size: 2.5rem;
+  }
+  
+  .result-actions {
+    flex-direction: column;
+    width: 100%;
+  }
+  
+  .result-actions button, .result-actions a {
+    width: 100%;
+  }
+  
+  .guzheng-decoration {
+    display: none;
+  }
+}

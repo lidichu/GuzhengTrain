@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>古箏能力測驗 - 新莊箏心古箏音樂教室</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="quiz.css">
+    <link rel="stylesheet" href="quiz-animations.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <script src="quiz-fixed.js" defer></script>
+    <script src="quiz-interactions.js" defer></script>
+</head>
+<body>
+    <!-- 導航欄 -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-links">
+                <a href="#about">關於我們</a>
+                <a href="#courses">課程資訊</a>
+                <a href="#teachers">師資介紹</a>
+                <a href="#videos">教學影片</a>
+                <a href="#results">學生成果</a>
+                <a href="#trial">體驗課程報名</a>
+                <a href="#contact">聯絡我們</a>
+                <a href="#guide">新手指南</a>
+                <a href="#ai">古箏AI小助手</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 主要內容 -->
+    <main class="main-content">
+        <div class="quiz-container">
+            <!-- 測驗標題 -->
+            <div id="quiz-header" class="quiz-header">
+                <h1>古箏能力測驗</h1>
+                <div class="quiz-description">
+                    <p>本測驗共有 <strong>20 題</strong>，可評估您的古箏程度（初階 / 中階 / 高階）。完成測驗後，您將獲得專業評估和學習建議。</p>
+                </div>
+                <button id="start-quiz" class="btn start-btn">開始測驗</button>
+                
+                <!-- 古箏琴弦動畫 -->
+                <div class="guzheng-animation">
+                    <div class="guzheng-string string-1"></div>
+                    <div class="guzheng-string string-2"></div>
+                    <div class="guzheng-string string-3"></div>
+                    <div class="guzheng-string string-4"></div>
+                    <div class="guzheng-string string-5"></div>
+                </div>
+            </div>
+
+            <!-- 測驗內容 -->
+            <div id="quiz-content" class="quiz-content" style="display: none;">
+                <div class="quiz-section-indicator"></div>
+                <div class="quiz-progress">
+                    <div class="quiz-progress-text">
+                        <span id="current-question">1</span> / <span id="total-questions">20</span>
+                    </div>
+                    <div class="quiz-progress-bar-container">
+                        <div class="quiz-progress-bar"></div>
+                    </div>
+                </div>
+                
+                <div class="question-container">
+                    <h2 id="question-text"></h2>
+                    <div class="options-container"></div>
+                </div>
+                
+                <div class="quiz-navigation">
+                    <button id="prev-btn" class="btn nav-btn">上一題</button>
+                    <button id="next-btn" class="btn nav-btn">下一題</button>
+                    <button id="submit-btn" class="btn submit-btn" style="display: none;">提交答案</button>
+                </div>
+            </div>
+
+            <!-- 測驗結果 -->
+            <div id="quiz-result" class="quiz-result" style="display: none;">
+                <h2>測驗結果</h2>
+                
+                <div class="result-summary">
+                    <div class="score-circle">
+                        <div class="score-value-container">
+                            <span id="score-value">0</span>
+                            <span class="score-total">/20</span>
+                        </div>
+                    </div>
+                    
+                    <div class="result-details">
+                        <p>您答對了 <span id="correct-answers">0</span> 題，達到了 <span id="level-icon">🎵</span> <span id="level-text">初階</span> 水平</p>
+                        <p id="level-description"></p>
+                    </div>
+                </div>
+                
+                <div class="result-actions">
+                    <button id="retry-btn" class="btn retry-btn">重新測驗</button>
+                    <button id="share-btn" class="btn share-btn">分享結果</button>
+                </div>
+                
+                <div class="questions-review-container">
+                    <h3>答題詳情</h3>
+                    <div id="questions-review" class="questions-review"></div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- 返回頂部按鈕 -->
+    <button class="back-to-top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- 頁腳 -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-content">
+                <h2>新莊箏心古箏音樂教室</h2>
+                <p>傳承古箏藝術，培養音樂素養</p>
+            </div>
+            
+            <div class="footer-contact">
+                <p><i class="fas fa-map-marker-alt"></i> 新北市新莊區新泰路西堤旁(金色米蘭社區)</p>
+                <p><i class="fas fa-phone"></i> 0937-124-902</p>
+                <p><i class="fas fa-envelope"></i> info@guzhengtrain.com</p>
+            </div>
+            
+            <div class="footer-social">
+                <a href="#" class="social-icon"><i class="fab fa-facebook"></i></a>
+                <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+                <a href="#" class="social-icon"><i class="fab fa-youtube"></i></a>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>&copy; 2024 新莊箏心古箏音樂教室. All Rights Reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>
