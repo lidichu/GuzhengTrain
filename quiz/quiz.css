@@ -663,3 +663,44 @@
     display: none;
   }
 }
+/* 測驗內容 - 修復顯示問題 */
+#quiz-content {
+  background-color: var(--white);
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  margin: 20px auto;
+  max-width: 800px;
+  padding: 30px;
+  /* 確保內容可見 */
+  z-index: 10;
+  position: relative;
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+/* 確保選項容器可見 */
+.options-container {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  opacity: 1 !important;
+  visibility: visible !important;
+  z-index: 11;
+  position: relative;
+}
+
+/* 確保選項可見 */
+.option {
+  display: flex;
+  align-items: center;
+  padding: 15px;
+  border-radius: 8px;
+  background-color: var(--light);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border: 2px solid transparent;
+  opacity: 1 !important;
+  visibility: visible !important;
+  z-index: 12;
+  position: relative;
+}

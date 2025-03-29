@@ -16,6 +16,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // 初始化測驗 - 增加錯誤處理
     function initQuiz() {
         try {
+            console.log('初始化測驗...');
             // 獲取DOM元素並添加錯誤處理
             startQuizBtn = document.getElementById('start-quiz');
             quizHeader = document.getElementById('quiz-header');
@@ -97,7 +98,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
     
-    // 開始測驗 - 增加錯誤處理
+    // 開始測驗 - 修復顯示問題
     function startQuiz() {
         try {
             console.log('開始測驗');
@@ -113,7 +114,13 @@ document.addEventListener('DOMContentLoaded', function() {
             }
             
             if (quizContent) {
+                // 確保測驗內容可見
                 quizContent.style.display = 'block';
+                quizContent.style.visibility = 'visible';
+                quizContent.style.opacity = '1';
+                
+                // 強制重新渲染
+                quizContent.offsetHeight;
             }
             
             // 載入問題
@@ -127,7 +134,7 @@ document.addEventListener('DOMContentLoaded', function() {
             // 播放琴弦動畫
             quizUtils.playStringAnimation();
             
-            console.log('測驗已開始');
+            console.log('測驗已開始，測驗內容顯示狀態:', quizContent.style.display);
         } catch (error) {
             console.error('開始測驗時發生錯誤:', error);
             // 嘗試恢復界面
@@ -138,9 +145,11 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
     
-    // 載入問題 - 增加錯誤處理
+    // 載入問題 - 增加錯誤處理和調試信息
     function loadQuestion() {
         try {
+            console.log('載入問題', currentQuestion + 1);
+            
             if (currentQuestion < 0 || currentQuestion >= quizData.length) {
                 console.error('問題索引超出範圍');
                 return;
@@ -156,6 +165,9 @@ document.addEventListener('DOMContentLoaded', function() {
             // 更新問題文本
             if (questionText) {
                 questionText.textContent = `${currentQuestion + 1}. ${question.question}`;
+                console.log('問題文本已更新:', questionText.textContent);
+            } else {
+                console.error('找不到問題文本元素');
             }
             
             // 更新部分指示器
@@ -196,6 +208,10 @@ document.addEventListener('DOMContentLoaded', function() {
                     optionElement.addEventListener('click', () => selectOption(index));
                     optionsContainer.appendChild(optionElement);
                 });
+                
+                console.log('選項已載入，數量:', question.options.length);
+            } else {
+                console.error('找不到選項容器元素');
             }
             
             // 更新按鈕狀態
