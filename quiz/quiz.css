@@ -8,7 +8,27 @@
   --correct: #4CAF50;
   --incorrect: #F44336;
 }
+/* 古箏能力測驗 CSS 樣式 */
+:root {
+  --primary: #8B5A2B;
+  --secondary: #D2B48C;
+  --light: #F5F5DC;
+  --dark: #4A3520;
+  --white: #FFFFFF;
+  --correct: #4CAF50;
+  --incorrect: #F44336;
+}
 
+/* 測驗頁面標題 */
+#quiz-header {
+  text-align: center;
+  padding: 60px 0;
+  background-color: var(--white);
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  margin: 20px auto;
+  max-width: 800px;
+}
 /* 測驗頁面標題 */
 #quiz-header {
   text-align: center;
@@ -27,11 +47,32 @@
   color: var(--dark);
   line-height: 1.6;
 }
+.quiz-intro {
+  font-size: 1.2rem;
+  margin: 20px auto;
+  max-width: 600px;
+  color: var(--dark);
+  line-height: 1.6;
+}
 
 .quiz-start-container {
   margin-top: 40px;
 }
+.quiz-start-container {
+  margin-top: 40px;
+}
 
+.btn-primary {
+  background-color: var(--primary);
+  color: var(--white);
+  border: none;
+  padding: 12px 30px;
+  border-radius: 30px;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 8px rgba(139, 90, 43, 0.3);
+}
 .btn-primary {
   background-color: var(--primary);
   color: var(--white);
@@ -49,7 +90,23 @@
   transform: translateY(-3px);
   box-shadow: 0 6px 12px rgba(139, 90, 43, 0.4);
 }
+.btn-primary:hover {
+  background-color: #7B4A1B;
+  transform: translateY(-3px);
+  box-shadow: 0 6px 12px rgba(139, 90, 43, 0.4);
+}
 
+.btn-secondary {
+  background-color: var(--secondary);
+  color: var(--dark);
+  border: none;
+  padding: 12px 30px;
+  border-radius: 30px;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 8px rgba(210, 180, 140, 0.3);
+}
 .btn-secondary {
   background-color: var(--secondary);
   color: var(--dark);
@@ -67,7 +124,18 @@
   transform: translateY(-3px);
   box-shadow: 0 6px 12px rgba(210, 180, 140, 0.4);
 }
+.btn-secondary:hover {
+  background-color: #C2A47C;
+  transform: translateY(-3px);
+  box-shadow: 0 6px 12px rgba(210, 180, 140, 0.4);
+}
 
+.btn-secondary:disabled {
+  background-color: #E5D5C0;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
 .btn-secondary:disabled {
   background-color: #E5D5C0;
   cursor: not-allowed;
@@ -86,7 +154,23 @@
   transition: all 0.3s ease;
   box-shadow: 0 4px 8px rgba(76, 175, 80, 0.3);
 }
+.btn-success {
+  background-color: #4CAF50;
+  color: var(--white);
+  border: none;
+  padding: 12px 30px;
+  border-radius: 30px;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 8px rgba(76, 175, 80, 0.3);
+}
 
+.btn-success:hover {
+  background-color: #3C9F40;
+  transform: translateY(-3px);
+  box-shadow: 0 6px 12px rgba(76, 175, 80, 0.4);
+}
 .btn-success:hover {
   background-color: #3C9F40;
   transform: translateY(-3px);
@@ -677,6 +761,20 @@
   opacity: 1 !important;
   visibility: visible !important;
 }
+/* 測驗內容 */
+#quiz-content {
+  background-color: var(--white);
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  margin: 20px auto;
+  max-width: 800px;
+  padding: 30px;
+  /* 確保內容可見 */
+  z-index: 10;
+  position: relative;
+  opacity: 1 !important;
+  visibility: visible !important;
+}
 
 /* 確保選項容器可見 */
 .options-container {
@@ -688,8 +786,62 @@
   z-index: 11;
   position: relative;
 }
+.quiz-progress-container {
+  margin-bottom: 30px;
+}
 
-/* 確保選項可見 */
+.quiz-progress {
+  height: 8px;
+  background-color: #E5D5C0;
+  border-radius: 4px;
+  overflow: hidden;
+  margin-bottom: 10px;
+}
+
+.quiz-progress-bar {
+  height: 100%;
+  background-color: var(--primary);
+  width: 5%;
+  transition: width 0.5s ease;
+}
+
+.quiz-progress-text {
+  text-align: right;
+  font-size: 0.9rem;
+  color: var(--dark);
+}
+
+.quiz-section-indicator {
+  display: inline-block;
+  background-color: var(--secondary);
+  color: var(--dark);
+  padding: 5px 15px;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  margin-bottom: 15px;
+  font-weight: bold;
+}
+.quiz-question-container {
+  margin-bottom: 30px;
+}
+
+.question-text {
+  font-size: 1.3rem;
+  color: var(--dark);
+  margin-bottom: 20px;
+  line-height: 1.5;
+}
+
+.options-container {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  opacity: 1 !important;
+  visibility: visible !important;
+  z-index: 11;
+  position: relative;
+}
+
 .option {
   display: flex;
   align-items: center;
