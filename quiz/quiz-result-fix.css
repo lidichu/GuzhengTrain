@@ -1,0 +1,51 @@
+/* 測驗結果顯示修復 */
+
+/* 確保結果區域可見 */
+#quiz-result {
+  display: none;
+  z-index: 1000;
+  position: relative;
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+#quiz-result.fade-in {
+  animation: fadeIn 0.5s ease forwards;
+  display: block !important;
+}
+
+/* 結果圓圈 */
+.score-circle {
+  position: relative;
+  z-index: 1001;
+}
+
+/* 結果容器 */
+.result-container {
+  background-color: var(--white);
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  padding: 30px;
+  margin: 20px auto;
+  max-width: 800px;
+  position: relative;
+  z-index: 1001;
+}
+
+/* 答題詳情 */
+.questions-review {
+  max-height: 400px;
+  overflow-y: auto;
+  margin-top: 20px;
+  position: relative;
+  z-index: 1001;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
