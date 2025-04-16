@@ -1,0 +1,563 @@
+/* 學習系列網頁樣式 */
+
+/* 通用樣式 */
+body {
+    font-family: "Microsoft JhengHei", Arial, sans-serif;
+    line-height: 1.6;
+    color: #333;
+}
+
+a {
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+a:hover {
+    text-decoration: none;
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 2rem;
+    color: #116466;
+    font-weight: 600;
+    position: relative;
+    padding-bottom: 15px;
+}
+
+.section-title:after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 3px;
+    background: #d1a080;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.section-desc {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto 3rem;
+    color: #666;
+}
+
+/* 頁面標題區塊 */
+.page-title {
+    background: linear-gradient(rgba(17, 100, 102, 0.8), rgba(17, 100, 102, 0.8)), url('../img/top1.jpg') center center/cover;
+    color: white;
+    padding: 60px 0;
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.page-title h1 {
+    font-size: 2.8rem;
+    margin-bottom: 1rem;
+    font-weight: 600;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+.page-title p {
+    font-size: 1.3rem;
+    max-width: 800px;
+    margin: 0 auto;
+    opacity: 0.9;
+}
+
+/* 介紹區塊 */
+.intro-section {
+    padding: 60px 0;
+    background-color: #f9f9f9;
+}
+
+.intro-content {
+    padding: 20px;
+}
+
+.intro-content h2 {
+    color: #116466;
+    margin-bottom: 20px;
+    font-weight: 600;
+}
+
+.intro-content p {
+    margin-bottom: 20px;
+    color: #555;
+    line-height: 1.8;
+}
+
+.features {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 30px;
+}
+
+.feature {
+    flex: 0 0 50%;
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.feature i {
+    color: #d1a080;
+    font-size: 1.2rem;
+    margin-right: 10px;
+}
+
+.feature span {
+    font-weight: 500;
+}
+
+.intro-image img {
+    border-radius: 8px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+}
+
+/* 學習路徑 */
+.learning-path {
+    padding: 70px 0;
+    background: white;
+}
+
+.path-timeline {
+    max-width: 900px;
+    margin: 0 auto;
+    position: relative;
+}
+
+.path-timeline:before {
+    content: '';
+    position: absolute;
+    left: 20px;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: #d1a080;
+}
+
+.timeline-item {
+    position: relative;
+    margin-bottom: 50px;
+    padding-left: 70px;
+}
+
+.timeline-number {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: #116466;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 1.2rem;
+    z-index: 2;
+}
+
+.timeline-content {
+    background: #f9f9f9;
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: 0 3px 15px rgba(0,0,0,0.05);
+}
+
+.timeline-content h3 {
+    color: #116466;
+    margin-bottom: 10px;
+    font-weight: 600;
+    font-size: 1.4rem;
+}
+
+.timeline-content p {
+    color: #555;
+    margin-bottom: 15px;
+}
+
+/* FAQ 卡片 */
+.faq-section {
+    padding: 70px 0;
+    background-color: #f5f5f5;
+}
+
+.faq-card {
+    background: white;
+    border-radius: 8px;
+    padding: 25px 20px;
+    text-align: center;
+    height: 100%;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+}
+
+.faq-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+
+.faq-icon {
+    font-size: 2.5rem;
+    color: #d1a080;
+    margin-bottom: 15px;
+}
+
+.faq-card h3 {
+    font-size: 1.3rem;
+    color: #116466;
+    margin-bottom: 12px;
+    font-weight: 600;
+}
+
+.faq-card p {
+    color: #666;
+    margin-bottom: 20px;
+    font-size: 0.95rem;
+}
+
+/* 學習資源 */
+.resources-section {
+    padding: 70px 0;
+    background: white;
+}
+
+.resource-card {
+    border: 1px solid #eee;
+    border-radius: 8px;
+    padding: 25px;
+    height: 100%;
+    margin-bottom: 30px;
+}
+
+.resource-card h3 {
+    color: #116466;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    font-size: 1.4rem;
+}
+
+.resource-card h3 i {
+    margin-right: 10px;
+    color: #d1a080;
+}
+
+.resource-list {
+    padding-left: 20px;
+}
+
+.resource-list li {
+    margin-bottom: 10px;
+    color: #555;
+}
+
+.youtube-links {
+    margin-top: 20px;
+}
+
+.youtube-link {
+    display: block;
+    background: #f5f5f5;
+    padding: 12px 15px;
+    border-radius: 4px;
+    color: #333;
+    margin-bottom: 10px;
+    transition: all 0.3s ease;
+    text-align: left;
+}
+
+.youtube-link:hover {
+    background: #fceade;
+    color: #d1a080;
+    transform: translateX(5px);
+}
+
+.youtube-link i {
+    color: #FF0000;
+    margin-right: 10px;
+}
+
+/* 諮詢與指導 */
+.consultation-section {
+    padding: 60px 0;
+    background: linear-gradient(rgba(17, 100, 102, 0.9), rgba(17, 100, 102, 0.9)), url('../img/top1.jpg') center center/cover;
+}
+
+.consultation-content {
+    text-align: center;
+    color: white;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.consultation-content h2 {
+    font-size: 2.2rem;
+    margin-bottom: 20px;
+    font-weight: 600;
+}
+
+.consultation-content p {
+    font-size: 1.1rem;
+    margin-bottom: 15px;
+    opacity: 0.9;
+}
+
+.consultation-buttons {
+    margin-top: 30px;
+}
+
+.consultation-buttons .btn {
+    margin: 0 10px;
+    padding: 12px 30px;
+}
+
+/* 內容頁樣式 */
+.content-page {
+    padding: 30px 0 70px;
+}
+
+.content-sidebar {
+    position: sticky;
+    top: 20px;
+}
+
+.content-nav {
+    background: #f9f9f9;
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 30px;
+}
+
+.content-nav h3 {
+    color: #116466;
+    margin-bottom: 15px;
+    font-size: 1.3rem;
+    border-bottom: 2px solid #d1a080;
+    padding-bottom: 10px;
+}
+
+.content-nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+.content-nav li {
+    margin-bottom: 10px;
+}
+
+.content-nav a {
+    color: #555;
+    display: block;
+    padding: 8px 10px;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+}
+
+.content-nav a:hover,
+.content-nav a.active {
+    background: #fceade;
+    color: #d1a080;
+}
+
+.content-nav .sub-nav {
+    padding-left: 15px;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+}
+
+.content-nav .has-sub.active .sub-nav {
+    max-height: 500px;
+}
+
+.content-main {
+    background: white;
+    border-radius: 8px;
+    padding: 40px;
+    box-shadow: 0 3px 15px rgba(0,0,0,0.05);
+}
+
+.content-main h2 {
+    color: #116466;
+    margin-bottom: 25px;
+    padding-bottom: 15px;
+    border-bottom: 2px solid #f5f5f5;
+}
+
+.content-main h3 {
+    color: #d1a080;
+    margin-top: 30px;
+    margin-bottom: 15px;
+    font-size: 1.4rem;
+}
+
+.content-main p {
+    margin-bottom: 20px;
+    color: #555;
+    line-height: 1.8;
+}
+
+.content-image {
+    margin: 30px 0;
+    text-align: center;
+}
+
+.content-image img {
+    max-width: 100%;
+    border-radius: 8px;
+    box-shadow: 0 3px 15px rgba(0,0,0,0.1);
+}
+
+.content-image figcaption {
+    margin-top: 10px;
+    color: #777;
+    font-style: italic;
+}
+
+.technique-steps {
+    counter-reset: step-counter;
+    margin: 30px 0;
+}
+
+.step {
+    position: relative;
+    margin-bottom: 30px;
+    padding-left: 60px;
+}
+
+.step:before {
+    counter-increment: step-counter;
+    content: counter(step-counter);
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 40px;
+    height: 40px;
+    background: #116466;
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+}
+
+.step h4 {
+    color: #116466;
+    margin-bottom: 10px;
+}
+
+/* 響應式調整 */
+@media (max-width: 992px) {
+    .path-timeline:before {
+        left: 18px;
+    }
+    
+    .timeline-number {
+        width: 35px;
+        height: 35px;
+        font-size: 1rem;
+    }
+    
+    .timeline-content {
+        padding: 20px;
+    }
+    
+    .content-main {
+        padding: 25px;
+    }
+}
+
+@media (max-width: 768px) {
+    .page-title {
+        padding: 40px 0;
+    }
+    
+    .page-title h1 {
+        font-size: 2.2rem;
+    }
+    
+    .page-title p {
+        font-size: 1rem;
+    }
+    
+    .intro-section,
+    .learning-path,
+    .faq-section,
+    .resources-section,
+    .consultation-section {
+        padding: 50px 0;
+    }
+    
+    .feature {
+        flex: 0 0 100%;
+    }
+    
+    .consultation-buttons .btn {
+        display: block;
+        margin: 10px auto;
+        width: 80%;
+    }
+}
+
+@media (max-width: 576px) {
+    .timeline-item {
+        padding-left: 50px;
+    }
+    
+    .content-main {
+        padding: 20px 15px;
+    }
+    
+    .step {
+        padding-left: 50px;
+    }
+}
+
+/* 按鈕樣式 */
+.btn-primary {
+    background-color: #d1a080;
+    border-color: #d1a080;
+}
+
+.btn-primary:hover, 
+.btn-primary:focus {
+    background-color: #c08c6a;
+    border-color: #c08c6a;
+}
+
+.btn-outline-primary {
+    color: #d1a080;
+    border-color: #d1a080;
+}
+
+.btn-outline-primary:hover, 
+.btn-outline-primary:focus {
+    background-color: #d1a080;
+    border-color: #d1a080;
+    color: white;
+}
+
+/* 卡片淡入動畫 */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.faq-card, .timeline-item, .resource-card {
+    animation: fadeIn 0.6s ease-out forwards;
+}
+
+.timeline-item:nth-child(1) { animation-delay: 0.1s; }
+.timeline-item:nth-child(2) { animation-delay: 0.2s; }
+.timeline-item:nth-child(3) { animation-delay: 0.3s; }
+.timeline-item:nth-child(4) { animation-delay: 0.4s; }
+.timeline-item:nth-child(5) { animation-delay: 0.5s; }
+.timeline-item:nth-child(6) { animation-delay: 0.6s; }
+.timeline-item:nth-child(7) { animation-delay: 0.7s; }
