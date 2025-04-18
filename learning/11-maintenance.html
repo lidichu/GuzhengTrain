@@ -1,0 +1,952 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <!-- SEO 優化 -->
+  <title>古箏保養與調音 | 專業保養指南 | 新莊箏心古箏音樂教室</title>
+  <meta name="description" content="專業的古箏保養與調音指南，包含日常清潔、環境控制、季節性保養與調音技巧，幫助您延長古箏壽命並保持最佳音質。">
+  <meta name="keywords" content="古箏保養,古箏調音,古箏清潔,古箏濕度控制,古箏弦更換,古箏音栓調整,古箏維護,古箏故障排除">
+  
+  <!-- Open Graph 標籤 -->
+  <meta property="og:title" content="古箏保養與調音 | 專業保養指南 | 新莊箏心古箏音樂教室">
+  <meta property="og:description" content="專業的古箏保養與調音指南，幫助您延長古箏壽命並保持最佳音質。">
+  <meta property="og:image" content="../img/top1.jpg">
+  <meta property="og:url" content="https://guzhengtrain.com/learning/11-maintenance.html">
+  <meta property="og:type" content="article">
+  
+  <!-- 外部資源連結 -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/js/all.min.js"></script>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  
+  <!-- 原有的 CSS 連結 -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link rel="stylesheet" href="../styles.css">
+  <link rel="stylesheet" href="style.css">
+  
+  <!-- 網站 Icon -->
+  <link rel="icon" type="image/png" href="../favicon.png">
+  <link rel="apple-touch-icon" href="../apple-touch-icon.png">
+  
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-VYZSYN15C2"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-VYZSYN15C2');
+  </script>
+
+  <style>
+    /* 文章專用樣式 */
+    .article-toc {
+      background-color: #f8f9fa;
+      border-radius: 8px;
+      padding: 20px;
+      position: sticky;
+      top: 20px;
+    }
+    
+    .article-toc h3 {
+      font-size: 1.2rem;
+      margin-bottom: 15px;
+      color: #333;
+    }
+    
+    .article-toc ul {
+      padding-left: 20px;
+    }
+    
+    .article-toc li {
+      margin-bottom: 8px;
+    }
+    
+    .article-toc a {
+      color: #007bff;
+      text-decoration: none;
+      transition: all 0.3s;
+    }
+    
+    .article-toc a:hover {
+      color: #0056b3;
+      text-decoration: underline;
+    }
+    
+    .section-heading {
+      margin-top: 40px;
+      margin-bottom: 20px;
+      padding-bottom: 10px;
+      border-bottom: 2px solid #eaeaea;
+      color: #333;
+    }
+    
+    .maintenance-tip {
+      background-color: #e8f4f8;
+      border-left: 4px solid #4aa3df;
+      padding: 15px;
+      margin: 20px 0;
+      border-radius: 4px;
+    }
+    
+    .maintenance-tip h4 {
+      color: #2980b9;
+      margin-top: 0;
+      margin-bottom: 10px;
+    }
+    
+    .warning-tip {
+      background-color: #fff3e0;
+      border-left: 4px solid #ff9800;
+      padding: 15px;
+      margin: 20px 0;
+      border-radius: 4px;
+    }
+    
+    .warning-tip h4 {
+      color: #e67e22;
+      margin-top: 0;
+      margin-bottom: 10px;
+    }
+    
+    .maintenance-steps {
+      counter-reset: step-counter;
+      margin-bottom: 30px;
+    }
+    
+    .maintenance-step {
+      margin-bottom: 25px;
+      position: relative;
+      padding-left: 60px;
+    }
+    
+    .maintenance-step:before {
+      content: counter(step-counter);
+      counter-increment: step-counter;
+      position: absolute;
+      left: 0;
+      top: 0;
+      background-color: #4aa3df;
+      color: white;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: bold;
+    }
+    
+    .image-container {
+      margin: 20px 0;
+      text-align: center;
+    }
+    
+    .image-container img {
+      max-width: 100%;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+    
+    .image-container .caption {
+      margin-top: 10px;
+      color: #666;
+      font-style: italic;
+      font-size: 0.9rem;
+    }
+    
+    .maintenance-table {
+      width: 100%;
+      margin: 20px 0;
+    }
+    
+    .maintenance-faq .accordion-button:not(.collapsed) {
+      background-color: #e8f4f8;
+      color: #2980b9;
+    }
+    
+    .article-navigation {
+      margin-top: 40px;
+      padding-top: 20px;
+      border-top: 1px solid #eaeaea;
+    }
+    
+    .prev-article, .next-article {
+      display: block;
+      padding: 10px;
+      color: #333;
+      text-decoration: none;
+      transition: all 0.3s;
+    }
+    
+    .prev-article:hover, .next-article:hover {
+      background-color: #f8f9fa;
+      border-radius: 4px;
+    }
+    
+    .prev-article span, .next-article span {
+      display: block;
+      color: #777;
+      font-size: 0.9rem;
+      margin-bottom: 5px;
+    }
+    
+    .prev-article h5, .next-article h5 {
+      margin: 0;
+      color: #007bff;
+    }
+  </style>
+
+</head>
+<body>
+  <!-- 導航欄 -->
+  <nav>
+    <div class="container nav-container">
+      <div class="logo-container">
+        <a href="../index.html"><h2>新莊箏心古箏音樂教室</h2></a>
+      </div>
+      <div class="menu-icon">
+        <i class="fas fa-bars"></i>
+      </div>
+      <ul class="nav-menu">
+        <li><a href="../index.html#about">關於我們</a></li>
+        <li><a href="../index.html#courses">課程資訊</a></li>
+        <li><a href="../index.html#teachers">師資介紹</a></li>
+        <li><a href="../index.html#youtube">教學影片</a></li>
+        <li><a href="../index.html#gallery">學生成果</a></li>
+        <li><a href="../index.html#register">體驗課程報名</a></li>
+        <li><a href="../index.html#contact">聯絡我們</a></li>
+        <li><a href="/quiz/">古箏測驗</a></li>
+        <li><a href="/learning/">學習指南</a></li>
+        <!--<li><a href="/ai/" target="_blank">AI助手</a></li>-->
+      </ul>
+    </div>
+  </nav>
+  
+  <!-- 頁面標題區塊 -->
+  <section class="page-title">
+    <div class="container">
+      <h1>古箏保養與調音</h1>
+      <p>延長您愛琴壽命的專業指南</p>
+    </div>
+  </section>
+  
+  <!-- 主要內容區塊 -->
+  <section class="article-section">
+    <div class="container">
+      <div class="row">
+        <!-- 側邊導航 -->
+        <div class="col-lg-3">
+          <div class="article-toc">
+            <h3>目錄</h3>
+            <ul>
+              <li><a href="#importance">保養重要性</a></li>
+              <li><a href="#environment">環境與擺放</a></li>
+              <li><a href="#daily-care">日常保養</a></li>
+              <li><a href="#seasonal-care">季節性保養</a></li>
+              <li><a href="#tuning-basics">調音基礎</a></li>
+              <li><a href="#tuning-steps">調音步驟詳解</a></li>
+              <li><a href="#common-issues">常見問題與解決</a></li>
+              <li><a href="#professional-maintenance">專業維護建議</a></li>
+              <li><a href="#maintenance-schedule">保養時間表</a></li>
+            </ul>
+          </div>
+        </div>
+        
+        <!-- 文章主體 -->
+        <div class="col-lg-9">
+          <div class="article-content">
+            <!-- 關鍵要點綜述 -->
+            <div class="key-points">
+              <h2>關鍵要點</h2>
+              <ul>
+                <li>古箏放置環境應保持恆定溫度，相對濕度維持在45-65%之間</li>
+                <li>避免陽光直射、暖氣旁或冷氣出風口下</li>
+                <li>日常保養包括演奏前後的除塵、定期擦拭、弦座清潔</li>
+                <li>每季度進行一次深度保養，每年至少進行一次專業檢查</li>
+                <li>調音前確保環境穩定，循序漸進調整，避免過緊造成琴弦或面板損傷</li>
+                <li>初學者建議使用電子調音器，標準音為D調</li>
+                <li>面板裂紋發現時應立即處理，防止擴大</li>
+                <li>替換弦時注意新弦拉伸過程，需頻繁重新調音直到穩定</li>
+              </ul>
+            </div>
+            
+            <!-- 保養重要性 -->
+            <h2 id="importance" class="section-heading">古箏保養的重要性</h2>
+            <p>古箏作為中國傳統樂器的瑰寶，由優質木材、精細工藝與巧妙結構組成，每一把品質優良的古箏都是藝術品。正確的保養不僅能延長古箏的使用壽命，還能維持其優美音質與原有音色特點，讓您的投資物超所值。</p>
+            
+            <div class="image-container">
+              <img src="images/guzheng-structure.jpg" alt="古箏結構圖解" loading="lazy">
+              <div class="caption">古箏主要結構與保養重點位置</div>
+            </div>
+            
+            <p>多數古箏面板使用桐木製作，背板多用硬木如紅木、花梨木等。這些天然材料對環境變化極為敏感，若缺乏正確保養，可能導致：</p>
+            
+            <div class="row">
+              <div class="col-md-6">
+                <div class="warning-tip">
+                  <h4>忽視保養的後果</h4>
+                  <ul>
+                    <li>面板龜裂，影響音色與結構</li>
+                    <li>木材翹曲變形，影響音準</li>
+                    <li>琴弦鏽蝕，降低音質</li>
+                    <li>琴碼位移，造成走音</li>
+                    <li>修復成本遠高於日常保養</li>
+                  </ul>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="maintenance-tip">
+                  <h4>良好保養的益處</h4>
+                  <ul>
+                    <li>延長古箏使用壽命達數十年</li>
+                    <li>維持穩定優質的音色</li>
+                    <li>保持調音的穩定性</li>
+                    <li>降低維修頻率與費用</li>
+                    <li>保持古箏的收藏與投資價值</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            
+            <!-- 環境與擺放 -->
+            <h2 id="environment" class="section-heading">理想環境與正確擺放</h2>
+            <p>古箏的保養首先從合適的存放環境開始。作為木質樂器，古箏對溫濕度變化特別敏感，選擇適當的放置位置至關重要。</p>
+            
+            <h3>溫濕度控制</h3>
+            <p>理想的古箏存放環境應保持適當的溫度和濕度：</p>
+            <ul>
+              <li><strong>溫度：</strong>維持在20-25°C（68-77°F）之間，避免劇烈變化</li>
+              <li><strong>濕度：</strong>相對濕度控制在45-65%之間最為理想</li>
+            </ul>
+            
+            <div class="maintenance-tip">
+              <h4>濕度控制建議</h4>
+              <p>若環境過於乾燥（冬季暖氣或夏季空調），建議使用加濕器增加環境濕度；相反，若環境過於潮濕，可使用除濕機調節。建議在古箏放置房間配備溫濕度計，隨時監測環境狀態。</p>
+            </div>
+            
+            <h3>正確的擺放位置</h3>
+            <p>選擇合適的位置放置古箏，可顯著減少環境因素對古箏的損害：</p>
+            
+            <div class="maintenance-steps">
+              <div class="maintenance-step">
+                <h4>避免陽光直射</h4>
+                <p>長時間的陽光直射會使古箏漆面變色，更嚴重時會導致木材開裂。最好將古箏放在遠離窗戶的位置，或確保窗簾能有效阻擋強光。</p>
+              </div>
+              
+              <div class="maintenance-step">
+                <h4>遠離熱源</h4>
+                <p>切勿將古箏放置在暖氣、火爐或其他熱源附近，過高溫度會導致木材過度乾燥，產生裂紋。建議距離任何熱源至少1-2米。</p>
+              </div>
+              
+              <div class="maintenance-step">
+                <h4>遠離空調出風口</h4>
+                <p>空調直接吹拂會造成局部溫濕度急劇變化，增加開裂風險。避免將古箏直接放在冷氣出風方向或風口下。</p>
+              </div>
+              
+              <div class="maintenance-step">
+                <h4>避免潮濕區域</h4>
+                <p>地下室、浴室附近等潮濕區域不適合存放古箏，過高濕度會使琴弦生鏽，甚至導致木材發霉或變形。</p>
+              </div>
+            </div>
+            
+            <div class="image-container">
+              <img src="images/guzheng-placement.jpg" alt="古箏正確擺放示範" loading="lazy">
+              <div class="caption">古箏的理想擺放位置與環境</div>
+            </div>
+            
+            <h3>存放方式</h3>
+            <p>無論是短期還是長期存放，正確的方法都能有效保護您的古箏：</p>
+            <ul>
+              <li><strong>演奏時：</strong>將古箏放在平穩的琴架上，確保琴面朝上，琴腿穩固</li>
+              <li><strong>短期不使用：</strong>可使用琴罩覆蓋，防止灰塵積累</li>
+              <li><strong>長期存放：</strong>建議鬆弦減少琴面壓力，裝入琴套，並放置在通風乾燥處</li>
+              <li><strong>運輸時：</strong>使用堅固的琴盒，內部填充足夠的緩衝材料</li>
+            </ul>
+            
+            <!-- 日常保養 -->
+            <h2 id="daily-care" class="section-heading">日常保養細節</h2>
+            <p>良好的日常保養習慣是延長古箏壽命的關鍵。即使每天只花幾分鐘，也能讓您的古箏保持最佳狀態。</p>
+            
+            <h3>清潔與除塵</h3>
+            
+            <div class="maintenance-steps">
+              <div class="maintenance-step">
+                <h4>彈奏前後擦拭</h4>
+                <p>每次彈奏前後，用柔軟乾淨的棉布或微纖維布輕輕擦拭琴面和琴弦，去除灰塵和手上的汗漬、油脂。這是防止琴弦生鏽、保護漆面的基本步驟。</p>
+              </div>
+              
+              <div class="maintenance-step">
+                <h4>琴弦清潔</h4>
+                <p>使用專用琴弦清潔劑或小量酒精（濃度70%以下）蘸取在軟布上輕輕擦拭琴弦，特別注意指法頻繁接觸的區域。<strong>切勿將液體直接灑在琴弦或琴面上</strong>。</p>
+              </div>
+              
+              <div class="maintenance-step">
+                <h4>音碼（琴馬）清潔</h4>
+                <p>定期用小毛刷清理音碼底部積累的灰塵，這些灰塵會影響音色清晰度。移動音碼時應謹慎，記錄原位置或一次只移動一個。</p>
+              </div>
+              
+              <div class="maintenance-step">
+                <h4>琴面保養</h4>
+                <p>對於漆面古箏，可每3-6個月使用專業樂器漆面清潔劑保養一次。傳統生漆面古箏則需更加謹慎，建議使用專用保養油。</p>
+              </div>
+            </div>
+            
+            <div class="warning-tip">
+              <h4>清潔注意事項</h4>
+              <ul>
+                <li>切勿使用含有酸性、鹼性的清潔劑</li>
+                <li>避免使用帶有研磨效果的布料或清潔劑</li>
+                <li>不要使用過濕的布，以免水分滲入木材</li>
+                <li>琴身雕刻處的清潔可使用軟毛刷輔助</li>
+              </ul>
+            </div>
+            
+            <h3>指甲油對古箏的影響</h3>
+            <p>許多古箏演奏者會使用手指甲在演奏時產生更好的音色，但指甲油可能對古箏產生意外影響：</p>
+            <ul>
+              <li>含有丙酮或其他溶劑的指甲油若在未完全乾燥時接觸琴弦，可能會腐蝕琴弦</li>
+              <li>某些深色指甲油可能會在琴弦上留下難以清除的色素</li>
+              <li>建議使用古箏專用假指甲，或確保指甲油完全乾燥後再演奏</li>
+            </ul>
+            
+            <div class="image-container">
+              <img src="images/guzheng-cleaning.jpg" alt="古箏清潔示範" loading="lazy">
+              <div class="caption">古箏正確清潔方式示範</div>
+            </div>
+            
+            <!-- 季節性保養 -->
+            <h2 id="seasonal-care" class="section-heading">季節性保養策略</h2>
+            <p>隨著季節更替，氣候變化會對古箏產生不同影響，因此需要針對不同季節調整保養策略。</p>
+            
+            <div class="table-responsive">
+              <table class="table table-bordered maintenance-table">
+                <thead class="table-light">
+                  <tr>
+                    <th>季節</th>
+                    <th>主要挑戰</th>
+                    <th>保養重點</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><strong>春季</strong></td>
+                    <td>溫度回升，濕度變化大</td>
+                    <td>
+                      <ul>
+                        <li>調整琴弦張力</li>
+                        <li>檢查冬季可能產生的細小裂縫</li>
+                        <li>深度清潔除塵</li>
+                      </ul>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td><strong>夏季</strong></td>
+                    <td>高溫高濕，容易發霉</td>
+                    <td>
+                      <ul>
+                        <li>控制室內濕度，避免過高</li>
+                        <li>頻繁檢查琴弦是否生鏽</li>
+                        <li>注意防蟲防霉</li>
+                      </ul>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td><strong>秋季</strong></td>
+                    <td>溫度下降，濕度變化</td>
+                    <td>
+                      <ul>
+                        <li>緩慢調整室內溫度</li>
+                        <li>檢查琴弦張力變化</li>
+                        <li>適時添加濕度</li>
+                      </ul>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td><strong>冬季</strong></td>
+                    <td>暖氣導致室內乾燥</td>
+                    <td>
+                      <ul>
+                        <li>增加室內濕度（45-65%）</li>
+                        <li>避免暖氣直吹</li>
+                        <li>監控古箏面板狀況</li>
+                      </ul>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            
+            <div class="maintenance-tip">
+              <h4>梅雨季節特別注意</h4>
+              <p>台灣梅雨季節濕度極高，建議：</p>
+              <ul>
+                <li>使用除濕機控制室內濕度</li>
+                <li>定期檢查古箏是否有發霉跡象</li>
+                <li>放置乾燥劑於琴盒內（若長時間不使用）</li>
+                <li>勿在雨天攜帶古箏外出（除非有專業防水琴盒）</li>
+              </ul>
+            </div>
+            
+            <!-- 調音基礎 -->
+            <h2 id="tuning-basics" class="section-heading">調音基礎知識</h2>
+            <p>正確的調音不僅能讓古箏發出悅耳的聲音，還能避免因不當操作對琴弦和琴身造成損傷。</p>
+            
+            <h3>調音工具介紹</h3>
+            <div class="row">
+              <div class="col-md-6">
+                <ul>
+                  <li><strong>調音扳手：</strong>專用工具，用於旋轉琴軸調整弦的張力</li>
+                  <li><strong>電子調音器：</strong>精確測量音高，建議選擇專為古箏設計的調音器</li>
+                  <li><strong>調音APP：</strong>智能手機上的調音應用，方便但精確度可能較專業調音器低</li>
+                  <li><strong>橡皮錘：</strong>輕敲音碼調整位置，影響音色</li>
+                </ul>
+              </div>
+              <div class="col-md-6">
+                <div class="image-container">
+                  <img src="images/guzheng-tuning-tools.jpg" alt="古箏調音工具" loading="lazy">
+                  <div class="caption">古箏調音常用工具</div>
+                </div>
+              </div>
+            </div>
+            
+            <h3>古箏標準音高與調式</h3>
+            <p>現代古箏通常使用D調作為標準定弦，但根據不同曲目需要，也可能會有其他調式：</p>
+            <ul>
+              <li><strong>標準D調：</strong>從低音至高音為 D, E, F#, A, B, D, E, F#...</li>
+              <li><strong>G調：</strong>相應將D調中的F#降為F</li>
+              <li><strong>變徵調：</strong>在D調基礎上，將某些音高根據需要調整</li>
+            </ul>
+            
+            <div class="maintenance-tip">
+              <h4>初學者調音建議</h4>
+              <p>剛開始學習古箏時，調音可能具有挑戰性。以下是一些實用建議：</p>
+              <ul>
+                <li>請教師幫助確立第一次的標準音高</li>
+                <li>熟悉古箏弦的排列與對應音高</li>
+                <li>使用高質量電子調音器輔助</li>
+                <li>視頻記錄老師的調音過程作為參考</li>
+              </ul>
+            </div>
+            
+            <!-- 調音步驟詳解 -->
+            <h2 id="tuning-steps" class="section-heading">調音步驟詳解</h2>
+            <p>掌握正確的調音步驟，能有效提高調音效率並確保古箏音準的準確性。</p>
+            
+            <div class="maintenance-steps">
+              <div class="maintenance-step">
+                <h4>準備工作</h4>
+                <p>在開始調音前，確保：</p>
+                <ul>
+                  <li>古箏放置在平穩表面</li>
+                  <li>環境溫濕度穩定</li>
+                  <li>準備好所有調音工具</li>
+                  <li>古箏已靜置至少30分鐘（若剛從外面帶回）</li>
+                </ul>
+              </div>
+              
+              <div class="maintenance-step">
+                <h4>確定基準音</h4>
+                <p>以標準D調為例：</p>
+                <ul>
+                  <li>使用調音器或標準音叉確定中央D音</li>
+                  <li>先調整中音區（第8-12弦），確保基準音準確</li>
+                  <li>注意聆聽音色，避免雜音</li>
+                </ul>
+              </div>
+              
+              <div class="maintenance-step">
+                <h4>由中向兩端調整</h4>
+                <p>遵循正確的調音順序：</p>
+                <ul>
+                  <li>確立中央D音後，依次向高音區調整</li>
+                  <li>完成高音區後返回中音區，再調整低音區</li>
+                  <li>注意漸進式調整，避免一次性大幅度變動</li>
+                </ul>
+              </div>
+              
+              <div class="maintenance-step">
+                <h4>微調與確認</h4>
+                <p>調音結束時的重要步驟：</p>
+                <ul>
+                  <li>彈奏音階檢查整體音準</li>
+                  <li>彈奏和弦檢查和聲效果</li>
+                  <li>進行最後的微調</li>
+                  <li>特別注意八度音程的和諧度</li>
+                </ul>
+              </div>
+            </div>
+            
+            <div class="image-container">
+              <img src="images/guzheng-tuning-process.jpg" alt="古箏調音過程" loading="lazy">
+              <div class="caption">古箏調音正確姿勢與手法</div>
+            </div>
+            
+            <div class="warning-tip">
+              <h4>調音注意事項</h4>
+              <ul>
+                <li><strong>避免過度調緊：</strong>過高張力可能導致琴弦斷裂或損傷琴面</li>
+                <li><strong>漸進式調整：</strong>每次調整不要超過半音，尤其是高音區</li>
+                <li><strong>避免急速變化：</strong>溫度或濕度急劇變化時，應等環境穩定後再調音</li>
+                <li><strong>新弦需頻繁調整：</strong>剛換的琴弦需要經過2-3週的穩定期，期間需頻繁檢查調整</li>
+              </ul>
+            </div>
+            
+            <!-- 音碼（琴馬）的調整 -->
+            <h3>音碼（琴馬）的調整</h3>
+            <p>音碼位置的微調能顯著影響古箏的音色與音質：</p>
+            <ul>
+              <li><strong>音碼向琴軸方向移動：</strong>音量增大，但音質可能變硬</li>
+              <li><strong>音碼向固定弦軸方向移動：</strong>音量減小，但音質更柔和</li>
+              <li>調整音碼時使用橡膠小錘輕輕敲擊，移動幅度應控制在1-2毫米</li>
+              <li>調整前可用鉛筆輕輕標記原位置，便於參考</li>
+            </ul>
+            
+            <!-- 常見問題與解決 -->
+            <h2 id="common-issues" class="section-heading">常見問題與解決方法</h2>
+            <p>即使進行了良好的日常保養，古箏也可能出現一些常見問題。以下是如何識別和處理這些問題：</p>
+            
+            <div class="accordion maintenance-faq" id="accordionFAQ">
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="headingOne">
+                  <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                    面板出現裂紋
+                  </button>
+                </h2>
+                <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionFAQ">
+                  <div class="accordion-body">
+                    <p><strong>可能原因：</strong>環境濕度過低、溫度變化劇烈、木材自然收縮</p>
+                    <p><strong>解決方法：</strong></p>
+                    <ul>
+                      <li><strong>小裂紋：</strong>增加環境濕度，使用專業木材保濕油</li>
+                      <li><strong>中等裂紋：</strong>尋求專業修復，可使用專用膠水填充</li>
+                      <li><strong>嚴重裂紋：</strong>需送專業琴師修復，可能需要加固或部分更換面板</li>
+                    </ul>
+                    <p><strong>預防措施：</strong>保持穩定濕度，避免陽光直射，使用加濕器（冬季）</p>
+                  </div>
+                </div>
+              </div>
+              
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="headingTwo">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                    琴弦生鏽或變色
+                  </button>
+                </h2>
+                <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionFAQ">
+                  <div class="accordion-body">
+                    <p><strong>可能原因：</strong>濕度過高、手汗過多、清潔不及時</p>
+                    <p><strong>解決方法：</strong></p>
+                    <ul>
+                      <li><strong>輕微生鏽：</strong>用沾少量酒精的軟布輕擦，然後用乾布擦拭</li>
+                      <li><strong>嚴重生鏽：</strong>考慮更換新琴弦，生鏽的琴弦音質已受影響</li>
+                      <li><strong>變色但不影響音質：</strong>可繼續使用，注意加強清潔頻率</li>
+                    </ul>
+                    <p><strong>預防措施：</strong>每次演奏前後擦拭琴弦，控制環境濕度，演奏前洗手並保持乾燥</p>
+                  </div>
+                </div>
+              </div>
+              
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="headingThree">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                    音色變渾濁或失真
+                  </button>
+                </h2>
+                <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionFAQ">
+                  <div class="accordion-body">
+                    <p><strong>可能原因：</strong>音碼位置移動、琴弦老化、面板振動不良</p>
+                    <p><strong>解決方法：</strong></p>
+                    <ul>
+                      <li><strong>檢查音碼：</strong>確認所有音碼位置正確，接觸面平整</li>
+                      <li><strong>檢測琴弦：</strong>輕彈各弦查看是否有異常聲音，考慮更換老化琴弦</li>
+                      <li><strong>檢查面板：</strong>輕輕敲擊面板不同位置，聆聽是否有雜音</li>
+                    </ul>
+                    <p><strong>預防措施：</strong>定期專業保養，及時更換老化琴弦，避免面板受到撞擊</p>
+                  </div>
+                </div>
+              </div>
+              
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="headingFour">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                    琴軸鬆動或困難旋轉
+                  </button>
+                </h2>
+                <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#accordionFAQ">
+                  <div class="accordion-body">
+                    <p><strong>可能原因：</strong>琴軸磨損、軸孔擴大、缺乏潤滑</p>
+                    <p><strong>解決方法：</strong></p>
+                    <ul>
+                      <li><strong>琴軸過鬆：</strong>尋求專業修復，可能需要更換新琴軸或填充軸孔</li>
+                      <li><strong>琴軸旋轉困難：</strong>少量專用潤滑油（樂器專用）潤滑軸孔</li>
+                      <li><strong>琴軸變形：</strong>需更換新琴軸，避免強行調整</li>
+                    </ul>
+                    <p><strong>預防措施：</strong>調音時動作輕柔，避免過度用力，定期檢查琴軸狀態</p>
+                  </div>
+                </div>
+              </div>
+              
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="headingFive">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+                    古箏共鳴不佳
+                  </button>
+                </h2>
+                <div id="collapseFive" class="accordion-collapse collapse" aria-labelledby="headingFive" data-bs-parent="#accordionFAQ">
+                  <div class="accordion-body">
+                    <p><strong>可能原因：</strong>琴腳接觸不良、面板結構變化、琴內異物</p>
+                    <p><strong>解決方法：</strong></p>
+                    <ul>
+                      <li><strong>檢查琴腳：</strong>確保所有琴腳穩固接觸平面，調整不平整處</li>
+                      <li><strong>確認音孔暢通：</strong>檢查音孔是否有異物阻塞</li>
+                      <li><strong>檢查內部：</strong>透過音孔觀察琴內是否有鬆動部件或異物</li>
+                    </ul>
+                    <p><strong>預防措施：</strong>放置在平整表面，避免異物進入音孔，定期檢查琴腳</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            <!-- 專業維護建議 -->
+            <h2 id="professional-maintenance" class="section-heading">專業維護建議</h2>
+            <p>即使您進行了良好的日常保養，古箏仍需定期由專業人士檢查和維護，特別是價值較高的古箏。</p>
+            
+            <h3>何時尋求專業維護</h3>
+            <ul>
+              <li><strong>定期檢查：</strong>建議每1-2年進行一次專業檢查，無論古箏是否有明顯問題</li>
+              <li><strong>面板出現明顯裂紋：</strong>特別是裂紋持續擴大時</li>
+              <li><strong>音色明顯變化：</strong>出現持續的雜音或失真</li>
+              <li><strong>結構部件鬆動：</strong>如琴軸、固定弦軸等結構性問題</li>
+              <li><strong>長期存放後重新使用：</strong>特別是存放超過1年的古箏</li>
+            </ul>
+            
+            <div class="maintenance-tip">
+              <h4>選擇合適的維修師</h4>
+              <p>尋找專業古箏維修師時，建議：</p>
+              <ul>
+                <li>選擇有豐富經驗的專業古箏製作或維修師</li>
+                <li>事先了解其過往作品和客戶評價</li>
+                <li>諮詢您的古箏老師推薦</li>
+                <li>確保維修師了解您古箏的特性和製作工藝</li>
+              </ul>
+            </div>
+            
+            <h3>琴弦更換</h3>
+            <p>琴弦是需要定期更換的消耗品，合適的更換頻率和方法能確保古箏音質：</p>
+            
+            <div class="row">
+              <div class="col-md-6">
+                <h4>何時更換琴弦</h4>
+                <ul>
+                  <li>琴弦出現明顯生鏽或腐蝕</li>
+                  <li>琴弦表面有明顯磨損凹痕</li>
+                  <li>音色變得渾濁或失去光澤</li>
+                  <li>彈奏時容易斷裂</li>
+                  <li>一般使用情況下，建議每1-2年更換一次</li>
+                </ul>
+              </div>
+              <div class="col-md-6">
+                <h4>琴弦更換步驟</h4>
+                <ol>
+                  <li>準備適合古箏型號的新琴弦</li>
+                  <li>一次只更換1-2根琴弦，避免一次性卸除所有琴弦</li>
+                  <li>記錄原琴弦的安裝方式</li>
+                  <li>安裝新弦後，需要反復調音直到穩定（可能需要1-2週）</li>
+                  <li>高音弦更換需特別小心，避免張力過大</li>
+                </ol>
+              </div>
+            </div>
+            
+            <div class="image-container">
+              <img src="images/guzheng-string-replacement.jpg" alt="古箏琴弦更換" loading="lazy">
+              <div class="caption">古箏琴弦更換示範</div>
+            </div>
+            
+            <!-- 保養時間表 -->
+            <h2 id="maintenance-schedule" class="section-heading">古箏保養時間表</h2>
+            <p>以下是建議的古箏保養時間表，依據使用頻率可進行適當調整：</p>
+            
+            <div class="table-responsive">
+              <table class="table table-bordered maintenance-table">
+                <thead class="table-light">
+                  <tr>
+                    <th>保養項目</th>
+                    <th>頻率</th>
+                    <th>詳細說明</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>基本除塵擦拭</td>
+                    <td>每次演奏前後</td>
+                    <td>使用柔軟棉布擦拭琴面和琴弦，去除灰塵和指痕</td>
+                  </tr>
+                  <tr>
+                    <td>琴弦深度清潔</td>
+                    <td>每兩週一次</td>
+                    <td>使用專用琴弦清潔劑或少量酒精擦拭，清除氧化物</td>
+                  </tr>
+                  <tr>
+                    <td>音碼位置檢查</td>
+                    <td>每月一次</td>
+                    <td>檢查音碼是否處於正確位置，接觸是否良好</td>
+                  </tr>
+                  <tr>
+                    <td>整體調音</td>
+                    <td>每週或需要時</td>
+                    <td>使用調音器確保所有琴弦音準準確</td>
+                  </tr>
+                  <tr>
+                    <td>面板深度清潔</td>
+                    <td>每3個月一次</td>
+                    <td>使用專用清潔劑深度清潔面板，保護漆面</td>
+                  </tr>
+                  <tr>
+                    <td>琴腿穩固檢查</td>
+                    <td>每3個月一次</td>
+                    <td>確保所有琴腿穩固，必要時調整或加固</td>
+                  </tr>
+                  <tr>
+                    <td>結構全面檢查</td>
+                    <td>每6個月一次</td>
+                    <td>檢查面板是否有新裂紋，結構是否穩固</td>
+                  </tr>
+                  <tr>
+                    <td>專業檢修</td>
+                    <td>每1-2年一次</td>
+                    <td>由專業古箏維修師進行全面檢查和必要維護</td>
+                  </tr>
+                  <tr>
+                    <td>琴弦更換</td>
+                    <td>每1-2年或需要時</td>
+                    <td>更換老化的琴弦，維持良好音色</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            
+            <div class="maintenance-tip">
+              <h4>保養記錄建議</h4>
+              <p>建立一個古箏保養記錄本，記錄以下內容：</p>
+              <ul>
+                <li>每次調音日期和調式</li>
+                <li>琴弦更換時間和品牌</li>
+                <li>專業維修記錄和內容</li>
+                <li>面板狀態變化記錄</li>
+                <li>音色變化觀察</li>
+              </ul>
+              <p>這不僅幫助您追蹤古箏的健康狀況，也為將來可能的維修提供重要參考。</p>
+            </div>
+            
+            <!-- 總結 -->
+            <div class="conclusion">
+                <h2>總結</h2>
+                <p>古箏作為傳統樂器的瑰寶，不僅代表著豐富的中華文化遺產，更是音樂藝術的精彩表現形式。正確的保養與調音不僅能延長古箏壽命，還能確保它始終保持最佳的音色和演奏狀態。</p>
+                
+                <p>記住以下核心保養原則：</p>
+                <ul>
+                  <li>維持穩定的溫度和濕度環境</li>
+                  <li>遠離陽光直射和熱源</li>
+                  <li>定期清潔和檢查</li>
+                  <li>正確存放和搬運</li>
+                  <li>定期專業維護</li>
+                  <li>謹慎且頻繁地調音</li>
+                </ul>
+                
+                <p>透過建立良好的保養習慣，您的古箏將能夠陪伴您更長久的音樂之旅，並持續發出美妙的音色。即使是初學者，掌握基本的保養與調音技巧也能有效提升學習體驗和演奏質量。</p>
+                
+                <div class="call-to-action">
+                  <p>如果您對古箏保養與調音有任何疑問，或需要專業指導，歡迎聯繫我們的古箏老師。新莊箏心古箏音樂教室提供專業的古箏保養建議和調音服務，幫助您的古箏始終保持最佳狀態。</p>
+                  <div class="cta-buttons">
+                    <a href="../index.html#contact" class="btn btn-primary">聯繫我們</a>
+                    <a href="https://line.me/ti/p/~@swn8120u" target="_blank" class="btn btn-outline-primary">
+                      <i class="fab fa-line"></i> LINE 諮詢
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  
+    <!-- 相關文章推薦 -->
+    <section class="related-articles">
+      <div class="container">
+        <h2 class="section-title">相關學習資源</h2>
+        <div class="row">
+          <div class="col-md-4 mb-4">
+            <div class="related-card">
+              <div class="related-image">
+                <img src="images/guzheng-buying-guide.jpg" alt="古箏購買指南" loading="lazy">
+              </div>
+              <div class="related-content">
+                <h3>如何選購古箏</h3>
+                <p>了解不同等級古箏的特點與選購要點，避免初學者常見錯誤</p>
+                <a href="08-buying-guzheng.html" class="btn btn-sm btn-outline-primary">查看詳情</a>
+              </div>
+            </div>
+          </div>
+          
+          <div class="col-md-4 mb-4">
+            <div class="related-card">
+              <div class="related-image">
+                <img src="images/guzheng-certification.jpg" alt="古箏證照考試" loading="lazy">
+              </div>
+              <div class="related-content">
+                <h3>考取古箏證照</h3>
+                <p>古箏等級考試準備指南與實用技巧，幫助您順利通過各級考試</p>
+                <a href="10-certification.html" class="btn btn-sm btn-outline-primary">查看詳情</a>
+              </div>
+            </div>
+          </div>
+          
+          <div class="col-md-4 mb-4">
+            <div class="related-card">
+              <div class="related-image">
+                <img src="images/guzheng-posture.jpg" alt="古箏正確坐姿" loading="lazy">
+              </div>
+              <div class="related-content">
+                <h3>基本坐姿與手型</h3>
+                <p>掌握正確的彈奏姿勢與手型，為古箏學習打下堅實基礎</p>
+                <a href="02-posture.html" class="btn btn-sm btn-outline-primary">查看詳情</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <!-- 諮詢與指導 -->
+    <section class="consultation-section">
+      <div class="container">
+        <div class="consultation-content">
+          <h2>需要專業的古箏保養指導？</h2>
+          <p>我們提供一對一古箏保養與調音指導，幫助您更好地維護您的寶貴樂器。</p>
+          <p>預約專業調音服務，讓您的古箏始終保持最佳音色！</p>
+          <div class="consultation-buttons">
+            <a href="../index.html#register" class="btn btn-primary btn-lg">
+              <i class="fas fa-edit"></i> 預約服務
+            </a>
+            <a href="https://line.me/ti/p/~@swn8120u" target="_blank" class="btn btn-outline-primary btn-lg">
+              <i class="fab fa-line"></i> LINE 諮詢
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <!-- 頁尾 -->
+    <footer>
+      <div class="container">
+        <p>© 2025 新莊箏心古箏音樂教室 版權所有</p>
+      </div>
+    </footer>
+  
+    <!-- JavaScript -->
+    <script src="script.js"></script>
+  </body>
+  </html>
