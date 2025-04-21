@@ -89,6 +89,124 @@ nav ul li a {
   min-height: 60px; /* 設定最小高度確保足夠空間 */
 }
 
+/* 在 styles.css 中添加/修改以下樣式 */
+/* 修改下拉選單背景色 */
+.dropdown-menu {
+  background-color: var(--dark); /* 使用深色背景 */
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  min-width: 250px;
+  padding: 1rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3); /* 加深陰影 */
+  border: none;
+  margin-top: 0.5rem;
+  z-index: 1000;
+}
+
+.dropdown-header {
+  color: var(--white); /* 改為白色 */
+  font-weight: bold;
+  padding: 8px 16px;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.dropdown-divider {
+  margin: 0.5rem 0;
+  border-color: rgba(0, 0, 0, 0.1);
+}
+
+.dropdown-item {
+  padding: 8px 16px;
+  font-size: 0.95rem;
+  color: var(--white); /* 改為白色 */
+  transition: all 0.2s ease;
+}
+
+.dropdown-item:hover {
+  background-color: var(--secondary); /* 修改懸停背景色 */
+  color: var(--white); /* 懸停時保持白色 */
+  padding-left: 20px;
+}
+
+/* 調整下拉選單的位置 */
+.nav-item.dropdown {
+  position: relative;
+}
+
+/* 懸停時的效果 */
+.dropdown:hover .dropdown-menu-grid {
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(-50%) translateY(0);
+}
+/* 修改網格式下拉選單的寬度和定位 */
+.dropdown-menu-grid {
+  width: 500px;
+  transform: translateX(-50%) translateY(0);
+  display: block;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+  background-color: var(--dark); /* 確保網格式選單也使用深色背景 */
+  width: 500px;
+}
+
+/* 修改導航欄連結顏色 */
+.navbar-nav .nav-link {
+  color: var(--white) !important; /* 使用 !important 來確保覆蓋 Bootstrap 的默認樣式 */
+  font-weight: bold;
+  transition: color 0.3s;
+}
+
+/* 懸停效果 */
+.navbar-nav .nav-link:hover {
+  color: var(--secondary) !important; /* 懸停時的顏色，可以改成您想要的顏色 */
+}
+
+/* 確保下拉選單按鈕的顏色也是白色 */
+.navbar-nav .dropdown-toggle {
+  color: var(--white) !important;
+}
+
+/* 活動狀態的連結顏色 */
+.navbar-nav .nav-link.active {
+  color: var(--secondary) !important;
+}
+
+.dropdown-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+.dropdown-column {
+  padding: 0;
+}
+
+/* 響應式設計 */
+@media (max-width: 768px) {
+  .dropdown-menu,
+  .dropdown-menu-grid {
+    position: static;
+    width: 100%;
+    transform: none;
+    margin-top: 0;
+    box-shadow: none;
+  }
+  .dropdown:hover .dropdown-menu-grid {
+    transform: none;
+  }
+
+  .dropdown-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
 .logo-container {
   display: none; /* 預設隱藏，只在手機版顯示 */
 }
@@ -833,4 +951,36 @@ footer {
   align-items: center;
   justify-content: center;
   color: white;
+}
+
+/* 下拉選單標題樣式 */
+.dropdown-header {
+  color: var(--secondary) !important; /* 使用淺褐色 */
+  font-weight: bold;
+  padding: 12px 16px; /* 增加一點內邊距 */
+  font-size: 1.1rem; /* 加大字體 */
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-top: 8px; /* 增加一點上方間距 */
+}
+
+/* 下拉選單項目樣式 */
+.dropdown-item {
+  padding: 8px 16px;
+  font-size: 0.95rem; /* 保持較小的字體 */
+  color: var(--white) !important; /* 保持白色 */
+  transition: all 0.2s ease;
+}
+
+/* 下拉選單項目懸停效果 */
+.dropdown-item:hover {
+  background-color: var(--secondary); /* 懸停時的背景色 */
+  color: var(--dark) !important; /* 懸停時文字變深色 */
+  padding-left: 20px;
+}
+
+/* 確保下拉選單背景色 */
+.dropdown-menu, .dropdown-menu-grid {
+  background-color: var(--dark);
+  border: 1px solid var(--secondary); /* 添加邊框 */
 }
