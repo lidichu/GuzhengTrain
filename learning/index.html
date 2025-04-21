@@ -41,27 +41,61 @@
 
 </head>
 <body>
-  <!-- 導航欄 -->
-  <nav>
+   <!-- 導航欄 -->
+   <nav class="navbar navbar-expand-lg">
     <div class="container nav-container">
       <div class="logo-container">
-        <a href="../index.html"><h2>新莊箏心古箏音樂教室</h2></a>
+        <a href="../index.html" class="navbar-brand"><h2>新莊箏心古箏音樂教室</h2></a>
       </div>
-      <div class="menu-icon">
+      <button class="navbar-toggler menu-icon" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent">
         <i class="fas fa-bars"></i>
+      </button>
+      
+      <div class="collapse navbar-collapse" id="navbarContent">
+        <ul class="navbar-nav nav-menu ms-auto">
+          <li class="nav-item"><a class="nav-link" href="../index.html#about">關於我們</a></li>
+          <li class="nav-item"><a class="nav-link" href="../index.html#courses">課程資訊</a></li>
+          <li class="nav-item"><a class="nav-link" href="../index.html#teachers">師資介紹</a></li>
+          <li class="nav-item"><a class="nav-link" href="../index.html#youtube">教學影片</a></li>
+          <li class="nav-item"><a class="nav-link" href="../index.html#gallery">學生成果</a></li>
+          <li class="nav-item"><a class="nav-link" href="../index.html#register">體驗課程報名</a></li>
+          <li class="nav-item"><a class="nav-link" href="../index.html#contact">聯絡我們</a></li>
+          
+          <!-- 學習指南下拉選單 -->
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="/learning/" role="button">
+              學習指南
+            </a>
+            <div class="dropdown-menu dropdown-menu-grid">
+              <div class="dropdown-grid">
+                <div class="dropdown-column">
+                  <h6 class="dropdown-header">學習指南</h6>
+                  <a class="dropdown-item" href="/learning/">學習總覽</a>
+                  <h6 class="dropdown-header">基礎學習</h6>
+                  <a class="dropdown-item" href="/learning/01-introduction.html">認識古箏</a>
+                  <a class="dropdown-item" href="/learning/02-posture.html">基本坐姿與手型</a>
+                  <a class="dropdown-item" href="/learning/03-basic-techniques.html">基礎指法練習</a>
+                  
+                  <h6 class="dropdown-header">技巧提升</h6>
+                  <a class="dropdown-item" href="/learning/04-beginner-techniques.html">初級彈奏技巧</a>
+                  <a class="dropdown-item" href="/learning/05-intermediate-techniques.html">中級彈奏技巧</a>
+                  <a class="dropdown-item" href="/learning/06-advanced-techniques.html">高級演奏技巧</a>
+                </div>
+                <div class="dropdown-column">
+                  <h6 class="dropdown-header">實用指南</h6>
+                  <a class="dropdown-item" href="/learning/08-buying-guzheng.html">如何選購古箏</a>
+                  <a class="dropdown-item" href="/learning/09-finding-teacher.html">尋找適合的老師</a>
+                  <a class="dropdown-item" href="/learning/10-certification.html">考取古箏證照</a>
+                  <a class="dropdown-item" href="/learning/11-maintenance.html">古箏保養與調音</a>
+                </div>
+              </div>
+            </div>
+          </li>
+          
+          <li class="nav-item"><a class="nav-link" href="/quiz/">古箏測驗</a></li>
+          <!--<li class="nav-item"><a class="nav-link" href="/ai/" target="_blank">AI助手</a></li>-->
+        </ul>
       </div>
-      <ul class="nav-menu">
-        <li><a href="../index.html#about">關於我們</a></li>
-        <li><a href="../index.html#courses">課程資訊</a></li>
-        <li><a href="../index.html#teachers">師資介紹</a></li>
-        <li><a href="../index.html#youtube">教學影片</a></li>
-        <li><a href="../index.html#gallery">學生成果</a></li>
-        <li><a href="../index.html#register">體驗課程報名</a></li>
-        <li><a href="../index.html#contact">聯絡我們</a></li>
-        <li><a href="/learning/">學習指南</a></li>
-        <li><a href="/quiz/">古箏測驗</a></li>
-        <!--<li><a href="/ai/" target="_blank">AI助手</a></li>-->
-      </ul>
     </div>
   </nav>
   
