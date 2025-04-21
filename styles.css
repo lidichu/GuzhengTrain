@@ -192,15 +192,28 @@ nav ul li a {
 @media (max-width: 768px) {
   .dropdown-menu,
   .dropdown-menu-grid {
-    position: static;
-    width: 100%;
-    transform: none;
-    margin-top: 0;
-    box-shadow: none;
+    display: none !important;
+}
+    /* 移除下拉功能 */
+    .nav-item.dropdown .dropdown-toggle::after {
+      display: none;
   }
+  
+  /* 將下拉選單項目改為普通連結樣式 */
+  .nav-item.dropdown .nav-link {
+      pointer-events: auto;
+  }
+  
+  /* 確保點擊時可以直接跳轉 */
+  .nav-item.dropdown {
+      pointer-events: auto;
+  }
+  
+  /* 移除下拉效果 */
   .dropdown:hover .dropdown-menu-grid {
-    transform: none;
+      display: none !important;
   }
+
 
   .dropdown-grid {
     grid-template-columns: 1fr;
