@@ -997,3 +997,100 @@ footer {
   background-color: var(--dark);
   border: 1px solid var(--secondary); /* 添加邊框 */
 }
+/* 學習指南區塊樣式 */
+#learning-guides {
+  background-color: #f9f7f2;
+  padding: 60px 0;
+}
+
+.guide-card {
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+  padding: 25px;
+  height: 100%;
+  transition: transform 0.3s, box-shadow 0.3s;
+  text-align: left;
+}
+
+.guide-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+}
+
+.guide-icon {
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+.guide-icon i {
+  font-size: 36px;
+  color: #8a4e7d;
+  background: #f3e9f0;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  line-height: 80px;
+}
+
+.guide-card h3 {
+  text-align: center;
+  font-size: 22px;
+  margin-bottom: 15px;
+  color: #333;
+}
+
+.guide-links {
+  list-style: none;
+  padding-left: 0;
+  margin-bottom: 25px;
+}
+
+.guide-links li {
+  margin-bottom: 12px;
+  padding-left: 20px;
+  position: relative;
+}
+
+.guide-links li:before {
+  content: "→";
+  position: absolute;
+  left: 0;
+  color: #8a4e7d;
+}
+
+.guide-links a {
+  color: #555;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.guide-links a:hover {
+  color: #8a4e7d;
+  text-decoration: underline;
+}
+
+.guide-card .btn {
+  display: block;
+  width: 100%;
+  text-align: center;
+}
+
+.learning-main-link {
+  display: inline-block;
+  font-size: 18px;
+  color: #8a4e7d;
+  text-decoration: none;
+  border-bottom: 2px solid #8a4e7d;
+  padding-bottom: 3px;
+  transition: all 0.2s;
+}
+
+.learning-main-link:hover {
+  color: #6d3e62;
+  border-color: #6d3e62;
+}
+
+.learning-main-link i {
+  margin-right: 5px;
+}
