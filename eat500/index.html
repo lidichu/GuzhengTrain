@@ -78,7 +78,47 @@
             gap: 20px;
             height: calc(100vh - 120px);
         }
-        
+        /* 导航按钮样式 */
+.directions-btn {
+    margin-top: 12px;
+    text-align: center;
+}
+
+.directions-btn a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #4285F4;
+    color: white;
+    padding: 8px 12px;
+    border-radius: 4px;
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 500;
+    transition: all 0.2s;
+    width: 100%;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.2);
+}
+
+.directions-btn a svg {
+    margin-right: 6px;
+}
+
+.directions-btn a:hover {
+    background: #3367D6;
+    transform: translateY(-1px);
+    box-shadow: 0 3px 5px rgba(0,0,0,0.2);
+}
+
+.directions-btn a:active {
+    transform: translateY(0);
+}
+
+/* 确保信息窗口样式适配按钮 */
+.info-window {
+    padding: 12px;
+    max-width: 280px;
+}
         .sidebar {
             width: 350px;
             background: white;
@@ -2350,14 +2390,28 @@
 
         // 顯示餐廳資訊視窗
         function showRestaurantInfo(restaurant, marker) {
+                // 获取奖项级别用于CSS类名
+    let awardClass = "award-1";
+    if (restaurant.award === "2碗") awardClass = "award-2";
+    if (restaurant.award === "3碗") awardClass = "award-3";
+        // 编码地址用于Google Maps URL
+        const encodedAddress = encodeURIComponent(restaurant.address);
             const content = `
-                <div class="info-window">
-                    <h3>${restaurant.name}</h3>
-                    <p><strong>類別：</strong>${restaurant.category}</p>
-                    <p><strong>地址：</strong>${restaurant.address}</p>
-                    <div class="award">${restaurant.award}獎</div>
-                </div>
-            `;
+        <div class="info-window">
+            <h3>${restaurant.name}</h3>
+            <p><strong>類別：</strong>${restaurant.category}</p>
+            <p><strong>地址：</strong>${restaurant.address}</p>
+            <div class="award ${awardClass}">${restaurant.award}</div>
+            <div class="directions-btn">
+                <a href="https://www.google.com/maps/search/?api=1&query=${encodedAddress}" target="_blank">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <polyline points="9 18 15 12 9 6"></polyline>
+                    </svg>
+                    在Google地圖中導航
+                </a>
+            </div>
+        </div>
+    `;
             
             infoWindow.setContent(content);
             infoWindow.open(map, marker);
