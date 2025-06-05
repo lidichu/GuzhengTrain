@@ -183,20 +183,169 @@
         }
         
         @media (max-width: 768px) {
-            .container {
-                flex-direction: column;
-                height: auto;
-            }
-            
-            .sidebar {
-                width: 100%;
-                max-height: 400px;
-            }
-            
-            #map {
-                height: 500px;
-            }
+   /* 基本布局调整 */
+   .container {
+        flex-direction: column;
+        height: auto;
+        padding: 12px;
+        gap: 12px;
+    }
+    
+    .sidebar {
+        width: 100%;
+        max-height: none; /* 移除最大高度限制 */
+        height: auto;
+        padding: 15px;
+    }
+    
+    #map {
+        height: 350px; /* 减小地图高度以便更好地浏览餐厅列表 */
+        margin-bottom: 20px;
+    }
+    
+    /* 页眉调整 */
+    .header {
+        padding: 15px 10px;
+    }
+    
+    .header h1 {
+        font-size: 22px;
+        margin-bottom: 6px;
+    }
+    
+    .header p {
+        font-size: 14px;
+    }
+    
+    /* 筛选区域优化 */
+    .filter-buttons {
+        gap: 6px;
+    }
+    
+    .filter-btn {
+        padding: 6px 12px;
+        font-size: 13px;
+    }
+    
+    .award-filter-btn {
+        padding: 5px 10px;
+        font-size: 12px;
+    }
+    
+    /* 统计区域优化 */
+    .stats {
+        padding: 12px;
+        margin-bottom: 15px;
+    }
+    
+    .stat-number {
+        font-size: 18px;
+    }
+    
+    .stat-label {
+        font-size: 11px;
+    }
+    
+    /* 搜索框优化 */
+    .search-box {
+        padding: 10px;
+        margin-bottom: 15px;
+    }
+    
+    /* 餐厅列表项目优化 */
+    .restaurant-item {
+        padding: 12px;
+    }
+    
+    .restaurant-name {
+        font-size: 15px;
+    }
+    
+    .restaurant-address {
+        font-size: 13px;
+    }
         }
+
+        /* 添加极小屏幕设备的特殊处理 */
+@media (max-width: 375px) {
+    .header h1 {
+        font-size: 20px;
+    }
+    
+    .filter-btn {
+        padding: 5px 10px;
+        font-size: 12px;
+    }
+    
+    .award-filter-btn {
+        padding: 4px 8px;
+        font-size: 11px;
+    }
+    
+    .stats-numbers {
+        flex-wrap: wrap;
+    }
+    
+    .stat-item {
+        flex-basis: 50%;
+        margin-bottom: 8px;
+    }
+    
+    /* 纵向排列统计项目 */
+    .stats-numbers {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 8px;
+    }
+    
+    /* 调整地图高度 */
+    #map {
+        height: 280px;
+    }
+}
+
+/* 添加横屏模式优化 */
+@media (max-width: 896px) and (orientation: landscape) {
+    .container {
+        flex-direction: row; /* 横屏时恢复为行布局 */
+        height: calc(100vh - 100px);
+    }
+    
+    .sidebar {
+        width: 40%;
+        height: 100%;
+        overflow-y: auto;
+    }
+    
+    #map {
+        height: auto;
+        flex: 1;
+    }
+    
+    .header {
+        padding: 10px;
+    }
+    
+    .header h1 {
+        font-size: 20px;
+        margin-bottom: 4px;
+    }
+    
+    .header p {
+        font-size: 12px;
+    }
+}
+
+/* 优化触摸交互 */
+@media (pointer: coarse) {
+    .filter-btn, .award-filter-btn, .restaurant-item {
+        min-height: 44px; /* 确保可点击区域足够大 */
+    }
+    
+    .search-box {
+        height: 44px;
+    }
+}
     </style>
 </head>
 <body>
