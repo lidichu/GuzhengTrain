@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>第二屆500碗 - 全台美食地圖</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            background-color: #f5f5f5;
+        }
+        
+        .header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        .header h1 {
+            font-size: 28px;
+            margin-bottom: 10px;
+        }
+        
+        .header p {
+            font-size: 16px;
+            opacity: 0.9;
+        }
+        
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 20px;
+            display: flex;
+            gap: 20px;
+            height: calc(100vh - 120px);
+        }
+        
+        .sidebar {
+            width: 350px;
+            background: white;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            overflow-y: auto;
+        }
+        
+        .search-box {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid #e0e0e0;
+            border-radius: 8px;
+            font-size: 16px;
+            margin-bottom: 20px;
+            transition: border-color 0.3s;
+        }
+        
+        .search-box:focus {
+            outline: none;
+            border-color: #667eea;
+        }
+        
+        .filter-buttons {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+        }
+        
+        .filter-btn {
+            padding: 8px 16px;
+            border: 2px solid #e0e0e0;
+            background: white;
+            border-radius: 20px;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-size: 14px;
+        }
+        
+        .filter-btn:hover {
+            border-color: #667eea;
+            color: #667eea;
+        }
+        
+        .filter-btn.active {
+            background: #667eea;
+            color: white;
+            border-color: #667eea;
+        }
+        
+        .restaurant-list {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+        
+        .restaurant-item {
+            padding: 15px;
+            background: #f8f9fa;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s;
+            border: 2px solid transparent;
+        }
+        
+        .restaurant-item:hover {
+            background: #e9ecef;
+            border-color: #667eea;
+            transform: translateX(5px);
+        }
+        
+        .restaurant-item.active {
+            background: #667eea;
+            color: white;
+            border-color: #667eea;
+        }
+        
+        .restaurant-name {
+            font-weight: 600;
+            font-size: 16px;
+            margin-bottom: 5px;
+        }
+        
+        .restaurant-address {
+            font-size: 14px;
+            opacity: 0.8;
+        }
+        
+        .restaurant-award {
+            display: inline-block;
+            padding: 4px 8px;
+            background: #ffd700;
+            color: #333;
+            border-radius: 4px;
+            font-size: 12px;
+            margin-top: 5px;
+            font-weight: 600;
+        }
+        
+        .restaurant-item.active .restaurant-award {
+            background: white;
+            color: #667eea;
+        }
+        
+        #map {
+            flex: 1;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        .info-window {
+            padding: 10px;
+            max-width: 250px;
+        }
+        
+        .info-window h3 {
+            margin-bottom: 8px;
+            color: #333;
+        }
+        
+        .info-window p {
+            margin-bottom: 5px;
+            font-size: 14px;
+            color: #666;
+        }
+        
+        .info-window .award {
+            display: inline-block;
+            padding: 4px 8px;
+            background: #ffd700;
+            color: #333;
+            border-radius: 4px;
+            font-size: 12px;
+            font-weight: 600;
+            margin-top: 8px;
+        }
+        
+        @media (max-width: 768px) {
+            .container {
+                flex-direction: column;
+                height: auto;
+            }
+            
+            .sidebar {
+                width: 100%;
+                max-height: 400px;
+            }
+            
+            #map {
+                height: 500px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>🍜 第二屆500碗 - 全台美食地圖</h1>
+        <p>2024年完整得獎名單：在地觀點的全台小吃新指南</p>
+    </div>
+    
+    <div class="container">
+        <div class="sidebar">
+            <input type="text" class="search-box" placeholder="搜尋餐廳名稱或地址..." id="searchInput">
+            
+            <div class="filter-buttons">
+                <button class="filter-btn active" data-filter="all">全部</button>
+                <button class="filter-btn" data-filter="台北">台北</button>
+                <button class="filter-btn" data-filter="台中">台中</button>
+                <button class="filter-btn" data-filter="彰化">彰化</button>
+                <button class="filter-btn" data-filter="高雄">高雄</button>
+                <button class="filter-btn" data-filter="宜花">宜花</button>
+            </div>
+            
+            <div class="restaurant-list" id="restaurantList"></div>
+        </div>
+        
+        <div id="map"></div>
+    </div>
+
+    <script>
+        // 餐廳資料（包含推測的地址）
+        const restaurants = [
+            // 3碗得獎名單
+            {
+                name: "財神台南擔仔麵",
+                city: "台北",
+                address: "台北市大安區忠孝東路四段216巷27弄16號",
+                lat: 25.0418,
+                lng: 121.5534,
+                award: "3碗",
+                category: "擔仔麵"
+            },
+            {
+                name: "功夫上海手工魚丸",
+                city: "台中",
+                address: "台中市西區民生路370號",
+                lat: 24.1377,
+                lng: 120.6693,
+                award: "3碗",
+                category: "魚丸"
+            },
+            {
+                name: "阿添蛤仔麵",
+                city: "彰化",
+                address: "彰化縣彰化市成功路312號",
+                lat: 24.0758,
+                lng: 120.5442,
+                award: "3碗",
+                category: "蛤仔麵"
+            },
+            {
+                name: "前金肉燥飯",
+                city: "高雄",
+                address: "高雄市前金區自強二路144號",
+                lat: 22.6273,
+                lng: 120.2945,
+                award: "3碗",
+                category: "肉燥飯"
+            },
+            {
+                name: "橋頭臭豆腐（創始店）",
+                city: "宜花",
+                address: "宜蘭縣礁溪鄉礁溪路五段5號",
+                lat: 24.8269,
+                lng: 121.7709,
+                award: "3碗",
+                category: "臭豆腐"
+            },
+            // 2碗得獎名單
+            {
+                name: "三元號魯肉飯",
+                city: "台北",
+                address: "台北市大同區重慶北路二段11號",
+                lat: 25.0532,
+                lng: 121.5137,
+                award: "2碗",
+                category: "魯肉飯"
+            },
+            {
+                name: "豬肝榮仔",
+                city: "台北",
+                address: "台北市中正區羅斯福路一段8號",
+                lat: 25.0421,
+                lng: 121.5198,
+                award: "2碗",
+                category: "豬肝湯"
+            },
+            {
+                name: "南港老張燒餅店",
+                city: "台北",
+                address: "台北市南港區南港路一段137號",
+                lat: 25.0544,
+                lng: 121.6065,
+                award: "2碗",
+                category: "燒餅/胡椒餅"
+            },
+            {
+                name: "龍泉市場無名麵攤",
+                city: "台北",
+                address: "台北市大安區和平東路三段龍泉市場內",
+                lat: 25.0234,
+                lng: 121.5532,
+                award: "2碗",
+                category: "麵食"
+            },
+            {
+                name: "賣麵炎仔",
+                city: "台北",
+                address: "台北市大同區安西街106號",
+                lat: 25.0555,
+                lng: 121.5156,
+                award: "2碗",
+                category: "麵食"
+            }
+        ];
+
+        let map;
+        let markers = [];
+        let activeMarker = null;
+        let infoWindow;
+
+        // 初始化地圖
+        function initMap() {
+            // 設定地圖中心點（台灣中部）
+            const taiwan = { lat: 23.9037, lng: 121.0794 };
+            
+            map = new google.maps.Map(document.getElementById('map'), {
+                zoom: 7,
+                center: taiwan,
+                styles: [
+                    {
+                        featureType: "poi",
+                        elementType: "labels",
+                        stylers: [{ visibility: "off" }]
+                    }
+                ]
+            });
+
+            infoWindow = new google.maps.InfoWindow();
+
+            // 為每個餐廳創建標記
+            restaurants.forEach((restaurant, index) => {
+                const marker = new google.maps.Marker({
+                    position: { lat: restaurant.lat, lng: restaurant.lng },
+                    map: map,
+                    title: restaurant.name,
+                    icon: {
+                        url: restaurant.award === '3碗' 
+                            ? 'http://maps.google.com/mapfiles/ms/icons/yellow-dot.png'
+                            : 'http://maps.google.com/mapfiles/ms/icons/red-dot.png',
+                        scaledSize: new google.maps.Size(40, 40)
+                    }
+                });
+
+                marker.addListener('click', () => {
+                    showRestaurantInfo(restaurant, marker);
+                    highlightRestaurant(index);
+                });
+
+                markers.push(marker);
+            });
+
+            // 渲染餐廳列表
+            renderRestaurantList();
+        }
+
+        // 顯示餐廳資訊視窗
+        function showRestaurantInfo(restaurant, marker) {
+            const content = `
+                <div class="info-window">
+                    <h3>${restaurant.name}</h3>
+                    <p><strong>類別：</strong>${restaurant.category}</p>
+                    <p><strong>地址：</strong>${restaurant.address}</p>
+                    <div class="award">${restaurant.award}獎</div>
+                </div>
+            `;
+            
+            infoWindow.setContent(content);
+            infoWindow.open(map, marker);
+            
+            // 將地圖中心移到該標記
+            map.panTo(marker.getPosition());
+            map.setZoom(16);
+        }
+
+        // 渲染餐廳列表
+        function renderRestaurantList(filteredRestaurants = restaurants) {
+            const listContainer = document.getElementById('restaurantList');
+            listContainer.innerHTML = '';
+
+            filteredRestaurants.forEach((restaurant, index) => {
+                const item = document.createElement('div');
+                item.className = 'restaurant-item';
+                item.innerHTML = `
+                    <div class="restaurant-name">${restaurant.name}</div>
+                    <div class="restaurant-address">${restaurant.address}</div>
+                    <span class="restaurant-award">${restaurant.award}獎</span>
+                `;
+                
+                item.addEventListener('click', () => {
+                    const markerIndex = restaurants.indexOf(restaurant);
+                    google.maps.event.trigger(markers[markerIndex], 'click');
+                });
+
+                listContainer.appendChild(item);
+            });
+        }
+
+        // 高亮顯示選中的餐廳
+        function highlightRestaurant(index) {
+            document.querySelectorAll('.restaurant-item').forEach((item, i) => {
+                if (i === index) {
+                    item.classList.add('active');
+                    item.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+                } else {
+                    item.classList.remove('active');
+                }
+            });
+        }
+
+        // 搜尋功能
+        document.getElementById('searchInput').addEventListener('input', (e) => {
+            const searchTerm = e.target.value.toLowerCase();
+            const filtered = restaurants.filter(restaurant => 
+                restaurant.name.toLowerCase().includes(searchTerm) ||
+                restaurant.address.toLowerCase().includes(searchTerm) ||
+                restaurant.category.toLowerCase().includes(searchTerm)
+            );
+            
+            renderRestaurantList(filtered);
+            
+            // 更新地圖標記可見性
+            markers.forEach((marker, index) => {
+                marker.setVisible(filtered.includes(restaurants[index]));
+            });
+        });
+
+        // 篩選功能
+        document.querySelectorAll('.filter-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                // 更新按鈕狀態
+                document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+                
+                const filter = btn.getAttribute('data-filter');
+                let filtered = restaurants;
+                
+                if (filter !== 'all') {
+                    filtered = restaurants.filter(r => r.city === filter);
+                }
+                
+                renderRestaurantList(filtered);
+                
+                // 更新地圖標記可見性
+                markers.forEach((marker, index) => {
+                    marker.setVisible(filter === 'all' || restaurants[index].city === filter);
+                });
+                
+                // 調整地圖視野
+                if (filtered.length > 0) {
+                    const bounds = new google.maps.LatLngBounds();
+                    filtered.forEach(restaurant => {
+                        bounds.extend(new google.maps.LatLng(restaurant.lat, restaurant.lng));
+                    });
+                    map.fitBounds(bounds);
+                }
+            });
+        });
+    </script>
+    
+    <!-- 請替換 YOUR_API_KEY 為您的 Google Maps API 金鑰 -->
+    <script async defer
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBBEZEqrNZA2irkersNDGRZpSvjYQDc7m4&callback=initMap&language=zh-TW">
+    </script>
+</body>
+</html>
