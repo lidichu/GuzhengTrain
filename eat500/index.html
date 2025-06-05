@@ -2469,7 +2469,7 @@ function showRestaurantInfo(restaurant, marker) {
             <p><strong>地址：</strong>${restaurant.address}</p>
             <div class="award ${awardClass}">${restaurant.award}</div>
             <div class="directions-btn">
-                <a href="https://www.google.com/maps/search/?api=1&query=${encodedAddress}" target="_blank">
+                <a href="https://www.google.com/maps/search/?api=1&query=${restaurant.name}" target="_blank">
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                         <polyline points="9 18 15 12 9 6"></polyline>
                     </svg>
@@ -2505,7 +2505,7 @@ function showRestaurantInfo(restaurant, marker) {
             <p><strong>地址：</strong>${restaurant.address}</p>
             <div class="award ${awardClass}">${restaurant.award}</div>
             <div class="directions-btn">
-                <a href="https://www.google.com/maps/search/?api=1&query=${encodedAddress}" target="_blank">
+                <a href="https://www.google.com/maps/search/?api=1&query=${restaurant.name}" target="_blank">
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                         <polyline points="9 18 15 12 9 6"></polyline>
                     </svg>
