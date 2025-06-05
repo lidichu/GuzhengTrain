@@ -2430,9 +2430,16 @@
                 const item = document.createElement('div');
                 item.className = 'restaurant-item';
                 item.innerHTML = `
-                    <div class="restaurant-name">${restaurant.name}</div>
-                    <div class="restaurant-address">${restaurant.address}</div>
-                    <span class="restaurant-award">${restaurant.award}獎</span>
+                    <div class="restaurant-name">${restaurant.name}<span class="restaurant-award">${restaurant.award}獎</span></div>
+                    <div class="restaurant-address">${restaurant.address}</div>                    
+                               <div class="directions-btn">
+                <a href="https://www.google.com/maps/search/?api=1&query=${restaurant.address}" target="_blank">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <polyline points="9 18 15 12 9 6"></polyline>
+                    </svg>
+                    在Google地圖中導航
+                </a>
+            </div>
                 `;
                 
                 item.addEventListener('click', () => {
