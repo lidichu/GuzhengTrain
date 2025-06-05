@@ -2343,50 +2343,152 @@
         let activeMarker = null;
         let infoWindow;
 
-        // 初始化地圖
-        function initMap() {
-            // 設定地圖中心點（台灣中部）
-            const taiwan = { lat: 25.0460, lng: 121.4470 };
+// 修改initMap函数，使用地址而非经纬度定位
+function initMap() {
+    // 设定地图中心点（台湾中部）
+    const taiwan = { lat: 23.9037, lng: 121.0794 };
+    
+    map = new google.maps.Map(document.getElementById('map'), {
+        zoom: 7,
+        center: taiwan,
+        styles: [
+            {
+                featureType: "poi",
+                elementType: "labels",
+                stylers: [{ visibility: "off" }]
+            }
+        ]
+    });
+
+    infoWindow = new google.maps.InfoWindow();
+    
+    // 创建地理编码服务
+    const geocoder = new google.maps.Geocoder();
+    
+    // 计数器追踪已处理的餐厅数量
+    let processedCount = 0;
+    
+    // 为每个餐厅创建标记
+    restaurants.forEach((restaurant, index) => {
+        // 根据奖项决定图标颜色
+        let awardLevel = 1;
+        if (restaurant.award === "2碗") awardLevel = 2;
+        if (restaurant.award === "3碗") awardLevel = 3;
+        
+        const markerIcon = {
+            url: awardLevel === 3 
+                ? 'http://maps.google.com/mapfiles/ms/icons/yellow-dot.png'
+                : awardLevel === 2
+                ? 'http://maps.google.com/mapfiles/ms/icons/red-dot.png'
+                : 'http://maps.google.com/mapfiles/ms/icons/blue-dot.png',
+            scaledSize: new google.maps.Size(40, 40)
+        };
+
+        // 优先使用经纬度，如果不准确则使用地址
+        if (isValidLatLng(restaurant.lat, restaurant.lng)) {
+            createMarker(restaurant, index, { lat: restaurant.lat, lng: restaurant.lng }, markerIcon);
+            processedCount++;
             
-            map = new google.maps.Map(document.getElementById('map'), {
-                zoom: 7,
-                center: taiwan,
-                styles: [
-                    {
-                        featureType: "poi",
-                        elementType: "labels",
-                        stylers: [{ visibility: "off" }]
-                    }
-                ]
+            // 所有餐厅处理完毕后更新统计和列表
+            if (processedCount === restaurants.length) {
+                updateStats();
+                renderRestaurantList();
+            }
+        } else {
+            // 使用地址进行地理编码
+            geocoder.geocode({ 'address': restaurant.address }, function(results, status) {
+                if (status === 'OK' && results[0]) {
+                    const position = results[0].geometry.location;
+                    
+                    // 更新餐厅的经纬度（可选）
+                    restaurant.lat = position.lat();
+                    restaurant.lng = position.lng();
+                    
+                    createMarker(restaurant, index, position, markerIcon);
+                } else {
+                    console.warn(`地理编码失败: ${restaurant.name}, ${restaurant.address}, 状态: ${status}`);
+                    // 创建默认位置的标记（台湾中心点附近的随机位置）
+                    const randomOffset = () => (Math.random() - 0.5) * 2;
+                    const fallbackPosition = {
+                        lat: taiwan.lat + randomOffset(),
+                        lng: taiwan.lng + randomOffset()
+                    };
+                    createMarker(restaurant, index, fallbackPosition, markerIcon);
+                }
+                
+                processedCount++;
+                // 所有餐厅处理完毕后更新统计和列表
+                if (processedCount === restaurants.length) {
+                    updateStats();
+                    renderRestaurantList();
+                }
             });
-
-            infoWindow = new google.maps.InfoWindow();
-
-            // 為每個餐廳創建標記
-            restaurants.forEach((restaurant, index) => {
-                const marker = new google.maps.Marker({
-                    position: { lat: restaurant.lat, lng: restaurant.lng },
-                    map: map,
-                    title: restaurant.name,
-                    icon: {
-                        url: restaurant.award === '3碗' 
-                            ? 'http://maps.google.com/mapfiles/ms/icons/yellow-dot.png'
-                            : 'http://maps.google.com/mapfiles/ms/icons/red-dot.png',
-                        scaledSize: new google.maps.Size(40, 40)
-                    }
-                });
-
-                marker.addListener('click', () => {
-                    showRestaurantInfo(restaurant, marker);
-                    highlightRestaurant(index);
-                });
-
-                markers.push(marker);
-            });
-
-            // 渲染餐廳列表
-            renderRestaurantList();
         }
+    });
+}
+
+// 辅助函数：检查经纬度是否有效
+function isValidLatLng(lat, lng) {
+    return lat && lng && 
+           !isNaN(lat) && !isNaN(lng) && 
+           lat >= 21.5 && lat <= 25.5 && // 台湾纬度范围
+           lng >= 119.5 && lng <= 122.5; // 台湾经度范围
+}
+
+// 辅助函数：创建标记
+function createMarker(restaurant, index, position, markerIcon) {
+    const marker = new google.maps.Marker({
+        position: position,
+        map: map,
+        title: restaurant.name,
+        icon: markerIcon
+    });
+
+    marker.addListener('click', () => {
+        showRestaurantInfo(restaurant, marker);
+        highlightRestaurant(index);
+    });
+
+    markers.push(marker);
+}
+
+// 修改showRestaurantInfo函数，使用地址导航到Google地图
+function showRestaurantInfo(restaurant, marker) {
+    // 获取奖项级别用于CSS类名
+    let awardClass = "award-1";
+    if (restaurant.award === "2碗") awardClass = "award-2";
+    if (restaurant.award === "3碗") awardClass = "award-3";
+    
+    // 编码地址用于Google Maps URL
+    const encodedAddress = encodeURIComponent(restaurant.address);
+    
+    const content = `
+        <div class="info-window">
+            <h3>${restaurant.name}</h3>
+            <p><strong>類別：</strong>${restaurant.category || '其他'}</p>
+            <p><strong>地址：</strong>${restaurant.address}</p>
+            <div class="award ${awardClass}">${restaurant.award}</div>
+            <div class="directions-btn">
+                <a href="https://www.google.com/maps/search/?api=1&query=${encodedAddress}" target="_blank">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <polyline points="9 18 15 12 9 6"></polyline>
+                    </svg>
+                    在Google地圖中導航
+                </a>
+            </div>
+        </div>
+    `;
+    
+    infoWindow.setContent(content);
+    infoWindow.open(map, marker);
+    
+    // 将地图中心移到该标记
+    map.panTo(marker.getPosition());
+    map.setZoom(16);
+    
+    // 高亮显示侧边栏中的餐厅
+    highlightRestaurant(restaurants.indexOf(restaurant));
+}
 
         // 顯示餐廳資訊視窗
         function showRestaurantInfo(restaurant, marker) {
