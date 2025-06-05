@@ -3,7 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>第二屆500碗 - 全台美食地圖</title>
+    <title>箏心古箏-美食口袋名單-全台美食地圖</title>
+    <!-- 在header div中添加以下内容，放在标题h1之前 -->
+<div class="header">
+    <a href="/" class="home-btn">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+            <polyline points="9 22 9 12 15 12 15 22"></polyline>
+        </svg>
+        <span>首頁</span>
+    </a>
+</div>
     <style>
         * {
             margin: 0;
@@ -22,6 +32,8 @@
             padding: 20px;
             text-align: center;
             box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: relative;
+            padding-top: 30px; /* 增加一点上方padding以容纳按钮 */
         }
         
         .header h1 {
@@ -29,6 +41,30 @@
             margin-bottom: 10px;
         }
         
+        .home-btn {
+            position: absolute;
+            left: 20px;
+            top: 5px;
+            display: flex;
+            align-items: center;
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.2s;
+            background: rgba(255, 255, 255, 0.2);
+            padding: 8px 12px;
+            border-radius: 30px;
+        }
+
+        .home-btn svg {
+            margin-right: 6px;
+        }
+
+        .home-btn:hover {
+            background: rgba(255, 255, 255, 0.3);
+            transform: translateY(-2px);
+        }
+
         .header p {
             font-size: 16px;
             opacity: 0.9;
@@ -190,7 +226,21 @@
         padding: 12px;
         gap: 12px;
     }
+    .home-btn {
+        left: 10px;
+        top: 10px;
+        padding: 6px 10px;
+        font-size: 14px;
+    }
     
+    .home-btn svg {
+        width: 20px;
+        height: 20px;
+    }
+    
+    .header {
+        padding-top: 25px;
+    }
     .sidebar {
         width: 100%;
         max-height: none; /* 移除最大高度限制 */
@@ -302,6 +352,17 @@
     #map {
         height: 280px;
     }
+    .home-btn span {
+        display: none; /* 在超小屏幕上只显示图标 */
+    }
+    
+    .home-btn {
+        padding: 8px;
+    }
+    
+    .home-btn svg {
+        margin-right: 0;
+    }
 }
 
 /* 添加横屏模式优化 */
@@ -350,8 +411,8 @@
 </head>
 <body>
     <div class="header">
-        <h1>🍜 第二屆500碗 - 全台美食地圖</h1>
-        <p>2024年完整得獎名單：在地觀點的全台小吃新指南</p>
+        <h1>全台美食地圖</h1>
+        <p>箏心古箏-美食口袋名單-全台美食地圖</p>
     </div>
     
     <div class="container">
@@ -2245,7 +2306,7 @@
         // 初始化地圖
         function initMap() {
             // 設定地圖中心點（台灣中部）
-            const taiwan = { lat: 23.9037, lng: 121.0794 };
+            const taiwan = { lat: 25.0460, lng: 121.4470 };
             
             map = new google.maps.Map(document.getElementById('map'), {
                 zoom: 7,
