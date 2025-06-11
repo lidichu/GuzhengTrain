@@ -461,7 +461,6 @@
             
             <div class="filter-buttons">
                 <button class="filter-btn active" data-filter="all">全部</button>
-                <button class="filter-btn" data-filter="基隆">基隆</button>
                 <button class="filter-btn" data-filter="台北">台北</button>
                 <button class="filter-btn" data-filter="新北">新北</button>
                 <button class="filter-btn" data-filter="桃園">桃園</button>
@@ -487,31 +486,2172 @@
 
     <script>
         // 餐廳資料（包含推測的地址）
-        const restaurants = [];
+        const restaurants = [
+            // 3碗得獎名單
+            {
+                name: "財神台南擔仔麵",
+                city: "台北",
+                address: "台北市大安區忠孝東路四段216巷27弄16號",
+                lat: 25.0418,
+                lng: 121.5534,
+                award: "3碗",
+                category: "擔仔麵"
+            },
+            {
+                name: "功夫上海手工魚丸",
+                city: "台中",
+                address: "台中市西區民生路370號",
+                lat: 24.1377,
+                lng: 120.6693,
+                award: "3碗",
+                category: "魚丸"
+            },
+            {
+                name: "阿添蛤仔麵",
+                city: "彰化",
+                address: "彰化縣彰化市成功路312號",
+                lat: 24.0758,
+                lng: 120.5442,
+                award: "3碗",
+                category: "蛤仔麵"
+            },
+            {
+                name: "前金肉燥飯",
+                city: "高雄",
+                address: "高雄市前金區自強二路144號",
+                lat: 22.6273,
+                lng: 120.2945,
+                award: "3碗",
+                category: "肉燥飯"
+            },
+            {
+                name: "橋頭臭豆腐（創始店）",
+                city: "宜蘭",
+                address: "宜蘭縣礁溪鄉礁溪路五段5號",
+                lat: 24.8269,
+                lng: 121.7709,
+                award: "3碗",
+                category: "臭豆腐"
+            },
+            // 2碗得獎名單
+            {
+                name: "三元號魯肉飯",
+                city: "台北",
+                address: "台北市大同區重慶北路二段11號",
+                lat: 25.0532,
+                lng: 121.5137,
+                award: "2碗",
+                category: "魯肉飯"
+            },
+            {
+                name: "豬肝榮仔",
+                city: "台北",
+                address: "台北市中正區羅斯福路一段8號",
+                lat: 25.0421,
+                lng: 121.5198,
+                award: "2碗",
+                category: "豬肝湯"
+            },
+            {
+                name: "南港老張燒餅店",
+                city: "台北",
+                address: "台北市南港區南港路一段137號",
+                lat: 25.0544,
+                lng: 121.6065,
+                award: "2碗",
+                category: "燒餅/胡椒餅"
+            },
+            {
+                name: "龍泉市場無名麵攤",
+                city: "台北",
+                address: "台北市大安區和平東路三段龍泉市場內",
+                lat: 25.0234,
+                lng: 121.5532,
+                award: "2碗",
+                category: "麵食"
+            },
+            {
+                name: "賣麵炎仔",
+                city: "台北",
+                address: "台北市大同區安西街106號",
+                lat: 25.0555,
+                lng: 121.5156,
+                award: "2碗",
+                category: "麵食"
+            },
+            {
+                name: "財神台南擔仔麵",
+                city: "台北",
+                address: "台北市大安區忠孝東路四段216巷27弄16號",
+                lat: 25.0418,
+                lng: 121.5534,
+                award: "3碗",
+                category: "擔仔麵"
+            },
+            {
+                name: "十二堂",
+                city: "基隆",
+                address: "基隆市仁愛區愛三路12號",
+                lat: 25.1276,
+                lng: 121.7408,
+                award: "1碗",
+                category: "台灣小吃"
+            },
+            {
+                name: "三沙灣麵線羹",
+                city: "基隆",
+                address: "基隆市中正區中船路29號",
+                lat: 25.1372,
+                lng: 121.7445,
+                award: "1碗",
+                category: "麵線"
+            },
+            {
+                name: "天天來鹹粥",
+                city: "基隆",
+                address: "基隆市仁愛區孝三路42巷4號",
+                lat: 25.1278,
+                lng: 121.7423,
+                award: "1碗",
+                category: "鹹粥"
+            },
+            {
+                name: "牛膳坊",
+                city: "基隆",
+                address: "基隆市仁愛區仁二路236號",
+                lat: 25.1279,
+                lng: 121.7398,
+                award: "1碗",
+                category: "牛肉麵"
+            },
+            {
+                name: "台灣小吃 旗魚麵線，旗魚湯",
+                city: "基隆",
+                address: "基隆市仁愛區仁三路24號",
+                lat: 25.1280,
+                lng: 121.7430,
+                award: "1碗",
+                category: "麵線"
+            },
+            {
+                name: "平實豆漿",
+                city: "基隆",
+                address: "基隆市仁愛區仁一路229號",
+                lat: 25.1285,
+                lng: 121.7425,
+                award: "1碗",
+                category: "早餐"
+            },
+            {
+                name: "老牌全家福酒釀湯圓元宵",
+                city: "基隆",
+                address: "基隆市仁愛區仁三路28號",
+                lat: 25.1282,
+                lng: 121.7428,
+                award: "1碗",
+                category: "湯圓"
+            },
+            {
+                name: "阿萬餛飩",
+                city: "基隆",
+                address: "基隆市仁愛區仁三路19號",
+                lat: 25.1281,
+                lng: 121.7431,
+                award: "1碗",
+                category: "餛飩"
+            },
+            {
+                name: "信奕原汁牛肉麵",
+                city: "基隆",
+                address: "基隆市仁愛區仁二路126號旁",
+                lat: 25.1280,
+                lng: 121.7410,
+                award: "1碗",
+                category: "牛肉麵"
+            },
+            {
+                name: "活力站蒟蒻屋",
+                city: "基隆",
+                address: "基隆市仁愛區仁三路30號",
+                lat: 25.1283,
+                lng: 121.7429,
+                award: "1碗",
+                category: "台灣小吃"
+            },
+            {
+                name: "紀家豬腳原汁專家",
+                city: "基隆",
+                address: "基隆市仁愛區孝二路51號",
+                lat: 25.1290,
+                lng: 121.7415,
+                award: "1碗",
+                category: "豬腳"
+            },
+            {
+                name: "基隆廟口21號魯排骨飯",
+                city: "基隆",
+                address: "基隆市仁愛區仁三路21號",
+                lat: 25.1283,
+                lng: 121.7432,
+                award: "1碗",
+                category: "滷肉飯"
+            },
+            {
+                name: "基隆廟口30號攤 蝦仁羹 魯肉飯",
+                city: "基隆",
+                address: "基隆市仁愛區仁三路30號",
+                lat: 25.1283,
+                lng: 121.7429,
+                award: "1碗",
+                category: "蝦仁羹"
+            },
+            {
+                name: "基隆廟口咖哩飯",
+                city: "基隆",
+                address: "基隆市仁愛區仁三路25號",
+                lat: 25.1282,
+                lng: 121.7430,
+                award: "1碗",
+                category: "咖哩飯"
+            },
+            {
+                name: "郭家巷頭粿仔湯",
+                city: "基隆",
+                address: "基隆市仁愛區孝三路99巷7號",
+                lat: 25.1275,
+                lng: 121.7420,
+                award: "1碗",
+                category: "粿仔湯"
+            },
+            {
+                name: "廣東汕頭牛肉店",
+                city: "基隆",
+                address: "基隆市仁愛區仁二路236號",
+                lat: 25.1279,
+                lng: 121.7398,
+                award: "1碗",
+                category: "牛肉麵"
+            },
+            {
+                name: "德基純手工水餃",
+                city: "基隆",
+                address: "基隆市仁愛區愛三路20號",
+                lat: 25.1277,
+                lng: 121.7409,
+                award: "1碗",
+                category: "水餃"
+            },
+            {
+                name: "慶安宮廟口咖哩炒麵炒飯",
+                city: "基隆",
+                address: "基隆市仁愛區仁三路10號",
+                lat: 25.1284,
+                lng: 121.7433,
+                award: "1碗",
+                category: "炒麵"
+            },
+            {
+                name: "潤潤潤餅",
+                city: "基隆",
+                address: "基隆市仁愛區中山一路61-1號",
+                lat: 25.1295,
+                lng: 121.7402,
+                award: "1碗",
+                category: "潤餅"
+            },
+            {
+                name: "鹹湯圓豬肝腸（大觀圓）",
+                city: "基隆",
+                address: "基隆市仁愛區仁三路15號",
+                lat: 25.1285,
+                lng: 121.7434,
+                award: "1碗",
+                category: "鹹湯圓"
+            },
+            {
+                name: "鹹粥魷魚雞捲 基隆廟口42號",
+                city: "基隆",
+                address: "基隆市仁愛區仁三路42號",
+                lat: 25.1280,
+                lng: 121.7427,
+                award: "1碗",
+                category: "鹹粥"
+            },
+            {
+                name: "美好花生",
+                city: "花蓮",
+                address: "花蓮市中美路55號",
+                lat: 23.9750,
+                lng: 121.6050,
+                award: "1碗",
+                category: "花生製品"
+            },
+            {
+                name: "美琪烤玉米",
+                city: "花蓮",
+                address: "花蓮市中美路10號",
+                lat: 23.9752,
+                lng: 121.6055,
+                award: "1碗",
+                category: "烤玉米"
+            },
+            {
+                name: "源香飲食店",
+                city: "花蓮",
+                address: "花蓮市中正路485號",
+                lat: 23.9760,
+                lng: 121.6060,
+                award: "1碗",
+                category: "台灣小吃"
+            },
+            {
+                name: "源寶屋咖哩麵包",
+                city: "花蓮",
+                address: "花蓮市中美路30號",
+                lat: 23.9751,
+                lng: 121.6053,
+                award: "1碗",
+                category: "咖哩麵包"
+            },
+            {
+                name: "慶豐麵店",
+                city: "花蓮",
+                address: "花蓮市中正路500號",
+                lat: 23.9762,
+                lng: 121.6065,
+                award: "1碗",
+                category: "麵食"
+            },
+            {
+                name: "三姐妹米苔目",
+                city: "台東",
+                address: "台東市新生路150號",
+                lat: 22.7550,
+                lng: 121.1500,
+                award: "1碗",
+                category: "米苔目"
+            },
+            {
+                name: "卡滋爾鬼頭刀特色美食",
+                city: "台東",
+                address: "台東市更生路200號",
+                lat: 22.7545,
+                lng: 121.1495,
+                award: "1碗",
+                category: "海鮮"
+            },
+            {
+                name: "正海城北方小館",
+                city: "台東",
+                address: "台東市中華路一段300號",
+                lat: 22.7530,
+                lng: 121.1480,
+                award: "1碗",
+                category: "北方麵食"
+            },
+            {
+                name: "冰菓手作冰棒",
+                city: "台東",
+                address: "台東市博愛路250號",
+                lat: 22.7525,
+                lng: 121.1475,
+                award: "1碗",
+                category: "冰品"
+            },
+            {
+                name: "好煎炸",
+                city: "台東",
+                address: "台東市中山路320號",
+                lat: 22.7510,
+                lng: 121.1460,
+                award: "1碗",
+                category: "炸物"
+            },
+            {
+                name: "成功豆花",
+                city: "台東",
+                address: "台東市成功鎮中華路100號",
+                lat: 23.0990,
+                lng: 121.3770,
+                award: "1碗",
+                category: "豆花"
+            },
+            {
+                name: "臼部厨房",
+                city: "台東",
+                address: "台東市更生路180號",
+                lat: 22.7547,
+                lng: 121.1497,
+                award: "1碗",
+                category: "台灣小吃"
+            },
+            {
+                name: "花式蔥餅",
+                city: "台東",
+                address: "台東市正氣路120號",
+                lat: 22.7555,
+                lng: 121.1510,
+                award: "1碗",
+                category: "蔥餅"
+            },
+            {
+                name: "品味鵝肉店",
+                city: "台東",
+                address: "台東市中華路一段280號",
+                lat: 22.7532,
+                lng: 121.1482,
+                award: "1碗",
+                category: "鵝肉"
+            },
+            {
+                name: "秒殺水煎包",
+                city: "台東",
+                address: "台東市新生路130號",
+                lat: 22.7552,
+                lng: 121.1502,
+                award: "1碗",
+                category: "水煎包"
+            },
+            {
+                name: "家鄉正宗池上便當",
+                city: "台東",
+                address: "台東市更生路160號",
+                lat: 22.7548,
+                lng: 121.1498,
+                award: "1碗",
+                category: "便當"
+            },
+            {
+                name: "粨發粨粽",
+                city: "台東",
+                address: "台東市博愛路230號",
+                lat: 22.7527,
+                lng: 121.1477,
+                award: "1碗",
+                category: "粽子"
+            },
+            {
+                name: "越來家鄉味",
+                city: "台東",
+                address: "台東市中山路300號",
+                lat: 22.7512,
+                lng: 121.1462,
+                award: "1碗",
+                category: "台灣小吃"
+            },
+            {
+                name: "痴愛玉",
+                city: "台東",
+                address: "台東市正氣路100號",
+                lat: 22.7557,
+                lng: 121.1512,
+                award: "1碗",
+                category: "愛玉"
+            },
+            {
+                name: "興倫製麵",
+                city: "台東",
+                address: "台東市更生路170號",
+                lat: 22.7546,
+                lng: 121.1496,
+                award: "1碗",
+                category: "麵食"
+            },
+            {
+                name: "ʙᴇʟʟö鍋燒販賣所",
+                city: "台東",
+                address: "台東市中華路一段270號",
+                lat: 22.7533,
+                lng: 121.1483,
+                award: "1碗",
+                category: "鍋燒麵"
+            },
+            {
+        name: "180度C蜜酥雞排",
+        city: "台北",
+        address: "台北市萬華區貴陽街二段77號",
+        lat: 25.0337,
+        lng: 121.5098,
+        award: "1碗",
+        category: "蜜酥雞排"
+    },
+    {
+        name: "1976道地香港美食",
+        city: "台北",
+        address: "台北市中山區林森北路119巷16號",
+        lat: 25.0520,
+        lng: 121.5250,
+        award: "1碗",
+        category: "香港美食"
+    },
+    {
+        name: "一甲子餐飲",
+        city: "台北",
+        address: "台北市中正區羅斯福路三段316巷8弄1號",
+        lat: 25.0320,
+        lng: 121.5190,
+        award: "1碗",
+        category: "台灣小吃"
+    },
+    {
+        name: "一肥仔麵店",
+        city: "台北",
+        address: "台北市大同區延平北路二段255號",
+        lat: 25.0610,
+        lng: 121.5110,
+        award: "1碗",
+        category: "麵食"
+    },
+    {
+        name: "七條通蕭家魚湯",
+        city: "台北",
+        address: "台北市中山區林森北路119巷7號",
+        lat: 25.0525,
+        lng: 121.5245,
+        award: "1碗",
+        category: "魚湯"
+    },
+    {
+        name: "三姐鵝肉",
+        city: "台北",
+        address: "台北市中山區民權東路二段41巷12號",
+        lat: 25.0620,
+        lng: 121.5320,
+        award: "1碗",
+        category: "鵝肉"
+    },
+    {
+        name: "上海小籠包（龍城市場）",
+        city: "台北",
+        address: "台北市中山區龍江路356巷1號（龍城市場）",
+        lat: 25.0650,
+        lng: 121.5400,
+        award: "1碗",
+        category: "小籠包"
+    },
+    {
+        name: "士東市場137號米粉湯",
+        city: "台北",
+        address: "台北市中山區士東路100號（士東市場137號攤位）",
+        lat: 25.1130,
+        lng: 121.5300,
+        award: "1碗",
+        category: "米粉湯"
+    },
+    {
+        name: "大三元豆漿店",
+        city: "台北",
+        address: "台北市大同區華陰街90號",
+        lat: 25.0490,
+        lng: 121.5190,
+        award: "1碗",
+        category: "早餐"
+    },
+    {
+        name: "大稻埕米粉湯",
+        city: "台北",
+        address: "台北市大同區迪化街一段21號",
+        lat: 25.0550,
+        lng: 121.5100,
+        award: "1碗",
+        category: "米粉湯"
+    },
+    {
+        name: "大橋頭魯肉飯",
+        city: "台北",
+        address: "台北市大同區延平北路三段26號",
+        lat: 25.0630,
+        lng: 121.5100,
+        award: "1碗",
+        category: "滷肉飯"
+    },
+    {
+        name: "小王煮瓜",
+        city: "台北",
+        address: "台北市大安區永康街31巷9號",
+        lat: 25.0325,
+        lng: 121.5290,
+        award: "1碗",
+        category: "台灣小吃"
+    },
+    {
+        name: "小貨車蔥油餅",
+        city: "台北",
+        address: "台北市中山區長安東路二段169號",
+        lat: 25.0480,
+        lng: 121.5350,
+        award: "1碗",
+        category: "蔥油餅"
+    },
+    {
+        name: "双妹嘜養生甜品",
+        city: "台北",
+        address: "台北市大安區忠孝東路四段216巷32弄12號",
+        lat: 25.0410,
+        lng: 121.5540,
+        award: "1碗",
+        category: "甜品"
+    },
+    {
+        name: "天下三絕",
+        city: "台北",
+        address: "台北市中山區南京東路二段115巷3號",
+        lat: 25.0520,
+        lng: 121.5380,
+        award: "1碗",
+        category: "麵食"
+    },
+    {
+        name: "巴克斯烤韭菜盒子手工蛋餅",
+        city: "台北",
+        address: "台北市松山區南京東路五段23巷6弄2號",
+        lat: 25.0510,
+        lng: 121.5570,
+        award: "1碗",
+        category: "韭菜盒子"
+    },
+    {
+        name: "牛肉麵．雞湯",
+        city: "台北",
+        address: "台北市中山區龍江路188號",
+        lat: 25.0600,
+        lng: 121.5400,
+        award: "1碗",
+        category: "牛肉麵"
+    },
+    {
+        name: "牛家村",
+        city: "台北",
+        address: "台北市大同區延平北路二段242號",
+        lat: 25.0605,
+        lng: 121.5115,
+        award: "1碗",
+        category: "牛肉麵"
+    },
+    {
+        name: "牛媽媽沙茶牛肉",
+        city: "台北",
+        address: "台北市中山區伊通街106巷6號",
+        lat: 25.0530,
+        lng: 121.5350,
+        award: "1碗",
+        category: "沙茶牛肉"
+    },
+    {
+        name: "王記府城肉粽",
+        city: "台北",
+        address: "台北市中正區開封街一段2號",
+        lat: 25.0460,
+        lng: 121.5140,
+        award: "1碗",
+        category: "肉粽"
+    },
+    {
+        name: "以馬內利鮮魚湯",
+        city: "台北",
+        address: "台北市松山區光復北路11巷33號",
+        lat: 25.0490,
+        lng: 121.5580,
+        award: "1碗",
+        category: "魚湯"
+    },
+    {
+        name: "兄弟大飯店 梅花廳",
+        city: "台北",
+        address: "台北市中山區林森北路139號",
+        lat: 25.0530,
+        lng: 121.5250,
+        award: "1碗",
+        category: "中式料理"
+    },
+    {
+        name: "龍門客棧餃子館（林森店）",
+        city: "台北",
+        address: "台北市中山區林森北路159號",
+        lat: 25.0540,
+        lng: 121.5255,
+        award: "1碗",
+        category: "餃子"
+    },
+    {
+        name: "史記正宗牛肉麵",
+        city: "台北",
+        address: "台北市中正區忠孝東路一段176號",
+        lat: 25.0415,
+        lng: 121.5220,
+        award: "1碗",
+        category: "牛肉麵"
+    },
+    {
+        name: "巧之味手工水餃（濟南店）",
+        city: "台北",
+        address: "台北市中正區濟南路二段48號",
+        lat: 25.0410,
+        lng: 121.5310,
+        award: "1碗",
+        category: "水餃"
+    },
+    {
+        name: "市民大道涮涮鍋東興店",
+        city: "台北",
+        address: "台北市松山區市民大道四段63號",
+        lat: 25.0440,
+        lng: 121.5510,
+        award: "1碗",
+        category: "涮涮鍋"
+    },
+    {
+        name: "正記麻油料理",
+        city: "台北",
+        address: "台北市大安區復興南路二段151巷3號",
+        lat: 25.0280,
+        lng: 121.5430,
+        award: "1碗",
+        category: "麻油料理"
+    },
+    {
+        name: "冰霖古早味豆花",
+        city: "台北",
+        address: "台北市大同區民生西路171號",
+        lat: 25.0570,
+        lng: 121.5180,
+        award: "1碗",
+        category: "豆花"
+    },
+    {
+        name: "同心大腸蚵仔麵線",
+        city: "台北",
+        address: "台北市大同區保安街49巷17號",
+        lat: 25.0580,
+        lng: 121.5140,
+        award: "1碗",
+        category: "麵線"
+    },
+    {
+        name: "同安街麵線羹",
+        city: "台北",
+        address: "台北市中山區同安街43號",
+        lat: 25.0640,
+        lng: 121.5410,
+        award: "1碗",
+        category: "麵線"
+    },
+    {
+        name: "江家原汁排骨湯",
+        city: "台北",
+        address: "台北市大同區延平北路二段255號",
+        lat: 25.0610,
+        lng: 121.5110,
+        award: "1碗",
+        category: "排骨湯"
+    },
+    {
+        name: "老車滷味",
+        city: "台北",
+        address: "台北市中山區長春路47號",
+        lat: 25.0545,
+        lng: 121.5240,
+        award: "1碗",
+        category: "滷味"
+    },
+    {
+        name: "老杭家 麵食館",
+        city: "台北",
+        address: "台北市大同區延平北路二段268號",
+        lat: 25.0620,
+        lng: 121.5105,
+        award: "1碗",
+        category: "麵食"
+    },
+    {
+        name: "180度C蜜酥雞排",
+        city: "台北",
+        address: "台北市萬華區貴陽街二段77號",
+        lat: 25.0337,
+        lng: 121.5098,
+        award: "1碗",
+        category: "蜜酥雞排"
+    },
+    {
+        name: "1976道地香港美食",
+        city: "台北",
+        address: "台北市中山區林森北路119巷16號",
+        lat: 25.0520,
+        lng: 121.5250,
+        award: "1碗",
+        category: "香港美食"
+    },
+    {
+        name: "一甲子餐飲",
+        city: "台北",
+        address: "台北市中正區羅斯福路三段316巷8弄1號",
+        lat: 25.0320,
+        lng: 121.5190,
+        award: "1碗",
+        category: "台灣小吃"
+    },
+    {
+        name: "一肥仔麵店",
+        city: "台北",
+        address: "台北市大同區延平北路二段255號",
+        lat: 25.0610,
+        lng: 121.5110,
+        award: "1碗",
+        category: "麵食"
+    },
+    {
+        name: "七條通蕭家魚湯",
+        city: "台北",
+        address: "台北市中山區林森北路119巷7號",
+        lat: 25.0525,
+        lng: 121.5245,
+        award: "1碗",
+        category: "魚湯"
+    },
+    {
+        name: "三姐鵝肉",
+        city: "台北",
+        address: "台北市中山區民權東路二段41巷12號",
+        lat: 25.0620,
+        lng: 121.5320,
+        award: "1碗",
+        category: "鵝肉"
+    },
+    {
+        name: "上海小籠包（龍城市場）",
+        city: "台北",
+        address: "台北市中山區龍江路356巷1號（龍城市場）",
+        lat: 25.0650,
+        lng: 121.5400,
+        award: "1碗",
+        category: "小籠包"
+    },
+    {
+        name: "士東市場137號米粉湯",
+        city: "台北",
+        address: "台北市中山區士東路100號（士東市場137號攤位）",
+        lat: 25.1130,
+        lng: 121.5300,
+        award: "1碗",
+        category: "米粉湯"
+    },
+    {
+        name: "大三元豆漿店",
+        city: "台北",
+        address: "台北市大同區華陰街90號",
+        lat: 25.0490,
+        lng: 121.5190,
+        award: "1碗",
+        category: "早餐"
+    },
+    {
+        name: "大稻埕米粉湯",
+        city: "台北",
+        address: "台北市大同區迪化街一段21號",
+        lat: 25.0550,
+        lng: 121.5100,
+        award: "1碗",
+        category: "米粉湯"
+    },
+    {
+        name: "大橋頭魯肉飯",
+        city: "台北",
+        address: "台北市大同區延平北路三段26號",
+        lat: 25.0630,
+        lng: 121.5100,
+        award: "1碗",
+        category: "滷肉飯"
+    },
+    {
+        name: "小王煮瓜",
+        city: "台北",
+        address: "台北市大安區永康街31巷9號",
+        lat: 25.0325,
+        lng: 121.5290,
+        award: "1碗",
+        category: "台灣小吃"
+    },
+    {
+        name: "小貨車蔥油餅",
+        city: "台北",
+        address: "台北市中山區長安東路二段169號",
+        lat: 25.0480,
+        lng: 121.5350,
+        award: "1碗",
+        category: "蔥油餅"
+    },
+    {
+        name: "双妹嘜養生甜品",
+        city: "台北",
+        address: "台北市大安區忠孝東路四段216巷32弄12號",
+        lat: 25.0410,
+        lng: 121.5540,
+        award: "1碗",
+        category: "甜品"
+    },
+    {
+        name: "天下三絕",
+        city: "台北",
+        address: "台北市中山區南京東路二段115巷3號",
+        lat: 25.0520,
+        lng: 121.5380,
+        award: "1碗",
+        category: "麵食"
+    },
+    {
+        name: "巴克斯烤韭菜盒子手工蛋餅",
+        city: "台北",
+        address: "台北市松山區南京東路五段23巷6弄2號",
+        lat: 25.0510,
+        lng: 121.5570,
+        award: "1碗",
+        category: "韭菜盒子"
+    },
+    {
+        name: "牛肉麵．雞湯",
+        city: "台北",
+        address: "台北市中山區龍江路188號",
+        lat: 25.0600,
+        lng: 121.5400,
+        award: "1碗",
+        category: "牛肉麵"
+    },
+    {
+        name: "牛家村",
+        city: "台北",
+        address: "台北市大同區延平北路二段242號",
+        lat: 25.0605,
+        lng: 121.5115,
+        award: "1碗",
+        category: "牛肉麵"
+    },
+    {
+        name: "牛媽媽沙茶牛肉",
+        city: "台北",
+        address: "台北市中山區伊通街106巷6號",
+        lat: 25.0530,
+        lng: 121.5350,
+        award: "1碗",
+        category: "沙茶牛肉"
+    },
+    {
+        name: "王記府城肉粽",
+        city: "台北",
+        address: "台北市中正區開封街一段2號",
+        lat: 25.0460,
+        lng: 121.5140,
+        award: "1碗",
+        category: "肉粽"
+    },
+    {
+        name: "以馬內利鮮魚湯",
+        city: "台北",
+        address: "台北市松山區光復北路11巷33號",
+        lat: 25.0490,
+        lng: 121.5580,
+        award: "1碗",
+        category: "魚湯"
+    },
+    {
+        name: "兄弟大飯店 梅花廳",
+        city: "台北",
+        address: "台北市中山區林森北路139號",
+        lat: 25.0530,
+        lng: 121.5250,
+        award: "1碗",
+        category: "中式料理"
+    },
+    {
+		name: "龍門客棧餃子館（林森店）",
+        city: "台北",
+        address: "台北市中山區林森北路159號",
+        lat: 25.0540,
+        lng: 121.5255,
+        award: "1碗",
+        category: "餃子"
+    },
+    {
+        name: "史記正宗牛肉麵",
+        city: "台北",
+        address: "台北市中正區忠孝東路一段176號",
+        lat: 25.0415,
+        lng: 121.5220,
+        award: "1碗",
+        category: "牛肉麵"
+    },
+    {
+        name: "巧之味手工水餃（濟南店）",
+        city: "台北",
+        address: "台北市中正區濟南路二段48號",
+        lat: 25.0410,
+        lng: 121.5310,
+        award: "1碗",
+        category: "水餃"
+    },
+    {
+        name: "市民大道涮涮鍋東興店",
+        city: "台北",
+        address: "台北市松山區市民大道四段63號",
+        lat: 25.0440,
+        lng: 121.5510,
+        award: "1碗",
+        category: "涮涮鍋"
+    },
+    {
+        name: "正記麻油料理",
+        city: "台北",
+        address: "台北市大安區復興南路二段151巷3號",
+        lat: 25.0280,
+        lng: 121.5430,
+        award: "1碗",
+        category: "麻油料理"
+    },
+    {
+        name: "冰霖古早味豆花",
+        city: "台北",
+        address: "台北市大同區民生西路171號",
+        lat: 25.0570,
+        lng: 121.5180,
+        award: "1碗",
+        category: "豆花"
+    },
+    {
+        name: "同心大腸蚵仔麵線",
+        city: "台北",
+        address: "台北市大同區保安街49巷17號",
+        lat: 25.0580,
+        lng: 121.5140,
+        award: "1碗",
+        category: "麵線"
+    },
+    {
+        name: "同安街麵線羹",
+        city: "台北",
+        address: "台北市中山區同安街43號",
+        lat: 25.0640,
+        lng: 121.5410,
+        award: "1碗",
+        category: "麵線"
+    },
+    {
+        name: "江家原汁排骨湯",
+        city: "台北",
+        address: "台北市大同區延平北路二段255號",
+        lat: 25.0610,
+        lng: 121.5110,
+        award: "1碗",
+        category: "排骨湯"
+    },
+    {
+        name: "老車滷味",
+        city: "台北",
+        address: "台北市中山區長春路47號",
+        lat: 25.0545,
+        lng: 121.5240,
+        award: "1碗",
+        category: "滷味"
+    },
+    {
+        name: "老杭家 麵食館",
+        city: "台北",
+        address: "台北市大同區延平北路二段268號",
+        lat: 25.0620,
+        lng: 121.5105,
+        award: "1碗",
+        category: "麵食"
+    },
+    {
+        name: "老楊在二樓",
+        city: "台北",
+        address: "台北市中正區八德路一段82巷9弄12號2樓",
+        lat: 25.0440,
+        lng: 121.5290,
+        award: "1碗",
+        category: "台灣小吃"
+    },
+    {
+        name: "老麵攤",
+        city: "台北",
+        address: "台北市大同區南京西路233巷8號",
+        lat: 25.0525,
+        lng: 121.5150,
+        award: "1碗",
+        category: "麵食"
+    },
+    {
+        name: "赤峰街無名排骨飯",
+        city: "台北",
+        address: "台北市中山區赤峰街31號",
+        lat: 25.0540,
+        lng: 121.5200,
+        award: "1碗",
+        category: "排骨飯"
+    },
+    {
+        name: "呷二嘴",
+        city: "台北",
+        address: "台北市大安區永康街6巷1號",
+        lat: 25.0330,
+        lng: 121.5280,
+        award: "1碗",
+        category: "台灣小吃"
+    },
+    {
+        name: "和記豆漿店",
+        city: "台北",
+        address: "台北市中山區長安東路一段53號",
+        lat: 25.0485,
+        lng: 121.5240,
+        award: "1碗",
+        category: "早餐"
+    },
+    {
+        name: "明月湯包",
+        city: "台北",
+        address: "台北市松山區民生東路五段36巷4弄1號",
+        lat: 25.0590,
+        lng: 121.5630,
+        award: "1碗",
+        category: "湯包"
+    },
+    {
+        name: "東引快刀手（光復店）",
+        city: "台北",
+        address: "台北市松山區光復北路120號",
+        lat: 25.0500,
+        lng: 121.5575,
+        award: "1碗",
+        category: "台灣小吃"
+    },
+    {
+        name: "松山割包",
+        city: "台北",
+        address: "台北市松山區民生東路五段36巷4弄3號",
+        lat: 25.0590,
+        lng: 121.5630,
+        award: "1碗",
+        category: "割包"
+    },
+    {
+        name: "林東芳牛肉麵",
+        city: "台北",
+        address: "台北市中山區八德路二段274號",
+        lat: 25.0470,
+        lng: 121.5430,
+        award: "1碗",
+        category: "牛肉麵"
+    },
+    {
+        name: "林家乾麵",
+        city: "台北",
+        address: "台北市大安區通化街39巷50弄12號",
+        lat: 25.0320,
+        lng: 121.5540,
+        award: "1碗",
+        category: "乾麵"
+    },
+    {
+        name: "金仙魯肉飯（松山店）",
+        city: "台北",
+        address: "台北市松山區八德路四段697號",
+        lat: 25.0500,
+        lng: 121.5770,
+        award: "1碗",
+        category: "滷肉飯"
+    },
+    {
+        name: "金華街咖哩屋",
+        city: "台北",
+        address: "台北市中正區金華街18巷2號",
+        lat: 25.0390,
+        lng: 121.5310,
+        award: "1碗",
+        category: "咖哩飯"
+    },
+    {
+        name: "阜杭豆漿",
+        city: "台北",
+        address: "台北市中正區忠孝東路一段108號2樓",
+        lat: 25.0430,
+        lng: 121.5220,
+        award: "1碗",
+        category: "早餐"
+    },
+    {
+        name: "阿桐阿寶四神湯",
+        city: "台北",
+        address: "台北市大安區忠孝東路四段216巷32弄10號",
+        lat: 25.0410,
+        lng: 121.5540,
+        award: "1碗",
+        category: "四神湯"
+    },
+    {
+        name: "阿財虱目魚肚",
+        city: "台北",
+        address: "台北市中正區中華路二段315巷8號",
+        lat: 25.0340,
+        lng: 121.5060,
+        award: "1碗",
+        category: "虱目魚"
+    },
+    {
+        name: "阿財彰化肉圓",
+        city: "台北",
+        address: "台北市大同區華陰街46號",
+        lat: 25.0495,
+        lng: 121.5195,
+        award: "1碗",
+        category: "肉圓"
+    },
+    {
+        name: "阿寶師台東鱔魚麵",
+        city: "台北",
+        address: "台北市松山區饒河街105號",
+        lat: 25.0510,
+        lng: 121.5775,
+        award: "1碗",
+        category: "鱔魚麵"
+    },
+    {
+        name: "青島水餃",
+        city: "台北",
+        address: "台北市中山區青島東路7號",
+        lat: 25.0445,
+        lng: 121.5240,
+        award: "1碗",
+        category: "水餃"
+    },
+    {
+        name: "施家麻油腰花",
+        city: "台北",
+        address: "台北市大安區麗水街13巷11號",
+        lat: 25.0335,
+        lng: 121.5295,
+        award: "1碗",
+        category: "麻油腰花"
+    },
+    {
+        name: "信遠齋 燻雞·滷味",
+        city: "台北",
+        address: "台北市大同區延平北路二段47號",
+        lat: 25.0580,
+        lng: 121.5110,
+        award: "1碗",
+        category: "滷味"
+    },
+    {
+        name: "美景紅油抄手",
+        city: "台北",
+        address: "台北市大安區永康街6巷2號",
+        lat: 25.0330,
+        lng: 121.5280,
+        award: "1碗",
+        category: "抄手"
+    }, 
+	{
+        name: "香滿園",
+        city: "台北",
+        address: "台北市松山區八德路四段245號",
+        lat: 25.0495,
+        lng: 121.5720,
+        award: "1碗",
+        category: "台灣小吃"
+    },
+    {
+        name: "師大分部臭豆腐",
+        city: "台北",
+        address: "台北市大安區師大路59巷13號",
+        lat: 25.0240,
+        lng: 121.5290,
+        award: "1碗",
+        category: "臭豆腐"
+    },
+    {
+        name: "家鄉碳烤香雞排（士林店）",
+        city: "台北",
+        address: "台北市士林區大東路15號",
+        lat: 25.0880,
+        lng: 121.5260,
+        award: "1碗",
+        category: "雞排"
+    },
+    {
+        name: "秦小姐豆漿店",
+        city: "台北",
+        address: "台北市中山區長安西路145號",
+        lat: 25.0500,
+        lng: 121.5180,
+        award: "1碗",
+        category: "早餐"
+    },
+    {
+        name: "高 雙管四神湯",
+        city: "台北",
+        address: "台北市大安區光復南路280巷2號",
+        lat: 25.0430,
+        lng: 121.5570,
+        award: "1碗",
+        category: "四神湯"
+    },
+    {
+        name: "國手肉骨茶",
+        city: "台北",
+        address: "台北市松山區南京東路五段66號",
+        lat: 25.0510,
+        lng: 121.5570,
+        award: "1碗",
+        category: "肉骨茶"
+    },
+    {
+        name: "御炒牛 A Class Beef",
+        city: "台北",
+        address: "台北市中山區中山北路二段77巷2號",
+        lat: 25.0580,
+        lng: 121.5230,
+        award: "1碗",
+        category: "牛肉料理"
+    },
+    {
+        name: "欲罷不能鹹水雞東區商圈店",
+        city: "台北",
+        address: "台北市大安區忠孝東路四段216巷27弄2號",
+        lat: 25.0418,
+        lng: 121.5534,
+        award: "1碗",
+        category: "鹹水雞"
+    },
+    {
+        name: "涼粉伯",
+        city: "台北",
+        address: "台北市大同區延平北路二段68號",
+        lat: 25.0570,
+        lng: 121.5110,
+        award: "1碗",
+        category: "涼粉"
+    },
+    {
+        name: "莫宰羊（松山北寧店）",
+        city: "台北",
+        address: "台北市松山區北寧路15號",
+        lat: 25.0570,
+        lng: 121.5630,
+        award: "1碗",
+        category: "羊肉料理"
+    },
+    {
+        name: "許仔豬腳麵線",
+        city: "台北",
+        address: "台北市大同區民生西路210號",
+        lat: 25.0575,
+        lng: 121.5170,
+        award: "1碗",
+        category: "豬腳麵線"
+    },
+    {
+        name: "陳家涼麵",
+        city: "台北",
+        address: "台北市大安區復興南路二段151巷5號",
+        lat: 25.0280,
+        lng: 121.5430,
+        award: "1碗",
+        category: "涼麵"
+    },
+    {
+        name: "陳記腸蚵麵線（大安店）",
+        city: "台北",
+        address: "台北市大安區復興南路一段340號",
+        lat: 25.0360,
+        lng: 121.5435,
+        award: "1碗",
+        category: "麵線"
+    },
+    {
+        name: "頂級甜不辣",
+        city: "台北",
+        address: "台北市松山區饒河街101號",
+        lat: 25.0510,
+        lng: 121.5775,
+        award: "1碗",
+        category: "甜不辣"
+    },
+    {
+        name: "勝口味（芝山店）",
+        city: "台北",
+        address: "台北市士林區福華路164號",
+        lat: 25.1040,
+        lng: 121.5220,
+        award: "1碗",
+        category: "台灣小吃"
+    },
+    {
+        name: "彭記臭豆腐",
+        city: "台北",
+        address: "台北市士林區大南路20號",
+        lat: 25.0870,
+        lng: 121.5260,
+        award: "1碗",
+        category: "臭豆腐"
+    },
+    {
+        name: "華榮市場口甜不辣",
+        city: "台北",
+        address: "台北市中正區華山市場內",
+        lat: 25.0430,
+        lng: 121.5290,
+        award: "1碗",
+        category: "甜不辣"
+    },
+    {
+        name: "黃金麵線",
+        city: "台北",
+        address: "台北市大同區延平北路二段33號",
+        lat: 25.0565,
+        lng: 121.5110,
+        award: "1碗",
+        category: "麵線"
+    },
+    {
+        name: "新東街東山鴨頭",
+        city: "台北",
+        address: "台北市中山區新生北路三段82號",
+        lat: 25.0680,
+        lng: 121.5240,
+        award: "1碗",
+        category: "鴨頭"
+    },
+    {
+        name: "溫州街蘿蔔絲餅達人",
+        city: "台北",
+        address: "台北市大安區溫州街74號",
+        lat: 25.0240,
+        lng: 121.5330,
+        award: "1碗",
+        category: "蘿蔔絲餅"
+    },
+    {
+        name: "葉家肉粥",
+        city: "台北",
+        address: "台北市大同區寧夏路23巷7號",
+        lat: 25.0560,
+        lng: 121.5140,
+        award: "1碗",
+        category: "肉粥"
+    },
+    {
+        name: "鼎旺麻辣鍋",
+        city: "台北",
+        address: "台北市中山區中山北路二段59號",
+        lat: 25.0575,
+        lng: 121.5230,
+        award: "1碗",
+        category: "麻辣鍋"
+    },
+    {
+        name: "廖家牛肉麵（中原街）",
+        city: "台北",
+        address: "台北市中山區中原街12號",
+        lat: 25.0540,
+        lng: 121.5320,
+        award: "1碗",
+        category: "牛肉麵"
+    },
+    {
+        name: "碧山岩 桶仔雞",
+        city: "台北",
+        address: "台北市內湖區碧山路38號",
+        lat: 25.0700,
+        lng: 121.5900,
+        award: "1碗",
+        category: "桶仔雞"
+    },
+    {
+        name: "億頓排骨",
+        city: "台北",
+        address: "台北市松山區八德路三段12巷52弄2號",
+        lat: 25.0480,
+        lng: 121.5580,
+        award: "1碗",
+        category: "排骨飯"
+    },
+    {
+        name: "劉記傳統美食",
+        city: "台北",
+        address: "台北市大同區延平北路二段232號",
+        lat: 25.0600,
+        lng: 121.5115,
+        award: "1碗",
+        category: "台灣小吃"
+    },
+    {
+        name: "劉媽媽涼麵",
+        city: "台北",
+        address: "台北市大安區復興南路二段151巷7號",
+        lat: 25.0280,
+        lng: 121.5430,
+        award: "1碗",
+        category: "涼麵"
+    },
+    {
+        name: "樺林乾麵",
+        city: "台北",
+        address: "台北市松山區民生東路五段137巷2號",
+        lat: 25.0590,
+        lng: 121.5620,
+        award: "1碗",
+        category: "乾麵"
+    },
+    {
+        name: "燒喔！抄手麵食館",
+        city: "台北",
+        address: "台北市大安區復興南路一段107巷5號",
+        lat: 25.0430,
+        lng: 121.5430,
+        award: "1碗",
+        category: "抄手"
+    },
+    {
+        name: "鴨頭正二代滷肉飯",
+        city: "台北",
+        address: "台北市大同區延平北路二段97號",
+        lat: 25.0570,
+        lng: 121.5110,
+        award: "1碗",
+        category: "滷肉飯"
+    },
+    {
+        name: "龍潭豆花",
+        city: "台北",
+        address: "台北市中山區龍江路45巷7號",
+        lat: 25.0540,
+        lng: 121.5400,
+        award: "1碗",
+        category: "豆花"
+    },
+    {
+        name: "歸綏街當歸豬腳老店",
+        city: "台北",
+        address: "台北市大同區歸綏街119號",
+        lat: 25.0580,
+        lng: 121.5130,
+        award: "1碗",
+        category: "豬腳"
+    },
+    {
+        name: "藍家割包",
+        city: "台北",
+        address: "台北市中正區羅斯福路三段316巷9弄2號",
+        lat: 25.0320,
+        lng: 121.5190,
+        award: "1碗",
+        category: "割包"
+    },
+    {
+        name: "豐原清水排骨麵",
+        city: "台北",
+        address: "台北市中山區吉林路26號",
+        lat: 25.0530,
+        lng: 121.5310,
+        award: "1碗",
+        category: "排骨麵"
+    },
+    {
+        name: "魏祥記純糖麻糬",
+        city: "台北",
+        address: "台北市大同區寧夏路23巷5號",
+        lat: 25.0560,
+        lng: 121.5140,
+        award: "1碗",
+        category: "麻糬"
+    },
+    {
+        name: "羅媽媽米粉湯",
+        city: "台北",
+        address: "台北市大同區延平北路二段242號",
+        lat: 25.0605,
+        lng: 121.5115,
+        award: "1碗",
+        category: "米粉湯"
+    },
+    {
+        name: "鯛魚燒工房（台灣民生店）",
+        city: "台北",
+        address: "台北市中山區民生東路三段88號",
+        lat: 25.0575,
+        lng: 121.5370,
+        award: "1碗",
+        category: "鯛魚燒"
+    },
+    {
+        name: "寶島肉圓店",
+        city: "台北",
+        address: "台北市大同區延平北路二段90號",
+        lat: 25.0570,
+        lng: 121.5110,
+        award: "1碗",
+        category: "肉圓"
+    },
+    {
+        name: "蘇杭點心店",
+        city: "台北",
+        address: "台北市大安區復興南路二段148號",
+        lat: 25.0290,
+        lng: 121.5430,
+        award: "1碗",
+        category: "點心"
+    },
+    {
+        name: "霸味薑母鴨（和平店）",
+        city: "台北",
+        address: "台北市大安區和平東路二段118巷2號",
+        lat: 25.0260,
+        lng: 121.5340,
+        award: "1碗",
+        category: "薑母鴨"
+    },
+    {
+        name: "A宰羊羊肉專賣店",
+        city: "台北",
+        address: "台北市松山區八德路四段666號",
+        lat: 25.0500,
+        lng: 121.5760,
+        award: "1碗",
+        category: "羊肉料理"
+    },
+    {
+        name: "三重老牌甜不辣專賣店",
+        city: "新北",
+        address: "新北市三重區信義西街1巷9號",
+        lat: 25.0650,
+        lng: 121.4980,
+        award: "1碗",
+        category: "甜不辣"
+    },
+    {
+        name: "三重橋頭麵線",
+        city: "新北",
+        address: "新北市三重區正義北路60號",
+        lat: 25.0660,
+        lng: 121.5000,
+        award: "1碗",
+        category: "麵線"
+    },
+    {
+        name: "小貨車 草地涼麵",
+        city: "新北",
+        address: "新北市三重區正義南路8號",
+        lat: 25.0640,
+        lng: 121.4970,
+        award: "1碗",
+        category: "涼麵"
+    },
+    {
+        name: "山東水餃王",
+        city: "新北",
+        address: "新北市三重區中央北路65號",
+        lat: 25.0680,
+        lng: 121.4950,
+        award: "1碗",
+        category: "水餃"
+    },
+    {
+        name: "川味麵食",
+        city: "新北",
+        address: "新北市三重區重新路四段41巷50號",
+        lat: 25.0620,
+        lng: 121.4960,
+        award: "1碗",
+        category: "麵食"
+    },
+    {
+        name: "太順油飯",
+        city: "新北",
+        address: "新北市三重區中央北路27巷口",
+        lat: 25.0670,
+        lng: 121.4940,
+        award: "1碗",
+        category: "油飯"
+    },
+    {
+        name: "方記臭豆腐",
+        city: "新北",
+        address: "新北市三重區文化北路132巷2號",
+        lat: 25.0700,
+        lng: 121.4930,
+        award: "1碗",
+        category: "臭豆腐"
+    },
+    {
+        name: "王德福滷担",
+        city: "新北",
+        address: "新北市文山區木新路三段357號",
+        lat: 24.9803,
+        lng: 121.5556,
+        award: "1碗",
+        category: "滷味"
+    },
+    {
+        name: "北方牛肉麵",
+        city: "新北",
+        address: "新北市三重區正義北路150號",
+        lat: 25.0665,
+        lng: 121.4995,
+        award: "1碗",
+        category: "牛肉麵"
+    },
+    {
+        name: "半坪屋手工糯米腸",
+        city: "新北",
+        address: "新北市三重區中央北路71號",
+        lat: 25.0680,
+        lng: 121.4950,
+        award: "1碗",
+        category: "糯米腸"
+    },
+    {
+        name: "朱記花枝羹",
+        city: "新北",
+        address: "新北市三重區正義北路51號",
+        lat: 25.0660,
+        lng: 121.5000,
+        award: "1碗",
+        category: "花枝羹"
+    },
+    {
+        name: "老張牛肉麵",
+        city: "新北",
+        address: "新北市三重區重新路三段67號",
+        lat: 25.0630,
+        lng: 121.4980,
+        award: "1碗",
+        category: "牛肉麵"
+    },
+    {
+        name: "快樂QQ球",
+        city: "新北",
+        address: "新北市三重區三和路四段165號",
+        lat: 25.0770,
+        lng: 121.4870,
+        award: "1碗",
+        category: "台灣小吃"
+    },
+    {
+        name: "我家餐廳",
+        city: "新北",
+        address: "新北市三重區重新路四段12號",
+        lat: 25.0620,
+        lng: 121.4960,
+        award: "1碗",
+        category: "台灣小吃"
+    },
+    {
+        name: "官記純檸檬泰式涼拌木瓜",
+        city: "新北",
+        address: "新北市三重區中央北路125號",
+        lat: 25.0675,
+        lng: 121.4945,
+        award: "1碗",
+        category: "泰式涼拌"
+    },
+    {
+        name: "店小二魯肉飯",
+        city: "新北",
+        address: "新北市三重區正義南路15號",
+        lat: 25.0640,
+        lng: 121.4970,
+        award: "1碗",
+        category: "滷肉飯"
+    },
+    {
+        name: "南川麵館",
+        city: "新北",
+        address: "新北市三重區重新路四段244號",
+        lat: 25.0625,
+        lng: 121.4955,
+        award: "1碗",
+        category: "麵食"
+    },
+    {
+        name: "柳家麻油雞",
+        city: "新北",
+        address: "新北市三重區正義南路39號",
+        lat: 25.0640,
+        lng: 121.4970,
+        award: "1碗",
+        category: "麻油雞"
+    },
+    {
+        name: "家有璽事-排骨吐司",
+        city: "新北",
+        address: "新北市三重區集美街161號",
+        lat: 25.0660,
+        lng: 121.4960,
+        award: "1碗",
+        category: "排骨吐司"
+    },
+    {
+        name: "高記生炒魷魚",
+        city: "新北",
+        address: "新北市三重區文化北路51號",
+        lat: 25.0700,
+        lng: 121.4930,
+        award: "1碗",
+        category: "炒魷魚"
+    },
+    {
+        name: "淡水文化阿給",
+        city: "新北",
+        address: "新北市淡水區中正路11巷1號",
+        lat: 25.1690,
+        lng: 121.4440,
+        award: "1碗",
+        category: "阿給"
+    },
+    {
+        name: "無名刈包",
+        city: "新北",
+        address: "新北市三重區正義北路109號",
+        lat: 25.0660,
+        lng: 121.5000,
+        award: "1碗",
+        category: "刈包"
+    },
+    {
+        name: "新莊羊肉榮",
+        city: "新北",
+        address: "新北市新莊區後港一路160號",
+        lat: 25.0460,
+        lng: 121.4470,
+        award: "1碗",
+        category: "羊肉料理"
+    },
+    {
+        name: "蔡家牛肉麵",
+        city: "新北",
+        address: "新北市三重區重新路三段108號",
+        lat: 25.0630,
+        lng: 121.4980,
+        award: "1碗",
+        category: "牛肉麵"
+    },
+    {
+        name: "賴岡山羊肉",
+        city: "新北",
+        address: "新北市新店區中正路516號",
+        lat: 25.0460,
+        lng: 121.4470,
+        award: "1碗",
+        category: "羊肉料理"
+    },
+    {
+        name: "大香酥香雞排",
+        city: "桃園",
+        address: "桃園市中壢區新明路120號",
+        lat: 24.9577,
+        lng: 121.2256,
+        award: "1碗",
+        category: "雞排"
+    },
+    {
+        name: "好鮮屋米粉湯",
+        city: "桃園",
+        address: "桃園市中壢區新明路109號",
+        lat: 24.9578,
+        lng: 121.2257,
+        award: "1碗",
+        category: "米粉湯"
+    },
+    {
+        name: "林記水煎包",
+        city: "桃園",
+        address: "桃園市中壢區新明路115號",
+        lat: 24.9578,
+        lng: 121.2257,
+        award: "1碗",
+        category: "水煎包"
+    },
+    {
+        name: "虎堡王台灣漢堡店",
+        city: "桃園",
+        address: "桃園市中壢區新明路130號",
+        lat: 24.9576,
+        lng: 121.2255,
+        award: "1碗",
+        category: "台灣小吃"
+    },
+    {
+        name: "新明老牌牛肉麵",
+        city: "桃園",
+        address: "桃園市中壢區中山路135號",
+        lat: 24.9550,
+        lng: 121.2240,
+        award: "1碗",
+        category: "牛肉麵"
+    },
+    {
+        name: "簡師傅麻辣臭豆腐",
+        city: "桃園",
+        address: "桃園市中壢區新明路101號",
+        lat: 24.9579,
+        lng: 121.2258,
+        award: "1碗",
+        category: "臭豆腐"
+    },    {name: "一二三台灣料理", city: "新竹", address: "新竹市東區府後街17號", lat: 24.8035, lng: 120.9662, award: "1碗", category: "台灣料理"},
+    {name: "一哥炊粉", city: "新竹", address: "新竹市北區西大路458號", lat: 24.8068, lng: 120.9702, award: "1碗", category: "炊粉"},
+    {name: "三廠炸醬麵", city: "新竹", address: "新竹市東區東南街128號", lat: 24.8030, lng: 120.9750, award: "1碗", category: "炸醬麵"},
+    {name: "中央市場糯米水餃", city: "新竹", address: "新竹市東區中央路229號", lat: 24.8010, lng: 120.9710, award: "1碗", category: "水餃"},
+    {name: "好所在客家美食館", city: "新竹", address: "新竹市東區食品路65號", lat: 24.8030, lng: 120.9750, award: "1碗", category: "客家料理"},
+    {name: "竹蓮肉圓", city: "新竹", address: "新竹市東區中正路72號", lat: 24.8018, lng: 120.9714, award: "1碗", category: "肉圓"},
+    {name: "延平大飯店", city: "新竹", address: "新竹市北區延平路一段135號", lat: 24.8070, lng: 120.9690, award: "1碗", category: "台灣小吃"},
+    {name: "東風客家米食中心", city: "新竹", address: "新竹市東區東南街150號", lat: 24.8030, lng: 120.9750, award: "1碗", category: "客家料理"},
+    {name: "林家冰店", city: "新竹", address: "新竹市東區中正路120號", lat: 24.8015, lng: 120.9715, award: "1碗", category: "冰品"},
+    {name: "欣園客家美食坊-客家菜包", city: "新竹", address: "新竹市東區食品路78號", lat: 24.8030, lng: 120.9750, award: "1碗", category: "客家料理"},
+    {name: "阿胖豆漿", city: "新竹", address: "新竹市北區西大路500號", lat: 24.8065, lng: 120.9700, award: "1碗", category: "早餐"},
+    {name: "柳家肉燥飯", city: "新竹", address: "新竹市東區中央路180號", lat: 24.8010, lng: 120.9710, award: "1碗", category: "肉燥飯"},
+    {name: "張記美食河南手工扯麵", city: "新竹", address: "新竹市東區東南街132號", lat: 24.8030, lng: 120.9750, award: "1碗", category: "扯麵"},
+    {name: "鹿寮坑黃屋伙房", city: "新竹", address: "新竹市東區食品路90號", lat: 24.8030, lng: 120.9750, award: "1碗", category: "客家料理"},
+    {name: "新福飲食店", city: "新竹", address: "新竹市東區中央路200號", lat: 24.8010, lng: 120.9710, award: "1碗", category: "台灣小吃"},
+    {name: "源式仙草", city: "新竹", address: "新竹市東區中正路150號", lat: 24.8015, lng: 120.9715, award: "1碗", category: "仙草"},
+    {name: "葉大粒粉圓", city: "新竹", address: "新竹市東區中正路100號", lat: 24.8018, lng: 120.9714, award: "1碗", category: "粉圓"},
+    {name: "鄒記菜包", city: "新竹", address: "新竹市東區中央路210號", lat: 24.8010, lng: 120.9710, award: "1碗", category: "菜包"},
+    {name: "鄭家祖傳特製雞蛋糕", city: "新竹", address: "新竹市東區中正路130號", lat: 24.8015, lng: 120.9715, award: "1碗", category: "雞蛋糕"},
+    {name: "ㄤ咕麵", city: "新竹", address: "新竹市北區西門街108號", lat: 24.8050, lng: 120.9690, award: "1碗", category: "麵食"},
+    {name: "Bebu 春嬌粄條", city: "新竹", address: "新竹市東區食品路100號", lat: 24.8030, lng: 120.9750, award: "1碗", category: "粄條"},
+        {name: "小木屋水晶餃", city: "苗栗", address: "苗栗縣苗栗市新苗街59號", lat: 24.5650, lng: 120.8205, award: "1碗", category: "水晶餃"},
+    {name: "小食光麵堂", city: "苗栗", address: "苗栗縣銅鑼鄉中正路76號", lat: 24.4900, lng: 120.8210, award: "1碗", category: "麵食"},
+    {name: "東棧水餃館", city: "苗栗", address: "苗栗縣苗栗市中正路550號", lat: 24.5643, lng: 120.8237, award: "1碗", category: "水餃"},
+    {name: "阿妹狗客家米食", city: "苗栗", address: "苗栗縣苗栗市府前路120號", lat: 24.5640, lng: 120.8230, award: "1碗", category: "客家料理"},
+    {name: "阿蘭姊小吃店", city: "苗栗", address: "苗栗縣苗栗市新苗街61巷49號", lat: 24.5652, lng: 120.8207, award: "1碗", category: "台灣小吃"},
+    {name: "南苗三姊妹早餐", city: "苗栗", address: "苗栗縣苗栗市米市街25號", lat: 24.5630, lng: 120.8220, award: "1碗", category: "早餐"},
+    {name: "春田窯", city: "苗栗", address: "苗栗縣苗栗市中正路600號", lat: 24.5643, lng: 120.8237, award: "1碗", category: "台灣小吃"},
+    {name: "香香意麵", city: "苗栗", address: "苗栗縣苗栗市府前路130號", lat: 24.5640, lng: 120.8230, award: "1碗", category: "麵食"},
+    {name: "陳記台南碗粿", city: "苗栗", address: "苗栗縣苗栗市中正路580號", lat: 24.5643, lng: 120.8237, award: "1碗", category: "碗粿"},
+    {name: "蒸烹派餐廳", city: "苗栗", address: "苗栗縣苗栗市中正路620號", lat: 24.5643, lng: 120.8237, award: "1碗", category: "台灣小吃"},
+    {name: "福樂麵店", city: "苗栗", address: "苗栗縣苗栗市中正路560號", lat: 24.5643, lng: 120.8237, award: "1碗", category: "麵食"},
+    {name: "銅鑼蛋餅", city: "苗栗", address: "苗栗縣銅鑼鄉中正路80號", lat: 24.4900, lng: 120.8210, award: "1碗", category: "蛋餅"},
+    {name: "邀悅膳館", city: "苗栗", address: "苗栗縣苗栗市府前路140號", lat: 24.5640, lng: 120.8230, award: "1碗", category: "台灣小吃"},
+    {name: "丁記炸粿", city: "台中", address: "台中市西區模範街22號", lat: 24.1370, lng: 120.6860, award: "1碗", category: "炸粿"},
+    {name: "三回", city: "台中", address: "台中市北區一中街120號", lat: 24.1500, lng: 120.6840, award: "1碗", category: "台灣小吃"},
+    {name: "上海灘租界地", city: "台中", address: "台中市西屯區文華路150號", lat: 24.1640, lng: 120.6400, award: "1碗", category: "上海料理"},
+    {name: "大雅無名麵攤臭豆腐", city: "台中", address: "台中市大雅區中清東路88號", lat: 24.2250, lng: 120.6500, award: "1碗", category: "臭豆腐"},
+    {name: "大雅萬丹紅豆餅豐仁冰", city: "台中", address: "台中市大雅區學府路125號", lat: 24.2270, lng: 120.6520, award: "1碗", category: "紅豆餅"},
+    {name: "小初店", city: "台中", address: "台中市北區育才北路50號", lat: 24.1500, lng: 120.6840, award: "1碗", category: "台灣小吃"},
+    {name: "天津苟不理湯包", city: "台中", address: "台中市東區信義街63號", lat: 24.1460, lng: 120.6780, award: "1碗", category: "湯包"},
+    {name: "台南蘇無刺虱目魚", city: "台中", address: "台中市西屯區市政路588號", lat: 24.1620, lng: 120.6450, award: "1碗", category: "虱目魚"},
+    {name: "四季春甜食店", city: "台中", address: "台中市北區一中街130號", lat: 24.1500, lng: 120.6840, award: "1碗", category: "甜品"},
+    {name: "旬魚", city: "台中", address: "台中市西區精誠路20號", lat: 24.1370, lng: 120.6860, award: "1碗", category: "海鮮"},
+    {name: "李海魯肉飯", city: "台中", address: "台中市南區復興路一段70號", lat: 24.1250, lng: 120.6700, award: "1碗", category: "魯肉飯"},
+    {name: "東引釣客", city: "台中", address: "台中市西屯區福星路300號", lat: 24.1640, lng: 120.6400, award: "1碗", category: "海鮮"},
+    {name: "東佳牛肉麵館", city: "台中", address: "台中市北區雙十路二段40號", lat: 24.1520, lng: 120.6830, award: "1碗", category: "牛肉麵"},
+    {name: "阿川鵝肉", city: "台中", address: "台中市西區向上路一段80號", lat: 24.1370, lng: 120.6860, award: "1碗", category: "鵝肉"},
+    {name: "品味香麵攤", city: "台中", address: "台中市北屯區崇德路二段150號", lat: 24.1700, lng: 120.6850, award: "1碗", category: "麵食"},
+    {name: "珍品小吃 米粉/芋頭", city: "台中", address: "台中市西區模範街20-1號", lat: 24.1370, lng: 120.6860, award: "1碗", category: "米粉芋"},
+    {name: "英才大麵羹", city: "台中", address: "台中市北區英才路400號", lat: 24.1520, lng: 120.6830, award: "1碗", category: "大麵羹"},
+    {name: "范記金之園草袋飯（總店）", city: "台中", address: "台中市中區自由路二段94號", lat: 24.1410, lng: 120.6790, award: "1碗", category: "草袋飯"},
+    {name: "徐家莊手打麵", city: "台中", address: "台中市西區美村路一段180號", lat: 24.1370, lng: 120.6860, award: "1碗", category: "手打麵"},
+    {name: "乾麵酸菜湯老店", city: "台中", address: "台中市北區一中街140號", lat: 24.1500, lng: 120.6840, award: "1碗", category: "乾麵"},
+    {name: "現採炭烤玉米", city: "台中", address: "台中市西屯區文華路160號", lat: 24.1640, lng: 120.6400, award: "1碗", category: "炭烤玉米"},
+    {name: "蚵仔粥", city: "台中", address: "台中市南屯區大墩路500號", lat: 24.1400, lng: 120.6500, award: "1碗", category: "蚵仔粥"},
+    {name: "陳記蚵仔麵線", city: "台中", address: "台中市北區育才南街30號", lat: 24.1500, lng: 120.6840, award: "1碗", category: "蚵仔麵線"},
+    {name: "頂吉古早味火雞肉飯", city: "台中", address: "台中市西區華美街150號", lat: 24.1370, lng: 120.6860, award: "1碗", category: "火雞肉飯"},
+    {name: "頂好炸雞", city: "台中", address: "台中市北屯區崇德路二段160號", lat: 24.1700, lng: 120.6850, award: "1碗", category: "炸雞"},
+    {name: "魚麗共同廚房", city: "台中", address: "台中市西區精誠路30號", lat: 24.1370, lng: 120.6860, award: "1碗", category: "台灣小吃"},
+    {name: "新金樹肉丸", city: "台中", address: "台中市豐原區中正路200號", lat: 24.2500, lng: 120.7230, award: "1碗", category: "肉丸"},
+    {name: "廟東清水排骨麵", city: "台中", address: "台中市豐原區中正路210號", lat: 24.2500, lng: 120.7230, award: "1碗", category: "排骨麵"},
+    {name: "廟東菱角酥", city: "台中", address: "台中市豐原區中正路212號", lat: 24.2500, lng: 120.7230, award: "1碗", category: "菱角酥"},
+    {name: "鮮魚鱻蝦仁飯", city: "台中", address: "台中市西屯區福星路310號", lat: 24.1640, lng: 120.6400, award: "1碗", category: "蝦仁飯"},
+    {name: "繡球", city: "台中", address: "台中市北區一中街150號", lat: 24.1500, lng: 120.6840, award: "1碗", category: "台灣小吃"},
+    {name: "豐原排骨麵店", city: "台中", address: "台中市豐原區中正路220號", lat: 24.2500, lng: 120.7230, award: "1碗", category: "排骨麵"},
+    {name: "鵝城", city: "台中", address: "台中市西區向上南路一段100號", lat: 24.1370, lng: 120.6860, award: "1碗", category: "鵝肉"},
+    {name: "麵哥麵嫂", city: "台中", address: "台中市北屯區崇德路二段170號", lat: 24.1700, lng: 120.6850, award: "1碗", category: "麵食"},
+    {name: "饕食館", city: "台中", address: "台中市南屯區大墩路510號", lat: 24.1400, lng: 120.6500, award: "1碗", category: "台灣小吃"},
+    {name: "一滴水麵館", city: "南投", address: "南投縣南投市南陽路177號", lat: 23.9108, lng: 120.6842, award: "1碗", category: "意麵"},
+    {name: "大觀市場爌肉飯糰", city: "南投", address: "南投縣南投市中興路700號", lat: 23.9100, lng: 120.6850, award: "1碗", category: "爌肉飯糰"},
+    {name: "太清宮蛋餅", city: "南投", address: "南投縣埔里鎮中山路二段200號", lat: 23.9660, lng: 120.9690, award: "1碗", category: "蛋餅"},
+    {name: "久味大姐手工麻糬（中山店）", city: "南投", address: "南投縣埔里鎮中山路二段322號", lat: 23.9658, lng: 120.9685, award: "1碗", category: "麻糬"},
+    {name: "王品桂花酸梅湯", city: "南投", address: "南投縣南投市南陽路160號", lat: 23.9107, lng: 120.6843, award: "1碗", category: "酸梅湯"},
+    {name: "正典牛乳大王", city: "南投", address: "南投縣南投市南陽路155號", lat: 23.9107, lng: 120.6843, award: "1碗", category: "飲品"},
+    {name: "阿花扣仔嗲", city: "南投", address: "南投縣南投市中興路710號", lat: 23.9100, lng: 120.6850, award: "1碗", category: "扣仔嗲"},
+    {name: "阿龍扣仔嗲", city: "南投", address: "南投縣南投市中興路712號", lat: 23.9100, lng: 120.6850, award: "1碗", category: "扣仔嗲"},
+    {name: "阿鳳傳統米食", city: "南投", address: "南投縣草屯鎮太平路二段150號", lat: 23.9750, lng: 120.6850, award: "1碗", category: "台灣小吃"},
+    {name: "品昇蒸餃世家", city: "南投", address: "南投縣埔里鎮南昌街50號", lat: 23.9665, lng: 120.9695, award: "1碗", category: "蒸餃"},
+    {name: "茴香館餃子宴", city: "南投", address: "南投縣南投市南陽路170號", lat: 23.9107, lng: 120.6843, award: "1碗", category: "餃子"},
+    {name: "普里鹹油條", city: "南投", address: "南投縣埔里鎮中山路三段100號", lat: 23.9660, lng: 120.9690, award: "1碗", category: "油條"},
+    {name: "榕樹下扣仔嗲", city: "南投", address: "南投縣草屯鎮太平路二段160號", lat: 23.9750, lng: 120.6850, award: "1碗", category: "扣仔嗲"},
+    {name: "輝鴻蚵仔煎", city: "南投", address: "南投縣南投市中興路720號", lat: 23.9100, lng: 120.6850, award: "1碗", category: "蚵仔煎"},
+    {name: "六哥古早味烤玉米", city: "嘉義", address: "嘉義市西區文化路150號", lat: 23.4800, lng: 120.4500, award: "1碗", category: "烤玉米"},
+    {name: "北迴水晶餃", city: "嘉義", address: "嘉義市東區忠孝路300號", lat: 23.4790, lng: 120.4510, award: "1碗", category: "水晶餃"},
+    {name: "延平國華米糕", city: "嘉義", address: "嘉義市西區國華街120號", lat: 23.4800, lng: 120.4500, award: "1碗", category: "米糕"},
+    {name: "阿進土產牛肉湯", city: "嘉義", address: "嘉義市東區忠孝路290號", lat: 23.4790, lng: 120.4510, award: "1碗", category: "牛肉湯"},
+    {name: "阿溪雞肉飯", city: "嘉義", address: "嘉義市西區文化路160號", lat: 23.4800, lng: 120.4500, award: "1碗", category: "雞肉飯"},
+    {name: "阿樓師火雞肉飯", city: "嘉義", address: "嘉義市西區興中街63號", lat: 23.4805, lng: 120.4490, award: "1碗", category: "雞肉飯"},
+    {name: "黃記涼麵涼圓", city: "嘉義", address: "嘉義市西區文化路170號", lat: 23.4800, lng: 120.4500, award: "1碗", category: "涼麵"},
+    {name: "源滷肉飯", city: "嘉義", address: "嘉義市東區朝陽街83號", lat: 23.4795, lng: 120.4515, award: "1碗", category: "滷肉飯"},
+    {name: "葉記牛肉", city: "嘉義", address: "嘉義市東區忠孝路280號", lat: 23.4790, lng: 120.4510, award: "1碗", category: "牛肉料理"},
+    {name: "嘉義市文化路碳烤三明治", city: "嘉義", address: "嘉義市西區文化路180號", lat: 23.4800, lng: 120.4500, award: "1碗", category: "三明治"},
+    {name: "嘉義民族狀元糕", city: "嘉義", address: "嘉義市西區民族路600號", lat: 23.4780, lng: 120.4490, award: "1碗", category: "狀元糕"},
+    {name: "劉里長雞肉飯", city: "嘉義", address: "嘉義市東區公明路197號", lat: 23.4795, lng: 120.4510, award: "1碗", category: "雞肉飯"},
+    {name: "德記小吃部", city: "嘉義", address: "嘉義市西區文化路190號", lat: 23.4800, lng: 120.4500, award: "1碗", category: "台灣小吃"},
+    {name: "錦源飲食攤", city: "嘉義", address: "嘉義市西區文化路200號", lat: 23.4800, lng: 120.4500, award: "1碗", category: "台灣小吃"},
+    {name: "上崙早餐店", city: "台南", address: "台南市中西區文化路150號", lat: 23.0000, lng: 120.2000, award: "1碗", category: "早餐"},
+    {name: "上富小吃店", city: "台南", address: "台南市南區金華路二段57號", lat: 22.9850, lng: 120.1950, award: "1碗", category: "滷排骨飯"},
+    {name: "下大道旗魚羹店", city: "台南", address: "台南市中西區康樂街23號", lat: 22.9960, lng: 120.1980, award: "1碗", category: "旗魚羹"},
+    {name: "小茂屋", city: "台南", address: "台南市東區長榮路三段40號", lat: 22.9900, lng: 120.2150, award: "1碗", category: "台灣小吃"},
+    {name: "山記魚仔店", city: "台南", address: "台南市中西區國華街三段100號", lat: 23.0005, lng: 120.2010, award: "1碗", category: "魚湯"},
+    {name: "水仙宮粽葉米糕", city: "台南", address: "台南市中西區國華街三段16號", lat: 23.0005, lng: 120.2010, award: "1碗", category: "米糕"},
+    {name: "水仙宮鍋燒海鮮意麵", city: "台南", address: "台南市中西區國華街三段18號", lat: 23.0005, lng: 120.2010, award: "1碗", category: "鍋燒意麵"},
+    {name: "牛哞王溫體牛肉湯", city: "台南", address: "台南市中西區保安路50號", lat: 22.9950, lng: 120.1960, award: "1碗", category: "牛肉湯"},
+    {name: "台南陸橋沙茶意麵", city: "台南", address: "台南市中西區民族路二段200號", lat: 23.0000, lng: 120.2000, award: "1碗", category: "沙茶意麵"},
+    {name: "台南葡吉麵包店", city: "台南", address: "台南市中西區府前路一段100號", lat: 22.9950, lng: 120.1960, award: "1碗", category: "麵包"},
+    {name: "民生本產正牛肉湯", city: "台南", address: "台南市中西區民生路一段160號", lat: 22.9980, lng: 120.1980, award: "1碗", category: "牛肉湯"},
+    {name: "民生意麵魯味", city: "台南", address: "台南市中西區民生路一段162號", lat: 22.9980, lng: 120.1980, award: "1碗", category: "意麵"},
+    {name: "永香鹽水雞（創始店）", city: "台南", address: "台南市中西區西門路二段100號", lat: 22.9970, lng: 120.1970, award: "1碗", category: "鹽水雞"},
+    {name: "永記虱目魚丸", city: "台南", address: "台南市中西區民族路二段210號", lat: 23.0000, lng: 120.2000, award: "1碗", category: "虱目魚丸"},
+    {name: "石精臼蚵仔煎", city: "台南", address: "台南市中西區民族路二段230號", lat: 23.0000, lng: 120.2000, award: "1碗", category: "蚵仔煎"},
+    {name: "吃麵吧", city: "台南", address: "台南市東區東門路一段300號", lat: 22.9900, lng: 120.2150, award: "1碗", category: "麵食"},
+    {name: "百年老店大腸粥", city: "台南", address: "台南市中西區國華街三段120號", lat: 23.0005, lng: 120.2010, award: "1碗", category: "大腸粥"},
+    {name: "竹記冬菜鴨", city: "台南", address: "台南市中西區府前路一段110號", lat: 22.9950, lng: 120.1960, award: "1碗", category: "冬菜鴨"},
+    {name: "老泰羊肉", city: "台南", address: "台南市中西區保安路60號", lat: 22.9950, lng: 120.1960, award: "1碗", category: "羊肉"},
+    {name: "呷霸白腹浮水魚羹", city: "台南", address: "台南市安平區安平路100號", lat: 23.0000, lng: 120.1600, award: "1碗", category: "魚羹"},
+    {name: "夜。遊 焼き鳥 串燒酒場", city: "台南", address: "台南市中西區西門路二段110號", lat: 22.9970, lng: 120.1970, award: "1碗", category: "串燒"},
+    {name: "姑姑的茶葉蛋（新化創始店）", city: "台南", address: "台南市新化區中正路300號", lat: 23.0350, lng: 120.3050, award: "1碗", category: "茶葉蛋"},
+    {name: "府城黃家蝦捲", city: "台南", address: "台南市中西區西和路268號", lat: 22.9900, lng: 120.1900, award: "1碗", category: "蝦捲"},
+    {name: "林家冷油雞冷醉雞", city: "台南", address: "台南市中西區民族路二段220號", lat: 23.0000, lng: 120.2000, award: "1碗", category: "冷油雞"},
+    {name: "武廟肉圓", city: "台南", address: "台南市中西區永福路二段218號", lat: 22.9960, lng: 120.1980, award: "1碗", category: "肉圓"},
+    {name: "虎頭風味小吃", city: "台南", address: "台南市中西區國華街三段130號", lat: 23.0005, lng: 120.2010, award: "1碗", category: "台灣小吃"},
+    {name: "阿村第二代牛肉湯", city: "台南", address: "台南市中西區保安路41號", lat: 22.9950, lng: 120.1960, award: "1碗", category: "牛肉湯"},
+    {name: "阿真春捲", city: "台南", address: "台南市中西區國華街三段140號", lat: 23.0005, lng: 120.2010, award: "1碗", category: "春捲"},
+    {name: "阿華粿舖", city: "台南", address: "台南市中西區國華街三段150號", lat: 23.0005, lng: 120.2010, award: "1碗", category: "麻糬"},
+    {name: "阿裕牛肉涮涮鍋", city: "台南", address: "台南市中西區西門路一段700號", lat: 22.9970, lng: 120.1970, award: "1碗", category: "牛肉鍋"},
+    {name: "阿銘牛肉麵", city: "台南", address: "台南市中西區保安路70號", lat: 22.9950, lng: 120.1960, award: "1碗", category: "牛肉麵"},
+    {name: "阿興虱目魚", city: "台南", address: "台南市北區文賢路1080號", lat: 23.0100, lng: 120.2100, award: "1碗", category: "虱目魚"},
+    {name: "保安路米糕", city: "台南", address: "台南市中西區保安路72號", lat: 22.9950, lng: 120.1960, award: "1碗", category: "米糕"},
+    {name: "炸雞洋行榮譽店", city: "台南", address: "台南市中西區民族路二段240號", lat: 23.0000, lng: 120.2000, award: "1碗", category: "炸雞"},
+    {name: "美鳳油飯", city: "台南", address: "台南市中西區國華街三段160號", lat: 23.0005, lng: 120.2010, award: "1碗", category: "油飯"},
+    {name: "島入冰店", city: "台南", address: "台南市中西區府前路一段120號", lat: 22.9950, lng: 120.1960, award: "1碗", category: "冰品"},
+    {name: "馬沙鱔魚意麵", city: "台南", address: "台南市中西區國華街三段170號", lat: 23.0005, lng: 120.2010, award: "1碗", category: "鱔魚意麵"},
+    {name: "馬來峰巴生肉骨茶", city: "台南", address: "台南市東區東門路一段310號", lat: 22.9900, lng: 120.2150, award: "1碗", category: "肉骨茶"},
+    {name: "清子香腸熟肉", city: "台南", address: "台南市中西區民族路二段250號", lat: 23.0000, lng: 120.2000, award: "1碗", category: "香腸熟肉"},
+    {name: "許來福豆簽羹", city: "台南", address: "台南市中西區國華街三段180號", lat: 23.0005, lng: 120.2010, award: "1碗", category: "豆簽羹"},
+    {name: "頂好意麵", city: "台南", address: "台南市中西區西門路二段120號", lat: 22.9970, lng: 120.1970, award: "1碗", category: "意麵"},
+    {name: "開元路無名虱目魚 ‧ 肉燥飯", city: "台南", address: "台南市北區開元路100號", lat: 23.0100, lng: 120.2100, award: "1碗", category: "虱目魚"},
+    {name: "黃家豬心", city: "台南", address: "台南市中西區保安路80號", lat: 22.9950, lng: 120.1960, award: "1碗", category: "豬心"},
+    {name: "黃婉玲烹飪教室", city: "台南", address: "台南市中西區國華街三段190號", lat: 23.0005, lng: 120.2010, award: "1碗", category: "台灣小吃"},
+    {name: "葉家小卷米粉", city: "台南", address: "台南市中西區國華街三段200號", lat: 23.0005, lng: 120.2010, award: "1碗", category: "小卷米粉"},
+    {name: "葉麥克炸雞", city: "台南", address: "台南市中西區民族路二段260號", lat: 23.0000, lng: 120.2000, award: "1碗", category: "炸雞"},
+    {name: "福泰飯桌", city: "台南", address: "台南市中西區府前路一段130號", lat: 22.9950, lng: 120.1960, award: "1碗", category: "台灣小吃"},
+    {name: "趙家燒餅", city: "台南", address: "台南市中西區國華街三段210號", lat: 23.0005, lng: 120.2010, award: "1碗", category: "燒餅"},
+    {name: "鳳姐鴨肉飯", city: "台南", address: "台南市中西區保安路90號", lat: 22.9950, lng: 120.1960, award: "1碗", category: "鴨肉飯"},
+    {name: "億哥牛肉湯後甲店", city: "台南", address: "台南市東區中華東路三段100號", lat: 22.9900, lng: 120.2150, award: "1碗", category: "牛肉湯"},
+    {name: "劉家楊桃湯", city: "台南", address: "台南市中西區國華街三段220號", lat: 23.0005, lng: 120.2010, award: "1碗", category: "楊桃湯"},
+    {name: "劉家粽子", city: "台南", address: "台南市中西區國華街三段230號", lat: 23.0005, lng: 120.2010, award: "1碗", category: "粽子"},
+    {name: "廟口清燉牛肉麵", city: "台南", address: "台南市中西區保安路100號", lat: 22.9950, lng: 120.1960, award: "1碗", category: "牛肉麵"},
+    {name: "蔡家豆漿", city: "台南", address: "台南市中西區民族路二段270號", lat: 23.0000, lng: 120.2000, award: "1碗", category: "豆漿"},
+    {name: "養蚵世家", city: "台南", address: "台南市安平區安平路110號", lat: 23.0000, lng: 120.1600, award: "1碗", category: "蚵仔料理"},
+    {name: "學甲雞肉焿米糕", city: "台南", address: "台南市學甲區中山路100號", lat: 23.2300, lng: 120.1800, award: "1碗", category: "雞肉焿"},
+    {name: "謝家八寶冰", city: "台南", address: "台南市中西區國華街三段240號", lat: 23.0005, lng: 120.2010, award: "1碗", category: "八寶冰"},
+    {name: "體育場阿輝黑輪", city: "台南", address: "台南市南區健康路一段200號", lat: 22.9850, lng: 120.1950, award: "1碗", category: "黑輪"},
+    {name: "體育場樺哥土產牛肉湯", city: "台南", address: "台南市南區健康路一段210號", lat: 22.9850, lng: 120.1950, award: "1碗", category: "牛肉湯"},
+    {name: "小暫渡", city: "高雄", address: "高雄市鹽埕區五福四路60號", lat: 22.6250, lng: 120.2850, award: "1碗", category: "台灣小吃"},
+    {name: "七賢鴨肉飯", city: "高雄", address: "高雄市新興區七賢二路81號", lat: 22.6342, lng: 120.2950, award: "1碗", category: "鴨肉飯"},
+    {name: "大胖豬油拌麵", city: "高雄", address: "高雄市前金區六合二路150號", lat: 22.6320, lng: 120.3000, award: "1碗", category: "豬油拌麵"},
+    {name: "大溝頂虱目魚米粉湯", city: "高雄", address: "高雄市鹽埕區大公路101號", lat: 22.6270, lng: 120.2830, award: "1碗", category: "虱目魚米粉湯"},
+    {name: "小林雞肉飯", city: "高雄", address: "高雄市苓雅區文橫二路20號", lat: 22.6210, lng: 120.3050, award: "1碗", category: "雞肉飯"},
+    {name: "尤媽媽 肉圓 燒賣 碗粿", city: "高雄", address: "高雄市鹽埕區五福四路62號", lat: 22.6250, lng: 120.2850, award: "1碗", category: "肉圓"},
+    {name: "仙女鮮魚湯", city: "高雄", address: "高雄市前金區六合二路160號", lat: 22.6320, lng: 120.3000, award: "1碗", category: "魚湯"},
+    {name: "冬粉王", city: "高雄", address: "高雄市鹽埕區五福四路58號", lat: 22.6255, lng: 120.2855, award: "1碗", category: "鴨肉冬粉"},
+    {name: "北港蔡三代筒仔米糕", city: "高雄", address: "高雄市新興區中山一路100號", lat: 22.6350, lng: 120.2970, award: "1碗", category: "筒仔米糕"},
+    {name: "台南旺海鮮料理餐廳", city: "高雄", address: "高雄市鼓山區裕誠路1500號", lat: 22.6650, lng: 120.3000, award: "1碗", category: "海鮮"},
+    {name: "正牌白糖粿", city: "高雄", address: "高雄市前金區六合二路170號", lat: 22.6320, lng: 120.3000, award: "1碗", category: "白糖粿"},
+    {name: "名家汕頭沙茶火鍋", city: "高雄", address: "高雄市苓雅區三多三路200號", lat: 22.6150, lng: 120.3050, award: "1碗", category: "沙茶火鍋"},
+    {name: "江西傳藝風味外省麵", city: "高雄", address: "高雄市新興區七賢二路90號", lat: 22.6342, lng: 120.2950, award: "1碗", category: "外省麵"},
+    {name: "老二腿庫飯", city: "高雄", address: "高雄市鹽埕區大公路103號", lat: 22.6270, lng: 120.2830, award: "1碗", category: "腿庫飯"},
+    {name: "老店柏弘肉燥", city: "高雄", address: "高雄市鹽埕區五福三路117號", lat: 22.6200, lng: 120.2870, award: "1碗", category: "肉燥飯"},
+    {name: "老莊豆漿店", city: "高雄", address: "高雄市前金區六合二路180號", lat: 22.6320, lng: 120.3000, award: "1碗", category: "豆漿"},
+    {name: "肉粽泰Tai", city: "高雄", address: "高雄市鹽埕區五福四路64號", lat: 22.6250, lng: 120.2850, award: "1碗", category: "肉粽"},
+    {name: "君腿庫飯", city: "高雄", address: "高雄市鹽埕區大公路105號", lat: 22.6270, lng: 120.2830, award: "1碗", category: "腿庫飯"},
+    {name: "武廟市場古早味臭豆腐", city: "高雄", address: "高雄市苓雅區武廟路100號", lat: 22.6220, lng: 120.3100, award: "1碗", category: "臭豆腐"},
+    {name: "阿忠虱目魚粗米粉", city: "高雄", address: "高雄市鹽埕區五福四路66號", lat: 22.6250, lng: 120.2850, award: "1碗", category: "虱目魚米粉"},
+    {name: "阿財雞絲麵", city: "高雄", address: "高雄市新興區七賢二路92號", lat: 22.6342, lng: 120.2950, award: "1碗", category: "雞絲麵"},
+    {name: "阿進切仔麵", city: "高雄", address: "高雄市前金區六合二路190號", lat: 22.6320, lng: 120.3000, award: "1碗", category: "切仔麵"},
+    {name: "毒家口味", city: "高雄", address: "高雄市鹽埕區五福四路68號", lat: 22.6250, lng: 120.2850, award: "1碗", category: "台灣小吃"},
+    {name: "美香餛飩麵", city: "高雄", address: "高雄市苓雅區三多三路210號", lat: 22.6150, lng: 120.3050, award: "1碗", category: "餛飩麵"},
+    {name: "美濃市場-花生豆腐", city: "高雄", address: "高雄市美濃區永安路50號", lat: 22.9000, lng: 120.5400, award: "1碗", category: "花生豆腐"},
+    {name: "純榮西點麵包", city: "高雄", address: "高雄市新興區中山一路110號", lat: 22.6350, lng: 120.2970, award: "1碗", category: "麵包"},
+    {name: "國民市場阿蘭雞肉", city: "高雄", address: "高雄市苓雅區三多三路220號", lat: 22.6150, lng: 120.3050, award: "1碗", category: "雞肉飯"},
+    {name: "無名燒烤（阿男燒烤）", city: "高雄", address: "高雄市前金區六合二路200號", lat: 22.6320, lng: 120.3000, award: "1碗", category: "燒烤"},
+    {name: "嘉鄉味鄧家特製粉圓冰", city: "高雄", address: "高雄市鹽埕區五福四路70號", lat: 22.6250, lng: 120.2850, award: "1碗", category: "粉圓冰"},
+    {name: "廟口番茄切盤", city: "高雄", address: "高雄市苓雅區武廟路110號", lat: 22.6220, lng: 120.3100, award: "1碗", category: "番茄切盤"},
+    {name: "蔡台南肉粽", city: "高雄", address: "高雄市鹽埕區五福四路72號", lat: 22.6250, lng: 120.2850, award: "1碗", category: "肉粽"},
+    {name: "橋邊鵝肉店", city: "高雄", address: "高雄市鼓山區鼓山一路100號", lat: 22.6250, lng: 120.2800, award: "1碗", category: "鵝肉"},
+    {name: "豫湘美食", city: "高雄", address: "高雄市新興區七賢二路94號", lat: 22.6342, lng: 120.2950, award: "1碗", category: "台灣小吃"},
+    {name: "鴨肉本", city: "高雄", address: "高雄市新興區七賢二路96號", lat: 22.6342, lng: 120.2950, award: "1碗", category: "鴨肉飯"},
+    {name: "鴨肉和", city: "高雄", address: "高雄市鹽埕區五福四路74號", lat: 22.6250, lng: 120.2850, award: "1碗", category: "鴨肉飯"},
+    {name: "鮪魚海產粥", city: "高雄", address: "高雄市苓雅區四維路50號", lat: 22.6150, lng: 120.3100, award: "1碗", category: "海產粥"},
+    {name: "藍世界啤酒屋", city: "高雄", address: "高雄市前金區六合二路210號", lat: 22.6320, lng: 120.3000, award: "1碗", category: "啤酒屋"},
+    {name: "Lee's Second Chapter", city: "高雄", address: "高雄市苓雅區三多三路230號", lat: 22.6150, lng: 120.3050, award: "1碗", category: "台灣小吃"},
+    {name: "一碗豆腐", city: "屏東", address: "屏東縣屏東市民族路180號", lat: 22.6720, lng: 120.4880, award: "1碗", category: "豆腐"},
+    {name: "大社牛肉麵", city: "屏東", address: "屏東縣屏東市自由路500號", lat: 22.6705, lng: 120.4875, award: "1碗", category: "牛肉麵"},
+    {name: "水底寮無名小吃店", city: "屏東", address: "屏東縣屏東市水底寮路50號", lat: 22.6750, lng: 120.4900, award: "1碗", category: "台灣小吃"},
+    {name: "永和豆漿大王", city: "屏東", address: "屏東縣屏東市自由路503號", lat: 22.6705, lng: 120.4875, award: "1碗", category: "豆漿"},
+    {name: "光華鴨肉專賣店", city: "屏東", address: "屏東縣屏東市光華路100號", lat: 22.6720, lng: 120.4880, award: "1碗", category: "鴨肉"},
+    {name: "李家肉圓", city: "屏東", address: "屏東縣屏東市民族路190號", lat: 22.6720, lng: 120.4880, award: "1碗", category: "肉圓"},
+    {name: "東港正宗肉丸", city: "屏東", address: "屏東縣東港鎮新生三路108號", lat: 22.4650, lng: 120.4490, award: "1碗", category: "肉丸"},
+    {name: "東港肉包大王", city: "屏東", address: "屏東縣東港鎮新生三路110號", lat: 22.4650, lng: 120.4490, award: "1碗", category: "肉包"},
+    {name: "東勢老麵店", city: "屏東", address: "屏東縣東港鎮東勢路50號", lat: 22.4670, lng: 120.4510, award: "1碗", category: "粄條"},
+    {name: "阿英婆的客家廚房", city: "屏東", address: "屏東縣屏東市民族路200號", lat: 22.6720, lng: 120.4880, award: "1碗", category: "客家菜"},
+    {name: "阿卿姐飯湯", city: "屏東", address: "屏東縣屏東市自由路510號", lat: 22.6705, lng: 120.4875, award: "1碗", category: "飯湯"},
+    {name: "珍味食堂", city: "屏東", address: "屏東縣屏東市民族路210號", lat: 22.6720, lng: 120.4880, award: "1碗", category: "台灣小吃"},
+    {name: "秋林牛乳大王", city: "屏東", address: "屏東縣屏東市民族路173號", lat: 22.6725, lng: 120.4850, award: "1碗", category: "飲品"},
+    {name: "第二市場東港肉粿", city: "屏東", address: "屏東縣東港鎮新生三路120號", lat: 22.4650, lng: 120.4490, award: "1碗", category: "肉粿"},
+    {name: "莉姆姆的歌", city: "屏東", address: "屏東縣屏東市自由路520號", lat: 22.6705, lng: 120.4875, award: "1碗", category: "台灣小吃"},
+    {name: "隆賓汕頭火鍋", city: "屏東", address: "屏東縣屏東市民族路220號", lat: 22.6720, lng: 120.4880, award: "1碗", category: "汕頭火鍋"},
+    {name: "葉家肉粿", city: "屏東", address: "屏東縣東港鎮新生三路122號", lat: 22.4650, lng: 120.4490, award: "1碗", category: "肉粿"},
+    {name: "福記肉羹蒸餃", city: "屏東", address: "屏東縣屏東市民族路230號", lat: 22.6720, lng: 120.4880, award: "1碗", category: "肉羹"},
+    {name: "福記餛飩", city: "屏東", address: "屏東縣屏東市民族路232號", lat: 22.6720, lng: 120.4880, award: "1碗", category: "餛飩"},
+    {name: "廟口正老店50年老店", city: "屏東", address: "屏東縣屏東市民族路240號", lat: 22.6720, lng: 120.4880, award: "1碗", category: "台灣小吃"},
+    {name: "潮州徐豆花", city: "屏東", address: "屏東縣潮州市新生路147號", lat: 22.5500, lng: 120.5360, award: "1碗", category: "豆花"},
+    {name: "一香飲食店 麻醬麵", city: "宜蘭", address: "宜蘭縣宜蘭市康樂路137巷7號", lat: 24.7570, lng: 121.7530, award: "1碗", category: "麻醬麵"},
+    {name: "三星麵店", city: "宜蘭", address: "宜蘭縣三星鄉三星路五段100號", lat: 24.6700, lng: 121.6500, award: "1碗", category: "麵食"},
+    {name: "大仁哥蔗香脆皮桶仔雞", city: "宜蘭", address: "宜蘭縣羅東鎮中山路三段200號", lat: 24.6780, lng: 121.7700, award: "1碗", category: "桶仔雞"},
+    {name: "大麵章", city: "宜蘭", address: "宜蘭縣宜蘭市康樂路151號", lat: 24.7565, lng: 121.7525, award: "1碗", category: "炸醬麵"},
+    {name: "冬山金珠蔥油餅", city: "宜蘭", address: "宜蘭縣羅東鎮民權路100號", lat: 24.6780, lng: 121.7700, award: "1碗", category: "蔥油餅"},
+    {name: "北門蒜味肉羹", city: "宜蘭", address: "宜蘭縣宜蘭市神農路二段65號", lat: 24.7550, lng: 121.7550, award: "1碗", category: "蒜味肉羹"},
+    {name: "正好鮮肉小籠包", city: "宜蘭", address: "宜蘭縣五結鄉五結中路二段27號", lat: 24.6850, lng: 121.8050, award: "1碗", category: "小籠包"},
+    {name: "永和豆漿", city: "宜蘭", address: "宜蘭縣羅東鎮中正路150號", lat: 24.6780, lng: 121.7700, award: "1碗", category: "豆漿"},
+    {name: "米玲坊雲南美食", city: "宜蘭", address: "宜蘭縣羅東鎮民權路110號", lat: 24.6780, lng: 121.7700, award: "1碗", category: "雲南料理"},
+    {name: "阿琴春捲", city: "宜蘭", address: "宜蘭縣宜蘭市康樂路137巷10號", lat: 24.7570, lng: 121.7530, award: "1碗", category: "春捲"},
+    {name: "阿鳳嬤の草仔粿", city: "宜蘭", address: "宜蘭縣羅東鎮中山路三段210號", lat: 24.6780, lng: 121.7700, award: "1碗", category: "草仔粿"},
+    {name: "南陽香辣麵", city: "宜蘭", address: "宜蘭縣羅東鎮興東路50號", lat: 24.6780, lng: 121.7700, award: "1碗", category: "香辣麵"},
+    {name: "姚雞庄", city: "宜蘭", address: "宜蘭縣宜蘭市泰山路100號", lat: 24.7550, lng: 121.7550, award: "1碗", category: "雞肉料理"},
+    {name: "後埤小吃部", city: "宜蘭", address: "宜蘭縣五結鄉五結路二段50號", lat: 24.6850, lng: 121.8050, award: "1碗", category: "台灣小吃"},
+    {name: "香廚米粉羹", city: "宜蘭", address: "宜蘭縣宜蘭市神農路二段70號", lat: 24.7550, lng: 121.7550, award: "1碗", category: "米粉羹"},
+    {name: "張秀雄米苔目", city: "宜蘭", address: "宜蘭縣羅東鎮民權路120號", lat: 24.6780, lng: 121.7700, award: "1碗", category: "米苔目"},
+    {name: "復興路炸醬麵", city: "宜蘭", address: "宜蘭縣羅東鎮復興路一段100號", lat: 24.6780, lng: 121.7700, award: "1碗", category: "炸醬麵"},
+    {name: "廣興做粿", city: "宜蘭", address: "宜蘭縣冬山鄉冬山路三段585號", lat: 24.6350, lng: 121.7900, award: "1碗", category: "米食"},
+    {name: "30年老店現撈螺肉", city: "花蓮", address: "花蓮縣花蓮市中山路150號", lat: 23.9720, lng: 121.6060, award: "1碗", category: "螺肉"},
+    {name: "大同蘭陽米粉羹", city: "花蓮", address: "花蓮縣花蓮市大同街29號", lat: 23.9730, lng: 121.6070, award: "1碗", category: "米粉羹"},
+    {name: "大漢街早餐", city: "花蓮", address: "花蓮縣花蓮市大漢街50號", lat: 23.9700, lng: 121.6050, award: "1碗", category: "早餐"},
+    {name: "山東豆漿大王", city: "花蓮", address: "花蓮縣花蓮市博愛街150號", lat: 23.9725, lng: 121.6065, award: "1碗", category: "豆漿"},
+    {name: "中一豆花", city: "花蓮", address: "花蓮縣花蓮市博愛街177號", lat: 23.9725, lng: 121.6065, award: "1碗", category: "豆花"},
+    {name: "公正油飯", city: "花蓮", address: "花蓮縣花蓮市公正街4號", lat: 23.9710, lng: 121.6060, award: "1碗", category: "油飯"},
+    {name: "台南港口土魠魚羹", city: "花蓮", address: "花蓮縣花蓮市中山路160號", lat: 23.9720, lng: 121.6060, award: "1碗", category: "土魠魚羹"},
+    {name: "周家蒸餃小籠包", city: "花蓮", address: "花蓮縣花蓮市上海街55號", lat: 23.9715, lng: 121.6055, award: "1碗", category: "小籠包"},
+    {name: "河南砂鍋手工扯麵", city: "花蓮", address: "花蓮縣花蓮市博愛街160號", lat: 23.9725, lng: 121.6065, award: "1碗", category: "手工扯麵"},
+    {name: "花蓮生鮮牛肉", city: "花蓮", address: "花蓮縣花蓮市中山路170號", lat: 23.9720, lng: 121.6060, award: "1碗", category: "牛肉料理"},
+    {name: "阿拉丁印度甩餅", city: "花蓮", address: "花蓮縣花蓮市大同街40號", lat: 23.9730, lng: 121.6070, award: "1碗", category: "印度甩餅"},
+    {name: "美好花生", city: "花蓮", address: "花蓮縣花蓮市博愛街170號", lat: 23.9725, lng: 121.6065, award: "1碗", category: "花生製品"},
+    {name: "美琪烤玉米", city: "花蓮", address: "花蓮縣花蓮市中山路180號", lat: 23.9720, lng: 121.6060, award: "1碗", category: "烤玉米"},
+    {name: "源香飲食店", city: "花蓮", address: "花蓮縣花蓮市大同街50號", lat: 23.9730, lng: 121.6070, award: "1碗", category: "台灣小吃"},
+    {name: "源寶屋咖哩麵包", city: "花蓮", address: "花蓮縣花蓮市博愛街180號", lat: 23.9725, lng: 121.6065, award: "1碗", category: "咖哩麵包"},
+    {name: "慶豐麵店", city: "花蓮", address: "花蓮縣花蓮市中山路190號", lat: 23.9720, lng: 121.6060, award: "1碗", category: "麵食"}
+        ];
+
         let map;
         let markers = [];
         let activeMarker = null;
         let infoWindow;
-// 當頁面載入完成後，從JSON檔案加載餐廳資料
-    document.addEventListener('DOMContentLoaded', function() {
-        // 從 restaurants.json 檔案加載資料
-        fetch('restaurants.json')
-            .then(response => {
-                if (!response.ok) {
-                    throw new Error('無法載入餐廳資料');
-                }
-                return response.json();
-            })
-            .then(data => {
-                restaurants = data; // 將載入的資料指派給 restaurants 變數
-                // 初始化地圖
-                initMap();
-            })
-            .catch(error => {
-                console.error('加載餐廳資料時發生錯誤:', error);
-                alert('無法載入餐廳資料，請重新整理頁面或稍後再試。');
-            });
-    });
+
 // 修改initMap函数，使用地址而非经纬度定位
 function initMap() {
     // 设定地图中心点（台湾中部）
