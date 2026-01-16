@@ -3,19 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- SEO 優化：強化地區與服務關鍵字 -->
-    <title>2026 古箏考級賽事情報 | 新莊箏心古箏音樂教室 - 專業檢定輔導</title>
-    <meta name="description" content="2026年最新古箏考級與比賽日程整理，收錄國樂學會、全國音樂考級(黃鐘獎)等重要資訊。新莊箏心古箏音樂教室提供專業古箏教學、檢定輔導與比賽特訓。由廖美華老師團隊親自指導，位於新北市新莊區，歡迎預約體驗。">
-    <meta name="keywords" content="古箏考級, 古箏比賽, 2026行事曆, 黃鐘獎, 全國音樂考級, 國樂學會, 新莊古箏教學, 箏心古箏, 廖美華">
+    <title>2026 古箏考級賽事情報 | 新莊箏心古箏音樂教室</title>
     
     <script src="https://cdn.tailwindcss.com"></script>
+    
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/chartjs-adapter-date-fns/dist/chartjs-adapter-date-fns.bundle.min.js"></script>
+    
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     
     <style>
         body { font-family: 'Segoe UI', 'Microsoft JhengHei', sans-serif; background-color: #fafaf9; }
-        .chart-container { position: relative; width: 100%; max-width: 800px; height: 350px; margin: 0 auto; }
+        
+        /* 強制設定圖表容器高度，解決圖表不顯示的問題 */
+        .chart-container { 
+            position: relative; 
+            width: 100%; 
+            height: 350px; /* 固定高度 */
+            min-height: 350px;
+            margin: 0 auto; 
+        }
+        
         .card-hover:hover { transform: translateY(-4px); box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1); }
         /* 自訂滾動條 */
         ::-webkit-scrollbar { width: 8px; }
@@ -26,28 +34,58 @@
 </head>
 <body class="text-stone-800 flex flex-col min-h-screen">
 
-    <!-- 導航列 -->
-    <nav class="bg-amber-800 text-amber-50 shadow-lg sticky top-0 z-50">
-        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
-            <div class="flex items-center space-x-3">
-                <!-- 頂部回首頁按鈕 -->
-                <a href="../index.html" class="bg-amber-900/50 hover:bg-amber-700 text-white px-3 py-1 rounded-md text-sm transition-colors flex items-center gap-2" title="回到箏心古箏官網">
-                    <i class="fas fa-home"></i> <span class="hidden md:inline">教室首頁</span>
+    <nav class="sticky top-0 z-50 shadow-lg text-white" style="background-color: #4A3520;">
+        <div class="container mx-auto px-4">
+            <div class="flex justify-between items-center h-[70px]">
+                
+                <a href="../index.html" class="text-xl font-bold tracking-wider hover:text-[#D2B48C] transition-colors duration-300 flex items-center gap-2">
+                    <i class="fas fa-music"></i> 新莊箏心
                 </a>
-                <div class="border-l border-amber-600 pl-3">
-                    <h1 class="text-lg md:text-xl font-bold tracking-wide">2026 備考儀表板</h1>
+
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="../index.html#about" class="font-bold hover:text-[#D2B48C] transition-colors duration-300">關於我們</a>
+                    <a href="../index.html#courses" class="font-bold hover:text-[#D2B48C] transition-colors duration-300">課程資訊</a>
+                    <a href="../index.html#teachers" class="font-bold hover:text-[#D2B48C] transition-colors duration-300">師資介紹</a>
+                    
+                    <div class="relative group">
+                        <button class="font-bold hover:text-[#D2B48C] transition-colors duration-300 flex items-center gap-1 py-4">
+                            學習指南 <i class="fas fa-chevron-down text-xs"></i>
+                        </button>
+                        <div class="absolute left-1/2 transform -translate-x-1/2 top-full w-48 bg-[#4A3520] border border-[#D2B48C] rounded shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 flex flex-col py-2">
+                            <a href="https://scm-event.tw/" target="_blank" class="px-4 py-2 hover:bg-[#D2B48C] hover:text-[#4A3520] transition-colors text-sm">國樂學會報名</a>
+                            <a href="#" class="px-4 py-2 hover:bg-[#D2B48C] hover:text-[#4A3520] transition-colors text-sm">黃鐘獎考級</a>
+                        </div>
+                    </div>
+
+                    <a href="../index.html#gallery" class="font-bold hover:text-[#D2B48C] transition-colors duration-300">學生成果</a>
+                    <a href="../index.html#contact" class="font-bold hover:text-[#D2B48C] transition-colors duration-300">聯絡我們</a>
+                    
+                    <div class="h-6 w-px bg-white/30 mx-2"></div>
+                    <span class="text-[#D2B48C] font-bold text-sm bg-black/20 px-3 py-1 rounded-full">
+                        <i class="fas fa-chart-line mr-1"></i> 備考情報
+                    </span>
                 </div>
+
+                <button id="mobile-menu-btn" class="md:hidden text-2xl focus:outline-none hover:text-[#D2B48C] transition-colors">
+                    <i class="fas fa-bars"></i>
+                </button>
             </div>
-            <div class="hidden md:block text-sm bg-amber-900/50 px-3 py-1 rounded-full">
-                <i class="far fa-clock mr-1"></i> 今天: <span id="current-date-display"></span>
+        </div>
+
+        <div id="mobile-menu" class="hidden md:hidden bg-[#4A3520] border-t border-[#D2B48C]/30 absolute w-full left-0 shadow-xl">
+            <div class="flex flex-col p-4 space-y-4 text-center">
+                <a href="../index.html#about" class="block py-2 hover:text-[#D2B48C] font-bold border-b border-white/10">關於我們</a>
+                <a href="../index.html#courses" class="block py-2 hover:text-[#D2B48C] font-bold border-b border-white/10">課程資訊</a>
+                <a href="../index.html#teachers" class="block py-2 hover:text-[#D2B48C] font-bold border-b border-white/10">師資介紹</a>
+                <a href="https://scm-event.tw/" target="_blank" class="block py-2 hover:text-[#D2B48C] font-bold border-b border-white/10">學習指南 (考級)</a>
+                <a href="../index.html#gallery" class="block py-2 hover:text-[#D2B48C] font-bold border-b border-white/10">學生成果</a>
+                <a href="../index.html#contact" class="block py-2 hover:text-[#D2B48C] font-bold">聯絡我們</a>
             </div>
         </div>
     </nav>
 
-    <!-- 主要內容區 -->
     <main class="flex-grow container mx-auto px-4 py-8 space-y-12">
         
-        <!-- 1. 警示與歡迎區塊 -->
         <section class="max-w-5xl mx-auto space-y-4">
             <div class="bg-white p-6 rounded-xl shadow-sm border-l-4 border-amber-500">
                 <div class="flex justify-between items-start">
@@ -62,7 +100,6 @@
                 </div>
             </div>
 
-            <!-- 重要提醒 (紅色警示) -->
             <div class="bg-red-50 border border-red-200 p-4 rounded-xl flex items-start space-x-4 animate-pulse">
                 <div class="bg-red-100 p-2 rounded-full text-red-600 mt-1 flex-shrink-0">
                     <i class="fas fa-exclamation-triangle"></i>
@@ -77,7 +114,6 @@
             </div>
         </section>
 
-        <!-- 2. 時程視覺化圖表 -->
         <section class="bg-white p-6 rounded-2xl shadow-md border border-stone-100">
             <div class="flex flex-col md:flex-row justify-between items-center mb-6">
                 <h2 class="text-xl font-bold text-stone-800 flex items-center gap-2">
@@ -96,7 +132,6 @@
             </div>
         </section>
 
-        <!-- 3. 活動卡片列表 (核心功能) -->
         <section>
             <div class="flex flex-col md:flex-row justify-between items-end mb-6 gap-4">
                 <div>
@@ -104,7 +139,6 @@
                     <p class="text-stone-500 text-sm mt-1">系統會自動計算剩餘天數，紅色代表即將截止</p>
                 </div>
                 
-                <!-- 過濾按鈕 -->
                 <div class="flex flex-wrap gap-2 bg-white p-2 rounded-lg shadow-sm border border-stone-200">
                     <button class="filter-btn active bg-amber-600 text-white px-4 py-2 rounded-md text-sm font-medium transition-colors" data-filter="all">全部</button>
                     <button class="filter-btn hover:bg-stone-100 text-stone-600 px-4 py-2 rounded-md text-sm font-medium transition-colors" data-filter="exam">考級</button>
@@ -115,13 +149,10 @@
                 </div>
             </div>
 
-            <!-- 卡片網格 (JS自動生成) -->
             <div id="events-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                <!-- 內容由下方 JavaScript 填充 -->
-            </div>
+                </div>
         </section>
         
-        <!-- 4. 未來賽事預告 -->
         <section class="grid grid-cols-1 md:grid-cols-2 gap-6">
             <div class="bg-gradient-to-br from-indigo-50 to-white p-6 rounded-xl border border-indigo-100 shadow-sm relative overflow-hidden group">
                 <div class="absolute top-0 right-0 w-24 h-24 bg-indigo-100 rounded-full -mr-12 -mt-12 opacity-50 group-hover:scale-110 transition-transform"></div>
@@ -130,10 +161,9 @@
                 </h3>
                 <ul class="space-y-2 text-sm text-indigo-800 mb-4">
                     <li><i class="far fa-calendar-alt w-5 text-center mr-1 opacity-60"></i> <strong>舉辦時間：</strong> 暑假期間 (7/7 ~ 8/6 分區舉辦)</li>
-                    <li><i class="fas fa-bullhorn w-5 text-center mr-1 opacity-60"></i> <strong>簡章公布：</strong> 預計 3~4月</li>
                 </ul>
                 <a href="https://www.taiwanmusic.org/" target="_blank" class="text-indigo-600 text-sm font-bold hover:text-indigo-800 flex items-center gap-1">
-                    前往官網關注 <i class="fas fa-arrow-right"></i>
+                    前往官網 <i class="fas fa-arrow-right"></i>
                 </a>
             </div>
 
@@ -144,55 +174,57 @@
                 </h3>
                 <ul class="space-y-2 text-sm text-emerald-800 mb-4">
                     <li><i class="far fa-clock w-5 text-center mr-1 opacity-60"></i> <strong>決賽時間：</strong> 2026年 3月</li>
-                    <li><i class="fas fa-user-check w-5 text-center mr-1 opacity-60"></i> <strong>資格：</strong> 限 2025年市賽晉級者</li>
                 </ul>
                 <a href="https://web.arte.gov.tw/music/" target="_blank" class="text-emerald-600 text-sm font-bold hover:text-emerald-800 flex items-center gap-1">
-                    查看決賽賽程 <i class="fas fa-arrow-right"></i>
+                    查看賽程 <i class="fas fa-arrow-right"></i>
                 </a>
             </div>
         </section>
 
     </main>
 
-    <!-- Footer: 招生與聯絡資訊 (SEO 優化版) -->
     <footer class="bg-stone-900 text-stone-300 py-12 mt-12 border-t border-amber-900/30">
         <div class="container mx-auto px-4">
             <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
-                <!-- 教室介紹與招生文案 -->
                 <div class="md:col-span-1 space-y-4">
                     <h2 class="text-xl font-bold text-amber-500 flex items-center gap-2">
                         <i class="fas fa-certificate"></i> 新莊箏心古箏音樂教室
                     </h2>
                     <p class="text-stone-400 text-sm leading-relaxed">
                         備考路上，您不孤單！想要在考級與比賽中脫穎而出嗎？
-                        我們擁有 <strong>15年教學經驗</strong> 的專業師資團隊，由<strong>廖美華老師團隊</strong>親自領軍。
+                        我們擁有 <strong class="text-stone-200">15年教學經驗</strong> 的專業師資團隊，由<strong class="text-stone-200">廖美華老師團隊</strong>親自領軍。
                         提供一對一教學、檢定模擬考與比賽特訓，為您量身打造學習計畫，讓學習變成一種快樂與成就。
                     </p>
-                    <a href="../index.html/#register" class="inline-block bg-amber-700 hover:bg-amber-600 text-white px-6 py-2 rounded-full text-sm font-bold transition-all shadow-lg hover:shadow-amber-900/50">
+                    <a href="../index.html#register" class="inline-block bg-amber-700 hover:bg-amber-600 text-white px-6 py-2 rounded-full text-sm font-bold transition-all shadow-lg hover:shadow-amber-900/50 mt-2">
                         <i class="fas fa-hand-point-right mr-1"></i> 預約體驗課程
                     </a>
                 </div>
 
-                <!-- 聯絡方式 -->
                 <div class="md:col-span-1 space-y-4">
                     <h3 class="text-lg font-bold text-white mb-2 border-b border-stone-700 pb-2">聯絡我們</h3>
-                    <ul class="space-y-3 text-sm">
+                    <ul class="space-y-4 text-sm">
                         <li class="flex items-center gap-3">
-                            <div class="w-8 h-8 rounded-full bg-stone-800 flex items-center justify-center text-green-500"><i class="fab fa-line text-lg"></i></div>
+                            <div class="w-8 h-8 rounded-full bg-stone-800 flex items-center justify-center text-green-500 flex-shrink-0">
+                                <i class="fab fa-line text-lg"></i>
+                            </div>
                             <div>
                                 <span class="text-stone-500 text-xs block">官方 Line</span>
-                                <a href="https://line.me/ti/p/~@swn8120u" target="_blank" class="text-stone-300 hover:text-white font-mono text-lg">@swn8120u</a>
+                                <a href="https://line.me/ti/p/~@swn8120u" target="_blank" class="text-stone-300 hover:text-white font-mono text-lg transition-colors">@swn8120u</a>
                             </div>
                         </li>
                         <li class="flex items-center gap-3">
-                            <div class="w-8 h-8 rounded-full bg-stone-800 flex items-center justify-center text-blue-500"><i class="fab fa-facebook-f text-lg"></i></div>
+                            <div class="w-8 h-8 rounded-full bg-stone-800 flex items-center justify-center text-blue-500 flex-shrink-0">
+                                <i class="fab fa-facebook-f text-lg"></i>
+                            </div>
                             <div>
                                 <span class="text-stone-500 text-xs block">Facebook 粉絲專頁</span>
-                                <a href="https://www.facebook.com/GuzhengTrain" target="_blank" class="text-stone-300 hover:text-white">GuzhengTrain</a>
+                                <a href="https://www.facebook.com/GuzhengTrain" target="_blank" class="text-stone-300 hover:text-white text-base transition-colors">GuzhengTrain</a>
                             </div>
                         </li>
                         <li class="flex items-center gap-3">
-                            <div class="w-8 h-8 rounded-full bg-stone-800 flex items-center justify-center text-red-500"><i class="fas fa-map-marker-alt"></i></div>
+                            <div class="w-8 h-8 rounded-full bg-stone-800 flex items-center justify-center text-red-500 flex-shrink-0">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
                             <div>
                                 <span class="text-stone-500 text-xs block">教室位置</span>
                                 <span class="text-stone-300">新北市新莊區 (近新莊體育場)</span>
@@ -201,28 +233,27 @@
                     </ul>
                 </div>
 
-                <!-- 快速連結 -->
                 <div class="md:col-span-1 space-y-4">
                     <h3 class="text-lg font-bold text-white mb-2 border-b border-stone-700 pb-2">常用連結</h3>
-                    <ul class="space-y-2 text-sm">
+                    <ul class="space-y-3 text-sm">
                         <li>
                             <a href="../index.html" class="flex items-center gap-2 text-stone-400 hover:text-amber-400 transition-colors">
-                                <i class="fas fa-home w-4"></i> 回到官方網站首頁
+                                <i class="fas fa-home w-4 text-center"></i> 回到官方網站首頁
                             </a>
                         </li>
                         <li>
                             <a href="https://scm-event.tw/" target="_blank" class="flex items-center gap-2 text-stone-400 hover:text-white transition-colors">
-                                <i class="fas fa-external-link-alt w-4"></i> 國樂學會報名系統
+                                <i class="fas fa-external-link-alt w-4 text-center"></i> 國樂學會報名系統
                             </a>
                         </li>
                         <li>
                             <a href="https://ambitious-watermelon-ddjt20.mystrikingly.com/" target="_blank" class="flex items-center gap-2 text-stone-400 hover:text-white transition-colors">
-                                <i class="fas fa-file-alt w-4"></i> 全國音樂考級 (黃鐘)
+                                <i class="fas fa-file-alt w-4 text-center"></i> 全國音樂考級 (黃鐘)
                             </a>
                         </li>
                     </ul>
-                    <div class="pt-4 mt-4 border-t border-stone-800 text-xs text-stone-500">
-                        <p>© 2026 新莊箏心古箏音樂教室</p>
+                    <div class="pt-4 mt-6 border-t border-stone-800 text-xs text-stone-600">
+                        <p class="mb-1">© 2026 新莊箏心古箏音樂教室</p>
                         <p>本頁面資訊更新日期：2026/01/15</p>
                     </div>
                 </div>
@@ -230,208 +261,74 @@
         </div>
     </footer>
 
-    <!-- ========================================== -->
-    <!--          資料設定區域 (DATA AREA)          -->
-    <!--          資料已根據 2026 實況更新          -->
-    <!-- ========================================== -->
     <script>
-        // 設定年份
+        // 1. 手機版選單邏輯
+        document.addEventListener('DOMContentLoaded', () => {
+            const btn = document.getElementById('mobile-menu-btn');
+            const menu = document.getElementById('mobile-menu');
+            const icon = btn ? btn.querySelector('i') : null;
+
+            if(btn && menu) {
+                btn.addEventListener('click', () => {
+                    menu.classList.toggle('hidden');
+                    if (menu.classList.contains('hidden')) {
+                        icon.classList.remove('fa-times');
+                        icon.classList.add('fa-bars');
+                    } else {
+                        icon.classList.remove('fa-bars');
+                        icon.classList.add('fa-times');
+                    }
+                });
+            }
+        });
+
+        // 2. 資料設定
         const YEAR = 2026;
         const d = (month, day) => new Date(YEAR, month - 1, day);
-        
-        // 為了讓您看到正確的倒數計時，這裡預設今天的日期
         const today = new Date(); 
         
         const events = [
-            // --- 國樂學會考級 (SCM Exams) ---
-            {
-                id: 'exam-mar-net',
-                title: '國樂學會考級 - 3月場 (網路)',
-                type: 'exam',
-                location: '線上錄影上傳',
-                regStart: d(1, 26), 
-                regEnd: d(2, 26),
-                examDates: [d(3, 22)],
-                link: 'https://scm-event.tw/',
-                officialSite: 'https://www.scm.org.tw/',
-                note: '重點場次'
-            },
-            {
-                id: 'exam-mar-site',
-                title: '國樂學會考級 - 3月場 (中/桃)',
-                type: 'exam',
-                location: '台中、桃園 (現場)',
-                regStart: d(1, 26),
-                regEnd: d(2, 26),
-                examDates: [d(3, 28), d(3, 29)],
-                link: 'https://scm-event.tw/',
-                officialSite: 'https://www.scm.org.tw/'
-            },
-            
-            // --- 新增：全國音樂考級 (National Music Grading - Huang Zhong) ---
-            {
-                id: 'exam-national-grading',
-                title: '全國音樂考級 (黃鐘獎) - 台北場',
-                type: 'exam',
-                location: '台北市 (詳見簡章)',
-                regStart: today, // 官網顯示報名中
-                regEnd: d(2, 10), // 報名期限預估
-                examDates: [d(3, 1)], // 2026/03/01 考試
-                link: 'https://ambitious-watermelon-ddjt20.mystrikingly.com/',
-                officialSite: 'https://www.facebook.com/TaiBeiMinZuLeTuan/',
-                note: '有古箏項目，台北民族樂團主辦'
-            },
-
-            // --- 國樂學會考級 (5月場次) ---
-            {
-                id: 'exam-may-site-1',
-                title: '國樂學會考級 - 5月場 (北/南)',
-                type: 'exam',
-                location: '台北、台南 (現場)',
-                regStart: d(3, 24),
-                regEnd: d(4, 24),
-                examDates: [d(5, 23), d(5, 24)],
-                link: 'https://scm-event.tw/',
-                officialSite: 'https://www.scm.org.tw/'
-            },
-            {
-                id: 'exam-may-site-2',
-                title: '國樂學會考級 - 5月場 (高/竹)',
-                type: 'exam',
-                location: '高雄、新竹 (現場)',
-                regStart: d(3, 30),
-                regEnd: d(4, 30),
-                examDates: [d(5, 30), d(5, 31)],
-                link: 'https://scm-event.tw/',
-                officialSite: 'https://www.scm.org.tw/'
-            },
-            {
-                id: 'exam-may-net',
-                title: '國樂學會考級 - 5月場 (網路)',
-                type: 'exam',
-                location: '線上錄影上傳',
-                regStart: d(4, 8),
-                regEnd: d(5, 8),
-                examDates: [d(5, 31)],
-                link: 'https://scm-event.tw/',
-                officialSite: 'https://www.scm.org.tw/'
-            },
-
-            // --- 比賽 (Competitions) ---
-            {
-                id: 'comp-asian-hsinchu',
-                title: '亞洲盃 - 新竹區 (已截止)',
-                type: 'competition',
-                location: '清華大學南大校區',
-                regEnd: d(1, 14), // 已過期
-                examDates: [d(1, 24), d(1, 25)],
-                link: 'https://www.facebook.com/asiancupmusic/'
-            },
-            {
-                id: 'comp-asian-tainan',
-                title: '亞洲盃 - 台南區',
-                type: 'competition',
-                location: '成功大學力行校區',
-                regEnd: d(1, 21), // 1/21 截止
-                examDates: [d(1, 31), d(2, 1)],
-                link: 'https://www.facebook.com/asiancupmusic/',
-                urgent: true // 強制標紅
-            },
-            {
-                id: 'comp-asian-taipei',
-                title: '亞洲盃 - 台北區',
-                type: 'competition',
-                location: '台北教育大學(雨賢廳)',
-                regEnd: d(1, 27),
-                examDates: [d(2, 7), d(2, 8)],
-                link: 'https://www.facebook.com/asiancupmusic/'
-            },
-            {
-                id: 'comp-asian-final',
-                title: '亞洲盃 - 全國總決賽',
-                type: 'competition',
-                location: '台中大墩文化中心',
-                regEnd: d(3, 11),
-                examDates: [d(3, 21), d(3, 22)],
-                link: 'https://www.facebook.com/asiancupmusic/'
-            },
-            {
-                id: 'comp-tainan-int',
-                title: '大台南國際音樂大賽',
-                type: 'competition',
-                location: '歸仁文化中心',
-                regEnd: d(1, 20), // 預估一月中下旬
-                examDates: [d(3, 8)], // 古箏組日期
-                link: 'https://www.cheer100music.com/',
-                urgent: true,
-                note: '古箏組: 3/8'
-            },
-            
-            // --- 新增：黃鐘獎世界音樂大賽 (Competition) ---
-            {
-                id: 'comp-huangzhong-world',
-                title: '黃鐘獎世界音樂大賽 (比賽)',
-                type: 'competition',
-                location: '台北 (決賽)',
-                regEnd: d(5, 15), // 2026/05/15 截止
-                examDates: [d(5, 30), d(6, 4)], // 評審日期
-                link: 'https://realistic-eagle-ddjt2w.mystrikingly.com/',
-                note: '2026項目: 吹管/拉弦 (古箏請詳閱簡章確認)'
-            }
+            { id: 'exam-mar-net', title: '國樂學會考級 - 3月場 (網路)', type: 'exam', location: '線上錄影上傳', regStart: d(1, 26), regEnd: d(2, 26), examDates: [d(3, 22)], link: 'https://scm-event.tw/', officialSite: 'https://www.scm.org.tw/', note: '重點場次' },
+            { id: 'exam-mar-site', title: '國樂學會考級 - 3月場 (中/桃)', type: 'exam', location: '台中、桃園 (現場)', regStart: d(1, 26), regEnd: d(2, 26), examDates: [d(3, 28), d(3, 29)], link: 'https://scm-event.tw/' },
+            { id: 'exam-national-grading', title: '全國音樂考級 (黃鐘獎) - 台北場', type: 'exam', location: '台北市 (詳見簡章)', regStart: today, regEnd: d(2, 10), examDates: [d(3, 1)], link: 'https://ambitious-watermelon-ddjt20.mystrikingly.com/', note: '有古箏項目' },
+            { id: 'exam-may-site-1', title: '國樂學會考級 - 5月場 (北/南)', type: 'exam', location: '台北、台南 (現場)', regStart: d(3, 24), regEnd: d(4, 24), examDates: [d(5, 23), d(5, 24)], link: 'https://scm-event.tw/' },
+            { id: 'comp-asian-tainan', title: '亞洲盃 - 台南區', type: 'competition', location: '成功大學力行校區', regEnd: d(1, 21), examDates: [d(1, 31), d(2, 1)], link: 'https://www.facebook.com/asiancupmusic/', urgent: true },
+            { id: 'comp-asian-taipei', title: '亞洲盃 - 台北區', type: 'competition', location: '台北教育大學(雨賢廳)', regEnd: d(1, 27), examDates: [d(2, 7), d(2, 8)], link: 'https://www.facebook.com/asiancupmusic/' },
+            { id: 'comp-tainan-int', title: '大台南國際音樂大賽', type: 'competition', location: '歸仁文化中心', regEnd: d(1, 20), examDates: [d(3, 8)], link: 'https://www.cheer100music.com/', urgent: true, note: '古箏組: 3/8' },
+            { id: 'comp-huangzhong-world', title: '黃鐘獎世界音樂大賽', type: 'competition', location: '台北 (決賽)', regEnd: d(5, 15), examDates: [d(5, 30), d(6, 4)], link: 'https://realistic-eagle-ddjt2w.mystrikingly.com/', note: '需確認古箏項目' }
         ];
-    </script>
 
-    <!-- 邏輯程式碼 (自動計算狀態) -->
-    <script>
         function formatDate(date) { return `${date.getMonth() + 1}/${date.getDate()}`; }
         function calculateDaysRemaining(target) { return Math.ceil((target - today) / (1000 * 60 * 60 * 24)); }
         
         function getStatus(event) {
             let daysLeft = 999, status = 'upcoming';
-            // 邏輯：如果有開始日，且今天還沒到開始日 -> Upcoming
-            // 如果在區間內 -> Open
-            // 如果過了結束日 -> Closed
             if (event.regStart && event.regEnd) {
-                if (today < event.regStart) { 
-                    status = 'upcoming'; 
-                    daysLeft = calculateDaysRemaining(event.regStart); 
-                } else if (today <= event.regEnd) { 
-                    status = 'open'; 
-                    daysLeft = calculateDaysRemaining(event.regEnd); 
-                    if(daysLeft <= 7) status = 'urgent'; 
-                } else { 
-                    status = 'closed'; 
-                }
+                if (today < event.regStart) { status = 'upcoming'; daysLeft = calculateDaysRemaining(event.regStart); } 
+                else if (today <= event.regEnd) { status = 'open'; daysLeft = calculateDaysRemaining(event.regEnd); if(daysLeft <= 7) status = 'urgent'; } 
+                else { status = 'closed'; }
             } else if (event.regEnd) {
-                // 只有截止日 (比賽類通常如此)
                 daysLeft = calculateDaysRemaining(event.regEnd);
-                if (daysLeft < 0) status = 'closed';
-                else if (daysLeft <= 10) status = 'urgent';
-                else status = 'open';
+                if (daysLeft < 0) status = 'closed'; else if (daysLeft <= 10) status = 'urgent'; else status = 'open';
             }
             return { status, daysLeft };
         }
 
         function renderCards(filter = 'all') {
             const container = document.getElementById('events-grid');
+            if(!container) return;
             container.innerHTML = '';
             
-            // 排序：緊急 > 開放中 > 即將開始 > 已截止
             const sortedEvents = [...events].sort((a, b) => {
                 const statusOrder = { 'urgent': 1, 'open': 2, 'upcoming': 3, 'closed': 4 };
-                const statA = getStatus(a).status;
-                const statB = getStatus(b).status;
+                const statA = getStatus(a).status, statB = getStatus(b).status;
                 if (statusOrder[statA] !== statusOrder[statB]) return statusOrder[statA] - statusOrder[statB];
-                // 同狀態比日期
-                const dateA = a.regEnd || a.regStart;
-                const dateB = b.regEnd || b.regStart;
-                return dateA - dateB;
+                return (a.regEnd || a.regStart) - (b.regEnd || b.regStart);
             });
 
             const filtered = sortedEvents.filter(e => {
                 const s = getStatus(e).status;
-                if (filter === 'all') return s !== 'closed'; // 預設不顯示已截止
-                if (filter === 'all') return true; 
+                if (filter === 'all') return s !== 'closed';
                 if (filter === 'urgent') return e.urgent || s === 'urgent';
                 return e.type === filter;
             });
@@ -445,29 +342,12 @@
                 const { status, daysLeft } = getStatus(event);
                 let badgeClass = '', badgeText = '', cardBorder = 'border-stone-200 border-l-4 border-l-stone-300';
                 
-                if (status === 'closed') { 
-                    badgeClass = 'bg-stone-200 text-stone-500'; 
-                    badgeText = '已截止'; 
-                    cardBorder = 'border-stone-200 border-l-4 border-l-stone-400 opacity-75 grayscale';
-                } else if (status === 'upcoming') { 
-                    badgeClass = 'bg-blue-100 text-blue-700'; 
-                    badgeText = `還有 ${daysLeft} 天開放`; 
-                    cardBorder = 'border-stone-200 border-l-4 border-l-blue-400';
-                } else if (status === 'urgent') { 
-                    badgeClass = 'bg-red-100 text-red-700 font-bold animate-pulse'; 
-                    badgeText = `剩 ${daysLeft} 天截止 !`; 
-                    cardBorder = 'border-red-200 border-l-4 border-l-red-500 shadow-md'; 
-                } else { 
-                    badgeClass = 'bg-green-100 text-green-700 font-bold'; 
-                    badgeText = `報名中 (剩${daysLeft}天)`; 
-                    cardBorder = 'border-stone-200 border-l-4 border-l-green-500'; 
-                }
+                if (status === 'closed') { badgeClass = 'bg-stone-200 text-stone-500'; badgeText = '已截止'; cardBorder = 'border-stone-200 border-l-4 border-l-stone-400 opacity-75 grayscale'; } 
+                else if (status === 'upcoming') { badgeClass = 'bg-blue-100 text-blue-700'; badgeText = `還有 ${daysLeft} 天開放`; cardBorder = 'border-stone-200 border-l-4 border-l-blue-400'; } 
+                else if (status === 'urgent') { badgeClass = 'bg-red-100 text-red-700 font-bold animate-pulse'; badgeText = `剩 ${daysLeft} 天截止 !`; cardBorder = 'border-red-200 border-l-4 border-l-red-500 shadow-md'; } 
+                else { badgeClass = 'bg-green-100 text-green-700 font-bold'; badgeText = `報名中 (剩${daysLeft}天)`; cardBorder = 'border-stone-200 border-l-4 border-l-green-500'; }
 
-                // 日期顯示優化
-                const dateDisplay = event.regStart 
-                    ? `<span class="font-mono">${formatDate(event.regStart)} ~ ${formatDate(event.regEnd)}</span>` 
-                    : `截止日: <span class="font-mono font-bold ${status==='urgent'?'text-red-600':''}">${formatDate(event.regEnd)}</span>`;
-                
+                const dateDisplay = event.regStart ? `<span class="font-mono">${formatDate(event.regStart)} ~ ${formatDate(event.regEnd)}</span>` : `截止日: <span class="font-mono font-bold ${status==='urgent'?'text-red-600':''}">${formatDate(event.regEnd)}</span>`;
                 const icon = event.type === 'exam' ? 'fa-clipboard-check' : 'fa-trophy';
                 const typeLabel = event.type === 'exam' ? '考級' : '比賽';
                 const typeColor = event.type === 'exam' ? 'text-amber-600' : 'text-indigo-600';
@@ -476,14 +356,11 @@
                     <div class="bg-white rounded-xl p-5 border ${cardBorder} card-hover flex flex-col justify-between h-full relative overflow-hidden">
                         <div>
                             <div class="flex justify-between items-start mb-3">
-                                <span class="text-xs font-bold uppercase tracking-wider ${typeColor} flex items-center gap-1">
-                                    <i class="fas ${icon}"></i> ${typeLabel}
-                                </span>
+                                <span class="text-xs font-bold uppercase tracking-wider ${typeColor} flex items-center gap-1"><i class="fas ${icon}"></i> ${typeLabel}</span>
                                 <span class="px-2 py-1 rounded-full text-xs ${badgeClass}">${badgeText}</span>
                             </div>
                             <h3 class="text-lg font-bold text-stone-800 mb-1 leading-tight">${event.title}</h3>
                             ${event.note ? `<p class="text-xs text-amber-600 mb-3 font-medium"><i class="fas fa-info-circle"></i> ${event.note}</p>` : '<div class="mb-3"></div>'}
-                            
                             <div class="space-y-2 text-sm text-stone-600 mb-4 bg-stone-50 p-3 rounded-lg">
                                 <p class="flex items-center"><i class="fas fa-map-marker-alt w-5 text-center mr-2 text-stone-400"></i> ${event.location}</p>
                                 <p class="flex items-center"><i class="far fa-clock w-5 text-center mr-2 text-stone-400"></i> ${dateDisplay}</p>
@@ -491,9 +368,7 @@
                             </div>
                         </div>
                         <div class="flex gap-2">
-                             <a href="${event.link}" target="_blank" class="flex-1 text-center bg-white hover:bg-amber-50 text-stone-600 hover:text-amber-700 font-medium py-2 rounded-lg transition-colors border border-stone-200 text-sm">
-                                下載簡章 / 報名
-                             </a>
+                             <a href="${event.link}" target="_blank" class="flex-1 text-center bg-white hover:bg-amber-50 text-stone-600 hover:text-amber-700 font-medium py-2 rounded-lg transition-colors border border-stone-200 text-sm">下載簡章 / 報名</a>
                              ${event.officialSite ? `<a href="${event.officialSite}" target="_blank" class="px-3 py-2 text-stone-400 hover:text-stone-600 bg-stone-50 rounded-lg border border-stone-100" title="官方網站"><i class="fas fa-globe"></i></a>` : ''}
                         </div>
                     </div>`;
@@ -502,8 +377,6 @@
 
         // 初始化
         document.addEventListener('DOMContentLoaded', () => {
-            const dateOptions = { year: 'numeric', month: 'long', day: 'numeric', weekday: 'long' };
-            document.getElementById('current-date-display').innerText = today.toLocaleDateString('zh-TW', dateOptions);
             renderCards();
             
             // 綁定過濾按鈕
@@ -520,23 +393,25 @@
                 });
             });
 
-            // 初始化圖表
-            const ctx = document.getElementById('scheduleChart').getContext('2d');
-            const examEvents = events.filter(e => e.type === 'exam');
-            new Chart(ctx, {
-                type: 'bar',
-                data: {
-                    labels: examEvents.map(e => e.title.replace('國樂學會考級 - ', '').replace('全國音樂考級 (黃鐘獎) - 台北場', '黃鐘獎考級(台北)')),
-                    datasets: [
-                        { label: '報名期間', data: examEvents.map(e => e.regStart ? [e.regStart.getTime(), e.regEnd.getTime()] : null), backgroundColor: 'rgba(217, 119, 6, 0.5)', borderColor: 'rgba(217, 119, 6, 1)', borderWidth: 1, barPercentage: 0.6 },
-                        { label: '考試日期', data: examEvents.map(e => [e.examDates[0].getTime(), e.examDates[0].getTime() + 86400000]), backgroundColor: 'rgba(220, 38, 38, 0.8)', borderColor: 'rgba(220, 38, 38, 1)', borderWidth: 1, barPercentage: 0.3, borderRadius: 10 }
-                    ]
-                },
-                options: {
-                    indexAxis: 'y', responsive: true, maintainAspectRatio: false,
-                    scales: { x: { type: 'time', time: { unit: 'month', displayFormats: { month: 'M月' } }, min: d(1, 1).getTime(), max: d(6, 30).getTime() } }
-                }
-            });
+            // 初始化圖表 (修正圖表消失問題)
+            const ctx = document.getElementById('scheduleChart');
+            if (ctx) {
+                const examEvents = events.filter(e => e.type === 'exam');
+                new Chart(ctx.getContext('2d'), {
+                    type: 'bar',
+                    data: {
+                        labels: examEvents.map(e => e.title.replace('國樂學會考級 - ', '').replace('全國音樂考級 (黃鐘獎) - 台北場', '黃鐘獎考級(台北)')),
+                        datasets: [
+                            { label: '報名期間', data: examEvents.map(e => e.regStart ? [e.regStart.getTime(), e.regEnd.getTime()] : null), backgroundColor: 'rgba(217, 119, 6, 0.5)', borderColor: 'rgba(217, 119, 6, 1)', borderWidth: 1, barPercentage: 0.6 },
+                            { label: '考試日期', data: examEvents.map(e => [e.examDates[0].getTime(), e.examDates[0].getTime() + 86400000]), backgroundColor: 'rgba(220, 38, 38, 0.8)', borderColor: 'rgba(220, 38, 38, 1)', borderWidth: 1, barPercentage: 0.3, borderRadius: 10 }
+                        ]
+                    },
+                    options: {
+                        indexAxis: 'y', responsive: true, maintainAspectRatio: false,
+                        scales: { x: { type: 'time', time: { unit: 'month', displayFormats: { month: 'M月' } }, min: d(1, 1).getTime(), max: d(6, 30).getTime() } }
+                    }
+                });
+            }
         });
     </script>
 </body>
