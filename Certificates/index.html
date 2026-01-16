@@ -15,11 +15,11 @@
     <style>
         body { font-family: 'Segoe UI', 'Microsoft JhengHei', sans-serif; background-color: #fafaf9; }
         
-        /* 強制設定圖表容器高度，解決圖表不顯示的問題 */
+        /* 強制設定圖表容器高度 */
         .chart-container { 
             position: relative; 
             width: 100%; 
-            height: 350px; /* 固定高度 */
+            height: 350px; 
             min-height: 350px;
             margin: 0 auto; 
         }
@@ -37,41 +37,34 @@
     <nav class="sticky top-0 z-50 shadow-lg text-white" style="background-color: #4A3520;">
         <div class="container mx-auto px-4">
             <div class="flex justify-between items-center h-[70px]">
-                
                 <a href="../index.html" class="text-xl font-bold tracking-wider hover:text-[#D2B48C] transition-colors duration-300 flex items-center gap-2">
                     <i class="fas fa-music"></i> 新莊箏心
                 </a>
-
                 <div class="hidden md:flex items-center space-x-8">
                     <a href="../index.html#about" class="font-bold hover:text-[#D2B48C] transition-colors duration-300">關於我們</a>
                     <a href="../index.html#courses" class="font-bold hover:text-[#D2B48C] transition-colors duration-300">課程資訊</a>
                     <a href="../index.html#teachers" class="font-bold hover:text-[#D2B48C] transition-colors duration-300">師資介紹</a>
-                    
                     <div class="relative group">
                         <button class="font-bold hover:text-[#D2B48C] transition-colors duration-300 flex items-center gap-1 py-4">
                             學習指南 <i class="fas fa-chevron-down text-xs"></i>
                         </button>
                         <div class="absolute left-1/2 transform -translate-x-1/2 top-full w-48 bg-[#4A3520] border border-[#D2B48C] rounded shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 flex flex-col py-2">
                             <a href="https://scm-event.tw/" target="_blank" class="px-4 py-2 hover:bg-[#D2B48C] hover:text-[#4A3520] transition-colors text-sm">國樂學會報名</a>
-                            <a href="https://ambitious-watermelon-ddjt20.mystrikingly.com/" class="px-4 py-2 hover:bg-[#D2B48C] hover:text-[#4A3520] transition-colors text-sm">黃鐘獎考級</a>
+                            <a href="#" class="px-4 py-2 hover:bg-[#D2B48C] hover:text-[#4A3520] transition-colors text-sm">黃鐘獎考級</a>
                         </div>
                     </div>
-
                     <a href="../index.html#gallery" class="font-bold hover:text-[#D2B48C] transition-colors duration-300">學生成果</a>
                     <a href="../index.html#contact" class="font-bold hover:text-[#D2B48C] transition-colors duration-300">聯絡我們</a>
-                    
                     <div class="h-6 w-px bg-white/30 mx-2"></div>
                     <span class="text-[#D2B48C] font-bold text-sm bg-black/20 px-3 py-1 rounded-full">
                         <i class="fas fa-chart-line mr-1"></i> 備考情報
                     </span>
                 </div>
-
                 <button id="mobile-menu-btn" class="md:hidden text-2xl focus:outline-none hover:text-[#D2B48C] transition-colors">
                     <i class="fas fa-bars"></i>
                 </button>
             </div>
         </div>
-
         <div id="mobile-menu" class="hidden md:hidden bg-[#4A3520] border-t border-[#D2B48C]/30 absolute w-full left-0 shadow-xl">
             <div class="flex flex-col p-4 space-y-4 text-center">
                 <a href="../index.html#about" class="block py-2 hover:text-[#D2B48C] font-bold border-b border-white/10">關於我們</a>
@@ -85,7 +78,6 @@
     </nav>
 
     <main class="flex-grow container mx-auto px-4 py-8 space-y-12">
-        
         <section class="max-w-5xl mx-auto space-y-4">
             <div class="bg-white p-6 rounded-xl shadow-sm border-l-4 border-amber-500">
                 <div class="flex justify-between items-start">
@@ -99,7 +91,6 @@
                     <i class="fas fa-music text-amber-100 text-6xl -mt-2 -mr-2"></i>
                 </div>
             </div>
-
             <div class="bg-red-50 border border-red-200 p-4 rounded-xl flex items-start space-x-4 animate-pulse">
                 <div class="bg-red-100 p-2 rounded-full text-red-600 mt-1 flex-shrink-0">
                     <i class="fas fa-exclamation-triangle"></i>
@@ -138,7 +129,6 @@
                     <h2 class="text-2xl font-bold text-stone-800">近期賽事與檢定</h2>
                     <p class="text-stone-500 text-sm mt-1">系統會自動計算剩餘天數，紅色代表即將截止</p>
                 </div>
-                
                 <div class="flex flex-wrap gap-2 bg-white p-2 rounded-lg shadow-sm border border-stone-200">
                     <button class="filter-btn active bg-amber-600 text-white px-4 py-2 rounded-md text-sm font-medium transition-colors" data-filter="all">全部</button>
                     <button class="filter-btn hover:bg-stone-100 text-stone-600 px-4 py-2 rounded-md text-sm font-medium transition-colors" data-filter="exam">考級</button>
@@ -148,9 +138,7 @@
                     </button>
                 </div>
             </div>
-
-            <div id="events-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                </div>
+            <div id="events-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"></div>
         </section>
         
         <section class="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -166,7 +154,6 @@
                     前往官網 <i class="fas fa-arrow-right"></i>
                 </a>
             </div>
-
             <div class="bg-gradient-to-br from-emerald-50 to-white p-6 rounded-xl border border-emerald-100 shadow-sm relative overflow-hidden group">
                 <div class="absolute top-0 right-0 w-24 h-24 bg-emerald-100 rounded-full -mr-12 -mt-12 opacity-50 group-hover:scale-110 transition-transform"></div>
                 <h3 class="font-bold text-emerald-900 mb-3 flex items-center text-lg">
@@ -180,7 +167,6 @@
                 </a>
             </div>
         </section>
-
     </main>
 
     <footer class="bg-stone-900 text-stone-300 py-12 mt-12 border-t border-amber-900/30">
@@ -199,7 +185,6 @@
                         <i class="fas fa-hand-point-right mr-1"></i> 預約體驗課程
                     </a>
                 </div>
-
                 <div class="md:col-span-1 space-y-4">
                     <h3 class="text-lg font-bold text-white mb-2 border-b border-stone-700 pb-2">聯絡我們</h3>
                     <ul class="space-y-4 text-sm">
@@ -232,25 +217,12 @@
                         </li>
                     </ul>
                 </div>
-
                 <div class="md:col-span-1 space-y-4">
                     <h3 class="text-lg font-bold text-white mb-2 border-b border-stone-700 pb-2">常用連結</h3>
                     <ul class="space-y-3 text-sm">
-                        <li>
-                            <a href="../index.html" class="flex items-center gap-2 text-stone-400 hover:text-amber-400 transition-colors">
-                                <i class="fas fa-home w-4 text-center"></i> 回到官方網站首頁
-                            </a>
-                        </li>
-                        <li>
-                            <a href="https://scm-event.tw/" target="_blank" class="flex items-center gap-2 text-stone-400 hover:text-white transition-colors">
-                                <i class="fas fa-external-link-alt w-4 text-center"></i> 國樂學會報名系統
-                            </a>
-                        </li>
-                        <li>
-                            <a href="https://ambitious-watermelon-ddjt20.mystrikingly.com/" target="_blank" class="flex items-center gap-2 text-stone-400 hover:text-white transition-colors">
-                                <i class="fas fa-file-alt w-4 text-center"></i> 全國音樂考級 (黃鐘)
-                            </a>
-                        </li>
+                        <li><a href="../index.html" class="flex items-center gap-2 text-stone-400 hover:text-amber-400 transition-colors"><i class="fas fa-home w-4 text-center"></i> 回到官方網站首頁</a></li>
+                        <li><a href="https://scm-event.tw/" target="_blank" class="flex items-center gap-2 text-stone-400 hover:text-white transition-colors"><i class="fas fa-external-link-alt w-4 text-center"></i> 國樂學會報名系統</a></li>
+                        <li><a href="https://ambitious-watermelon-ddjt20.mystrikingly.com/" target="_blank" class="flex items-center gap-2 text-stone-400 hover:text-white transition-colors"><i class="fas fa-file-alt w-4 text-center"></i> 全國音樂考級 (黃鐘)</a></li>
                     </ul>
                     <div class="pt-4 mt-6 border-t border-stone-800 text-xs text-stone-600">
                         <p class="mb-1">© 2026 新莊箏心古箏音樂教室</p>
@@ -262,12 +234,11 @@
     </footer>
 
     <script>
-        // 1. 手機版選單邏輯
+        // 手機版選單
         document.addEventListener('DOMContentLoaded', () => {
             const btn = document.getElementById('mobile-menu-btn');
             const menu = document.getElementById('mobile-menu');
             const icon = btn ? btn.querySelector('i') : null;
-
             if(btn && menu) {
                 btn.addEventListener('click', () => {
                     menu.classList.toggle('hidden');
@@ -282,7 +253,7 @@
             }
         });
 
-        // 2. 資料設定
+        // 資料設定
         const YEAR = 2026;
         const d = (month, day) => new Date(YEAR, month - 1, day);
         const today = new Date(); 
@@ -368,7 +339,7 @@
                             </div>
                         </div>
                         <div class="flex gap-2">
-                             <a href="${event.link}" target="_blank" class="flex-1 text-center bg-white hover:bg-amber-50 text-stone-600 hover:text-amber-700 font-medium py-2 rounded-lg transition-colors border border-stone-200 text-sm">下載簡章 / 報名</a>
+                             <a href="${event.link}" target="_blank" class="flex-1 text-center bg-white hover:bg-amber-50 text-stone-600 hover:text-amber-700 font-medium py-2 rounded-lg transition-colors border border-stone-200 text-sm">簡章/報名</a>
                              ${event.officialSite ? `<a href="${event.officialSite}" target="_blank" class="px-3 py-2 text-stone-400 hover:text-stone-600 bg-stone-50 rounded-lg border border-stone-100" title="官方網站"><i class="fas fa-globe"></i></a>` : ''}
                         </div>
                     </div>`;
@@ -378,8 +349,6 @@
         // 初始化
         document.addEventListener('DOMContentLoaded', () => {
             renderCards();
-            
-            // 綁定過濾按鈕
             document.querySelectorAll('.filter-btn').forEach(btn => {
                 btn.addEventListener('click', () => {
                     document.querySelectorAll('.filter-btn').forEach(b => {
@@ -393,7 +362,6 @@
                 });
             });
 
-            // 初始化圖表 (修正圖表消失問題)
             const ctx = document.getElementById('scheduleChart');
             if (ctx) {
                 const examEvents = events.filter(e => e.type === 'exam');
@@ -408,7 +376,31 @@
                     },
                     options: {
                         indexAxis: 'y', responsive: true, maintainAspectRatio: false,
-                        scales: { x: { type: 'time', time: { unit: 'month', displayFormats: { month: 'M月' } }, min: d(1, 1).getTime(), max: d(6, 30).getTime() } }
+                        scales: { x: { type: 'time', time: { unit: 'month', displayFormats: { month: 'M月' } }, min: d(1, 1).getTime(), max: d(6, 30).getTime() } },
+                        
+                        // ===== 重點修改區域 =====
+                        plugins: {
+                            tooltip: {
+                                callbacks: {
+                                    // 這裡就是負責把數字轉回日期的魔法
+                                    label: function(context) {
+                                        const label = context.dataset.label || '';
+                                        const value = context.raw;
+                                        // 判斷是「報名期間 (時間段)」還是「考試日期 (單點)」
+                                        if (Array.isArray(value)) {
+                                            const start = new Date(value[0]);
+                                            const end = new Date(value[1]);
+                                            // 格式化為 YYYY/M/D
+                                            return `${label}: ${start.getFullYear()}/${start.getMonth()+1}/${start.getDate()} ~ ${end.getFullYear()}/${end.getMonth()+1}/${end.getDate()}`;
+                                        } else {
+                                            const d = new Date(value);
+                                            return `${label}: ${d.getFullYear()}/${d.getMonth()+1}/${d.getDate()}`;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                        // ======================
                     }
                 });
             }
