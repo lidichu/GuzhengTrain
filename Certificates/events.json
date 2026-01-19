@@ -1,0 +1,85 @@
+[
+  {
+    "id": "exam-mar-net",
+    "title": "國樂學會考級 - 3月場 (網路)",
+    "type": "exam",
+    "location": "線上錄影上傳",
+    "regStart": "2026-01-26",
+    "regEnd": "2026-02-26",
+    "examDates": ["2026-03-22"],
+    "link": "https://scm-event.tw/",
+    "officialSite": "https://www.scm.org.tw/",
+    "note": "重點場次"
+  },
+  {
+    "id": "exam-mar-site",
+    "title": "國樂學會考級 - 3月場 (中/桃)",
+    "type": "exam",
+    "location": "台中、桃園 (現場)",
+    "regStart": "2026-01-26",
+    "regEnd": "2026-02-26",
+    "examDates": ["2026-03-28", "2026-03-29"],
+    "link": "https://scm-event.tw/"
+  },
+  {
+    "id": "exam-national-grading",
+    "title": "全國音樂考級 (黃鐘獎) - 台北場",
+    "type": "exam",
+    "location": "台北市 (詳見簡章)",
+    "regStart": "2026-01-19",
+    "regEnd": "2026-02-10",
+    "examDates": ["2026-03-01"],
+    "link": "https://ambitious-watermelon-ddjt20.mystrikingly.com/",
+    "note": "有古箏項目"
+  },
+  {
+    "id": "exam-may-site-1",
+    "title": "國樂學會考級 - 5月場 (北/南)",
+    "type": "exam",
+    "location": "台北、台南 (現場)",
+    "regStart": "2026-03-24",
+    "regEnd": "2026-04-24",
+    "examDates": ["2026-05-23", "2026-05-24"],
+    "link": "https://scm-event.tw/"
+  },
+  {
+    "id": "comp-asian-tainan",
+    "title": "亞洲盃 - 台南區",
+    "type": "competition",
+    "location": "成功大學力行校區",
+    "regEnd": "2026-01-21",
+    "examDates": ["2026-01-31", "2026-02-01"],
+    "link": "https://www.facebook.com/asiancupmusic/",
+    "urgent": true
+  },
+  {
+    "id": "comp-asian-taipei",
+    "title": "亞洲盃 - 台北區",
+    "type": "competition",
+    "location": "台北教育大學(雨賢廳)",
+    "regEnd": "2026-01-27",
+    "examDates": ["2026-02-07", "2026-02-08"],
+    "link": "https://www.facebook.com/asiancupmusic/"
+  },
+  {
+    "id": "comp-tainan-int",
+    "title": "大台南國際音樂大賽",
+    "type": "competition",
+    "location": "歸仁文化中心",
+    "regEnd": "2026-01-20",
+    "examDates": ["2026-03-08"],
+    "link": "https://www.cheer100music.com/",
+    "urgent": true,
+    "note": "古箏組: 3/8"
+  },
+  {
+    "id": "comp-huangzhong-world",
+    "title": "黃鐘獎世界音樂大賽",
+    "type": "competition",
+    "location": "台北 (決賽)",
+    "regEnd": "2026-05-15",
+    "examDates": ["2026-05-30", "2026-06-04"],
+    "link": "https://realistic-eagle-ddjt2w.mystrikingly.com/",
+    "note": "需確認古箏項目"
+  }
+]

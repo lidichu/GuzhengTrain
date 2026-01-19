@@ -233,58 +233,73 @@
         </div>
     </footer>
 
-    <script>
-        // 手機版選單
-        document.addEventListener('DOMContentLoaded', () => {
-            const btn = document.getElementById('mobile-menu-btn');
-            const menu = document.getElementById('mobile-menu');
-            const icon = btn ? btn.querySelector('i') : null;
-            if(btn && menu) {
-                btn.addEventListener('click', () => {
-                    menu.classList.toggle('hidden');
-                    if (menu.classList.contains('hidden')) {
-                        icon.classList.remove('fa-times');
-                        icon.classList.add('fa-bars');
-                    } else {
-                        icon.classList.remove('fa-bars');
-                        icon.classList.add('fa-times');
-                    }
-                });
-            }
-        });
-
-        // 資料設定
+ <script>
+        // --- 1. 全域變數設定 ---
         const YEAR = 2026;
-        const d = (month, day) => new Date(YEAR, month - 1, day);
         const today = new Date(); 
-        
-        const events = [
-            { id: 'exam-mar-net', title: '國樂學會考級 - 3月場 (網路)', type: 'exam', location: '線上錄影上傳', regStart: d(1, 26), regEnd: d(2, 26), examDates: [d(3, 22)], link: 'https://scm-event.tw/', officialSite: 'https://www.scm.org.tw/', note: '重點場次' },
-            { id: 'exam-mar-site', title: '國樂學會考級 - 3月場 (中/桃)', type: 'exam', location: '台中、桃園 (現場)', regStart: d(1, 26), regEnd: d(2, 26), examDates: [d(3, 28), d(3, 29)], link: 'https://scm-event.tw/' },
-            { id: 'exam-national-grading', title: '全國音樂考級 (黃鐘獎) - 台北場', type: 'exam', location: '台北市 (詳見簡章)', regStart: today, regEnd: d(2, 10), examDates: [d(3, 1)], link: 'https://ambitious-watermelon-ddjt20.mystrikingly.com/', note: '有古箏項目' },
-            { id: 'exam-may-site-1', title: '國樂學會考級 - 5月場 (北/南)', type: 'exam', location: '台北、台南 (現場)', regStart: d(3, 24), regEnd: d(4, 24), examDates: [d(5, 23), d(5, 24)], link: 'https://scm-event.tw/' },
-            { id: 'comp-asian-tainan', title: '亞洲盃 - 台南區', type: 'competition', location: '成功大學力行校區', regEnd: d(1, 21), examDates: [d(1, 31), d(2, 1)], link: 'https://www.facebook.com/asiancupmusic/', urgent: true },
-            { id: 'comp-asian-taipei', title: '亞洲盃 - 台北區', type: 'competition', location: '台北教育大學(雨賢廳)', regEnd: d(1, 27), examDates: [d(2, 7), d(2, 8)], link: 'https://www.facebook.com/asiancupmusic/' },
-            { id: 'comp-tainan-int', title: '大台南國際音樂大賽', type: 'competition', location: '歸仁文化中心', regEnd: d(1, 20), examDates: [d(3, 8)], link: 'https://www.cheer100music.com/', urgent: true, note: '古箏組: 3/8' },
-            { id: 'comp-huangzhong-world', title: '黃鐘獎世界音樂大賽', type: 'competition', location: '台北 (決賽)', regEnd: d(5, 15), examDates: [d(5, 30), d(6, 4)], link: 'https://realistic-eagle-ddjt2w.mystrikingly.com/', note: '需確認古箏項目' }
-        ];
+        let events = []; // 改用 let，因為資料會重新被寫入
+        let scheduleChart = null; // 儲存圖表實例，以便更新時銷毀舊的
 
-        function formatDate(date) { return `${date.getMonth() + 1}/${date.getDate()}`; }
-        function calculateDaysRemaining(target) { return Math.ceil((target - today) / (1000 * 60 * 60 * 24)); }
+        // --- 2. 工具函式 ---
+        function formatDate(date) { 
+            return `${date.getMonth() + 1}/${date.getDate()}`; 
+        }
+        
+        function calculateDaysRemaining(target) { 
+            return Math.ceil((target - today) / (1000 * 60 * 60 * 24)); 
+        }
         
         function getStatus(event) {
             let daysLeft = 999, status = 'upcoming';
+            // 確保日期物件存在才進行比較
             if (event.regStart && event.regEnd) {
-                if (today < event.regStart) { status = 'upcoming'; daysLeft = calculateDaysRemaining(event.regStart); } 
-                else if (today <= event.regEnd) { status = 'open'; daysLeft = calculateDaysRemaining(event.regEnd); if(daysLeft <= 7) status = 'urgent'; } 
-                else { status = 'closed'; }
+                if (today < event.regStart) { 
+                    status = 'upcoming'; 
+                    daysLeft = calculateDaysRemaining(event.regStart); 
+                } else if (today <= event.regEnd) { 
+                    status = 'open'; 
+                    daysLeft = calculateDaysRemaining(event.regEnd); 
+                    if(daysLeft <= 7) status = 'urgent'; 
+                } else { 
+                    status = 'closed'; 
+                }
             } else if (event.regEnd) {
                 daysLeft = calculateDaysRemaining(event.regEnd);
-                if (daysLeft < 0) status = 'closed'; else if (daysLeft <= 10) status = 'urgent'; else status = 'open';
+                if (daysLeft < 0) status = 'closed'; 
+                else if (daysLeft <= 10) status = 'urgent'; 
+                else status = 'open';
             }
             return { status, daysLeft };
         }
 
+        // --- 3. 核心功能：載入資料 ---
+        async function loadData() {
+            try {
+                const response = await fetch('./events.json');
+                if (!response.ok) throw new Error('Network response was not ok');
+                
+                const rawData = await response.json();
+
+                // ★ 關鍵修正：將 JSON 字串轉換為 Date 物件
+                events = rawData.map(event => ({
+                    ...event,
+                    regStart: event.regStart ? new Date(event.regStart) : null,
+                    regEnd: event.regEnd ? new Date(event.regEnd) : null,
+                    examDates: event.examDates ? event.examDates.map(d => new Date(d)) : []
+                }));
+
+                // 資料準備好後，才執行渲染
+                renderCards();
+                initChart();
+
+            } catch (error) {
+                console.error("資料載入失敗:", error);
+                const container = document.getElementById('events-grid');
+                if(container) container.innerHTML = `<div class="col-span-full text-center text-red-500 py-10">資料讀取發生錯誤，請稍後再試。<br><span class="text-xs text-stone-400">${error.message}</span></div>`;
+            }
+        }
+
+        // --- 4. 渲染卡片 ---
         function renderCards(filter = 'all') {
             const container = document.getElementById('events-grid');
             if(!container) return;
@@ -294,7 +309,10 @@
                 const statusOrder = { 'urgent': 1, 'open': 2, 'upcoming': 3, 'closed': 4 };
                 const statA = getStatus(a).status, statB = getStatus(b).status;
                 if (statusOrder[statA] !== statusOrder[statB]) return statusOrder[statA] - statusOrder[statB];
-                return (a.regEnd || a.regStart) - (b.regEnd || b.regStart);
+                // 安全處理日期相減 (處理 null 的情況)
+                const dateA = a.regEnd || a.regStart || new Date(9999,0,1);
+                const dateB = b.regEnd || b.regStart || new Date(9999,0,1);
+                return dateA - dateB;
             });
 
             const filtered = sortedEvents.filter(e => {
@@ -313,10 +331,15 @@
                 const { status, daysLeft } = getStatus(event);
                 let badgeClass = '', badgeText = '', cardBorder = 'border-stone-200 border-l-4 border-l-stone-300';
                 
-                if (status === 'closed') { badgeClass = 'bg-stone-200 text-stone-500'; badgeText = '已截止'; cardBorder = 'border-stone-200 border-l-4 border-l-stone-400 opacity-75 grayscale'; } 
-                else if (status === 'upcoming') { badgeClass = 'bg-blue-100 text-blue-700'; badgeText = `還有 ${daysLeft} 天開放`; cardBorder = 'border-stone-200 border-l-4 border-l-blue-400'; } 
-                else if (status === 'urgent') { badgeClass = 'bg-red-100 text-red-700 font-bold animate-pulse'; badgeText = `剩 ${daysLeft} 天截止 !`; cardBorder = 'border-red-200 border-l-4 border-l-red-500 shadow-md'; } 
-                else { badgeClass = 'bg-green-100 text-green-700 font-bold'; badgeText = `報名中 (剩${daysLeft}天)`; cardBorder = 'border-stone-200 border-l-4 border-l-green-500'; }
+                if (status === 'closed') { 
+                    badgeClass = 'bg-stone-200 text-stone-500'; badgeText = '已截止'; cardBorder = 'border-stone-200 border-l-4 border-l-stone-400 opacity-75 grayscale'; 
+                } else if (status === 'upcoming') { 
+                    badgeClass = 'bg-blue-100 text-blue-700'; badgeText = `還有 ${daysLeft} 天開放`; cardBorder = 'border-stone-200 border-l-4 border-l-blue-400'; 
+                } else if (status === 'urgent') { 
+                    badgeClass = 'bg-red-100 text-red-700 font-bold animate-pulse'; badgeText = `剩 ${daysLeft} 天截止 !`; cardBorder = 'border-red-200 border-l-4 border-l-red-500 shadow-md'; 
+                } else { 
+                    badgeClass = 'bg-green-100 text-green-700 font-bold'; badgeText = `報名中 (剩${daysLeft}天)`; cardBorder = 'border-stone-200 border-l-4 border-l-green-500'; 
+                }
 
                 const dateDisplay = event.regStart ? `<span class="font-mono">${formatDate(event.regStart)} ~ ${formatDate(event.regEnd)}</span>` : `截止日: <span class="font-mono font-bold ${status==='urgent'?'text-red-600':''}">${formatDate(event.regEnd)}</span>`;
                 const icon = event.type === 'exam' ? 'fa-clipboard-check' : 'fa-trophy';
@@ -346,9 +369,108 @@
             });
         }
 
-        // 初始化
+        // --- 5. 繪製圖表 ---
+        function initChart() {
+            const ctxCanvas = document.getElementById('scheduleChart');
+            if (!ctxCanvas) return;
+            
+            // 篩選出考級類活動
+            const examEvents = events.filter(e => e.type === 'exam');
+
+            // 如果已有圖表，先銷毀以避免重複繪製
+            if (scheduleChart) scheduleChart.destroy();
+
+            scheduleChart = new Chart(ctxCanvas.getContext('2d'), {
+                type: 'bar',
+                data: {
+                    labels: examEvents.map(e => e.title.replace('國樂學會考級 - ', '').replace('全國音樂考級 (黃鐘獎) - 台北場', '黃鐘獎考級(台北)')),
+                    datasets: [
+                        { 
+                            label: '報名期間', 
+                            // 這裡 data 必須確保是數值 (timestamp)
+                            data: examEvents.map(e => e.regStart ? [e.regStart.getTime(), e.regEnd.getTime()] : null), 
+                            backgroundColor: 'rgba(217, 119, 6, 0.5)', 
+                            borderColor: 'rgba(217, 119, 6, 1)', 
+                            borderWidth: 1, 
+                            barPercentage: 0.6 
+                        },
+                        { 
+                            label: '考試日期', 
+                            data: examEvents.map(e => {
+                                // 處理多個考試日期的情況，這裡只取第一天做示意
+                                if(e.examDates && e.examDates.length > 0) {
+                                    const t = e.examDates[0].getTime();
+                                    return [t, t + 86400000]; // 畫一天長度
+                                }
+                                return null;
+                            }), 
+                            backgroundColor: 'rgba(220, 38, 38, 0.8)', 
+                            borderColor: 'rgba(220, 38, 38, 1)', 
+                            borderWidth: 1, 
+                            barPercentage: 0.3, 
+                            borderRadius: 10 
+                        }
+                    ]
+                },
+                options: {
+                    indexAxis: 'y', 
+                    responsive: true, 
+                    maintainAspectRatio: false,
+                    scales: { 
+                        x: { 
+                            type: 'time', 
+                            time: { unit: 'month', displayFormats: { month: 'M月' } }, 
+                            min: new Date(YEAR, 0, 1).getTime(), 
+                            max: new Date(YEAR, 6, 30).getTime() 
+                        } 
+                    },
+                    plugins: {
+                        tooltip: {
+                            callbacks: {
+                                label: function(context) {
+                                    const label = context.dataset.label || '';
+                                    const value = context.raw;
+                                    if (Array.isArray(value)) {
+                                        const start = new Date(value[0]);
+                                        const end = new Date(value[1]);
+                                        // 考試日期如果是單日，顯示單日即可
+                                        if (label === '考試日期') {
+                                             return `${label}: ${start.getFullYear()}/${start.getMonth()+1}/${start.getDate()}`;
+                                        }
+                                        return `${label}: ${start.getFullYear()}/${start.getMonth()+1}/${start.getDate()} ~ ${end.getFullYear()}/${end.getMonth()+1}/${end.getDate()}`;
+                                    } 
+                                    return label;
+                                }
+                            }
+                        }
+                    }
+                }
+            });
+        }
+
+        // --- 6. 頁面初始化 ---
         document.addEventListener('DOMContentLoaded', () => {
-            renderCards();
+            // A. 載入資料
+            loadData();
+
+            // B. 手機版選單監聽
+            const btn = document.getElementById('mobile-menu-btn');
+            const menu = document.getElementById('mobile-menu');
+            if(btn && menu) {
+                const icon = btn.querySelector('i');
+                btn.addEventListener('click', () => {
+                    menu.classList.toggle('hidden');
+                    if (menu.classList.contains('hidden')) {
+                        icon.classList.remove('fa-times');
+                        icon.classList.add('fa-bars');
+                    } else {
+                        icon.classList.remove('fa-bars');
+                        icon.classList.add('fa-times');
+                    }
+                });
+            }
+
+            // C. 篩選按鈕監聽
             document.querySelectorAll('.filter-btn').forEach(btn => {
                 btn.addEventListener('click', () => {
                     document.querySelectorAll('.filter-btn').forEach(b => {
@@ -361,49 +483,6 @@
                     renderCards(btn.dataset.filter);
                 });
             });
-
-            const ctx = document.getElementById('scheduleChart');
-            if (ctx) {
-                const examEvents = events.filter(e => e.type === 'exam');
-                new Chart(ctx.getContext('2d'), {
-                    type: 'bar',
-                    data: {
-                        labels: examEvents.map(e => e.title.replace('國樂學會考級 - ', '').replace('全國音樂考級 (黃鐘獎) - 台北場', '黃鐘獎考級(台北)')),
-                        datasets: [
-                            { label: '報名期間', data: examEvents.map(e => e.regStart ? [e.regStart.getTime(), e.regEnd.getTime()] : null), backgroundColor: 'rgba(217, 119, 6, 0.5)', borderColor: 'rgba(217, 119, 6, 1)', borderWidth: 1, barPercentage: 0.6 },
-                            { label: '考試日期', data: examEvents.map(e => [e.examDates[0].getTime(), e.examDates[0].getTime() + 86400000]), backgroundColor: 'rgba(220, 38, 38, 0.8)', borderColor: 'rgba(220, 38, 38, 1)', borderWidth: 1, barPercentage: 0.3, borderRadius: 10 }
-                        ]
-                    },
-                    options: {
-                        indexAxis: 'y', responsive: true, maintainAspectRatio: false,
-                        scales: { x: { type: 'time', time: { unit: 'month', displayFormats: { month: 'M月' } }, min: d(1, 1).getTime(), max: d(6, 30).getTime() } },
-                        
-                        // ===== 重點修改區域 =====
-                        plugins: {
-                            tooltip: {
-                                callbacks: {
-                                    // 這裡就是負責把數字轉回日期的魔法
-                                    label: function(context) {
-                                        const label = context.dataset.label || '';
-                                        const value = context.raw;
-                                        // 判斷是「報名期間 (時間段)」還是「考試日期 (單點)」
-                                        if (Array.isArray(value)) {
-                                            const start = new Date(value[0]);
-                                            const end = new Date(value[1]);
-                                            // 格式化為 YYYY/M/D
-                                            return `${label}: ${start.getFullYear()}/${start.getMonth()+1}/${start.getDate()} ~ ${end.getFullYear()}/${end.getMonth()+1}/${end.getDate()}`;
-                                        } else {
-                                            const d = new Date(value);
-                                            return `${label}: ${d.getFullYear()}/${d.getMonth()+1}/${d.getDate()}`;
-                                        }
-                                    }
-                                }
-                            }
-                        }
-                        // ======================
-                    }
-                });
-            }
         });
     </script>
 </body>
