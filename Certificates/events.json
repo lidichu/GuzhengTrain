@@ -1,6 +1,6 @@
 [
   {
-    "id": "exam-mar-net",
+    "id": "exam-scm-mar-net",
     "title": "國樂學會考級 - 3月場 (網路)",
     "type": "exam",
     "location": "線上錄影上傳",
@@ -9,38 +9,160 @@
     "examDates": ["2026-03-22"],
     "link": "https://scm-event.tw/",
     "officialSite": "https://www.scm.org.tw/",
-    "note": "重點場次"
+    "note": "影片上傳截止日同報名截止日"
   },
   {
-    "id": "exam-mar-site",
+    "id": "exam-scm-mar-site",
     "title": "國樂學會考級 - 3月場 (中/桃)",
     "type": "exam",
     "location": "台中、桃園 (現場)",
     "regStart": "2026-01-26",
     "regEnd": "2026-02-26",
     "examDates": ["2026-03-28", "2026-03-29"],
-    "link": "https://scm-event.tw/"
+    "link": "https://scm-event.tw/",
+    "note": ""
   },
   {
-    "id": "exam-national-grading",
-    "title": "全國音樂考級 (黃鐘獎) - 台北場",
-    "type": "exam",
-    "location": "台北市 (詳見簡章)",
-    "regStart": "2026-01-19",
-    "regEnd": "2026-02-10",
-    "examDates": ["2026-03-01"],
-    "link": "https://ambitious-watermelon-ddjt20.mystrikingly.com/",
-    "note": "有古箏項目"
-  },
-  {
-    "id": "exam-may-site-1",
+    "id": "exam-scm-may-site-1",
     "title": "國樂學會考級 - 5月場 (北/南)",
     "type": "exam",
     "location": "台北、台南 (現場)",
     "regStart": "2026-03-24",
     "regEnd": "2026-04-24",
     "examDates": ["2026-05-23", "2026-05-24"],
-    "link": "https://scm-event.tw/"
+    "link": "https://scm-event.tw/",
+    "note": ""
+  },
+  {
+    "id": "exam-scm-may-site-2",
+    "title": "國樂學會考級 - 5月場 (高/竹)",
+    "type": "exam",
+    "location": "高雄、新竹 (現場)",
+    "regStart": "2026-03-30",
+    "regEnd": "2026-04-30",
+    "examDates": ["2026-05-30", "2026-05-31"],
+    "link": "https://scm-event.tw/",
+    "note": ""
+  },
+  {
+    "id": "exam-scm-may-net",
+    "title": "國樂學會考級 - 5月場 (網路)",
+    "type": "exam",
+    "location": "線上錄影上傳",
+    "regStart": "2026-04-08",
+    "regEnd": "2026-05-08",
+    "examDates": ["2026-05-31"],
+    "link": "https://scm-event.tw/",
+    "note": ""
+  },
+  {
+    "id": "exam-scm-sep-net",
+    "title": "國樂學會考級 - 9月場 (網路)",
+    "type": "exam",
+    "location": "線上錄影上傳",
+    "regStart": "2026-08-04",
+    "regEnd": "2026-09-04",
+    "examDates": ["2026-09-27"],
+    "link": "https://scm-event.tw/",
+    "note": "【預告】下半年場次"
+  },
+  {
+    "id": "exam-scm-oct-site",
+    "title": "國樂學會考級 - 10月場 (中/桃)",
+    "type": "exam",
+    "location": "台中、桃園 (現場)",
+    "regStart": "2026-08-18",
+    "regEnd": "2026-09-18",
+    "examDates": ["2026-10-17", "2026-10-18"],
+    "link": "https://scm-event.tw/",
+    "note": "【預告】下半年場次"
+  },
+  {
+    "id": "exam-scm-nov-site",
+    "title": "國樂學會考級 - 11月場 (北/南/高/竹)",
+    "type": "exam",
+    "location": "台北、台南、高雄、新竹",
+    "regStart": "2026-09-08",
+    "regEnd": "2026-10-22",
+    "examDates": ["2026-11-07", "2026-11-08", "2026-11-21", "2026-11-22"],
+    "link": "https://scm-event.tw/",
+    "note": "【預告】下半年場次，各區報名截止日略有不同"
+  },
+  {
+    "id": "exam-hz-taipei",
+    "title": "黃鐘獎考級 - 台北場",
+    "type": "exam",
+    "location": "台北市",
+    "regStart": "2026-01-19",
+    "regEnd": "2026-02-10",
+    "examDates": ["2026-03-01"],
+    "link": "https://www.beclass.com/rid=30501956901ad975da38",
+    "note": "【今日開始報名】BeClass系統報名"
+  },
+  {
+    "id": "exam-hz-net",
+    "title": "黃鐘獎考級 - 3月場 (網路)",
+    "type": "exam",
+    "location": "線上錄影 (YouTube不公開)",
+    "regStart": "2026-01-01",
+    "regEnd": "2026-02-25",
+    "examDates": ["2026-03-25"],
+    "link": "https://www.beclass.com/rid=30501956901af202712e",
+    "note": "注意：網路考級「一般組」指定曲必須背譜，上傳截止日3/15"
+  },
+  {
+    "id": "exam-hz-taoyuan",
+    "title": "黃鐘獎考級 - 桃園場",
+    "type": "exam",
+    "location": "桃園 (現場)",
+    "regStart": "2025-12-01",
+    "regEnd": "2026-02-15",
+    "examDates": ["2026-03-15"],
+    "link": "https://ambitious-watermelon-ddjt20.mystrikingly.com/",
+    "note": "由BeClass系統報名"
+  },
+  {
+    "id": "exam-hz-fengyuan",
+    "title": "黃鐘獎考級 - 豐原場",
+    "type": "exam",
+    "location": "台中豐原 (現場)",
+    "regStart": "2025-12-15",
+    "regEnd": "2026-03-01",
+    "examDates": ["2026-03-29"],
+    "link": "https://www.beclass.com/rid=30501956901adff80ef6"
+  },
+  {
+    "id": "exam-hz-chiayi",
+    "title": "黃鐘獎考級 - 嘉義場",
+    "type": "exam",
+    "location": "嘉義 (現場)",
+    "regStart": "2026-01-01",
+    "regEnd": "2026-03-12",
+    "examDates": ["2026-04-12"],
+    "link": "https://www.beclass.com/rid=3052516696c1fa92de36",
+    "note": "新發現場次"
+  },
+  {
+    "id": "exam-hz-kaohsiung",
+    "title": "黃鐘獎考級 - 高雄場",
+    "type": "exam",
+    "location": "高雄 (現場)",
+    "regStart": "2026-01-15",
+    "regEnd": "2026-03-19",
+    "examDates": ["2026-04-19"],
+    "link": "https://www.beclass.com/rid=3052516696c20fa8a520",
+    "note": "新發現場次"
+  },
+  {
+    "id": "exam-hz-tainan",
+    "title": "黃鐘獎考級 - 台南場",
+    "type": "exam",
+    "location": "台南 (現場)",
+    "regStart": "2026-02-01",
+    "regEnd": "2026-05-01",
+    "examDates": ["2026-05-31"],
+    "link": "https://www.beclass.com/rid=3052516696c21c1392e4",
+    "note": "上半年最後一場現場考級"
   },
   {
     "id": "comp-asian-tainan",
@@ -50,7 +172,8 @@
     "regEnd": "2026-01-21",
     "examDates": ["2026-01-31", "2026-02-01"],
     "link": "https://www.facebook.com/asiancupmusic/",
-    "urgent": true
+    "urgent": true,
+    "note": "報名即將截止 (1/21)"
   },
   {
     "id": "comp-asian-taipei",
@@ -59,27 +182,39 @@
     "location": "台北教育大學(雨賢廳)",
     "regEnd": "2026-01-27",
     "examDates": ["2026-02-07", "2026-02-08"],
-    "link": "https://www.facebook.com/asiancupmusic/"
+    "link": "https://www.facebook.com/asiancupmusic/",
+    "note": "報名截止日: 1/27"
   },
   {
     "id": "comp-tainan-int",
     "title": "大台南國際音樂大賽",
     "type": "competition",
     "location": "歸仁文化中心",
-    "regEnd": "2026-01-20",
+    "regStart": "2025-12-05",
+    "regEnd": "2025-12-16",
     "examDates": ["2026-03-08"],
     "link": "https://www.cheer100music.com/",
     "urgent": true,
-    "note": "古箏組: 3/8"
+    "note": "【警告】官網顯示報名已於12/16截止，請立即致電確認。古箏組賽程為3/8"
   },
   {
-    "id": "comp-huangzhong-world",
-    "title": "黃鐘獎世界音樂大賽",
+    "id": "comp-excellence-taichung",
+    "title": "台灣卓越盃音樂公開賽 - 台中",
     "type": "competition",
-    "location": "台北 (決賽)",
-    "regEnd": "2026-05-15",
-    "examDates": ["2026-05-30", "2026-06-04"],
-    "link": "https://realistic-eagle-ddjt2w.mystrikingly.com/",
-    "note": "需確認古箏項目"
+    "location": "東海大學音樂系",
+    "regEnd": "2025-12-19",
+    "examDates": ["2026-02-21", "2026-02-22"],
+    "link": "http://www.music-taiwan.com/zh-tw",
+    "note": "報名已截止，可前往觀摩"
+  },
+  {
+    "id": "comp-excellence-taipei",
+    "title": "台灣卓越盃音樂公開賽 - 台北",
+    "type": "competition",
+    "location": "功學社蘆洲音樂廳",
+    "regEnd": "2025-12-19",
+    "examDates": ["2026-04-18", "2026-04-19"],
+    "link": "http://www.music-taiwan.com/zh-tw",
+    "note": "報名已截止，可前往觀摩"
   }
 ]
