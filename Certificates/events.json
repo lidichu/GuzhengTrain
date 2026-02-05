@@ -216,5 +216,94 @@
     "examDates": ["2026-04-18", "2026-04-19"],
     "link": "http://www.music-taiwan.com/zh-tw",
     "note": "報名已截止，可前往觀摩"
+  },
+  {
+    "id": "comp-global-outstanding-musician-2026",
+    "title": "2026環球傑出青年音樂家比賽 (古箏組)",
+    "type": "competition",
+    "location": "荃灣大會堂 (香港)",
+    "regStart": "2025-12-16",
+    "regEnd": "2026-01-10",
+    "examDates": ["2026-02-21", "2026-02-22", "2026-02-23", "2026-02-24"],
+    "link": "https://www.hk-imca.com/",
+    "note": "【新增】實體賽事，評審為國際級音樂大師。古箏組為演奏家組之一，截止報名日期已接近。"
+  },
+  {
+    "id": "comp-international-youth-music-festival-2026",
+    "title": "第十四屆國際青少年盃音樂比賽 (中樂組)",
+    "type": "competition",
+    "location": "線上 (錄影提交)",
+    "regEnd": "2026-02-06",
+    "submitDeadline": "2026-02-10",
+    "resultDate": "2026-03-13",
+    "link": "https://hkmie.org/events?event_id=86",
+    "note": "【新增】線上比賽，參賽者需拍攝音樂演奏短片。中樂組包含古箏、琵琶、二胡等樂器。"
+  },
+  {
+    "id": "comp-78th-hong-kong-school-music-festival",
+    "title": "第78屆香港學校音樂節 - 古箏項目",
+    "type": "competition",
+    "location": "香港",
+    "regStart": "2025-09-29",
+    "regEnd": "2025-10-28",
+    "videoSubmitStart": "2026-01-21",
+    "videoSubmitEnd": "2026-01-27",
+    "examDates": ["2026-03-02", "2026-04-01"],
+    "link": "http://hkzhengart.com/news/item/78thmusicfestival-application01",
+    "note": "【新增】分為初級組、中級組、高級組、深造組。2026年指定曲目已公布"
+  },
+  {
+    "id": "comp-vwcm-6th-hong-kong-chinese-music-competition",
+    "title": "第六屆全港中樂大賽",
+    "type": "competition",
+    "location": "香港",
+    "regEnd": "2026-02-28",
+    "examDates": ["2026-04"],
+    "link": "https://vwcm.hk/vwcm-competition/the-sixth/",
+    "note": "【新增】接受獨奏及合奏報名，古箏為中樂組之一，具體比賽日期視參賽人數定"
+  },
+  {
+    "id": "comp-hk-12-districts-music-competition-2026",
+    "title": "第十二屆全港十八區音樂比賽2026",
+    "type": "competition",
+    "location": "香港",
+    "link": "https://www.hkgcpaa.com/post/第十二屆全港十八區音樂比賽2026",
+    "note": "【新增】中樂組包含古箏等傳統樂器，評分標準：風格詮釋40%、演奏技巧30%、整體音樂性30%"
+  },
+  {
+    "id": "exam-ccom-2026-overseas",
+    "title": "中央音樂學院音樂水平等級考試 (海外)",
+    "type": "exam",
+    "location": "各地 (海外)",
+    "examDates": ["2026-07-14", "2026-08-01"],
+    "link": "https://www.hkeaa.edu.hk/tc/ipe/ccm/ccompractical/",
+    "note": "【新增】2026年海外考試日期為7月14日至8月1日，使用中央音樂學院編訂的《考級曲目海外版》"
+  },
+  {
+    "id": "exam-chinese-musicians-association-2026",
+    "title": "中國音樂家協會2026年古箏考級 (寒假場次)",
+    "type": "exam",
+    "location": "各地 (中國)",
+    "link": "https://www.chnmusic.org.cn/kj/",
+    "note": "【新增】教材為《全國古箏演奏考級作品集（第三套）》，具體報名時間和地點需查詢官方網站"
+  },
+  {
+    "id": "comp-international-华乐杯-2026",
+    "title": "2026\"國際華樂杯\"中國民族器樂大賽",
+    "type": "competition",
+    "location": "北京/上海",
+    "regEnd": "2026-05-01",
+    "resultDate": "2026-06",
+    "link": "https://www.ioac.info/sys-nd/837.html",
+    "note": "【新增】全球徵集，古箏為中國民族器樂項目之一，全國決賽於6月舉行"
+  },
+  {
+    "id": "comp-10th-chinese-youth-guzheng-invitation",
+    "title": "第十屆中國少年兒童古箏邀請賽",
+    "type": "competition",
+    "location": "中國",
+    "examDates": ["2026-07-17", "2026-07-18", "2026-07-19", "2026-07-20"],
+    "link": "https://m.guzheng.cn/news/293594.html",
+    "note": "【新增】該賽事已舉辦十屆，致力於挖掘和培養古箏演奏人才，針對少年兒童"
   }
 ]
