@@ -251,6 +251,9 @@
         
         function getStatus(event) {
             let daysLeft = 999, status = 'upcoming';
+			if (!event.regStart && !event.regEnd) {
+				return { status: 'tba', daysLeft: 0 };
+				}
             // 確保日期物件存在才進行比較
             if (event.regStart && event.regEnd) {
                 if (today < event.regStart) { 
@@ -333,7 +336,13 @@
                 
                 if (status === 'closed') { 
                     badgeClass = 'bg-stone-200 text-stone-500'; badgeText = '已截止'; cardBorder = 'border-stone-200 border-l-4 border-l-stone-400 opacity-75 grayscale'; 
-                } else if (status === 'upcoming') { 
+                } else if (status === 'tba') {
+					// 【新增】針對待定活動的灰色標籤
+					badgeClass = 'bg-stone-100 text-stone-500'; 
+					badgeText = '日期未定'; 
+					cardBorder = 'border-stone-200 border-l-4 border-l-stone-300';
+				}
+				else if (status === 'upcoming') { 
                     badgeClass = 'bg-blue-100 text-blue-700'; badgeText = `還有 ${daysLeft} 天開放`; cardBorder = 'border-stone-200 border-l-4 border-l-blue-400'; 
                 } else if (status === 'urgent') { 
                     badgeClass = 'bg-red-100 text-red-700 font-bold animate-pulse'; badgeText = `剩 ${daysLeft} 天截止 !`; cardBorder = 'border-red-200 border-l-4 border-l-red-500 shadow-md'; 
@@ -341,7 +350,12 @@
                     badgeClass = 'bg-green-100 text-green-700 font-bold'; badgeText = `報名中 (剩${daysLeft}天)`; cardBorder = 'border-stone-200 border-l-4 border-l-green-500'; 
                 }
 
-                const dateDisplay = event.regStart ? `<span class="font-mono">${formatDate(event.regStart)} ~ ${formatDate(event.regEnd)}</span>` : `截止日: <span class="font-mono font-bold ${status==='urgent'?'text-red-600':''}">${formatDate(event.regEnd)}</span>`;
+				let dateDisplay = '<span class="text-stone-400">詳見簡章</span>';
+				if (event.regStart && event.regEnd) {
+					dateDisplay = `<span class="font-mono">${formatDate(event.regStart)} ~ ${formatDate(event.regEnd)}</span>`;
+				} else if (event.regEnd) {
+					dateDisplay = `截止日: <span class="font-mono font-bold ${status==='urgent'?'text-red-600':''}">${formatDate(event.regEnd)}</span>`;
+				}
                 const icon = event.type === 'exam' ? 'fa-clipboard-check' : 'fa-trophy';
                 const typeLabel = event.type === 'exam' ? '考級' : '比賽';
                 const typeColor = event.type === 'exam' ? 'text-amber-600' : 'text-indigo-600';
@@ -358,7 +372,10 @@
                             <div class="space-y-2 text-sm text-stone-600 mb-4 bg-stone-50 p-3 rounded-lg">
                                 <p class="flex items-center"><i class="fas fa-map-marker-alt w-5 text-center mr-2 text-stone-400"></i> ${event.location}</p>
                                 <p class="flex items-center"><i class="far fa-clock w-5 text-center mr-2 text-stone-400"></i> ${dateDisplay}</p>
-                                <p class="flex items-center"><i class="fas fa-calendar-check w-5 text-center mr-2 text-stone-400"></i> 考試: ${event.examDates.map(d => formatDate(d)).join(', ')}</p>
+                                <p class="flex items-center">
+							<i class="fas fa-calendar-check w-5 text-center mr-2 text-stone-400"></i> 
+							考試: ${event.examDates.length > 0 ? event.examDates.map(d => formatDate(d)).join(', ') : '<span class="text-stone-400 text-xs">以官方公告為準</span>'}
+								</p>
                             </div>
                         </div>
                         <div class="flex gap-2">
