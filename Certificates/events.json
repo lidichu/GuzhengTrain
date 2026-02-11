@@ -89,6 +89,39 @@
     "note": "【預告】下半年場次，各區報名截止日略有不同"
   },
   {
+    "id": "exam-scm-dec-net",
+    "title": "國樂學會考級 - 12月場 (網路)",
+    "type": "exam",
+    "location": "線上錄影上傳",
+    "regStart": "2026-11-04",
+    "regEnd": "2026-12-04",
+    "examDates": ["2026-12-27"],
+    "link": "https://scm-event.tw/",
+    "note": "年底場次，影片上傳截止日同報名截止日"
+  },
+  {
+    "id": "exam-scm-jan-2027-site",
+    "title": "國樂學會考級 - 2027年1月場 (中/桃)",
+    "type": "exam",
+    "location": "台中、桃園 (現場)",
+    "regStart": "2026-11-10",
+    "regEnd": "2026-12-10",
+    "examDates": ["2027-01-09", "2027-01-10"],
+    "link": "https://scm-event.tw/",
+    "note": "跨年度場次"
+  },
+  {
+    "id": "exam-scm-jan-2027-site-2",
+    "title": "國樂學會考級 - 2027年1月場 (北/南)",
+    "type": "exam",
+    "location": "台北、台南 (現場)",
+    "regStart": "2026-11-17",
+    "regEnd": "2026-12-17",
+    "examDates": ["2027-01-16", "2027-01-17"],
+    "link": "https://scm-event.tw/",
+    "note": "跨年度場次"
+  },
+  {
     "id": "exam-hz-taipei",
     "title": "黃鐘獎考級 - 台北場",
     "type": "exam",
@@ -165,6 +198,27 @@
     "note": "上半年最後一場現場考級"
   },
   {
+    "id": "exam-pccu-2026-may",
+    "title": "文化大學社會音樂考級 - 5月場",
+    "type": "exam",
+    "location": "台北 (文化大學)",
+    "regEnd": "2026-04-01",
+    "examDates": ["2026-05-01"],
+    "link": "https://www.sce.pccu.edu.tw/courses/0G48sample",
+    "officialSite": "https://artschool.pccu.edu.tw/p/412-1032-5508.php?Lang=zh-tw",
+    "note": "【新增】台灣社會音樂聯合考級，9級+演奏文憑級，取得台灣與北京中央音樂學院雙證"
+  },
+  {
+    "id": "exam-pccu-2026-dec",
+    "title": "文化大學社會音樂考級 - 12月場",
+    "type": "exam",
+    "location": "台北 (文化大學)",
+    "regEnd": "2026-11-01",
+    "examDates": ["2026-12-01"],
+    "link": "https://www.sce.pccu.edu.tw/courses/0G48sample",
+    "note": "【新增】年度第二場考級，線上線下並行報名"
+  },
+  {
     "id": "comp-asian-tainan",
     "title": "亞洲盃 - 台南區",
     "type": "competition",
@@ -218,6 +272,16 @@
     "note": "報名已截止，可前往觀摩"
   },
   {
+    "id": "comp-lianxiao-2026",
+    "title": "聯校音樂大賽2026",
+    "type": "competition",
+    "location": "各地 (台灣)",
+    "regEnd": "2026-04-30",
+    "examDates": ["2026-03-01", "2026-06-30"],
+    "link": "https://www.omusis.com/copy-of-e-musicmaestro-graded-piano-1",
+    "note": "【新增】接受古箏/笛子/中阮/嗩吶/笙報名。獨奏項目3-5月，合奏項目3-6月，錄影賽事及音樂創作組作品提交限期4/30"
+  },
+  {
     "id": "comp-global-outstanding-musician-2026",
     "title": "2026環球傑出青年音樂家比賽 (古箏組)",
     "type": "competition",
@@ -240,6 +304,16 @@
     "note": "【新增】線上比賽，參賽者需拍攝音樂演奏短片。中樂組包含古箏、琵琶、二胡等樂器。"
   },
   {
+    "id": "comp-superior-culture-international-music-festival-2026",
+    "title": "上文化國際青年音樂節2026",
+    "type": "competition",
+    "location": "香港",
+    "regEnd": "2026-02-15",
+    "examDates": ["2026-03-31"],
+    "link": "https://www.superiorculture.hk/sciymf2026",
+    "note": "【新增】初賽免費報名，決賽港幣250元。古箏為比賽項目之一"
+  },
+  {
     "id": "comp-78th-hong-kong-school-music-festival",
     "title": "第78屆香港學校音樂節 - 古箏項目",
     "type": "competition",
@@ -253,12 +327,32 @@
     "note": "【新增】分為初級組、中級組、高級組、深造組。2026年指定曲目已公布"
   },
   {
+    "id": "comp-hk-excellence-solo-2026",
+    "title": "2026香港優秀獨奏比賽",
+    "type": "competition",
+    "location": "香港及亞太區 (線上錄影)",
+    "regEnd": "2026-02-06",
+    "submitDeadline": "2026-02-27",
+    "resultDate": "2026-03-06",
+    "link": "https://hkmie.org/events?event_id=86",
+    "note": "【新增】線上音樂演奏短片比賽，古箏為參賽項目。報名截止2/6，提交作品截止2/27，結果公佈3/6"
+  },
+  {
+    "id": "comp-hk-art-promotion-2026",
+    "title": "2026香港藝術推廣節",
+    "type": "competition",
+    "location": "香港大會堂高座八樓演奏廳/沙田大會堂",
+    "examDates": ["2026-04-11", "2026-04-12"],
+    "link": "https://www.facebook.com/HKPPAA/posts/",
+    "note": "【新增】包含獨奏/合奏組，古箏為中樂項目之一"
+  },
+  {
     "id": "comp-vwcm-6th-hong-kong-chinese-music-competition",
     "title": "第六屆全港中樂大賽",
     "type": "competition",
     "location": "香港",
     "regEnd": "2026-02-28",
-    "examDates": ["2026-04"],
+    "examDates": ["2026-04-01", "2026-04-30"],
     "link": "https://vwcm.hk/vwcm-competition/the-sixth/",
     "note": "【新增】接受獨奏及合奏報名，古箏為中樂組之一，具體比賽日期視參賽人數定"
   },
@@ -267,8 +361,9 @@
     "title": "第十二屆全港十八區音樂比賽2026",
     "type": "competition",
     "location": "香港",
+    "regEnd": "2026-02-26",
     "link": "https://www.hkgcpaa.com/post/第十二屆全港十八區音樂比賽2026",
-    "note": "【新增】中樂組包含古箏等傳統樂器，評分標準：風格詮釋40%、演奏技巧30%、整體音樂性30%"
+    "note": "【新增】中樂組包含古箏等傳統樂器，評分標準：風格詮釋40%、演奏技巧30%、整體音樂性30%。報名截止2/26，提交作品截止2/26，結果公佈3/3"
   },
   {
     "id": "exam-ccom-2026-overseas",
@@ -288,12 +383,23 @@
     "note": "【新增】教材為《全國古箏演奏考級作品集（第三套）》，具體報名時間和地點需查詢官方網站"
   },
   {
+    "id": "comp-datong-yungang-cup-2026",
+    "title": "大同首屆古箏文化藝術節暨2026「云冈杯」國際民族器樂展演",
+    "type": "competition",
+    "location": "大同 (中國)",
+    "regStart": "2026-01-16",
+    "regEnd": "2026-06-01",
+    "examDates": ["2026-06-01"],
+    "link": "https://www.huain.com/news/guzheng/2026/0119/8433.html",
+    "note": "【新增】首屆古箏文化藝術節，報名起止時間1/16-6/1，初賽時間6月份"
+  },
+  {
     "id": "comp-international-华乐杯-2026",
     "title": "2026\"國際華樂杯\"中國民族器樂大賽",
     "type": "competition",
     "location": "北京/上海",
     "regEnd": "2026-05-01",
-    "resultDate": "2026-06",
+    "resultDate": "2026-06-01",
     "link": "https://www.ioac.info/sys-nd/837.html",
     "note": "【新增】全球徵集，古箏為中國民族器樂項目之一，全國決賽於6月舉行"
   },
@@ -305,5 +411,24 @@
     "examDates": ["2026-07-17", "2026-07-18", "2026-07-19", "2026-07-20"],
     "link": "https://m.guzheng.cn/news/293594.html",
     "note": "【新增】該賽事已舉辦十屆，致力於挖掘和培養古箏演奏人才，針對少年兒童"
+  },
+  {
+    "id": "comp-6th-macau-guzheng-invitation-2026",
+    "title": "2026第六屆澳門古箏邀請賽",
+    "type": "competition",
+    "location": "澳門",
+    "examDates": ["2026-08-01"],
+    "link": "https://www.guzheng.cn/news/293760.html",
+    "note": "【新增】專業賽事平台，初賽報名時間待確定，總決賽於8月舉行"
+  },
+  {
+    "id": "comp-bard-guzheng-conference-2026",
+    "title": "GUZHENG TIANXIA 古箏天下: Chinese Music in the West (Bard 2026)",
+    "type": "competition",
+    "location": "美國 (Bard Conservatory)",
+    "regEnd": "2026-05-03",
+    "examDates": ["2026-04-30", "2026-05-03"],
+    "link": "https://www.barduschinamusic.org/events/conference-2026",
+    "note": "【新增】Bard美中音樂研習院與中央音樂學院合作，首個美國中文民樂表演本科項目，4/30-5/3舉辦國際古箏學術會議"
   }
 ]
