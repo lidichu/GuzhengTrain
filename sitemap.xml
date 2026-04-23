@@ -2,14 +2,98 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://guzhengtrain.com/</loc>
-    <lastmod>2025-03-10</lastmod>
-    <changefreq>monthly</changefreq>
+    <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://guzhengtrain.com/ai/</loc>
-    <lastmod>2025-03-10</lastmod>
+    <loc>https://guzhengtrain.com/privacy.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.3</priority>
+  </url>
+
+  <url>
+    <loc>https://guzhengtrain.com/beginnerGuide/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://guzhengtrain.com/OnlineTuner/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://guzhengtrain.com/quiz/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://guzhengtrain.com/quiz/quiz-fixed.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://guzhengtrain.com/Certificates/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://guzhengtrain.com/learning/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://guzhengtrain.com/learning/01-introduction.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://guzhengtrain.com/learning/02-posture.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://guzhengtrain.com/learning/03-basic-techniques.html</loc>
+    <lastmod>2026-04-10T02:48:26+00:00</lastmod>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://guzhengtrain.com/learning/04-beginner-techniques.html</loc>
+    <lastmod>2026-04-10T02:48:26+00:00</lastmod>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://guzhengtrain.com/learning/05-intermediate-techniques.html</loc>
+    <lastmod>2026-04-10T02:48:26+00:00</lastmod>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://guzhengtrain.com/learning/06-advanced-techniques.html</loc>
+    <lastmod>2026-04-10T02:48:26+00:00</lastmod>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://guzhengtrain.com/learning/08-buying-guzheng.html</loc>
+    <lastmod>2026-04-10T02:48:26+00:00</lastmod>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://guzhengtrain.com/learning/09-finding-teacher.html</loc>
+    <lastmod>2026-04-10T02:48:26+00:00</lastmod>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://guzhengtrain.com/learning/10-certification.html</loc>
+    <lastmod>2026-04-10T02:48:26+00:00</lastmod>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://guzhengtrain.com/learning/11-maintenance.html</loc>
+    <lastmod>2026-04-10T02:48:26+00:00</lastmod>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://guzhengtrain.com/learning/12-recital-importance.html</loc>
+    <lastmod>2026-04-10T02:48:26+00:00</lastmod>
+    <priority>0.80</priority>
   </url>
 </urlset>
