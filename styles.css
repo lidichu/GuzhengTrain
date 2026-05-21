@@ -136,17 +136,34 @@ nav {
     margin: 0;
     padding: 0;
     height: 100%;
+    flex-wrap: nowrap;
+    white-space: nowrap;
   }
 
   ul.desktop-menu li {
-    padding: 15px 20px;
+    padding: 15px 14px;
     display: flex;
     align-items: center;
   }
 
   ul.desktop-menu li a {
-    font-size: 1.1rem;
+    font-size: 1.05rem;
     line-height: 1;
+    white-space: nowrap;
+  }
+
+  /* 視窗較窄(平板橫向、小筆電)時進一步壓縮間距 */
+  @media (max-width: 1100px) {
+    ul.desktop-menu li {
+      padding: 15px 9px;
+    }
+    ul.desktop-menu li a {
+      font-size: 0.98rem;
+    }
+    ul.desktop-menu .nav-cta {
+      padding: 7px 14px !important;
+      font-size: 0.95rem;
+    }
   }
 
   /* 電腦版下拉選單 (Hover 觸發) */
@@ -268,8 +285,8 @@ nav {
     font-size: 1.2rem;
   }
 
-  /* 手機版下拉(點擊 .dropdown-toggle 展開) */
-  .nav-item.dropdown .dropdown-toggle::after {
+  /* 手機版下拉(點擊 .dropdown-toggle 展開)— 僅作用於首頁的 .desktop-menu-container 內,避免影響 /learning/ 等使用 Bootstrap 原生 navbar 的頁面 */
+  .desktop-menu-container .nav-item.dropdown .dropdown-toggle::after {
     display: inline-block;
     margin-left: 8px;
     vertical-align: 0.255em;
@@ -279,24 +296,24 @@ nav {
     border-left: 0.3em solid transparent;
     transition: transform 0.3s;
   }
-  .nav-item.dropdown.open .dropdown-toggle::after {
+  .desktop-menu-container .nav-item.dropdown.open .dropdown-toggle::after {
     transform: rotate(180deg);
   }
 
-  .nav-item.dropdown .dropdown-menu-grid {
+  .desktop-menu-container .nav-item.dropdown .dropdown-menu-grid {
     display: none;
     background-color: rgba(0, 0, 0, 0.25);
     padding: 0;
   }
-  .nav-item.dropdown.open .dropdown-menu-grid {
+  .desktop-menu-container .nav-item.dropdown.open .dropdown-menu-grid {
     display: block;
   }
 
-  .dropdown-grid {
+  .desktop-menu-container .dropdown-grid {
     display: block;
   }
 
-  .dropdown-header {
+  .desktop-menu-container .dropdown-header {
     display: block;
     color: var(--secondary);
     font-size: 0.9rem;
@@ -304,7 +321,7 @@ nav {
     text-align: center;
   }
 
-  .dropdown-item {
+  .desktop-menu-container .dropdown-item {
     display: block;
     padding: 12px 20px;
     color: #ddd;
