@@ -61,7 +61,8 @@ header p {
 /* ========================================= */
 /* 3. 導航欄 Nav (核心修正區) */
 /* ========================================= */
-nav {
+nav,
+nav.navbar {
   background-color: var(--dark);
   position: sticky;
   top: 0;
