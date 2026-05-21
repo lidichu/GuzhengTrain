@@ -43,7 +43,7 @@ jobs:
         id: update
         working-directory: scripts
         env:
-          REPLICATE_API_TOKEN: ${{ secrets.REPLICATE_API_TOKEN }}
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
           DRY_RUN: ${{ inputs.dry_run && '1' || '' }}
           VERBOSE: ${{ inputs.verbose && '1' || '' }}
         run: node update-events.mjs
@@ -81,8 +81,8 @@ jobs:
                 "",
                 `- [Workflow run](${runUrl})`,
                 "- 常見原因:",
-                "  - Replicate API token 失效 / 額度用完",
-                "  - GPT 回傳格式錯誤(驗證失敗)",
+                "  - Gemini API key 失效 / 免費額度用完",
+                "  - Gemini 回傳格式錯誤(驗證失敗)",
                 "  - 變動規模過大(> 30% 移除,被防護中止)",
                 "",
                 "手動補救方式:",

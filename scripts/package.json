@@ -1,15 +1,16 @@
 {
   "name": "guzhengtrain-scripts",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "private": true,
   "type": "module",
-  "description": "排程腳本:用 Replicate GPT-5.2 自動更新 Certificates/events.json",
+  "description": "排程腳本:用 Google Gemini API + googleSearch 工具自動更新 Certificates/events.json",
   "scripts": {
     "update-events": "node update-events.mjs",
-    "update-events:dry": "DRY_RUN=1 node update-events.mjs"
+    "update-events:dry": "DRY_RUN=1 node update-events.mjs",
+    "cleanup-expired": "node cleanup-expired.mjs"
   },
   "dependencies": {
-    "replicate": "^1.0.0"
+    "@google/genai": "^1.0.0"
   },
   "engines": {
     "node": ">=20"
