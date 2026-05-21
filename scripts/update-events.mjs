@@ -111,19 +111,32 @@ const userPrompt = `今天日期:${today}
 2. 搜尋新公告的古箏/琵琶考級與比賽(2026 與 2027)
 3. 回傳完整最新 events 陣列(包含既有與新增的所有事件)
 
-請務必檢查以下台灣常用報名/賽事平台,通常會公告下半年新場次:
-- beclass.com 報名平台(黃鐘獎、各種音樂考級多在此公告)
-- scm-event.tw(中華民國國樂學會官方報名)
-- taiwanmusic.org(文化盃音樂大賽)
-- kfem.info(法雅盃音樂大賽)
-- pragues.com.tw(布拉格音樂大賽)
-- pccu.edu.tw/sce(文化大學社會音樂考級)
-- chnmusic.org.cn(中國音樂家協會考級)
+**使用 urlContext 工具(非常重要)直接抓取以下確切 URL 的內容**,
+這些頁面列出各賽事/考級的所有場次:
 
-針對「黃鐘獎」(全國音樂考級),請搜尋
-"黃鐘獎 考級 2026" 或 "黃鐘獎 報名 2026 下半年" 看看有沒有公告秋冬場次。
-針對「國樂學會」,請確認 scm-event.tw 上 7-12 月與 2027 上半年場次。
-針對比賽,搜尋「2026 古箏比賽 簡章」「2026 古箏大賽」找新賽事。
+1. **黃鐘獎(全國音樂考級)所有場次清單** — 必抓!
+   https://www.beclass.com/default.php?name=Search&op=relation&v=VQJWVwk=&f
+   這個頁面會列出黃鐘 2026 全年所有現場與網路考級場次。
+   每筆通常包含:場次名稱、考試日期、報名期限天數。
+   請把每一筆獨立場次都納入(嘉義、台北、台中、員林、苗栗、草屯、宜蘭、
+   斗六、中壢、網路考級...等都各算一筆)。
+
+2. **黃鐘獎官方資訊頁**:
+   https://ambitious-watermelon-ddjt20.mystrikingly.com/4
+
+3. **中華民國國樂學會**:https://scm-event.tw/
+4. **台灣文化盃**:https://www.taiwanmusic.org/
+5. **法雅盃**:https://www.kfem.info/
+6. **布拉格音樂大賽**:https://pragues.com.tw/
+7. **文化大學社會音樂考級**:https://www.sce.pccu.edu.tw/
+8. **中國音樂家協會考級**:https://www.chnmusic.org.cn/
+
+抓取以上 URL 後,將你發現的每一筆獨立場次都加入 events 陣列,
+每筆獨立使用一個 id(例如 "exam-hz-2026-09-23-net"、
+"exam-hz-2026-08-30-taichung"、"exam-hz-2026-08-16-taipei" 等)。
+
+另外用 googleSearch 工具搜尋「2026 古箏 比賽 簡章」「2026 琵琶 比賽」
+找其他新公告的賽事。
 
 每筆 schema:
 {
@@ -188,7 +201,10 @@ try {
     contents: userPrompt,
     config: {
       systemInstruction: systemPrompt,
-      tools: [{ googleSearch: {} }],
+      tools: [
+        { googleSearch: {} },
+        { urlContext: {} },        // 讓 Gemini 能實際抓取 prompt 中的 URL
+      ],
       temperature: 0.2,
     },
   });
@@ -197,10 +213,21 @@ try {
   // groundingMetadata 可能在不同層級(不同 SDK 版本)
   const candidate = response.candidates?.[0] || {};
   const meta = candidate.groundingMetadata || response.groundingMetadata;
+  const urlCtx = candidate.urlContextMetadata || response.urlContextMetadata;
+
   if (meta?.groundingChunks) groundingChunks = meta.groundingChunks;
   if (meta?.groundingAttributions && groundingChunks.length === 0) groundingChunks = meta.groundingAttributions;
-  if (meta?.webSearchQueries && VERBOSE) {
-    console.log(`🔎 Gemini 實際搜尋的關鍵字:${JSON.stringify(meta.webSearchQueries)}`);
+  if (meta?.webSearchQueries) {
+    console.log(`🔎 Gemini 搜尋關鍵字:${JSON.stringify(meta.webSearchQueries)}`);
+  }
+  if (urlCtx?.urlMetadata && urlCtx.urlMetadata.length > 0) {
+    console.log(`🌐 urlContext 抓取了 ${urlCtx.urlMetadata.length} 個 URL:`);
+    urlCtx.urlMetadata.slice(0, 12).forEach(u => {
+      const status = u.urlRetrievalStatus || "?";
+      console.log(`   [${status}] ${u.retrievedUrl || u.url || "(no url)"}`);
+    });
+  } else {
+    console.warn("⚠️ urlContext 沒抓任何 URL");
   }
   // 若仍找不到引用,印出 response 結構供 debug
   if (groundingChunks.length === 0) {
@@ -209,6 +236,7 @@ try {
       responseKeys: Object.keys(response),
       candidateKeys: Object.keys(candidate),
       groundingMetadataKeys: meta ? Object.keys(meta) : null,
+      urlContextMetadataKeys: urlCtx ? Object.keys(urlCtx) : null,
       finishReason: candidate.finishReason,
       tokenCount: response.usageMetadata?.totalTokenCount,
     }, null, 2));
