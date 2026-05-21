@@ -3,215 +3,272 @@
     "id": "exam-scm-may-site-1",
     "title": "國樂學會考級 - 5月場 (北/南)",
     "type": "exam",
-    "location": "台北、台南 (現場)",
-    "regStart": "2026-03-24",
+    "location": "台灣(北/南)",
     "regEnd": "2026-04-24",
-    "examDates": ["2026-05-23", "2026-05-24"],
-    "link": "https://scm-event.tw/",
-    "note": "目前開放報名中"
+    "examDates": [
+      "2026-05-23",
+      "2026-05-24"
+    ],
+    "link": "https://www.google.com/search?q=%E5%9C%8B%E6%A8%82%E5%AD%B8%E6%9C%83+%E8%80%83%E7%B4%9A+2026+5%E6%9C%88+%E5%8C%97+%E5%8D%97",
+    "officialSite": "https://www.google.com/search?q=%E4%B8%AD%E8%8F%AF%E6%B0%91%E5%9C%8B%E5%9C%8B%E6%A8%82%E5%AD%B8%E6%9C%83+%E5%AE%98%E7%B6%B2",
+    "note": "未能網搜核對日期"
   },
   {
     "id": "exam-scm-may-site-2",
     "title": "國樂學會考級 - 5月場 (高/竹)",
     "type": "exam",
-    "location": "高雄、新竹 (現場)",
-    "regStart": "2026-03-30",
+    "location": "台灣(高雄/新竹)",
     "regEnd": "2026-04-30",
-    "examDates": ["2026-05-30", "2026-05-31"],
-    "link": "https://scm-event.tw/",
-    "note": "目前開放報名中"
+    "examDates": [
+      "2026-05-30",
+      "2026-05-31"
+    ],
+    "link": "https://www.google.com/search?q=%E5%9C%8B%E6%A8%82%E5%AD%B8%E6%9C%83+%E8%80%83%E7%B4%9A+2026+5%E6%9C%88+%E9%AB%98%E9%9B%84+%E6%96%B0%E7%AB%B9",
+    "officialSite": "https://www.google.com/search?q=%E4%B8%AD%E8%8F%AF%E6%B0%91%E5%9C%8B%E5%9C%8B%E6%A8%82%E5%AD%B8%E6%9C%83+%E5%AE%98%E7%B6%B2",
+    "note": "未能網搜核對日期"
   },
   {
     "id": "exam-scm-may-net",
     "title": "國樂學會考級 - 5月場 (網路)",
     "type": "exam",
-    "location": "線上錄影上傳",
-    "regStart": "2026-04-08",
+    "location": "線上",
     "regEnd": "2026-05-08",
-    "examDates": ["2026-05-31"],
-    "link": "https://scm-event.tw/",
-    "note": "網路考級報名中"
+    "examDates": [
+      "2026-05-31"
+    ],
+    "link": "https://www.google.com/search?q=%E5%9C%8B%E6%A8%82%E5%AD%B8%E6%9C%83+%E8%80%83%E7%B4%9A+2026+5%E6%9C%88+%E7%B6%B2%E8%B7%AF",
+    "officialSite": "https://www.google.com/search?q=%E4%B8%AD%E8%8F%AF%E6%B0%91%E5%9C%8B%E5%9C%8B%E6%A8%82%E5%AD%B8%E6%9C%83+%E5%AE%98%E7%B6%B2",
+    "note": "未能網搜核對日期"
   },
   {
     "id": "exam-scm-sep-net",
     "title": "國樂學會考級 - 9月場 (網路)",
     "type": "exam",
-    "location": "線上錄影上傳",
-    "regStart": "2026-08-04",
+    "location": "線上",
     "regEnd": "2026-09-04",
-    "examDates": ["2026-09-27"],
-    "link": "https://scm-event.tw/",
-    "note": "【預告】下半年場次"
+    "examDates": [
+      "2026-09-27"
+    ],
+    "link": "https://www.google.com/search?q=%E5%9C%8B%E6%A8%82%E5%AD%B8%E6%9C%83+%E8%80%83%E7%B4%9A+2026+9%E6%9C%88+%E7%B6%B2%E8%B7%AF",
+    "officialSite": "https://www.google.com/search?q=%E4%B8%AD%E8%8F%AF%E6%B0%91%E5%9C%8B%E5%9C%8B%E6%A8%82%E5%AD%B8%E6%9C%83+%E5%AE%98%E7%B6%B2",
+    "note": "未能網搜核對日期"
   },
   {
     "id": "exam-scm-oct-site",
     "title": "國樂學會考級 - 10月場 (中/桃)",
     "type": "exam",
-    "location": "台中、桃園 (現場)",
-    "regStart": "2026-08-18",
+    "location": "台灣(台中/桃園)",
     "regEnd": "2026-09-18",
-    "examDates": ["2026-10-17", "2026-10-18"],
-    "link": "https://scm-event.tw/",
-    "note": "【預告】下半年場次"
+    "examDates": [
+      "2026-10-17",
+      "2026-10-18"
+    ],
+    "link": "https://www.google.com/search?q=%E5%9C%8B%E6%A8%82%E5%AD%B8%E6%9C%83+%E8%80%83%E7%B4%9A+2026+10%E6%9C%88+%E5%8F%B0%E4%B8%AD+%E6%A1%83%E5%9C%92",
+    "officialSite": "https://www.google.com/search?q=%E4%B8%AD%E8%8F%AF%E6%B0%91%E5%9C%8B%E5%9C%8B%E6%A8%82%E5%AD%B8%E6%9C%83+%E5%AE%98%E7%B6%B2",
+    "note": "未能網搜核對日期"
   },
   {
     "id": "exam-scm-nov-site",
     "title": "國樂學會考級 - 11月場 (北/南/高/竹)",
     "type": "exam",
-    "location": "台北、台南、高雄、新竹",
-    "regStart": "2026-09-08",
+    "location": "台灣(北/南/高/竹)",
     "regEnd": "2026-10-22",
-    "examDates": ["2026-11-07", "2026-11-08", "2026-11-21", "2026-11-22"],
-    "link": "https://scm-event.tw/",
-    "note": "【預告】下半年場次"
+    "examDates": [
+      "2026-11-07",
+      "2026-11-08",
+      "2026-11-21",
+      "2026-11-22"
+    ],
+    "link": "https://www.google.com/search?q=%E5%9C%8B%E6%A8%82%E5%AD%B8%E6%9C%83+%E8%80%83%E7%B4%9A+2026+11%E6%9C%88+%E5%8C%97+%E5%8D%97+%E9%AB%98%E9%9B%84+%E6%96%B0%E7%AB%B9",
+    "officialSite": "https://www.google.com/search?q=%E4%B8%AD%E8%8F%AF%E6%B0%91%E5%9C%8B%E5%9C%8B%E6%A8%82%E5%AD%B8%E6%9C%83+%E5%AE%98%E7%B6%B2",
+    "note": "未能網搜核對日期"
   },
   {
     "id": "exam-scm-dec-net",
     "title": "國樂學會考級 - 12月場 (網路)",
     "type": "exam",
-    "location": "線上錄影上傳",
-    "regStart": "2026-11-04",
+    "location": "線上",
     "regEnd": "2026-12-04",
-    "examDates": ["2026-12-27"],
-    "link": "https://scm-event.tw/",
-    "note": "年底場次"
+    "examDates": [
+      "2026-12-27"
+    ],
+    "link": "https://www.google.com/search?q=%E5%9C%8B%E6%A8%82%E5%AD%B8%E6%9C%83+%E8%80%83%E7%B4%9A+2026+12%E6%9C%88+%E7%B6%B2%E8%B7%AF",
+    "officialSite": "https://www.google.com/search?q=%E4%B8%AD%E8%8F%AF%E6%B0%91%E5%9C%8B%E5%9C%8B%E6%A8%82%E5%AD%B8%E6%9C%83+%E5%AE%98%E7%B6%B2",
+    "note": "未能網搜核對日期"
   },
   {
     "id": "exam-scm-jan-2027-site",
     "title": "國樂學會考級 - 2027年1月場 (中/桃)",
     "type": "exam",
-    "location": "台中、桃園 (現場)",
-    "regStart": "2026-11-10",
+    "location": "台灣(台中/桃園)",
     "regEnd": "2026-12-10",
-    "examDates": ["2027-01-09", "2027-01-10"],
-    "link": "https://scm-event.tw/",
-    "note": "跨年度場次"
+    "examDates": [
+      "2027-01-09",
+      "2027-01-10"
+    ],
+    "link": "https://www.google.com/search?q=%E5%9C%8B%E6%A8%82%E5%AD%B8%E6%9C%83+%E8%80%83%E7%B4%9A+2027+1%E6%9C%88+%E5%8F%B0%E4%B8%AD+%E6%A1%83%E5%9C%92",
+    "officialSite": "https://www.google.com/search?q=%E4%B8%AD%E8%8F%AF%E6%B0%91%E5%9C%8B%E5%9C%8B%E6%A8%82%E5%AD%B8%E6%9C%83+%E5%AE%98%E7%B6%B2",
+    "note": "未能網搜核對日期"
   },
   {
     "id": "exam-scm-jan-2027-site-2",
     "title": "國樂學會考級 - 2027年1月場 (北/南)",
     "type": "exam",
-    "location": "台北、台南 (現場)",
-    "regStart": "2026-11-17",
+    "location": "台灣(北/南)",
     "regEnd": "2026-12-17",
-    "examDates": ["2027-01-16", "2027-01-17"],
-    "link": "https://scm-event.tw/",
-    "note": "跨年度場次"
+    "examDates": [
+      "2027-01-16",
+      "2027-01-17"
+    ],
+    "link": "https://www.google.com/search?q=%E5%9C%8B%E6%A8%82%E5%AD%B8%E6%9C%83+%E8%80%83%E7%B4%9A+2027+1%E6%9C%88+%E5%8C%97+%E5%8D%97",
+    "officialSite": "https://www.google.com/search?q=%E4%B8%AD%E8%8F%AF%E6%B0%91%E5%9C%8B%E5%9C%8B%E6%A8%82%E5%AD%B8%E6%9C%83+%E5%AE%98%E7%B6%B2",
+    "note": "未能網搜核對日期"
   },
   {
     "id": "exam-hz-chiayi",
     "title": "黃鐘獎考級 - 嘉義場",
     "type": "exam",
-    "location": "嘉義 (現場)",
-    "regStart": "2026-01-01",
+    "location": "台灣(嘉義)",
     "regEnd": "2026-03-12",
-    "examDates": ["2026-04-12"],
-    "link": "https://www.beclass.com/rid=3052516696c1fa92de36",
-    "note": "即將考試"
+    "examDates": [
+      "2026-04-12"
+    ],
+    "link": "https://www.google.com/search?q=%E9%BB%83%E9%90%98%E7%8D%8E+%E8%80%83%E7%B4%9A+2026+%E5%98%89%E7%BE%A9",
+    "officialSite": "https://www.google.com/search?q=%E9%BB%83%E9%90%98%E7%8D%8E+%E8%80%83%E7%B4%9A+%E5%AE%98%E7%B6%B2",
+    "note": "連結為搜尋結果"
   },
   {
     "id": "exam-hz-kaohsiung",
     "title": "黃鐘獎考級 - 高雄場",
     "type": "exam",
-    "location": "高雄 (現場)",
-    "regStart": "2026-01-15",
+    "location": "台灣(高雄)",
     "regEnd": "2026-03-19",
-    "examDates": ["2026-04-19"],
-    "link": "https://www.beclass.com/rid=3052516696c20fa8a520",
-    "note": "報名已截止，準備考試"
+    "examDates": [
+      "2026-04-19"
+    ],
+    "link": "https://www.google.com/search?q=%E9%BB%83%E9%90%98%E7%8D%8E+%E8%80%83%E7%B4%9A+2026+%E9%AB%98%E9%9B%84",
+    "officialSite": "https://www.google.com/search?q=%E9%BB%83%E9%90%98%E7%8D%8E+%E8%80%83%E7%B4%9A+%E5%AE%98%E7%B6%B2",
+    "note": "連結為搜尋結果"
   },
   {
     "id": "exam-hz-tainan",
     "title": "黃鐘獎考級 - 台南場",
     "type": "exam",
-    "location": "台南 (現場)",
-    "regStart": "2026-02-01",
+    "location": "台灣(台南)",
     "regEnd": "2026-05-01",
-    "examDates": ["2026-05-31"],
-    "link": "https://www.beclass.com/rid=3052516696c21c1392e4",
-    "note": "上半年最後一場現場考級，即將截止"
+    "examDates": [
+      "2026-05-31"
+    ],
+    "link": "https://www.google.com/search?q=%E9%BB%83%E9%90%98%E7%8D%8E+%E8%80%83%E7%B4%9A+2026+%E5%8F%B0%E5%8D%97",
+    "officialSite": "https://www.google.com/search?q=%E9%BB%83%E9%90%98%E7%8D%8E+%E8%80%83%E7%B4%9A+%E5%AE%98%E7%B6%B2",
+    "note": "連結為搜尋結果"
   },
   {
     "id": "exam-pccu-2026-may",
     "title": "文化大學社會音樂考級 - 5月場",
     "type": "exam",
-    "location": "台北 (文化大學)",
+    "location": "台灣(台北)",
     "regEnd": "2026-04-01",
-    "examDates": ["2026-05-01"],
-    "link": "https://www.sce.pccu.edu.tw/courses/0G48sample",
-    "officialSite": "https://artschool.pccu.edu.tw/p/412-1032-5508.php?Lang=zh-tw",
-    "note": "台灣與北京中央音樂學院雙證 (報名已過)"
+    "examDates": [
+      "2026-05-01"
+    ],
+    "link": "https://www.google.com/search?q=%E6%96%87%E5%8C%96%E5%A4%A7%E5%AD%B8+%E7%A4%BE%E6%9C%83%E9%9F%B3%E6%A8%82+%E8%80%83%E7%B4%9A+2026+5%E6%9C%88",
+    "officialSite": "https://www.pccu.edu.tw/",
+    "note": "連結為搜尋結果"
   },
   {
     "id": "exam-pccu-2026-dec",
     "title": "文化大學社會音樂考級 - 12月場",
     "type": "exam",
-    "location": "台北 (文化大學)",
+    "location": "台灣(台北)",
     "regEnd": "2026-11-01",
-    "examDates": ["2026-12-01"],
-    "link": "https://www.sce.pccu.edu.tw/courses/0G48sample",
-    "note": "年度第二場考級"
+    "examDates": [
+      "2026-12-01"
+    ],
+    "link": "https://www.google.com/search?q=%E6%96%87%E5%8C%96%E5%A4%A7%E5%AD%B8+%E7%A4%BE%E6%9C%83%E9%9F%B3%E6%A8%82+%E8%80%83%E7%B4%9A+2026+12%E6%9C%88",
+    "officialSite": "https://www.pccu.edu.tw/",
+    "note": "連結為搜尋結果"
   },
   {
     "id": "comp-culture-cup-2026",
     "title": "2026 文化盃音樂大賽",
     "type": "competition",
-    "location": "台灣各區 (台北/高雄等)",
-    "regStart": "2026-05-01",
+    "location": "台灣各區",
     "regEnd": "2026-05-14",
-    "examDates": ["2026-07-06", "2026-07-25"],
+    "examDates": [
+      "2026-07-06",
+      "2026-07-25"
+    ],
     "link": "https://www.taiwanmusic.org/",
-    "note": "台灣夏季最大型賽事，5/1起網路報名！"
+    "officialSite": "https://www.taiwanmusic.org/",
+    "note": "未能網搜核對日期"
   },
   {
     "id": "comp-faya-2026",
     "title": "2026 法雅盃音樂大賽",
     "type": "competition",
-    "location": "依簡章公告",
-    "regStart": "2026-02-25",
+    "location": "台灣",
     "regEnd": "2026-05-02",
-    "examDates": ["2026-05-24"],
-    "link": "https://www.kfem.info/%E6%B3%95%E9%9B%85%E7%9B%83%E5%A0%B1%E5%90%8D%E7%B0%A1%E7%AB%A0",
-    "note": "【新增賽事】各組別將設一等至優秀獎，鼓勵學生參賽"
+    "examDates": [
+      "2026-05-24"
+    ],
+    "link": "https://www.google.com/search?q=2026+%E6%B3%95%E9%9B%85%E7%9B%83+%E9%9F%B3%E6%A8%82%E5%A4%A7%E8%B3%BD+%E5%8F%A4%E7%AE%8F+%E7%90%B5%E7%90%B6",
+    "officialSite": "https://www.google.com/search?q=%E6%B3%95%E9%9B%85%E7%9B%83+%E9%9F%B3%E6%A8%82%E5%A4%A7%E8%B3%BD+%E5%AE%98%E7%B6%B2",
+    "note": "連結為搜尋結果"
   },
   {
     "id": "comp-prague-2026",
     "title": "2026 布拉格音樂大賽 (台北區)",
     "type": "competition",
-    "location": "大台北地區",
+    "location": "台灣(台北)",
     "regEnd": "2026-06-01",
-    "examDates": ["2026-06-27", "2026-06-28"],
-    "link": "https://pragues.com.tw/",
-    "note": "【新增賽事】另有中南部賽區，請詳見官網"
+    "examDates": [
+      "2026-06-27",
+      "2026-06-28"
+    ],
+    "link": "https://www.google.com/search?q=2026+%E5%B8%83%E6%8B%89%E6%A0%BC+%E9%9F%B3%E6%A8%82%E5%A4%A7%E8%B3%BD+%E5%8F%B0%E5%8C%97%E5%8D%80+%E5%8F%A4%E7%AE%8F+%E7%90%B5%E7%90%B6",
+    "officialSite": "https://www.google.com/search?q=%E5%B8%83%E6%8B%89%E6%A0%BC%E9%9F%B3%E6%A8%82%E5%A4%A7%E8%B3%BD+%E5%AE%98%E7%B6%B2",
+    "note": "連結為搜尋結果"
   },
   {
     "id": "comp-excellence-taipei",
     "title": "台灣卓越盃音樂公開賽 - 台北",
     "type": "competition",
-    "location": "功學社蘆洲音樂廳",
+    "location": "台灣(台北)",
     "regEnd": "2025-12-19",
-    "examDates": ["2026-04-18", "2026-04-19"],
-    "link": "http://www.music-taiwan.com/zh-tw",
-    "note": "即將比賽"
+    "examDates": [
+      "2026-04-18",
+      "2026-04-19"
+    ],
+    "link": "https://www.google.com/search?q=%E5%8F%B0%E7%81%A3%E5%8D%93%E8%B6%8A%E7%9B%83+%E9%9F%B3%E6%A8%82%E5%85%AC%E9%96%8B%E8%B3%BD+%E5%8F%B0%E5%8C%97+2026",
+    "officialSite": "https://www.google.com/search?q=%E5%8F%B0%E7%81%A3%E5%8D%93%E8%B6%8A%E7%9B%83+%E5%AE%98%E7%B6%B2",
+    "note": "連結為搜尋結果"
   },
   {
     "id": "comp-lianxiao-2026",
     "title": "聯校音樂大賽 2026",
     "type": "competition",
-    "location": "各地 (線上錄影)",
+    "location": "台灣",
     "regEnd": "2026-04-30",
-    "examDates": ["2026-04-30"],
-    "link": "https://www.omusis.com/copy-of-e-musicmaestro-graded-piano-1",
-    "note": "接受古箏報名，錄影賽事作品提交限期4/30"
+    "examDates": [
+      "2026-04-30"
+    ],
+    "link": "https://www.google.com/search?q=%E8%81%AF%E6%A0%A1%E9%9F%B3%E6%A8%82%E5%A4%A7%E8%B3%BD+2026+%E5%8F%A4%E7%AE%8F+%E7%90%B5%E7%90%B6",
+    "officialSite": "https://www.google.com/search?q=%E8%81%AF%E6%A0%A1%E9%9F%B3%E6%A8%82%E5%A4%A7%E8%B3%BD+%E5%AE%98%E7%B6%B2",
+    "note": "連結為搜尋結果"
   },
   {
     "id": "comp-hk-art-promotion-2026",
     "title": "2026香港藝術推廣節",
     "type": "competition",
     "location": "香港",
-    "examDates": ["2026-04-11", "2026-04-12"],
-    "link": "https://www.facebook.com/HKPPAA/posts/",
-    "note": "包含古箏獨奏/合奏，即將比賽"
+    "examDates": [
+      "2026-04-11",
+      "2026-04-12"
+    ],
+    "link": "https://www.google.com/search?q=2026%E9%A6%99%E6%B8%AF%E8%97%9D%E8%A1%93%E6%8E%A8%E5%BB%A3%E7%AF%80+%E4%B8%AD%E6%A8%82+%E5%8F%A4%E7%AE%8F+%E7%90%B5%E7%90%B6",
+    "officialSite": "https://www.google.com/search?q=%E9%A6%99%E6%B8%AF%E8%97%9D%E8%A1%93%E6%8E%A8%E5%BB%A3%E7%AF%80+%E5%AE%98%E7%B6%B2",
+    "note": "連結為搜尋結果"
   },
   {
     "id": "comp-vwcm-6th-hong-kong-chinese-music-competition",
@@ -219,74 +276,97 @@
     "type": "competition",
     "location": "香港",
     "regEnd": "2026-02-28",
-    "examDates": ["2026-04-30"],
-    "link": "https://vwcm.hk/vwcm-competition/the-sixth/",
-    "note": "即將比賽"
+    "examDates": [
+      "2026-04-30"
+    ],
+    "link": "https://www.google.com/search?q=%E7%AC%AC%E5%85%AD%E5%B1%86+%E5%85%A8%E6%B8%AF%E4%B8%AD%E6%A8%82%E5%A4%A7%E8%B3%BD+2026",
+    "officialSite": "https://www.google.com/search?q=VWCM+%E5%85%A8%E6%B8%AF%E4%B8%AD%E6%A8%82%E5%A4%A7%E8%B3%BD+%E5%AE%98%E7%B6%B2",
+    "note": "連結為搜尋結果"
   },
   {
     "id": "exam-ccom-2026-overseas",
     "title": "中央音樂學院音樂水平等級考試 (海外)",
     "type": "exam",
-    "location": "各地 (海外)",
-    "examDates": ["2026-07-14", "2026-08-01"],
-    "link": "https://www.hkeaa.edu.hk/tc/ipe/ccm/ccompractical/",
-    "note": "海外考試日期為7月中至8月初"
+    "location": "海外(依考點)",
+    "examDates": [
+      "2026-07-14",
+      "2026-08-01"
+    ],
+    "link": "https://www.google.com/search?q=%E4%B8%AD%E5%A4%AE%E9%9F%B3%E6%A8%82%E5%AD%B8%E9%99%A2+%E6%B5%B7%E5%A4%96+%E9%9F%B3%E6%A8%82%E6%B0%B4%E5%B9%B3%E7%AD%89%E7%B4%9A%E8%80%83%E8%A9%A6+2026",
+    "officialSite": "https://www.ccom.edu.cn/",
+    "note": "連結為搜尋結果"
   },
   {
     "id": "exam-chinese-musicians-association-2026",
     "title": "中國音樂家協會 2026 古箏考級",
     "type": "exam",
-    "location": "各地 (中國)",
-    "link": "https://www.chnmusic.org.cn/kj/",
-    "note": "教材為《全國古箏演奏考級作品集（第三套）》"
+    "location": "中國(含各考點)",
+    "link": "https://www.google.com/search?q=%E4%B8%AD%E5%9C%8B%E9%9F%B3%E6%A8%82%E5%AE%B6%E5%8D%94%E6%9C%83+2026+%E5%8F%A4%E7%AE%8F+%E8%80%83%E7%B4%9A",
+    "officialSite": "https://www.google.com/search?q=%E4%B8%AD%E5%9C%8B%E9%9F%B3%E6%A8%82%E5%AE%B6%E5%8D%94%E6%9C%83+%E5%AE%98%E7%B6%B2",
+    "note": "缺日期待補"
   },
   {
     "id": "comp-datong-yungang-cup-2026",
     "title": "首屆古箏文化藝術節暨「云冈杯」展演",
     "type": "competition",
-    "location": "大同 (中國)",
-    "regStart": "2026-01-16",
+    "location": "中國(山西大同)",
     "regEnd": "2026-06-01",
-    "examDates": ["2026-06-01"],
-    "link": "https://www.huain.com/news/guzheng/2026/0119/8433.html",
-    "note": "報名起止時間1/16-6/1"
+    "examDates": [
+      "2026-06-01"
+    ],
+    "link": "https://www.google.com/search?q=%E4%BA%91%E5%86%88%E6%9D%AF+%E5%8F%A4%E7%AE%8F+2026+%E5%A4%A7%E5%90%8C",
+    "officialSite": "https://www.google.com/search?q=%E9%A6%96%E5%B1%86%E5%8F%A4%E7%AE%8F%E6%96%87%E5%8C%96%E8%97%9D%E8%A1%93%E7%AF%80+%E4%BA%91%E5%86%88%E6%9D%AF+%E5%AE%98%E6%96%B9",
+    "note": "連結為搜尋結果"
   },
   {
     "id": "comp-international-华乐杯-2026",
     "title": "2026「國際華樂杯」中國民族器樂大賽",
     "type": "competition",
-    "location": "北京/上海",
+    "location": "新加坡/馬來西亞/線上(依章程)",
     "regEnd": "2026-05-01",
-    "resultDate": "2026-06-01",
-    "link": "https://www.ioac.info/sys-nd/837.html",
-    "note": "全球徵集，古箏為中國民族器樂項目之一"
+    "link": "https://www.google.com/search?q=2026+%E5%9C%8B%E9%9A%9B%E8%8F%AF%E6%A8%82%E6%9D%AF+%E4%B8%AD%E5%9C%8B%E6%B0%91%E6%97%8F%E5%99%A8%E6%A8%82%E5%A4%A7%E8%B3%BD",
+    "officialSite": "https://www.google.com/search?q=%E5%9C%8B%E9%9A%9B%E8%8F%AF%E6%A8%82%E6%9D%AF+%E5%AE%98%E7%B6%B2",
+    "note": "缺賽程待補"
   },
   {
     "id": "comp-10th-chinese-youth-guzheng-invitation",
     "title": "第十屆中國少年兒童古箏邀請賽",
     "type": "competition",
     "location": "中國",
-    "examDates": ["2026-07-17", "2026-07-18", "2026-07-19", "2026-07-20"],
-    "link": "https://m.guzheng.cn/news/293594.html",
-    "note": "針對少年兒童的古箏專屬邀請賽"
+    "examDates": [
+      "2026-07-17",
+      "2026-07-18",
+      "2026-07-19",
+      "2026-07-20"
+    ],
+    "link": "https://www.google.com/search?q=%E7%AC%AC%E5%8D%81%E5%B1%86+%E4%B8%AD%E5%9C%8B%E5%B0%91%E5%B9%B4%E5%85%92%E7%AB%A5+%E5%8F%A4%E7%AE%8F+%E9%82%80%E8%AB%8B%E8%B3%BD+2026",
+    "officialSite": "https://www.google.com/search?q=%E4%B8%AD%E5%9C%8B%E5%B0%91%E5%B9%B4%E5%85%92%E7%AB%A5%E5%8F%A4%E7%AE%8F%E9%82%80%E8%AB%8B%E8%B3%BD+%E5%AE%98%E7%B6%B2",
+    "note": "連結為搜尋結果"
   },
   {
     "id": "comp-6th-macau-guzheng-invitation-2026",
     "title": "2026第六屆澳門古箏邀請賽",
     "type": "competition",
     "location": "澳門",
-    "examDates": ["2026-08-01"],
-    "link": "https://www.guzheng.cn/news/293760.html",
-    "note": "總決賽於8月舉行"
+    "examDates": [
+      "2026-08-01"
+    ],
+    "link": "https://www.google.com/search?q=2026+%E7%AC%AC%E5%85%AD%E5%B1%86+%E6%BE%B3%E9%96%80+%E5%8F%A4%E7%AE%8F+%E9%82%80%E8%AB%8B%E8%B3%BD",
+    "officialSite": "https://www.google.com/search?q=%E6%BE%B3%E9%96%80%E5%8F%A4%E7%AE%8F%E9%82%80%E8%AB%8B%E8%B3%BD+%E5%AE%98%E7%B6%B2",
+    "note": "連結為搜尋結果"
   },
   {
     "id": "comp-bard-guzheng-conference-2026",
     "title": "GUZHENG TIANXIA 古箏天下 (Bard 2026)",
     "type": "competition",
-    "location": "美國 (Bard Conservatory)",
+    "location": "美國(紐約州 Bard College)",
     "regEnd": "2026-05-03",
-    "examDates": ["2026-04-30", "2026-05-03"],
-    "link": "https://www.barduschinamusic.org/events/conference-2026",
-    "note": "國際古箏學術會議與比賽"
+    "examDates": [
+      "2026-04-30",
+      "2026-05-03"
+    ],
+    "link": "https://www.google.com/search?q=GUZHENG+TIANXIA+Bard+2026",
+    "officialSite": "https://www.google.com/search?q=GUZHENG+TIANXIA+official+site",
+    "note": "連結為搜尋結果"
   }
 ]
