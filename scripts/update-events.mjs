@@ -215,10 +215,36 @@ parsed.forEach((ev, i) => {
   }
 });
 
+// ─── 4a. 反降質防護(防止 GPT 沒做 web search 而把資料縮水) ────────
+// 規則:
+//  - link / officialSite 不能是 Google 搜尋 URL
+//  - 既有事件原本有 regStart 的,不能在新版被刪掉
+//  - note 不能包含「未能網搜」「無法核對」「未能核實」等字樣
+const SEARCH_URL_RE = /(?:^https?:\/\/)?(?:www\.)?(?:google|bing|duckduckgo|yahoo)\.[a-z.]+\/search/i;
+const BAD_NOTE_RE = /未能網搜|未能核對|未能核實|無法核對|無法核實|無法網搜/;
+const oldRegStartIds = new Set(existing.filter(e => e.regStart).map(e => e.id));
+
+parsed.forEach((ev, i) => {
+  if (ev.link && SEARCH_URL_RE.test(ev.link)) {
+    errors.push(`#${i} (${ev.id}) link 是搜尋引擎 URL,GPT 沒找到真實連結:${ev.link}`);
+  }
+  if (ev.officialSite && SEARCH_URL_RE.test(ev.officialSite)) {
+    errors.push(`#${i} (${ev.id}) officialSite 是搜尋引擎 URL:${ev.officialSite}`);
+  }
+  if (ev.note && BAD_NOTE_RE.test(ev.note)) {
+    errors.push(`#${i} (${ev.id}) note 顯示 GPT 無法核實:"${ev.note}"`);
+  }
+  if (oldRegStartIds.has(ev.id) && !ev.regStart) {
+    errors.push(`#${i} (${ev.id}) 既有事件原本有 regStart,新版被刪除`);
+  }
+});
+
 if (errors.length > 0) {
   console.error(`❌ 驗證失敗,共 ${errors.length} 個錯誤:`);
-  errors.slice(0, 10).forEach(e => console.error(" ", e));
-  if (errors.length > 10) console.error(`  ...還有 ${errors.length - 10} 個`);
+  errors.slice(0, 20).forEach(e => console.error(" ", e));
+  if (errors.length > 20) console.error(`  ...還有 ${errors.length - 20} 個`);
+  console.error("\n⚠️  常見原因:Replicate openai/gpt-5.2 預設沒有真實 web search,");
+  console.error("    模型只能基於 prompt 內容回答。請考慮改用支援 web search 的 API。");
   process.exit(2);
 }
 
