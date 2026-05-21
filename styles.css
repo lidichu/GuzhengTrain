@@ -125,9 +125,10 @@ nav {
     display: none;
   }
 
-  /* 顯示電腦版選單容器 */
+  /* 顯示電腦版選單容器 (visibility:visible 重要 — 防止 Tailwind 的 .collapse utility 在 /Certificates/ 之類混合頁面把整個 navbar 內容隱形) */
   .desktop-menu-container {
     display: block !important;
+    visibility: visible !important;
     width: 100%;
   }
 
@@ -257,6 +258,7 @@ nav {
     height: calc(100vh - 60px);
     background-color: rgba(74, 53, 32, 0.98);
     display: block !important;
+    visibility: visible !important;
     padding: 0;
     margin: 0;
     overflow-y: auto;
