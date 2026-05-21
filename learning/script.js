@@ -31,12 +31,16 @@
 
   const STORAGE_KEY = "guzhengtrain_learning_progress_v1";
 
-  // 取得當前頁面檔名
+  // 取得當前頁面檔名(處理 serve 把 .html 重導向去掉的情況)
   function currentFile() {
     const p = location.pathname;
     const m = p.match(/\/learning\/([^?#]*)$/);
     if (!m) return null;
-    return m[1] || "index.html";
+    const raw = m[1];
+    if (!raw || raw === "" || raw === "index" || raw === "index.html") return "index.html";
+    // 若無副檔名,補上 .html
+    if (!raw.endsWith(".html")) return raw + ".html";
+    return raw;
   }
 
   // localStorage 助手
