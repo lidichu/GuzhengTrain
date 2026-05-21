@@ -31,51 +31,66 @@
         ::-webkit-scrollbar-thumb { background: #d6d3d1; border-radius: 4px; }
         ::-webkit-scrollbar-thumb:hover { background: #a8a29e; }
     </style>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="../styles.css">
+  <script src="../main.js" defer></script>
 </head>
 <body class="text-stone-800 flex flex-col min-h-screen">
 
-    <nav class="sticky top-0 z-50 shadow-lg text-white" style="background-color: #4A3520;">
-        <div class="container mx-auto px-4">
-            <div class="flex justify-between items-center h-[70px]">
-                <a href="../index.html" class="text-xl font-bold tracking-wider hover:text-[#D2B48C] transition-colors duration-300 flex items-center gap-2">
-                    <i class="fas fa-music"></i> 新莊箏心
-                </a>
-                <div class="hidden md:flex items-center space-x-8">
-                    <a href="../index.html#about" class="font-bold hover:text-[#D2B48C] transition-colors duration-300">關於我們</a>
-                    <a href="../index.html#courses" class="font-bold hover:text-[#D2B48C] transition-colors duration-300">課程資訊</a>
-                    <a href="../index.html#teachers" class="font-bold hover:text-[#D2B48C] transition-colors duration-300">師資介紹</a>
-                    <div class="relative group">
-                        <button class="font-bold hover:text-[#D2B48C] transition-colors duration-300 flex items-center gap-1 py-4">
-                            學習指南 <i class="fas fa-chevron-down text-xs"></i>
-                        </button>
-                        <div class="absolute left-1/2 transform -translate-x-1/2 top-full w-48 bg-[#4A3520] border border-[#D2B48C] rounded shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 flex flex-col py-2">
-                            <a href="https://scm-event.tw/" target="_blank" class="px-4 py-2 hover:bg-[#D2B48C] hover:text-[#4A3520] transition-colors text-sm">國樂學會報名</a>
-                            <a href="#" class="px-4 py-2 hover:bg-[#D2B48C] hover:text-[#4A3520] transition-colors text-sm">黃鐘獎考級</a>
-                        </div>
-                    </div>
-                    <a href="../index.html#gallery" class="font-bold hover:text-[#D2B48C] transition-colors duration-300">學生成果</a>
-                    <a href="../index.html#contact" class="font-bold hover:text-[#D2B48C] transition-colors duration-300">聯絡我們</a>
-                    <div class="h-6 w-px bg-white/30 mx-2"></div>
-                    <span class="text-[#D2B48C] font-bold text-sm bg-black/20 px-3 py-1 rounded-full">
-                        <i class="fas fa-chart-line mr-1"></i> 備考情報
-                    </span>
+<nav class="navbar navbar-expand-lg">
+    <div class="container nav-container">
+      <div class="logo-container">
+        <a href="/" class="navbar-brand"><span class="brand-text">新莊箏心古箏音樂教室</span></a>
+      </div>
+
+      <button class="navbar-toggler menu-icon" type="button" aria-controls="primaryNav" aria-expanded="false" aria-label="開啟選單">
+        <i class="fas fa-bars"></i>
+      </button>
+
+      <div class="collapse navbar-collapse desktop-menu-container" id="primaryNav">
+        <ul class="navbar-nav nav-menu ms-auto desktop-menu">
+          <li class="nav-item"><a class="nav-link" href="/#about">關於我們</a></li>
+          <li class="nav-item"><a class="nav-link" href="/#courses">課程資訊</a></li>
+          <li class="nav-item"><a class="nav-link" href="/Certificates/">考級比賽</a></li>
+          <li class="nav-item"><a class="nav-link" href="/#gallery">學生成果</a></li>
+          <li class="nav-item"><a class="nav-link" href="/#contact">聯絡我們</a></li>
+
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="/learning/" role="button" aria-haspopup="true" aria-expanded="false">
+              學習指南
+            </a>
+            <div class="dropdown-menu dropdown-menu-grid">
+              <div class="dropdown-grid">
+                <div class="dropdown-column">
+                  <h6 class="dropdown-header">學習指南</h6>
+                  <a class="dropdown-item" href="/learning/">學習總覽</a>
+                  <h6 class="dropdown-header">基礎學習</h6>
+                  <a class="dropdown-item" href="/learning/01-introduction.html">認識古箏</a>
+                  <a class="dropdown-item" href="/learning/02-posture.html">基本坐姿與手型</a>
+                  <a class="dropdown-item" href="/learning/03-basic-techniques.html">基礎指法練習</a>
+                  <h6 class="dropdown-header">技巧提升</h6>
+                  <a class="dropdown-item" href="/learning/04-beginner-techniques.html">初級彈奏技巧</a>
+                  <a class="dropdown-item" href="/learning/05-intermediate-techniques.html">中級彈奏技巧</a>
+                  <a class="dropdown-item" href="/learning/06-advanced-techniques.html">高級演奏技巧</a>
                 </div>
-                <button id="mobile-menu-btn" class="md:hidden text-2xl focus:outline-none hover:text-[#D2B48C] transition-colors">
-                    <i class="fas fa-bars"></i>
-                </button>
+                <div class="dropdown-column">
+                  <h6 class="dropdown-header">實用指南</h6>
+                  <a class="dropdown-item" href="/learning/08-buying-guzheng.html">如何選購古箏</a>
+                  <a class="dropdown-item" href="/learning/09-finding-teacher.html">尋找適合的老師</a>
+                  <a class="dropdown-item" href="/learning/10-certification.html">考取古箏證照</a>
+                  <a class="dropdown-item" href="/learning/11-maintenance.html">古箏保養與調音</a>
+                  <a class="dropdown-item" href="/learning/12-recital-importance.html">為什麼我們要辦成果發表會</a>
+                </div>
+              </div>
             </div>
-        </div>
-        <div id="mobile-menu" class="hidden md:hidden bg-[#4A3520] border-t border-[#D2B48C]/30 absolute w-full left-0 shadow-xl">
-            <div class="flex flex-col p-4 space-y-4 text-center">
-                <a href="../index.html#about" class="block py-2 hover:text-[#D2B48C] font-bold border-b border-white/10">關於我們</a>
-                <a href="../index.html#courses" class="block py-2 hover:text-[#D2B48C] font-bold border-b border-white/10">課程資訊</a>
-                <a href="../index.html#teachers" class="block py-2 hover:text-[#D2B48C] font-bold border-b border-white/10">師資介紹</a>
-                <a href="https://scm-event.tw/" target="_blank" class="block py-2 hover:text-[#D2B48C] font-bold border-b border-white/10">學習指南 (考級)</a>
-                <a href="../index.html#gallery" class="block py-2 hover:text-[#D2B48C] font-bold border-b border-white/10">學生成果</a>
-                <a href="../index.html#contact" class="block py-2 hover:text-[#D2B48C] font-bold">聯絡我們</a>
-            </div>
-        </div>
-    </nav>
+          </li>
+
+          <li class="nav-item"><a class="nav-link" href="/quiz/">古箏測驗</a></li>
+          <li class="nav-item nav-cta-item"><a class="nav-link nav-cta" href="/#register">立即報名體驗</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
 
     <main class="flex-grow container mx-auto px-4 py-8 space-y-12">
         <section class="max-w-5xl mx-auto space-y-4">
