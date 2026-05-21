@@ -38,6 +38,24 @@ const VALID_TYPES = new Set(["exam", "competition"]);
 const DATE_RE = /^\d{4}-\d{2}-\d{2}$/;
 
 const today = new Date().toISOString().slice(0, 10);
+const todayMs = new Date(today).getTime();
+
+/**
+ * 判斷事件是否還有任何未來日期(報名/考試/結果公布)
+ * - 完全沒有日期(TBA)→ 保留
+ * - 至少一個日期 >= 今天 → 保留
+ * - 所有日期都在過去 → 過期,應移除
+ */
+function hasAnyFutureDate(event) {
+  const dates = [];
+  if (event.regStart) dates.push(event.regStart);
+  if (event.regEnd) dates.push(event.regEnd);
+  if (event.resultDate) dates.push(event.resultDate);
+  if (Array.isArray(event.examDates)) dates.push(...event.examDates);
+
+  if (dates.length === 0) return true; // TBA 保留
+  return dates.some(d => new Date(d).getTime() >= todayMs);
+}
 
 // ─── 1. 讀現有 events.json ──────────────────────────────────────────
 const rawExisting = await fs.readFile(EVENTS_FILE, "utf8");
@@ -202,6 +220,15 @@ if (errors.length > 0) {
   errors.slice(0, 10).forEach(e => console.error(" ", e));
   if (errors.length > 10) console.error(`  ...還有 ${errors.length - 10} 個`);
   process.exit(2);
+}
+
+// ─── 4b. 過濾掉已過期的事件 ───────────────────────────────────────
+const beforeExpiryCount = parsed.length;
+const expired = parsed.filter(e => !hasAnyFutureDate(e));
+parsed = parsed.filter(e => hasAnyFutureDate(e));
+if (expired.length > 0) {
+  console.log(`\n🗑  過濾掉 ${expired.length} 筆已過期事件(所有日期皆早於 ${today}):`);
+  expired.forEach(e => console.log(`   - [${e.type}] ${e.title} (${e.id})`));
 }
 
 // ─── 5. Sanity check:變動規模 ───────────────────────────────────────

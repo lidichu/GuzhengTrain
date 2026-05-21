@@ -391,12 +391,37 @@
         }
 
         // --- 5. 繪製圖表 ---
+        function computeChartRange(items) {
+            const times = [];
+            items.forEach(e => {
+                if (e.regStart) times.push(e.regStart.getTime());
+                if (e.regEnd) times.push(e.regEnd.getTime());
+                if (e.examDates && e.examDates.length > 0) {
+                    times.push(...e.examDates.map(d => d.getTime()));
+                }
+            });
+            if (times.length === 0) {
+                return {
+                    min: new Date(YEAR, 0, 1).getTime(),
+                    max: new Date(YEAR + 1, 0, 1).getTime()
+                };
+            }
+            const minDate = new Date(Math.min(...times));
+            const maxDate = new Date(Math.max(...times));
+            minDate.setDate(1);
+            minDate.setHours(0, 0, 0, 0);
+            maxDate.setMonth(maxDate.getMonth() + 2, 0);
+            maxDate.setHours(23, 59, 59, 999);
+            return { min: minDate.getTime(), max: maxDate.getTime() };
+        }
+
         function initChart() {
             const ctxCanvas = document.getElementById('scheduleChart');
             if (!ctxCanvas) return;
-            
+
             // 篩選出考級類活動
             const examEvents = events.filter(e => e.type === 'exam');
+            const { min: chartMin, max: chartMax } = computeChartRange(examEvents);
 
             // 如果已有圖表，先銷毀以避免重複繪製
             if (scheduleChart) scheduleChart.destroy();
@@ -437,13 +462,13 @@
                     indexAxis: 'y', 
                     responsive: true, 
                     maintainAspectRatio: false,
-                    scales: { 
-                        x: { 
-                            type: 'time', 
-                            time: { unit: 'month', displayFormats: { month: 'M月' } }, 
-                            min: new Date(YEAR, 0, 1).getTime(), 
-                            max: new Date(YEAR, 6, 30).getTime() 
-                        } 
+                    scales: {
+                        x: {
+                            type: 'time',
+                            time: { unit: 'month', displayFormats: { month: 'yyyy/M' } },
+                            min: chartMin,
+                            max: chartMax
+                        }
                     },
                     plugins: {
                         tooltip: {
