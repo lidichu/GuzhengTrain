@@ -259,6 +259,25 @@ const output = JSON.stringify(parsed, null, 2) + "\n";
 await fs.writeFile(EVENTS_FILE, output, "utf8");
 console.log(`\n💾 已寫入 ${path.relative(process.cwd(), EVENTS_FILE)}`);
 
+// 順手把 Certificates/index.html 內「(YYYY/MM/DD 更新)」改成今天
+const INDEX_FILE = path.resolve(__dirname, "..", "Certificates", "index.html");
+try {
+  const html = await fs.readFile(INDEX_FILE, "utf8");
+  const todaySlash = today.replace(/-/g, "/");
+  const newHtml = html.replace(
+    /年度規劃指南\s*\(\d{4}\/\d{2}\/\d{2}\s*更新\)/,
+    `年度規劃指南 (${todaySlash} 更新)`
+  );
+  if (newHtml !== html) {
+    await fs.writeFile(INDEX_FILE, newHtml, "utf8");
+    console.log(`📅 已同步更新 Certificates/index.html 日期戳 → ${todaySlash}`);
+  } else {
+    console.log(`📅 index.html 日期戳未變動(可能格式不符或已是今日)`);
+  }
+} catch (err) {
+  console.warn(`⚠️ 無法更新 index.html 日期戳:${err.message}`);
+}
+
 // 寫進 GitHub Actions step output,供後續 step 判斷是否要 commit
 if (process.env.GITHUB_OUTPUT) {
   const summary = `added=${added.length}\nupdated=${changed.length}\nremoved=${removed.length}\ntotal=${parsed.length}\n`;
