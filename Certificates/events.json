@@ -1,100 +1,5 @@
 [
   {
-    "id": "exam-scm-may-site-1",
-    "title": "國樂學會考級 - 5月場 (北/南)",
-    "type": "exam",
-    "location": "台北、台南 (現場)",
-    "regStart": "2026-03-24",
-    "regEnd": "2026-04-24",
-    "examDates": [
-      "2026-05-23"
-    ],
-    "link": "https://scm-event.tw/",
-    "officialSite": "https://www.facebook.com/scm.org.tw/",
-    "note": "報名已截止"
-  },
-  {
-    "id": "exam-scm-may-site-2",
-    "title": "國樂學會考級 - 5月場 (高/竹)",
-    "type": "exam",
-    "location": "高雄、新竹 (現場)",
-    "regStart": "2026-03-30",
-    "regEnd": "2026-04-30",
-    "examDates": [
-      "2026-05-31"
-    ],
-    "link": "https://scm-event.tw/",
-    "officialSite": "https://www.facebook.com/scm.org.tw/",
-    "note": "報名已截止"
-  },
-  {
-    "id": "exam-scm-may-net",
-    "title": "國樂學會考級 - 5月場 (網路)",
-    "type": "exam",
-    "location": "線上錄影上傳",
-    "regStart": "2026-04-08",
-    "regEnd": "2026-05-08",
-    "examDates": [
-      "2026-05-31"
-    ],
-    "link": "https://scm-event.tw/",
-    "officialSite": "https://www.facebook.com/scm.org.tw/",
-    "note": "報名已截止"
-  },
-  {
-    "id": "comp-faya-2026",
-    "title": "2026 法雅盃音樂大賽",
-    "type": "competition",
-    "location": "台北",
-    "regStart": "2026-02-25",
-    "regEnd": "2026-05-05",
-    "examDates": [
-      "2026-05-24"
-    ],
-    "link": "https://www.kfem.info/",
-    "officialSite": "https://www.kfem.info/",
-    "note": "上半年賽事已結束，下半年資訊待公告"
-  },
-  {
-    "id": "exam-hz-2026-05-24-tainan",
-    "title": "黃鐘獎全國音樂檢定 - 05/24 台南場",
-    "type": "exam",
-    "location": "台南 (現場)",
-    "regEnd": "2026-05-14",
-    "examDates": [
-      "2026-05-24"
-    ],
-    "link": "https://www.beclass.com/default.php?name=Search&op=relation&v=VQJWVwk=&f",
-    "officialSite": "https://ambitious-watermelon-ddjt20.mystrikingly.com/4",
-    "note": "報名已截止"
-  },
-  {
-    "id": "exam-hz-2026-05-25-net",
-    "title": "黃鐘獎全國音樂檢定 - 05/25 網路考級",
-    "type": "exam",
-    "location": "線上",
-    "regEnd": "2026-05-15",
-    "examDates": [
-      "2026-05-25"
-    ],
-    "link": "https://www.beclass.com/default.php?name=Search&op=relation&v=VQJWVwk=&f",
-    "officialSite": "https://ambitious-watermelon-ddjt20.mystrikingly.com/4",
-    "note": "報名已截止"
-  },
-  {
-    "id": "exam-hz-2026-05-31-hualien",
-    "title": "黃鐘獎全國音樂檢定 - 05/31 花蓮場",
-    "type": "exam",
-    "location": "花蓮 (現場)",
-    "regEnd": "2026-05-21",
-    "examDates": [
-      "2026-05-31"
-    ],
-    "link": "https://www.beclass.com/default.php?name=Search&op=relation&v=VQJWVwk=&f",
-    "officialSite": "https://ambitious-watermelon-ddjt20.mystrikingly.com/4",
-    "note": "報名即將截止"
-  },
-  {
     "id": "comp-culture-cup-2026",
     "title": "2026 文化盃音樂大賽",
     "type": "competition",
@@ -105,7 +10,7 @@
       "2026-07-06",
       "2026-08-06"
     ],
-    "link": "https://www.taiwanmusic.org/culture/register/",
+    "link": "https://www.taiwanmusic.org/",
     "officialSite": "https://www.taiwanmusic.org/",
     "note": "報名已截止，台灣夏季大型賽事"
   },
@@ -122,7 +27,7 @@
     ],
     "link": "https://scm-event.tw/",
     "officialSite": "https://www.facebook.com/scm.org.tw/",
-    "note": "含個人、重奏、絲竹合奏賽"
+    "note": "報名已截止。含個人、重奏、絲竹合奏賽"
   },
   {
     "id": "comp-prague-2026",
@@ -132,16 +37,23 @@
     "regEnd": "2026-06-01",
     "examDates": [
       "2026-05-23",
+      "2026-05-24",
       "2026-06-13",
+      "2026-06-14",
       "2026-06-27",
+      "2026-06-28",
       "2026-07-04",
+      "2026-07-05",
       "2026-10-17",
+      "2026-10-18",
       "2026-11-14",
-      "2026-12-19"
+      "2026-11-15",
+      "2026-12-19",
+      "2026-12-20"
     ],
     "link": "https://pragues.com.tw/",
     "officialSite": "https://pragues.com.tw/",
-    "note": "多場次：台中(5月/12月)、高雄(6月)、台北(6月)等"
+    "note": "報名已截止。多場次巡迴賽事"
   },
   {
     "id": "comp-datong-yungang-cup-2026",
@@ -155,7 +67,7 @@
       "2026-08-31"
     ],
     "link": "https://www.huain.com/news/guzheng/2026/0119/8433.html",
-    "note": "初賽為6月線上影片評審，決賽為8月"
+    "note": "報名已截止。初賽為線上，決賽為現場"
   },
   {
     "id": "comp-my-tga-festival-2026",
@@ -180,7 +92,7 @@
     ],
     "link": "https://www.beclass.com/default.php?name=Search&op=relation&v=VQJWVwk=&f",
     "officialSite": "https://ambitious-watermelon-ddjt20.mystrikingly.com/4",
-    "note": "報名即將截止"
+    "note": "報名已截止"
   },
   {
     "id": "exam-hz-2026-06-14-taipei",
@@ -193,7 +105,7 @@
     ],
     "link": "https://www.beclass.com/default.php?name=Search&op=relation&v=VQJWVwk=&f",
     "officialSite": "https://ambitious-watermelon-ddjt20.mystrikingly.com/4",
-    "note": "6月初截止報名"
+    "note": "報名即將截止"
   },
   {
     "id": "exam-hz-2026-06-28-douliu",
@@ -246,7 +158,7 @@
     ],
     "link": "https://scm-event.tw/",
     "officialSite": "https://www.facebook.com/scm.org.tw/",
-    "note": "含個人、重奏、絲竹合奏賽"
+    "note": "報名已截止。含個人、重奏、絲竹合奏賽"
   },
   {
     "id": "exam-scm-sep-net",
@@ -313,7 +225,7 @@
     "title": "文化大學社會音樂考級 (2025起停辦)",
     "type": "exam",
     "location": "台北 (文化大學)",
-    "link": "https://arts.pccu.edu.tw/p/412-1139-131.php?Lang=zh-tw",
+    "link": "https://www.sce.pccu.edu.tw/",
     "officialSite": "https://www.sce.pccu.edu.tw/",
     "note": "官方公告自2025年起停辦"
   },
@@ -385,5 +297,43 @@
     "location": "各賽區/成都(總決賽)",
     "link": "https://mp.weixin.qq.com/s/3G5i2n3W2f-XwZ2qY0z9fQ",
     "note": "分為各賽區選拔賽與總決賽"
+  },
+  {
+    "id": "comp-superior-culture-autumn-2026",
+    "title": "2026 深秋中樂節",
+    "type": "competition",
+    "location": "香港 (線上)",
+    "regEnd": "2026-10-15",
+    "link": "https://www.superiorculture.com/autumnchinesemusic2026",
+    "officialSite": "https://www.superiorculture.com/",
+    "note": "線上影片比賽，含古箏、琵琶等多項中樂樂器"
+  },
+  {
+    "id": "comp-dream-chasing-guzheng-2026",
+    "title": "2026逐梦全国古筝比赛",
+    "type": "competition",
+    "location": "線上",
+    "regStart": "2026-04-12",
+    "regEnd": "2026-12-30",
+    "examDates": [
+      "2026-04-12",
+      "2026-12-30"
+    ],
+    "link": "https://www.52cmusic.com/race/139.html",
+    "note": "線上影片比賽，賽程期間內皆可報名上傳"
+  },
+  {
+    "id": "comp-dream-chasing-pipa-2026",
+    "title": "2026赛全国琵琶比赛",
+    "type": "competition",
+    "location": "線上",
+    "regStart": "2026-04-12",
+    "regEnd": "2026-12-30",
+    "examDates": [
+      "2026-04-12",
+      "2026-12-30"
+    ],
+    "link": "https://www.52cmusic.com/race/138.html",
+    "note": "線上影片比賽，賽程期間內皆可報名上傳"
   }
 ]
