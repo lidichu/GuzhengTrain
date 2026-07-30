@@ -89,6 +89,25 @@ nav.navbar {
   margin: 0;
 }
 
+/* 品牌名稱 = 全站回首頁入口,需要有可點擊的視覺提示 */
+.navbar-brand {
+  text-decoration: none;
+  display: inline-block;
+  transition: color 0.3s;
+}
+.navbar-brand .brand-text {
+  transition: color 0.3s;
+}
+.navbar-brand:hover .brand-text,
+.navbar-brand:focus-visible .brand-text {
+  color: var(--secondary);
+}
+.navbar-brand:focus-visible {
+  outline: 2px solid var(--secondary);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
 /* 視覺隱藏但保留給螢幕閱讀器與搜尋引擎(SEO h1 用) */
 .visually-hidden {
   position: absolute;
@@ -121,22 +140,27 @@ nav.navbar {
     display: none !important;
   }
 
-  /* 電腦版 Logo 預設隱藏 (依您原始設計) */
+  /* 電腦版顯示品牌名稱 — 這是全站唯一的回首頁連結,隱藏會讓子頁走不回首頁 */
   .logo-container {
-    display: none;
+    display: block;
+    flex: 0 0 auto;
+    margin-right: 12px;
+    white-space: nowrap;
   }
 
   /* 顯示電腦版選單容器 (visibility:visible 重要 — 防止 Tailwind 的 .collapse utility 在 /Certificates/ 之類混合頁面把整個 navbar 內容隱形) */
   .desktop-menu-container {
     display: block !important;
     visibility: visible !important;
-    width: 100%;
+    width: auto;
+    flex: 0 1 auto;
+    min-width: 0;
   }
 
   /* 電腦版列表排版 */
   ul.desktop-menu {
     display: flex;
-    justify-content: center;
+    justify-content: flex-end;
     align-items: center;
     list-style: none;
     margin: 0;
@@ -158,8 +182,12 @@ nav.navbar {
     white-space: nowrap;
   }
 
-  /* 視窗較窄(平板橫向、小筆電)時進一步壓縮間距 */
-  @media (max-width: 1100px) {
+  /* 視窗較窄(平板橫向、小筆電)時逐階壓縮,
+     讓「品牌名稱(回首頁入口)+ 8 個選單項」能同列不換行、不溢出 */
+  @media (max-width: 1250px) {
+    .logo-container .brand-text {
+      font-size: 1.05rem;
+    }
     ul.desktop-menu li {
       padding: 15px 9px;
     }
@@ -169,6 +197,22 @@ nav.navbar {
     ul.desktop-menu .nav-cta {
       padding: 7px 14px !important;
       font-size: 0.95rem;
+    }
+  }
+
+  @media (max-width: 1080px) {
+    .logo-container .brand-text {
+      font-size: 0.95rem;
+    }
+    ul.desktop-menu li {
+      padding: 15px 5px;
+    }
+    ul.desktop-menu li a {
+      font-size: 0.92rem;
+    }
+    ul.desktop-menu .nav-cta {
+      padding: 6px 10px !important;
+      font-size: 0.9rem;
     }
   }
 
