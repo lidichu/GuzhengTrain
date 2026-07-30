@@ -1,35 +1,79 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
   <meta charset='utf-8'>
-  <meta name='viewport' content='width=device-width'>
-  <title>Privacy Policy & Terms and Conditions</title>
+  <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+  <title>Privacy Policy &amp; Terms and Conditions | 新莊箏心古箏音樂教室</title>
+  <meta name="robots" content="noindex, follow">
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="icon" type="image/png" href="favicon.png">
+  <script src="main.js" defer></script>
+
   <style>
-    body {
-      font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-      padding: 1em;
-      line-height: 1.6;
+    /* styles.css 的 *{margin:0;padding:0} reset 會吃掉內文間距,這裡補回來 */
+    .legal-page {
+      padding: 40px 20px 60px;
     }
-    h1, h2 {
-      color: #333;
+    .legal-page h1 {
+      font-size: 2rem;
+      margin-bottom: 1em;
     }
-    ul {
-      padding-left: 20px;
+    .legal-page h2 {
+      font-size: 1.4rem;
+      margin: 1.6em 0 0.6em;
     }
-    a {
-      color: #007BFF;
-      text-decoration: none;
+    .legal-page p {
+      margin-bottom: 1em;
     }
-    a:hover {
-      text-decoration: underline;
+    .legal-page ul {
+      margin: 0 0 1em 0;
+      padding-left: 1.5em;
     }
-    hr {
-      margin: 2em 0;
+    .legal-page li {
+      margin-bottom: 0.4em;
+    }
+    .legal-page a {
+      color: var(--primary);
+    }
+    .legal-page hr {
+      margin: 2.5em 0;
+      border: 0;
+      border-top: 1px solid rgba(74, 53, 32, 0.2);
     }
   </style>
 </head>
 <body>
-  <h1>Privacy Policy & Terms and Conditions</h1>
+
+  <nav class="navbar navbar-expand-lg">
+    <div class="container nav-container">
+      <div class="logo-container">
+        <a href="/" class="navbar-brand"><span class="brand-text">新莊箏心古箏音樂教室</span></a>
+      </div>
+
+      <button class="navbar-toggler menu-icon" type="button" aria-controls="primaryNav" aria-expanded="false" aria-label="開啟選單">
+        <i class="fas fa-bars"></i>
+      </button>
+
+      <div class="collapse navbar-collapse desktop-menu-container" id="primaryNav">
+        <ul class="navbar-nav nav-menu ms-auto desktop-menu">
+          <li class="nav-item"><a class="nav-link" href="/#about">關於我們</a></li>
+          <li class="nav-item"><a class="nav-link" href="/#courses">課程資訊</a></li>
+          <li class="nav-item"><a class="nav-link" href="/Certificates/">考級比賽</a></li>
+          <li class="nav-item"><a class="nav-link" href="/#gallery">學生成果</a></li>
+          <li class="nav-item"><a class="nav-link" href="/#contact">聯絡我們</a></li>
+          <li class="nav-item"><a class="nav-link" href="/learning/">學習指南</a></li>
+          <li class="nav-item"><a class="nav-link" href="/quiz/">古箏測驗</a></li>
+          <li class="nav-item nav-cta-item"><a class="nav-link nav-cta" href="/#register">立即報名體驗</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <main class="container legal-page">
+  <h1>Privacy Policy &amp; Terms and Conditions</h1>
   <p>Welcome! Below you will find the Privacy Policy and Terms and Conditions for the <strong>地震遇災助手</strong> app.</p>
 
   <h2>Table of Contents</h2>
@@ -101,6 +145,8 @@
   <hr>
 
   <p>This page was generated using <a href="https://app-privacy-policy-generator.nisrulz.com/" target="_blank" rel="noopener noreferrer">App Privacy Policy Generator</a>.</p>
+  </main>
+
   <footer class="site-footer">
     <div class="container">
       <div class="footer-grid">
@@ -123,6 +169,7 @@
         <div class="footer-col footer-nav">
           <h4 class="footer-heading">快速連結</h4>
           <ul class="footer-links">
+            <li><a href="/">首頁</a></li>
             <li><a href="/#about">關於我們</a></li>
             <li><a href="/#courses">課程資訊</a></li>
             <li><a href="/Certificates/">考級比賽</a></li>
