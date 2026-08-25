@@ -1111,3 +1111,59 @@ footer {
     grid-template-columns: 1fr 1fr;
   }
 }
+
+/* ========================================= */
+/* 師資置頂主卡 (創辦人) — 橫向排版,寬度佔滿一排三格但高度維持精簡 */
+/* ========================================= */
+.teacher-card--featured {
+  width: 940px; /* = 300px*3 + 20px*2,剛好等於下方三張卡的總寬 */
+  max-width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 32px;
+  text-align: left;
+  padding: 24px 32px;
+}
+
+.teacher-card--featured .teacher-image {
+  width: 180px;
+  height: 180px;
+  flex: 0 0 180px;
+  margin: 0;
+}
+
+.teacher-featured-body {
+  min-width: 0;
+}
+
+.teacher-card--featured h3 {
+  font-size: 1.6rem;
+  margin-bottom: 6px;
+}
+
+.teacher-card--featured p {
+  margin-bottom: 2px;
+}
+
+.teacher-card--featured p strong {
+  color: var(--primary);
+}
+
+/* 手機版:主卡還原為直式置中,與其他卡片一致 */
+@media (max-width: 768px) {
+  .teacher-card--featured {
+    flex-direction: column;
+    text-align: center;
+    gap: 0;
+    padding: 20px;
+  }
+  .teacher-card--featured .teacher-image {
+    width: 150px;
+    height: 150px;
+    flex: 0 0 auto;
+    margin: 0 auto 15px;
+  }
+  .teacher-card--featured h3 {
+    font-size: 1.4rem;
+  }
+}
