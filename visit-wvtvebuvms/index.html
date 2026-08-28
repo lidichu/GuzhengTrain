@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>交通資訊｜新莊箏心古箏音樂教室</title>
+
+<!-- 這頁只給預約成功的學員,不希望被搜尋到,也不放進 sitemap、站上不放連結 -->
+<meta name="robots" content="noindex, nofollow, noarchive">
+<meta name="googlebot" content="noindex, nofollow">
+<meta name="referrer" content="no-referrer">
+
+<link rel="icon" type="image/png" href="../favicon.png">
+
+<style>
+:root{
+  --primary:#8B5A2B; --secondary:#D2B48C; --light:#F5F5DC;
+  --dark:#4A3520; --white:#fff; --ink:#3a2a18;
+  --line:rgba(74,53,32,.15); --bus:#1f6f43; --mrt:#c2410c; --car:#1d4ed8;
+}
+*{margin:0;padding:0;box-sizing:border-box;font-family:"微軟正黑體","Microsoft JhengHei",Arial,sans-serif}
+body{background:var(--light);color:var(--ink);line-height:1.65;-webkit-text-size-adjust:100%}
+.wrap{max-width:720px;margin:0 auto;padding:0 16px 64px}
+
+/* 頁首 */
+.top{background:var(--dark);color:var(--white);padding:22px 0 26px;margin-bottom:22px}
+.top .wrap{padding-bottom:0}
+.top h1{font-size:1.3rem;letter-spacing:.5px}
+.top .sub{color:var(--secondary);font-size:.9rem;margin-top:4px}
+
+/* 地址卡 */
+.addr{background:var(--white);border-radius:14px;padding:20px;box-shadow:0 4px 14px rgba(0,0,0,.08);margin-bottom:26px}
+.addr .label{font-size:.8rem;color:#8a7355;letter-spacing:1px}
+.addr .value{font-size:1.35rem;font-weight:bold;color:var(--primary);margin:6px 0 4px;line-height:1.4}
+.addr .note{font-size:.88rem;color:#7a6a58}
+.btns{display:flex;gap:10px;flex-wrap:wrap;margin-top:16px}
+.btn{flex:1 1 150px;text-align:center;padding:13px 14px;border-radius:10px;border:none;cursor:pointer;
+     font-size:1rem;font-weight:bold;text-decoration:none;display:block;transition:opacity .2s}
+.btn:active{opacity:.75}
+.btn-main{background:var(--primary);color:var(--white)}
+.btn-sub{background:var(--white);color:var(--primary);border:2px solid var(--secondary)}
+
+/* 區塊 */
+section{margin-bottom:34px}
+h2{font-size:1.12rem;color:var(--dark);padding-bottom:9px;border-bottom:2px solid var(--secondary);
+   margin-bottom:15px;display:flex;align-items:center;gap:8px}
+h2 .tag{font-size:.72rem;font-weight:normal;color:var(--white);background:var(--primary);
+        padding:2px 9px;border-radius:20px;letter-spacing:.5px}
+
+/* 出發地選擇器 */
+.picker{display:grid;grid-template-columns:repeat(auto-fit,minmax(96px,1fr));gap:9px;margin-bottom:16px}
+.pick{padding:13px 6px;border-radius:10px;border:2px solid var(--secondary);background:var(--white);
+      color:var(--primary);font-size:1rem;font-weight:bold;cursor:pointer;transition:.15s}
+.pick[aria-pressed="true"]{background:var(--primary);color:var(--white);border-color:var(--primary)}
+.result{background:var(--white);border-radius:12px;padding:18px;box-shadow:0 3px 12px rgba(0,0,0,.07)}
+.result .hint{color:#8a7355;font-size:.94rem}
+.plan{border-left:4px solid var(--bus);padding:2px 0 2px 14px;margin-bottom:16px}
+.plan:last-of-type{margin-bottom:0}
+.plan.mrt{border-left-color:var(--mrt)}
+.plan .head{font-weight:bold;font-size:1.05rem;color:var(--dark);margin-bottom:5px}
+.plan .step{font-size:.95rem;margin:3px 0}
+.plan .walk{font-size:.88rem;color:#7a6a58;margin-top:5px}
+.route{display:inline-block;background:var(--bus);color:#fff;font-weight:bold;
+       padding:1px 9px;border-radius:5px;font-size:.95rem;margin:0 2px}
+.route.m{background:var(--mrt)}
+
+/* 自由輸入 */
+.freeform{margin-top:16px;padding-top:16px;border-top:1px dashed var(--line)}
+.freeform label{display:block;font-size:.9rem;color:#7a6a58;margin-bottom:8px}
+.ff-row{display:flex;gap:8px}
+.ff-row input{flex:1;min-width:0;padding:12px;border:2px solid var(--secondary);border-radius:9px;font-size:1rem;background:#fff}
+.ff-row input:focus{outline:none;border-color:var(--primary)}
+.ff-row button{padding:12px 18px;border:none;border-radius:9px;background:var(--primary);
+               color:#fff;font-weight:bold;font-size:1rem;cursor:pointer;white-space:nowrap}
+
+/* 站牌表 */
+.stops{display:flex;flex-direction:column;gap:10px}
+.stop{background:var(--white);border-radius:11px;padding:14px 16px;box-shadow:0 2px 8px rgba(0,0,0,.06)}
+.stop .n{font-weight:bold;color:var(--dark);font-size:1.02rem}
+.stop .d{float:right;font-size:.85rem;color:#8a7355;font-weight:normal}
+.stop .r{margin-top:8px;display:flex;flex-wrap:wrap;gap:6px}
+.stop .r span{background:#eef6f1;color:var(--bus);border:1px solid #cfe5da;
+              padding:2px 9px;border-radius:5px;font-size:.9rem;font-weight:bold}
+
+/* 資訊卡 */
+.card{background:var(--white);border-radius:12px;padding:18px;box-shadow:0 3px 12px rgba(0,0,0,.07)}
+.card + .card{margin-top:12px}
+.card h3{font-size:1.02rem;color:var(--dark);margin-bottom:8px}
+.card p{font-size:.95rem;margin:5px 0}
+.price{display:inline-block;background:#fff7ed;border:1px solid #fed7aa;color:#9a3412;
+       padding:3px 10px;border-radius:6px;font-weight:bold;font-size:.93rem;margin:2px 6px 2px 0}
+
+/* 步行指引 */
+ol.walkto{list-style:none;counter-reset:s}
+ol.walkto li{counter-increment:s;position:relative;padding:0 0 16px 40px;border-left:2px solid var(--secondary);margin-left:13px}
+ol.walkto li:last-child{border-left-color:transparent;padding-bottom:0}
+ol.walkto li::before{content:counter(s);position:absolute;left:-14px;top:-2px;width:27px;height:27px;
+  background:var(--primary);color:#fff;border-radius:50%;display:flex;align-items:center;
+  justify-content:center;font-size:.85rem;font-weight:bold}
+ol.walkto strong{color:var(--dark)}
+
+.tip{background:#fffbeb;border:1px solid #fde68a;border-radius:10px;padding:13px 15px;font-size:.92rem;margin-top:14px}
+.tip b{color:#92400e}
+
+footer{text-align:center;font-size:.85rem;color:#8a7355;padding-top:26px;border-top:1px solid var(--line);margin-top:10px}
+footer a{color:var(--primary)}
+.toast{position:fixed;left:50%;bottom:26px;transform:translate(-50%,80px);background:var(--dark);
+  color:#fff;padding:11px 22px;border-radius:24px;font-size:.93rem;opacity:0;
+  transition:.25s;pointer-events:none;z-index:99}
+.toast.on{transform:translate(-50%,0);opacity:1}
+
+@media (min-width:600px){ .top h1{font-size:1.5rem} .addr .value{font-size:1.5rem} }
+</style>
+</head>
+<body>
+
+<div class="top">
+  <div class="wrap">
+    <h1>怎麼來教室</h1>
+    <div class="sub">新莊箏心古箏音樂教室・交通指引</div>
+  </div>
+</div>
+
+<div class="wrap">
+
+  <!-- 地址 -->
+  <div class="addr">
+    <div class="label">教室地址</div>
+    <div class="value" id="addr">新北市新莊區中平路46巷15號1樓</div>
+    <div class="note">鄰近新莊體育場、新泰國中・採預約制上課</div>
+    <div class="btns">
+      <a class="btn btn-main" id="navBtn" href="#" target="_blank" rel="noopener">開啟導航</a>
+      <button class="btn btn-sub" id="copyBtn" type="button">複製地址</button>
+    </div>
+  </div>
+
+  <!-- 出發地 -->
+  <section>
+    <h2>從哪裡出發？<span class="tag">點一下看方案</span></h2>
+    <div class="picker" id="picker"></div>
+    <div class="result" id="result">
+      <div class="hint">選擇你出發的區域，這裡會顯示建議搭乘方式與下車站牌。</div>
+    </div>
+
+    <div class="freeform">
+      <label>或直接輸入你的出發地址，交給 Google 地圖規劃即時路線：</label>
+      <div class="ff-row">
+        <input id="origin" type="text" placeholder="例如：板橋區文化路一段100號" autocomplete="street-address">
+        <button id="goBtn" type="button">查路線</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- 站牌 -->
+  <section>
+    <h2>教室附近的公車站牌</h2>
+    <div class="stops" id="stops"></div>
+    <div class="tip">
+      <b>特別注意：</b>「中平路」站兩個方向<b>各有一支站牌，分別在馬路兩側</b>。
+      要往哪個方向，站牌就要站對邊，這是最容易搞錯的地方。上車前先看站牌上的路線方向。
+    </div>
+  </section>
+
+  <!-- 捷運 -->
+  <section>
+    <h2>搭捷運</h2>
+    <div class="card">
+      <h3>捷運新莊站（中和新蘆線）</h3>
+      <p>距教室約 1.2 公里，步行約 19 分鐘。</p>
+      <p>不想走路的話，出站轉乘 <span class="route">960</span> 到「中港國小」下車，再走約 6 分鐘。</p>
+    </div>
+    <div class="card">
+      <h3>捷運泰山站（中和新蘆線）</h3>
+      <p>距教室約 1.2 公里，步行約 20 分鐘。</p>
+    </div>
+  </section>
+
+  <!-- 開車 -->
+  <section>
+    <h2>開車與停車</h2>
+    <div class="card">
+      <h3>推薦停車場：正好停－新莊運動公園地下停車場</h3>
+      <p>附近最便宜的選擇，走到教室只要 5～6 分鐘。</p>
+      <p>
+        <span class="price">平日 30 元/小時</span>
+        <span class="price">假日 40 元/小時</span>
+      </p>
+      <div class="btns">
+        <a class="btn btn-main" href="https://maps.app.goo.gl/Eqmx7L1oRHQx3hc59" target="_blank" rel="noopener">停車場位置</a>
+        <a class="btn btn-sub" id="parkNav" href="#" target="_blank" rel="noopener">從停車場走過來</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 步行 -->
+  <section>
+    <h2>下車後怎麼走</h2>
+    <ol class="walkto">
+      <li><strong>先確認你在中平路上。</strong>中平路是主要幹道，路上有明顯的公車站牌與商家。</li>
+      <li><strong>找到「46巷」的巷口。</strong>門牌巷號會標示在巷口牆面或電線桿上，注意看巷號而不是門牌號。</li>
+      <li><strong>轉進 46 巷後往內走。</strong>巷弄較窄，車輛請減速慢行。</li>
+      <li><strong>15 號在巷內，教室在 1 樓。</strong>抵達後按門鈴即可。</li>
+    </ol>
+    <div class="tip">
+      走錯或找不到的時候，最快的方式是直接按上面的「開啟導航」，Google 地圖會帶你走到巷口。
+      仍然找不到請直接來電或用 LINE 聯絡我們。
+    </div>
+  </section>
+
+  <footer>
+    新莊箏心古箏音樂教室<br>
+    <a href="/">回教室首頁</a>
+  </footer>
+</div>
+
+<div class="toast" id="toast">已複製地址</div>
+
+<script>
+(function(){
+  "use strict";
+
+  var ADDR = "新北市新莊區中平路46巷15號1樓";
+  var PARK = "正好停-新莊運動公園地下停車場";
+
+  // 走路時間換算:以 80 公尺/分鐘,再乘 1.3 的繞路係數
+  function walkMin(m){ return Math.max(1, Math.round(m * 1.3 / 80)); }
+
+  function mapsDir(from, to, mode){
+    return "https://www.google.com/maps/dir/?api=1"
+      + "&origin=" + encodeURIComponent(from)
+      + "&destination=" + encodeURIComponent(to)
+      + "&travelmode=" + (mode || "transit");
+  }
+
+  // 站牌資料 — 距離由地址地理編碼後實測,路線經大臺北公車官方站序核對
+  var STOPS = [
+    {n:"中平路",                 m:145, r:["845","859","藍18"]},
+    {n:"新泰國中北站",           m:153, r:["616"]},
+    {n:"新莊棒球場(立功里立德里)", m:235, r:["99","299","616","藍18"]},
+    {n:"新泰復興路口",           m:265, r:["616","845","藍18"]},
+    {n:"新莊體育場(立功里)",      m:297, r:["99","299","616","藍18"]},
+    {n:"中和街口(中和)",          m:314, r:["960"]},
+    {n:"新泰游泳池",             m:327, r:["616"]},
+    {n:"中港國小",               m:341, r:["960"]},
+    {n:"新泰國中南站",           m:346, r:["99","299","845","859"]},
+    {n:"新莊高中(幸福路)",        m:571, r:["803","845","960"]}
+  ];
+
+  var PLANS = {
+    "新莊": [
+      {t:"bus", head:"區內公車", steps:[
+        "搭 [99] 或 [藍18] 到「新莊棒球場」或「新莊體育場」",
+        "或搭 [845]、[859] 到「中平路」站"], walk:"下車後步行 2～5 分鐘"},
+      {t:"bus", head:"距離近的話", steps:["新莊區內多數地點步行或騎車即可抵達"], walk:""}
+    ],
+    "板橋": [
+      {t:"bus", head:"最推薦：[845] 直達", steps:["往新莊方向，在「中平路」站下車"], walk:"步行約 2 分鐘，是所有方案裡最短的"},
+      {t:"bus", head:"備案：[99] 直達", steps:["往新莊方向，在「新莊棒球場」下車"], walk:"步行約 4 分鐘"}
+    ],
+    "泰山": [
+      {t:"bus", head:"最推薦：[616] 直達", steps:["往天母方向，在「新泰國中北站」下車"], walk:"步行約 2 分鐘"},
+      {t:"bus", head:"備案：[859] 直達", steps:["往樹林方向，在「中平路」站下車"], walk:"步行約 2 分鐘"}
+    ],
+    "五股": [
+      {t:"bus", head:"[803] 直達", steps:["往松山機場方向，在「新莊高中(幸福路)」下車"], walk:"步行約 9 分鐘"}
+    ],
+    "三重": [
+      {t:"mrt", head:"捷運轉公車（沒有直達公車）", steps:[
+        "捷運「三重站」搭 (中和新蘆線) 往迴龍方向，經先嗇宮、頭前庄，第 3 站「新莊站」下車",
+        "出站轉乘 [960]，在「中港國小」下車"], walk:"下車後步行約 6 分鐘"},
+      {t:"mrt", head:"不轉公車的話", steps:["捷運「新莊站」下車後直接步行"], walk:"約 19 分鐘"}
+    ]
+  };
+
+  // ---- 站牌列表 ----
+  var stopsEl = document.getElementById("stops");
+  STOPS.forEach(function(s){
+    var d = document.createElement("div");
+    d.className = "stop";
+    var routes = s.r.map(function(x){ return "<span>" + x + "</span>"; }).join("");
+    d.innerHTML = '<div class="n">' + s.n +
+      '<span class="d">' + '直線 ' + s.m + ' 公尺・步行約 ' + walkMin(s.m) + ' 分</span></div>' +
+      '<div class="r">' + routes + '</div>';
+    stopsEl.appendChild(d);
+  });
+
+  // ---- 出發地選擇器 ----
+  var picker = document.getElementById("picker");
+  var result = document.getElementById("result");
+  var areas = Object.keys(PLANS);
+
+  function routeChip(text){
+    // 把 [99] 轉成綠色路線標籤,(中和新蘆線) 轉成橘色捷運標籤
+    return text
+      .replace(/\[([^\]]+)\]/g, '<span class="route">$1</span>')
+      .replace(/\(([^)]*線)\)/g, '<span class="route m">$1</span>');
+  }
+
+  function render(area){
+    var plans = PLANS[area];
+    var html = "";
+    plans.forEach(function(p){
+      html += '<div class="plan' + (p.t === "mrt" ? " mrt" : "") + '">';
+      html += '<div class="head">' + routeChip(p.head) + '</div>';
+      p.steps.forEach(function(s){ html += '<div class="step">' + routeChip(s) + '</div>'; });
+      if (p.walk) html += '<div class="walk">' + p.walk + '</div>';
+      html += '</div>';
+    });
+    result.innerHTML = html;
+  }
+
+  areas.forEach(function(a){
+    var b = document.createElement("button");
+    b.type = "button";
+    b.className = "pick";
+    b.textContent = a;
+    b.setAttribute("aria-pressed", "false");
+    b.addEventListener("click", function(){
+      [].forEach.call(picker.children, function(c){ c.setAttribute("aria-pressed", "false"); });
+      b.setAttribute("aria-pressed", "true");
+      render(a);
+      try { localStorage.setItem("gzt_area", a); } catch (e) {}
+    });
+    picker.appendChild(b);
+  });
+
+  // 記住上次選的區域(僅存在該裝置瀏覽器,不會傳出去)
+  try {
+    var saved = localStorage.getItem("gzt_area");
+    if (saved && PLANS[saved]) {
+      var idx = areas.indexOf(saved);
+      if (idx >= 0) picker.children[idx].click();
+    }
+  } catch (e) {}
+
+  // ---- 導航按鈕 ----
+  // 不帶 origin,讓 Google 地圖直接用使用者目前位置當起點
+  document.getElementById("navBtn").href =
+    "https://www.google.com/maps/dir/?api=1&destination=" + encodeURIComponent(ADDR);
+  document.getElementById("parkNav").href = mapsDir(PARK, ADDR, "walking");
+
+  // ---- 自由輸入 ----
+  function goFree(){
+    var v = document.getElementById("origin").value.trim();
+    if (!v) { document.getElementById("origin").focus(); return; }
+    window.open(mapsDir(v, ADDR, "transit"), "_blank", "noopener");
+  }
+  document.getElementById("goBtn").addEventListener("click", goFree);
+  document.getElementById("origin").addEventListener("keydown", function(e){
+    if (e.key === "Enter") goFree();
+  });
+
+  // ---- 複製地址 ----
+  var toast = document.getElementById("toast");
+  function showToast(msg){
+    toast.textContent = msg;
+    toast.classList.add("on");
+    setTimeout(function(){ toast.classList.remove("on"); }, 1800);
+  }
+  document.getElementById("copyBtn").addEventListener("click", function(){
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(ADDR)
+        .then(function(){ showToast("已複製地址"); })
+        .catch(function(){ showToast("複製失敗,請長按地址手動複製"); });
+    } else {
+      showToast("請長按上方地址手動複製");
+    }
+  });
+})();
+</script>
+
+</body>
+</html>
