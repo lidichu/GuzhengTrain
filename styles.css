@@ -61,7 +61,10 @@ header p {
 /* ========================================= */
 /* 3. 導航欄 Nav (核心修正區) */
 /* ========================================= */
-nav,
+/* 只作用於網站主導覽列。
+   不可用裸 nav 選擇器 — 文章內的 .article-pager、.article-toc、
+   .learning-breadcrumb、.series-nav 也都是 <nav>,會被套上深咖啡底色
+   與 sticky/z-index:1000,造成翻頁區出現莫名的咖啡色背景。 */
 nav.navbar {
   background-color: var(--dark);
   position: sticky;
