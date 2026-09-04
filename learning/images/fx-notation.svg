@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 380" role="img" aria-label="指法符號對照">
+  <rect width="640" height="380" rx="14" fill="#FBF7EC"/>
+  <text x="32" y="46" font-family="'Microsoft JhengHei','微軟正黑體',sans-serif" font-size="25" font-weight="bold" fill="#4A3520">指法符號對照</text>
+  <text x="32" y="74" font-family="'Microsoft JhengHei','微軟正黑體',sans-serif" font-size="16" fill="#8A7355">八法在樂譜上的常見標記</text>
+  <line x1="32" y1="88" x2="608" y2="88" stroke="#D2B48C" stroke-width="2"/>
+  <defs>
+    <marker id="ah" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#C2410C"/></marker>
+    <marker id="ah2" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#1F6F43"/></marker>
+    <marker id="ah3" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#1D4ED8"/></marker>
+  </defs>
+  <text x="32" y="112" font-family="'Microsoft JhengHei','微軟正黑體',sans-serif" font-size="15" fill="#8A7355">樂譜中常見的右手指法標記（記譜法因版本略有差異,以老師教本為準）。</text>
+  <rect x="42" y="132" width="132" height="70" rx="9" fill="#FFFFFF" stroke="#D2B48C"/>
+  <text x="108" y="166" text-anchor="middle" font-family="serif" font-size="28" fill="#C2410C">⌐</text>
+  <text x="108" y="190" text-anchor="middle" font-family="'Microsoft JhengHei','微軟正黑體',sans-serif" font-size="16" font-weight="bold" fill="#4A3520">托</text>
+  <rect x="190" y="132" width="132" height="70" rx="9" fill="#FFFFFF" stroke="#D2B48C"/>
+  <text x="256" y="166" text-anchor="middle" font-family="serif" font-size="28" fill="#C2410C">L</text>
+  <text x="256" y="190" text-anchor="middle" font-family="'Microsoft JhengHei','微軟正黑體',sans-serif" font-size="16" font-weight="bold" fill="#4A3520">劈</text>
+  <rect x="338" y="132" width="132" height="70" rx="9" fill="#FFFFFF" stroke="#D2B48C"/>
+  <text x="404" y="166" text-anchor="middle" font-family="serif" font-size="28" fill="#C2410C">/</text>
+  <text x="404" y="190" text-anchor="middle" font-family="'Microsoft JhengHei','微軟正黑體',sans-serif" font-size="16" font-weight="bold" fill="#4A3520">抹</text>
+  <rect x="486" y="132" width="132" height="70" rx="9" fill="#FFFFFF" stroke="#D2B48C"/>
+  <text x="552" y="166" text-anchor="middle" font-family="serif" font-size="28" fill="#C2410C">\</text>
+  <text x="552" y="190" text-anchor="middle" font-family="'Microsoft JhengHei','微軟正黑體',sans-serif" font-size="16" font-weight="bold" fill="#4A3520">挑</text>
+  <rect x="42" y="214" width="132" height="70" rx="9" fill="#FFFFFF" stroke="#D2B48C"/>
+  <text x="108" y="248" text-anchor="middle" font-family="serif" font-size="28" fill="#C2410C">⌂</text>
+  <text x="108" y="272" text-anchor="middle" font-family="'Microsoft JhengHei','微軟正黑體',sans-serif" font-size="16" font-weight="bold" fill="#4A3520">勾</text>
+  <rect x="190" y="214" width="132" height="70" rx="9" fill="#FFFFFF" stroke="#D2B48C"/>
+  <text x="256" y="248" text-anchor="middle" font-family="serif" font-size="28" fill="#C2410C">≠</text>
+  <text x="256" y="272" text-anchor="middle" font-family="'Microsoft JhengHei','微軟正黑體',sans-serif" font-size="16" font-weight="bold" fill="#4A3520">剔</text>
+  <rect x="338" y="214" width="132" height="70" rx="9" fill="#FFFFFF" stroke="#D2B48C"/>
+  <text x="404" y="248" text-anchor="middle" font-family="serif" font-size="28" fill="#C2410C">×</text>
+  <text x="404" y="272" text-anchor="middle" font-family="'Microsoft JhengHei','微軟正黑體',sans-serif" font-size="16" font-weight="bold" fill="#4A3520">打</text>
+  <rect x="486" y="214" width="132" height="70" rx="9" fill="#FFFFFF" stroke="#D2B48C"/>
+  <text x="552" y="248" text-anchor="middle" font-family="serif" font-size="28" fill="#C2410C">∧</text>
+  <text x="552" y="272" text-anchor="middle" font-family="'Microsoft JhengHei','微軟正黑體',sans-serif" font-size="16" font-weight="bold" fill="#4A3520">摘</text>
+  <rect x="32" y="304" width="576" height="64" rx="9" fill="#FFFFFF" stroke="#D2B48C"/>
+  <text x="46" y="326" font-family="'Microsoft JhengHei','微軟正黑體',sans-serif" font-size="15" fill="#4A3520">指法符號標在音符上方或下方,提示該音用哪一指、哪個方向。</text>
+  <text x="46" y="346" font-family="'Microsoft JhengHei','微軟正黑體',sans-serif" font-size="15" fill="#4A3520">初學時建議在譜上先標註,熟練後自然形成肌肉記憶。</text>
+
+</svg>

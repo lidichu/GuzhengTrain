@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 380" role="img" aria-label="勾">
+  <rect width="640" height="380" rx="14" fill="#FBF7EC"/>
+  <text x="32" y="46" font-family="'Microsoft JhengHei','微軟正黑體',sans-serif" font-size="25" font-weight="bold" fill="#4A3520">勾</text>
+  <text x="32" y="74" font-family="'Microsoft JhengHei','微軟正黑體',sans-serif" font-size="16" fill="#8A7355">中指 · 向內</text>
+  <line x1="32" y1="88" x2="608" y2="88" stroke="#D2B48C" stroke-width="2"/>
+  <defs>
+    <marker id="ah" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#C2410C"/></marker>
+    <marker id="ah2" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#1F6F43"/></marker>
+    <marker id="ah3" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#1D4ED8"/></marker>
+  </defs>
+  <line x1="70" y1="120" x2="570" y2="120" stroke="#B9A78C" stroke-width="2.5" stroke-linecap="round"/>
+  <line x1="70" y1="150" x2="570" y2="150" stroke="#B9A78C" stroke-width="2.5" stroke-linecap="round"/>
+  <line x1="70" y1="180" x2="570" y2="180" stroke="#B9A78C" stroke-width="2.5" stroke-linecap="round"/>
+  <line x1="70" y1="210" x2="570" y2="210" stroke="#C2410C" stroke-width="4" stroke-linecap="round"/>
+  <line x1="70" y1="240" x2="570" y2="240" stroke="#B9A78C" stroke-width="2.5" stroke-linecap="round"/>
+  <line x1="70" y1="270" x2="570" y2="270" stroke="#B9A78C" stroke-width="2.5" stroke-linecap="round"/>
+  <line x1="70" y1="300" x2="570" y2="300" stroke="#B9A78C" stroke-width="2.5" stroke-linecap="round"/>
+  <text x="70" y="104" font-family="'Microsoft JhengHei','微軟正黑體',sans-serif" font-size="14" fill="#8A7355">外側 · 遠離演奏者 · 低音</text>
+  <text x="70" y="330" font-family="'Microsoft JhengHei','微軟正黑體',sans-serif" font-size="14" fill="#8A7355">內側 · 靠近演奏者 · 高音</text>
+  <line x1="400" y1="176" x2="400" y2="240" stroke="#C2410C" stroke-width="4" marker-end="url(#ah)" stroke-linecap="round"/>
+  <circle cx="400" cy="168" r="21" fill="#C2410C"/>
+  <text x="400" y="174" text-anchor="middle" font-family="'Microsoft JhengHei','微軟正黑體',sans-serif" font-size="15" font-weight="bold" fill="#fff">中指</text>
+  <rect x="32" y="304" width="576" height="64" rx="9" fill="#FFFFFF" stroke="#D2B48C"/>
+  <text x="46" y="326" font-family="'Microsoft JhengHei','微軟正黑體',sans-serif" font-size="15" fill="#4A3520">中指向內撥弦（往高音方向、靠近身體）</text>
+  <text x="46" y="346" font-family="'Microsoft JhengHei','微軟正黑體',sans-serif" font-size="15" fill="#4A3520">力量來自指關節彎曲,發音後迅速回收。</text>
+
+</svg>

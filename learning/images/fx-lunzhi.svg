@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 380" role="img" aria-label="輪指">
+  <rect width="640" height="380" rx="14" fill="#FBF7EC"/>
+  <text x="32" y="46" font-family="'Microsoft JhengHei','微軟正黑體',sans-serif" font-size="25" font-weight="bold" fill="#4A3520">輪指</text>
+  <text x="32" y="74" font-family="'Microsoft JhengHei','微軟正黑體',sans-serif" font-size="16" fill="#8A7355">四指在同一弦上依序輪替</text>
+  <line x1="32" y1="88" x2="608" y2="88" stroke="#D2B48C" stroke-width="2"/>
+  <defs>
+    <marker id="ah" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#C2410C"/></marker>
+    <marker id="ah2" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#1F6F43"/></marker>
+    <marker id="ah3" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#1D4ED8"/></marker>
+  </defs>
+  <line x1="70" y1="120" x2="570" y2="120" stroke="#B9A78C" stroke-width="2.5" stroke-linecap="round"/>
+  <line x1="70" y1="150" x2="570" y2="150" stroke="#B9A78C" stroke-width="2.5" stroke-linecap="round"/>
+  <line x1="70" y1="180" x2="570" y2="180" stroke="#B9A78C" stroke-width="2.5" stroke-linecap="round"/>
+  <line x1="70" y1="210" x2="570" y2="210" stroke="#C2410C" stroke-width="4" stroke-linecap="round"/>
+  <line x1="70" y1="240" x2="570" y2="240" stroke="#B9A78C" stroke-width="2.5" stroke-linecap="round"/>
+  <line x1="70" y1="270" x2="570" y2="270" stroke="#B9A78C" stroke-width="2.5" stroke-linecap="round"/>
+  <line x1="70" y1="300" x2="570" y2="300" stroke="#B9A78C" stroke-width="2.5" stroke-linecap="round"/>
+  <text x="70" y="104" font-family="'Microsoft JhengHei','微軟正黑體',sans-serif" font-size="14" fill="#8A7355">外側 · 遠離演奏者 · 低音</text>
+  <text x="70" y="330" font-family="'Microsoft JhengHei','微軟正黑體',sans-serif" font-size="14" fill="#8A7355">內側 · 靠近演奏者 · 高音</text>
+  <circle cx="200" cy="158" r="20" fill="#1D4ED8"/>
+  <text x="200" y="164" text-anchor="middle" font-family="'Microsoft JhengHei','微軟正黑體',sans-serif" font-size="13" font-weight="bold" fill="#fff">無名指</text>
+  <line x1="200" y1="180" x2="200" y2="228" stroke="#1D4ED8" stroke-width="3.5" marker-end="url(#ah3)" stroke-linecap="round"/>
+  <text x="200" y="252" text-anchor="middle" font-family="'Microsoft JhengHei','微軟正黑體',sans-serif" font-size="14" font-weight="bold" fill="#8A7355">1</text>
+  <circle cx="280" cy="158" r="20" fill="#1F6F43"/>
+  <text x="280" y="164" text-anchor="middle" font-family="'Microsoft JhengHei','微軟正黑體',sans-serif" font-size="13" font-weight="bold" fill="#fff">中指</text>
+  <line x1="280" y1="180" x2="280" y2="228" stroke="#1F6F43" stroke-width="3.5" marker-end="url(#ah2)" stroke-linecap="round"/>
+  <text x="280" y="252" text-anchor="middle" font-family="'Microsoft JhengHei','微軟正黑體',sans-serif" font-size="14" font-weight="bold" fill="#8A7355">2</text>
+  <circle cx="360" cy="158" r="20" fill="#8B5A2B"/>
+  <text x="360" y="164" text-anchor="middle" font-family="'Microsoft JhengHei','微軟正黑體',sans-serif" font-size="13" font-weight="bold" fill="#fff">食指</text>
+  <line x1="360" y1="180" x2="360" y2="228" stroke="#8B5A2B" stroke-width="3.5" marker-end="url(#ah)" stroke-linecap="round"/>
+  <text x="360" y="252" text-anchor="middle" font-family="'Microsoft JhengHei','微軟正黑體',sans-serif" font-size="14" font-weight="bold" fill="#8A7355">3</text>
+  <circle cx="440" cy="158" r="20" fill="#C2410C"/>
+  <text x="440" y="164" text-anchor="middle" font-family="'Microsoft JhengHei','微軟正黑體',sans-serif" font-size="13" font-weight="bold" fill="#fff">大指</text>
+  <line x1="440" y1="180" x2="440" y2="228" stroke="#C2410C" stroke-width="3.5" marker-end="url(#ah)" stroke-linecap="round"/>
+  <text x="440" y="252" text-anchor="middle" font-family="'Microsoft JhengHei','微軟正黑體',sans-serif" font-size="14" font-weight="bold" fill="#8A7355">4</text>
+  <rect x="32" y="304" width="576" height="64" rx="9" fill="#FFFFFF" stroke="#D2B48C"/>
+  <text x="46" y="326" font-family="'Microsoft JhengHei','微軟正黑體',sans-serif" font-size="15" fill="#4A3520">四指在同一根弦上依序輪流撥弦,形成連綿的長音。</text>
+  <text x="46" y="346" font-family="'Microsoft JhengHei','微軟正黑體',sans-serif" font-size="15" fill="#4A3520">對手指獨立性與速度要求極高,需固定手型分指慢練。</text>
+
+</svg>

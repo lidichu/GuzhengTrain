@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 380" role="img" aria-label="泛音">
+  <rect width="640" height="380" rx="14" fill="#FBF7EC"/>
+  <text x="32" y="46" font-family="'Microsoft JhengHei','微軟正黑體',sans-serif" font-size="25" font-weight="bold" fill="#4A3520">泛音</text>
+  <text x="32" y="74" font-family="'Microsoft JhengHei','微軟正黑體',sans-serif" font-size="16" fill="#8A7355">輕觸弦長中點,發出清亮空靈之音</text>
+  <line x1="32" y1="88" x2="608" y2="88" stroke="#D2B48C" stroke-width="2"/>
+  <defs>
+    <marker id="ah" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#C2410C"/></marker>
+    <marker id="ah2" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#1F6F43"/></marker>
+    <marker id="ah3" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#1D4ED8"/></marker>
+  </defs>
+  <line x1="70" y1="120" x2="570" y2="120" stroke="#B9A78C" stroke-width="2.5" stroke-linecap="round"/>
+  <line x1="70" y1="150" x2="570" y2="150" stroke="#B9A78C" stroke-width="2.5" stroke-linecap="round"/>
+  <line x1="70" y1="180" x2="570" y2="180" stroke="#B9A78C" stroke-width="2.5" stroke-linecap="round"/>
+  <line x1="70" y1="210" x2="570" y2="210" stroke="#C2410C" stroke-width="4" stroke-linecap="round"/>
+  <line x1="70" y1="240" x2="570" y2="240" stroke="#B9A78C" stroke-width="2.5" stroke-linecap="round"/>
+  <line x1="70" y1="270" x2="570" y2="270" stroke="#B9A78C" stroke-width="2.5" stroke-linecap="round"/>
+  <line x1="70" y1="300" x2="570" y2="300" stroke="#B9A78C" stroke-width="2.5" stroke-linecap="round"/>
+  <text x="70" y="104" font-family="'Microsoft JhengHei','微軟正黑體',sans-serif" font-size="14" fill="#8A7355">外側 · 遠離演奏者 · 低音</text>
+  <text x="70" y="330" font-family="'Microsoft JhengHei','微軟正黑體',sans-serif" font-size="14" fill="#8A7355">內側 · 靠近演奏者 · 高音</text>
+  <line x1="300" y1="112" x2="300" y2="308" stroke="#8B5A2B" stroke-width="3" stroke-dasharray="6 5"/>
+  <text x="300" y="104" text-anchor="middle" font-family="'Microsoft JhengHei','微軟正黑體',sans-serif" font-size="13" fill="#8B5A2B">琴碼</text>
+  <text x="185" y="330" text-anchor="middle" font-family="'Microsoft JhengHei','微軟正黑體',sans-serif" font-size="13" fill="#8A7355">左手作韻區</text>
+  <text x="435" y="330" text-anchor="middle" font-family="'Microsoft JhengHei','微軟正黑體',sans-serif" font-size="13" fill="#8A7355">右手彈弦區</text>
+  <line x1="450" y1="244" x2="450" y2="180" stroke="#C2410C" stroke-width="4" marker-end="url(#ah)" stroke-linecap="round"/>
+  <circle cx="450" cy="252" r="21" fill="#C2410C"/>
+  <text x="450" y="258" text-anchor="middle" font-family="'Microsoft JhengHei','微軟正黑體',sans-serif" font-size="15" font-weight="bold" fill="#fff">右手</text>
+  <circle cx="240" cy="210" r="13" fill="none" stroke="#1D4ED8" stroke-width="4"/>
+  <circle cx="240" cy="158" r="22" fill="#1D4ED8"/>
+  <text x="240" y="164" text-anchor="middle" font-family="'Microsoft JhengHei','微軟正黑體',sans-serif" font-size="14" font-weight="bold" fill="#fff">輕觸</text>
+  <line x1="240" y1="180" x2="240" y2="194" stroke="#1D4ED8" stroke-width="4" marker-end="url(#ah3)"/>
+  <rect x="32" y="304" width="576" height="64" rx="9" fill="#FFFFFF" stroke="#D2B48C"/>
+  <text x="46" y="326" font-family="'Microsoft JhengHei','微軟正黑體',sans-serif" font-size="15" fill="#4A3520">左手輕觸弦長的中點（不按下）,右手同時彈弦後立即離開。</text>
+  <text x="46" y="346" font-family="'Microsoft JhengHei','微軟正黑體',sans-serif" font-size="15" fill="#4A3520">發出的音清亮空靈,音高為原音的高八度。</text>
+
+</svg>

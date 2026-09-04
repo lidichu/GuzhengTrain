@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 380" role="img" aria-label="刮奏">
+  <rect width="640" height="380" rx="14" fill="#FBF7EC"/>
+  <text x="32" y="46" font-family="'Microsoft JhengHei','微軟正黑體',sans-serif" font-size="25" font-weight="bold" fill="#4A3520">刮奏</text>
+  <text x="32" y="74" font-family="'Microsoft JhengHei','微軟正黑體',sans-serif" font-size="16" fill="#8A7355">大指或食指連續快速掠過相鄰各弦</text>
+  <line x1="32" y1="88" x2="608" y2="88" stroke="#D2B48C" stroke-width="2"/>
+  <defs>
+    <marker id="ah" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#C2410C"/></marker>
+    <marker id="ah2" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#1F6F43"/></marker>
+    <marker id="ah3" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#1D4ED8"/></marker>
+  </defs>
+  <line x1="70" y1="120" x2="570" y2="120" stroke="#C2410C" stroke-width="4" stroke-linecap="round"/>
+  <line x1="70" y1="150" x2="570" y2="150" stroke="#C2410C" stroke-width="4" stroke-linecap="round"/>
+  <line x1="70" y1="180" x2="570" y2="180" stroke="#C2410C" stroke-width="4" stroke-linecap="round"/>
+  <line x1="70" y1="210" x2="570" y2="210" stroke="#C2410C" stroke-width="4" stroke-linecap="round"/>
+  <line x1="70" y1="240" x2="570" y2="240" stroke="#C2410C" stroke-width="4" stroke-linecap="round"/>
+  <line x1="70" y1="270" x2="570" y2="270" stroke="#C2410C" stroke-width="4" stroke-linecap="round"/>
+  <line x1="70" y1="300" x2="570" y2="300" stroke="#C2410C" stroke-width="4" stroke-linecap="round"/>
+  <text x="70" y="104" font-family="'Microsoft JhengHei','微軟正黑體',sans-serif" font-size="14" fill="#8A7355">外側 · 遠離演奏者 · 低音</text>
+  <text x="70" y="330" font-family="'Microsoft JhengHei','微軟正黑體',sans-serif" font-size="14" fill="#8A7355">內側 · 靠近演奏者 · 高音</text>
+  <line x1="400" y1="120" x2="400" y2="300" stroke="#C2410C" stroke-width="5" marker-end="url(#ah)" stroke-linecap="round" opacity=".9"/>
+  <rect x="354" y="196" width="92" height="28" rx="14" fill="#C2410C"/>
+  <text x="400" y="216" text-anchor="middle" font-family="'Microsoft JhengHei','微軟正黑體',sans-serif" font-size="14" font-weight="bold" fill="#fff">由低往高</text>
+  <rect x="32" y="304" width="576" height="64" rx="9" fill="#FFFFFF" stroke="#D2B48C"/>
+  <text x="46" y="326" font-family="'Microsoft JhengHei','微軟正黑體',sans-serif" font-size="15" fill="#4A3520">大指（或食指）義甲連續掠過相鄰各弦,形成如流水般的連續音。</text>
+  <text x="46" y="346" font-family="'Microsoft JhengHei','微軟正黑體',sans-serif" font-size="15" fill="#4A3520">常用於渲染情緒、裝飾旋律,可由低往高或由高往低。</text>
+
+</svg>

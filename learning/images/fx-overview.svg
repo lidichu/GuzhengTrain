@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 380" role="img" aria-label="古箏右手基本指法（八法）">
+  <rect width="640" height="380" rx="14" fill="#FBF7EC"/>
+  <text x="32" y="46" font-family="'Microsoft JhengHei','微軟正黑體',sans-serif" font-size="25" font-weight="bold" fill="#4A3520">古箏右手基本指法（八法）</text>
+  <text x="32" y="74" font-family="'Microsoft JhengHei','微軟正黑體',sans-serif" font-size="16" fill="#8A7355">抹、勾、劈、打向內　挑、剔、托、摘向外</text>
+  <line x1="32" y1="88" x2="608" y2="88" stroke="#D2B48C" stroke-width="2"/>
+  <defs>
+    <marker id="ah" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#C2410C"/></marker>
+    <marker id="ah2" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#1F6F43"/></marker>
+    <marker id="ah3" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#1D4ED8"/></marker>
+  </defs>
+  <text x="32" y="112" font-family="'Microsoft JhengHei','微軟正黑體',sans-serif" font-size="15" fill="#8A7355">右手八法:同一根手指各有向外、向內一組,共四指八法。</text>
+  <rect x="40" y="134" width="278" height="44" rx="8" fill="#FFFFFF" stroke="#D2B48C"/>
+  <circle cx="66" cy="156" r="15" fill="#C2410C"/>
+  <text x="66" y="162" text-anchor="middle" font-family="'Microsoft JhengHei','微軟正黑體',sans-serif" font-size="17" font-weight="bold" fill="#fff">托</text>
+  <text x="92" y="155" font-family="'Microsoft JhengHei','微軟正黑體',sans-serif" font-size="15" font-weight="bold" fill="#4A3520">大指　向外</text>
+  <text x="92" y="172" font-family="'Microsoft JhengHei','微軟正黑體',sans-serif" font-size="13" fill="#8A7355">遠離身體 · 往低音</text>
+  <rect x="340" y="134" width="278" height="44" rx="8" fill="#FFFFFF" stroke="#D2B48C"/>
+  <circle cx="366" cy="156" r="15" fill="#1F6F43"/>
+  <text x="366" y="162" text-anchor="middle" font-family="'Microsoft JhengHei','微軟正黑體',sans-serif" font-size="17" font-weight="bold" fill="#fff">劈</text>
+  <text x="392" y="155" font-family="'Microsoft JhengHei','微軟正黑體',sans-serif" font-size="15" font-weight="bold" fill="#4A3520">大指　向內</text>
+  <text x="392" y="172" font-family="'Microsoft JhengHei','微軟正黑體',sans-serif" font-size="13" fill="#8A7355">靠近身體 · 往高音</text>
+  <rect x="40" y="186" width="278" height="44" rx="8" fill="#FFFFFF" stroke="#D2B48C"/>
+  <circle cx="66" cy="208" r="15" fill="#C2410C"/>
+  <text x="66" y="214" text-anchor="middle" font-family="'Microsoft JhengHei','微軟正黑體',sans-serif" font-size="17" font-weight="bold" fill="#fff">挑</text>
+  <text x="92" y="207" font-family="'Microsoft JhengHei','微軟正黑體',sans-serif" font-size="15" font-weight="bold" fill="#4A3520">食指　向外</text>
+  <text x="92" y="224" font-family="'Microsoft JhengHei','微軟正黑體',sans-serif" font-size="13" fill="#8A7355">遠離身體 · 往低音</text>
+  <rect x="340" y="186" width="278" height="44" rx="8" fill="#FFFFFF" stroke="#D2B48C"/>
+  <circle cx="366" cy="208" r="15" fill="#1F6F43"/>
+  <text x="366" y="214" text-anchor="middle" font-family="'Microsoft JhengHei','微軟正黑體',sans-serif" font-size="17" font-weight="bold" fill="#fff">抹</text>
+  <text x="392" y="207" font-family="'Microsoft JhengHei','微軟正黑體',sans-serif" font-size="15" font-weight="bold" fill="#4A3520">食指　向內</text>
+  <text x="392" y="224" font-family="'Microsoft JhengHei','微軟正黑體',sans-serif" font-size="13" fill="#8A7355">靠近身體 · 往高音</text>
+  <rect x="40" y="238" width="278" height="44" rx="8" fill="#FFFFFF" stroke="#D2B48C"/>
+  <circle cx="66" cy="260" r="15" fill="#C2410C"/>
+  <text x="66" y="266" text-anchor="middle" font-family="'Microsoft JhengHei','微軟正黑體',sans-serif" font-size="17" font-weight="bold" fill="#fff">剔</text>
+  <text x="92" y="259" font-family="'Microsoft JhengHei','微軟正黑體',sans-serif" font-size="15" font-weight="bold" fill="#4A3520">中指　向外</text>
+  <text x="92" y="276" font-family="'Microsoft JhengHei','微軟正黑體',sans-serif" font-size="13" fill="#8A7355">遠離身體 · 往低音</text>
+  <rect x="340" y="238" width="278" height="44" rx="8" fill="#FFFFFF" stroke="#D2B48C"/>
+  <circle cx="366" cy="260" r="15" fill="#1F6F43"/>
+  <text x="366" y="266" text-anchor="middle" font-family="'Microsoft JhengHei','微軟正黑體',sans-serif" font-size="17" font-weight="bold" fill="#fff">勾</text>
+  <text x="392" y="259" font-family="'Microsoft JhengHei','微軟正黑體',sans-serif" font-size="15" font-weight="bold" fill="#4A3520">中指　向內</text>
+  <text x="392" y="276" font-family="'Microsoft JhengHei','微軟正黑體',sans-serif" font-size="13" fill="#8A7355">靠近身體 · 往高音</text>
+  <rect x="40" y="290" width="278" height="44" rx="8" fill="#FFFFFF" stroke="#D2B48C"/>
+  <circle cx="66" cy="312" r="15" fill="#C2410C"/>
+  <text x="66" y="318" text-anchor="middle" font-family="'Microsoft JhengHei','微軟正黑體',sans-serif" font-size="17" font-weight="bold" fill="#fff">摘</text>
+  <text x="92" y="311" font-family="'Microsoft JhengHei','微軟正黑體',sans-serif" font-size="15" font-weight="bold" fill="#4A3520">無名指　向外</text>
+  <text x="92" y="328" font-family="'Microsoft JhengHei','微軟正黑體',sans-serif" font-size="13" fill="#8A7355">遠離身體 · 往低音</text>
+  <rect x="340" y="290" width="278" height="44" rx="8" fill="#FFFFFF" stroke="#D2B48C"/>
+  <circle cx="366" cy="312" r="15" fill="#1F6F43"/>
+  <text x="366" y="318" text-anchor="middle" font-family="'Microsoft JhengHei','微軟正黑體',sans-serif" font-size="17" font-weight="bold" fill="#fff">打</text>
+  <text x="392" y="311" font-family="'Microsoft JhengHei','微軟正黑體',sans-serif" font-size="15" font-weight="bold" fill="#4A3520">無名指　向內</text>
+  <text x="392" y="328" font-family="'Microsoft JhengHei','微軟正黑體',sans-serif" font-size="13" fill="#8A7355">靠近身體 · 往高音</text>
+
+</svg>
