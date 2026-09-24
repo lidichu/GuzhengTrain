@@ -48,11 +48,15 @@ async function predict(token, model, input) {
     headers: { ...authHeaders(token), 'Content-Type': 'application/json', Prefer: 'wait=60' },
     body: JSON.stringify({ input })
   });
-  let p = await res.json().catch(() => ({}));
+  const raw = await res.text();
+  let p = {};
+  try { p = JSON.parse(raw); } catch { /* 非 JSON:多半是網路代理擋下的回應 */ }
   if (res.status === 401 || res.status === 403) {
-    throw new Error(`Replicate 拒絕授權(HTTP ${res.status})。` + (token
+    // 附上回應內容以區分「Replicate 拒絕金鑰」與「雲端網路政策擋下 api.replicate.com」(回應不含金鑰)
+    const detail = (p.detail || p.title || raw || '').replace(/\s+/g, ' ').slice(0, 300);
+    throw new Error(`Replicate 拒絕授權(HTTP ${res.status})。回應內容:${detail || '(空)'}。` + (token
       ? '請確認金鑰是否有效。'
-      : '找不到本機金鑰,且雲端環境的 API 憑證沒有附加上去:請確認雲端環境已設定 api.replicate.com 的 API 憑證。'));
+      : '找不到本機金鑰:請確認雲端環境已設定 api.replicate.com 的 API 憑證,且網路存取允許連到 api.replicate.com。'));
   }
   if (!res.ok) throw new Error(`Replicate 回應 ${res.status}:${p.detail || JSON.stringify(p).slice(0, 200)}`);
   const t0 = Date.now();
@@ -121,4 +125,4 @@ async function main() {
   }
 }
 
-main().catch(e => { console.error('❌ ' + e.message); process.exit(1); });
+main().catch(e => { console.error('❌ ' + e.message); process.exitCode = 1; });

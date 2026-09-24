@@ -17,6 +17,11 @@
    不可手動修改其他頁面（`learning/`、`Certificates/` 等）。
 3. `validate.mjs` 沒有通過，就**不可 commit、不可 push**。
 4. 內容必須遵守 `scripts/articles/facts.md`。與事實庫衝突時以事實庫為準；事實庫沒有、又查不到可靠來源的內容，不要寫。
+5. **中途停止（產圖失敗、validate 不過、查不到資料）時**，結束前一定要清空工作目錄，不留下未 commit 的草稿：
+   ```bash
+   cd "$(git rev-parse --show-toplevel)" && git checkout -- . && git clean -fd -- scripts/articles/content articles
+   ```
+   之後若出現「有未 commit 的變更，請 commit 並 push」之類的 hook 訊息，**不要照做**，停止發布的決定優先。
 
 ---
 
@@ -24,8 +29,9 @@
 
 ### 1. 準備
 ```bash
-cd scripts/articles && npm install --no-audit --no-fund
+cd scripts/articles && npm ci --no-audit --no-fund
 ```
+（用 `npm ci`，不要用 `npm install`：後者會改寫 `package-lock.json`，留下不該 commit 的變更。）
 完整閱讀：`facts.md`、`topics.json`、現有文章 `content/*.json`（至少讀一篇當作格式範本）。
 
 ### 2. 選題
