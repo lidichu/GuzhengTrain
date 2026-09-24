@@ -1,0 +1,294 @@
+{
+  "updated": "2026-09-24",
+  "rule": "依序取第一個 status=pending 的題目;剩餘 pending 少於 6 題時,依 facts.md 的主題策略補新題目(不可與既有文章或已發布題目重疊)",
+  "topics": [
+    {
+      "slug": "is-guzheng-easy-to-learn",
+      "title": "古箏好學嗎？零基礎、自學與找老師的差別",
+      "category": "學習入門",
+      "keywords": [
+        "古箏好學嗎",
+        "學古箏難嗎",
+        "古箏可以自學嗎"
+      ],
+      "why": "Search Console 出現多筆「好學嗎/難嗎/自學」問句",
+      "note": "",
+      "status": "published",
+      "publishedAt": "2026-09-24"
+    },
+    {
+      "slug": "choosing-guzheng-school-xinzhuang",
+      "title": "新莊學古箏：怎麼挑適合自己的音樂教室",
+      "category": "在地學習",
+      "keywords": [
+        "新莊音樂教室",
+        "新莊古箏",
+        "新北古箏課程"
+      ],
+      "why": "「新莊音樂教室」526 次曝光、排名約 8",
+      "note": "不可寫出教室路名門牌;不可逐區開頁;可比較上課形式、師資、試上、交通考量等通用挑選原則,最後介紹本教室",
+      "status": "pending"
+    },
+    {
+      "slug": "huangzhong-exam-repertoire",
+      "title": "黃鐘獎國樂考級：古箏各級曲目與準備重點",
+      "category": "考級比賽",
+      "keywords": [
+        "黃鐘獎國樂考級曲目",
+        "黃鐘獎國樂考級2026",
+        "古箏考級"
+      ],
+      "why": "考級是最強主題,曲目類查詢仍排第 8 名",
+      "note": "曲目與級別必須引用黃鐘獎官方公告;查不到官方最新曲目就改寫「準備重點」並連回 /Certificates/",
+      "status": "pending"
+    },
+    {
+      "slug": "guzheng-vs-guqin",
+      "title": "古箏和古琴有什麼不同？外型、音色、曲目一次分清楚",
+      "category": "樂器知識",
+      "keywords": [
+        "古箏古琴差別",
+        "古琴是什麼",
+        "古琴 古箏"
+      ],
+      "why": "出現「古琴是什麼」「古琴尺寸」等查詢",
+      "note": "",
+      "status": "pending"
+    },
+    {
+      "slug": "guzheng-care-dry-season",
+      "title": "秋冬乾燥季節的古箏保養：琴弦、面板與琴碼",
+      "category": "保養調音",
+      "keywords": [
+        "古箏保養",
+        "古箏 乾燥",
+        "古箏琴弦"
+      ],
+      "why": "季節性題目,10 月底發布最適合",
+      "note": "避免與 /learning/11-maintenance.html 重疊:聚焦季節與濕度",
+      "status": "pending"
+    },
+    {
+      "slug": "cost-of-learning-guzheng",
+      "title": "學古箏一個月要花多少？學費、樂器與考級費用",
+      "category": "學習入門",
+      "keywords": [
+        "學古箏費用",
+        "古箏學費",
+        "古箏價格"
+      ],
+      "why": "價格類查詢合計 2,963 次曝光",
+      "note": "學費只能給市場區間並註明來源與日期;本教室除 50 體驗課外不寫價格;樂器價格連回 08 篇",
+      "status": "pending"
+    },
+    {
+      "slug": "how-to-use-guzheng-tuner",
+      "title": "古箏調音器怎麼用？21 弦 D 調定弦步驟",
+      "category": "保養調音",
+      "keywords": [
+        "古箏調音器怎麼用",
+        "古箏調音",
+        "古箏定弦"
+      ],
+      "why": "「古箏調音器怎麼用」73 次、「古箏調音」295 次曝光",
+      "note": "",
+      "status": "pending"
+    },
+    {
+      "slug": "adults-learning-guzheng",
+      "title": "成人學古箏會太晚嗎？上班族的學習節奏與心態",
+      "category": "學習入門",
+      "keywords": [
+        "成人學古箏",
+        "大人學古箏",
+        "上班族學樂器"
+      ],
+      "why": "常被問 AI 的決策型問題",
+      "note": "",
+      "status": "pending"
+    },
+    {
+      "slug": "guzheng-scale-positions",
+      "title": "古箏 21 弦音階位置圖解：從簡譜找到對應的弦",
+      "category": "樂器知識",
+      "keywords": [
+        "古箏音階位置",
+        "古箏簡譜",
+        "古箏弦位"
+      ],
+      "why": "「古箏音階位置」167 次曝光",
+      "note": "",
+      "status": "pending"
+    },
+    {
+      "slug": "best-age-for-kids-guzheng",
+      "title": "小孩幾歲學古箏最適合？手指發育、專注力與學習階段",
+      "category": "學習入門",
+      "keywords": [
+        "兒童學古箏",
+        "幾歲學古箏",
+        "小孩學樂器"
+      ],
+      "why": "常被問 AI 的決策型問題",
+      "note": "不可宣稱醫學或發育研究結論,除非有可靠來源",
+      "status": "pending"
+    },
+    {
+      "slug": "guzheng-schools-and-styles",
+      "title": "古箏流派介紹：各派特色與代表曲",
+      "category": "樂器知識",
+      "keywords": [
+        "古箏流派",
+        "古箏七大流派",
+        "箏派"
+      ],
+      "why": "「七大流派」211 次曝光",
+      "note": "避免與 01 篇流派段落重複,要寫得更深",
+      "status": "pending"
+    },
+    {
+      "slug": "guzheng-nails-and-tape",
+      "title": "義甲怎麼選、膠布怎麼纏？初學者常見問題一次解決",
+      "category": "練習技巧",
+      "keywords": [
+        "古箏義甲",
+        "古箏膠布",
+        "義甲纏法"
+      ],
+      "why": "保養與配件類查詢",
+      "note": "避免與 02 篇義甲佩戴段落重複,聚焦選購與問題排除",
+      "status": "pending"
+    },
+    {
+      "slug": "how-long-to-practice-daily",
+      "title": "古箏初學者每天要練多久？有效練習的時間安排",
+      "category": "練習技巧",
+      "keywords": [
+        "古箏練習時間",
+        "古箏每天練多久"
+      ],
+      "why": "後備",
+      "note": "",
+      "status": "pending"
+    },
+    {
+      "slug": "yuzhou-changwan-guide",
+      "title": "《漁舟唱晚》賞析與學習重點",
+      "category": "曲目賞析",
+      "keywords": [
+        "漁舟唱晚",
+        "漁舟唱晚古箏"
+      ],
+      "why": "後備",
+      "note": "",
+      "status": "pending"
+    },
+    {
+      "slug": "guzheng-hand-pain",
+      "title": "學古箏會傷手嗎？指甲、手腕痠痛的預防",
+      "category": "練習技巧",
+      "keywords": [
+        "古箏手痛",
+        "古箏手腕痠"
+      ],
+      "why": "後備",
+      "note": "不可給醫療建議,嚴重不適請就醫",
+      "status": "pending"
+    },
+    {
+      "slug": "pop-songs-on-guzheng",
+      "title": "流行歌也能用古箏彈？初學者適合的改編方向",
+      "category": "曲目賞析",
+      "keywords": [
+        "古箏流行歌",
+        "古箏改編"
+      ],
+      "why": "後備",
+      "note": "不可附上有版權的完整樂譜",
+      "status": "pending"
+    },
+    {
+      "slug": "exam-prep-one-month",
+      "title": "考級前一個月的準備清單",
+      "category": "考級比賽",
+      "keywords": [
+        "古箏考級準備",
+        "古箏檢定"
+      ],
+      "why": "後備",
+      "note": "連回 /Certificates/ 與 10 篇",
+      "status": "pending"
+    },
+    {
+      "slug": "guzheng-16-vs-21-strings",
+      "title": "16 弦和 21 弦古箏差在哪？初學該選哪一種",
+      "category": "樂器知識",
+      "keywords": [
+        "16弦古箏",
+        "21弦古箏"
+      ],
+      "why": "後備",
+      "note": "",
+      "status": "pending"
+    },
+    {
+      "slug": "practice-without-guzheng",
+      "title": "家裡沒有古箏可以先學嗎？上課與練習的安排",
+      "category": "學習入門",
+      "keywords": [
+        "沒有古箏",
+        "古箏練習"
+      ],
+      "why": "後備",
+      "note": "不可宣稱教室有租借或練琴室",
+      "status": "pending"
+    },
+    {
+      "slug": "reading-jianpu",
+      "title": "看不懂簡譜怎麼辦？古箏譜的基本讀法",
+      "category": "練習技巧",
+      "keywords": [
+        "古箏簡譜",
+        "簡譜怎麼看"
+      ],
+      "why": "後備",
+      "note": "",
+      "status": "pending"
+    },
+    {
+      "slug": "mo-li-hua-guide",
+      "title": "《茉莉花》古箏彈奏重點",
+      "category": "曲目賞析",
+      "keywords": [
+        "茉莉花古箏"
+      ],
+      "why": "後備",
+      "note": "",
+      "status": "pending"
+    },
+    {
+      "slug": "stage-fright",
+      "title": "上台會緊張怎麼辦？發表會與考級的心理準備",
+      "category": "練習技巧",
+      "keywords": [
+        "上台緊張",
+        "發表會"
+      ],
+      "why": "後備",
+      "note": "可連回 12 篇",
+      "status": "pending"
+    },
+    {
+      "slug": "guzheng-and-pipa",
+      "title": "想學古箏還是琵琶？兩種樂器的比較",
+      "category": "樂器知識",
+      "keywords": [
+        "古箏琵琶",
+        "學琵琶"
+      ],
+      "why": "後備",
+      "note": "本教室也有琵琶課",
+      "status": "pending"
+    }
+  ]
+}

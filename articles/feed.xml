@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>古箏知識專欄｜新莊箏心古箏音樂教室</title>
+    <link>https://guzhengtrain.com/articles/</link>
+    <atom:link href="https://guzhengtrain.com/articles/feed.xml" rel="self" type="application/rss+xml"/>
+    <description>每週一篇古箏學習實用知識</description>
+    <language>zh-TW</language>
+    <lastBuildDate>Thu, 24 Sep 2026 01:00:00 GMT</lastBuildDate>
+    <item>
+      <title>古箏好學嗎？零基礎、自學與找老師的差別</title>
+      <link>https://guzhengtrain.com/articles/is-guzheng-easy-to-learn.html</link>
+      <guid isPermaLink="true">https://guzhengtrain.com/articles/is-guzheng-easy-to-learn.html</guid>
+      <pubDate>Thu, 24 Sep 2026 01:00:00 GMT</pubDate>
+      <category>學習入門</category>
+      <description>古箏好學嗎？古箏以五聲音階定弦，入門比許多樂器容易，但要彈得好聽需要紮實的基本功。本篇整理初學最常卡關的地方、學到能彈一首曲子大約要多久，以及自學與找老師各自的優缺點。</description>
+    </item>
+  </channel>
+</rss>

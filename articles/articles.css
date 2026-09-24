@@ -1,0 +1,220 @@
+/* =========================================================
+   古箏知識專欄:文章頁與專欄首頁
+   卡片樣式在 ../styles.css(首頁也會用到)
+   設計原則:手機優先、長文易讀(行高 1.9、內文寬度約 720px)
+   ========================================================= */
+
+:root {
+  --art-link: #116466;
+  --art-muted: #6b5a45;
+  --art-line: #e8dcc8;
+  --art-soft: #fbf6ee;
+}
+
+/* ── 頁首區(沿用全站咖啡色系,與學習指南的青綠色做出區隔) ── */
+.art-hero {
+  background: linear-gradient(135deg, #4A3520 0%, #6e4a28 100%);
+  color: #fff;
+  padding: 44px 0 40px;
+}
+.art-narrow { max-width: 780px; }
+.art-breadcrumb { font-size: .88rem; opacity: .85; margin-bottom: 18px; }
+.art-breadcrumb a { color: #f3e3c7; text-decoration: none; }
+.art-breadcrumb a:hover, .art-breadcrumb a:focus-visible { text-decoration: underline; }
+.art-breadcrumb .sep { margin: 0 8px; opacity: .6; }
+.art-cat {
+  display: inline-block;
+  font-size: .8rem; font-weight: bold; letter-spacing: .05em;
+  background: rgba(255,255,255,.16); color: #fff;
+  padding: 4px 12px; border-radius: 20px; margin-bottom: 12px;
+}
+.art-hero h1 {
+  font-size: clamp(1.6rem, 4.6vw, 2.35rem);
+  line-height: 1.4; font-weight: bold; margin: 0 0 14px;
+  color: #fff;
+}
+.art-byline { font-size: .9rem; opacity: .88; margin: 0; }
+.art-byline .sep { margin: 0 7px; opacity: .55; }
+.art-byline i { margin-right: 3px; }
+.art-hero-index { padding: 48px 0 44px; text-align: center; }
+.art-hero-index .art-breadcrumb { text-align: left; max-width: 1160px; margin-left: auto; margin-right: auto; }
+.art-hero-sub { font-size: 1.08rem; opacity: .9; max-width: 640px; margin: 0 auto; line-height: 1.8; }
+
+/* ── 主體 ── */
+/* 全站 styles.css 有 section{padding:60px 0} 與 section:nth-child(2n){背景白} 兩條全域規則,
+   會讓文章內每個段落間距過大、且隔一段出現白底;在專欄頁面內重設 */
+.art-main section { padding: 0; background-color: transparent; }
+section.art-hero { background-color: transparent; }
+.art-main { padding: 32px 0 64px; }
+.art-cover { margin: 0 0 28px; }
+.art-cover-img { width: 100%; height: auto; border-radius: 12px; display: block; box-shadow: 0 6px 20px rgba(74,53,32,.14); }
+.art-cover figcaption { font-size: .8rem; color: #9a8870; text-align: right; margin-top: 6px; }
+
+.art-summary {
+  background: var(--art-soft);
+  border: 1px solid var(--art-line);
+  border-left: 4px solid var(--primary);
+  border-radius: 10px;
+  padding: 20px 22px 18px;
+  margin-bottom: 24px;
+}
+.art-summary h2 { font-size: 1.1rem; color: var(--primary); margin: 0 0 10px; font-weight: bold; }
+.art-summary ul { margin: 0; padding-left: 1.2em; }
+.art-summary li { line-height: 1.85; margin-bottom: 6px; color: var(--dark); }
+
+.art-toc { margin-bottom: 36px; }
+.art-toc details { border: 1px solid var(--art-line); border-radius: 10px; background: #fff; }
+.art-toc summary {
+  cursor: pointer; list-style: none;
+  padding: 14px 18px; min-height: 48px;
+  font-weight: bold; color: var(--dark);
+  display: flex; justify-content: space-between; align-items: center;
+}
+.art-toc summary::-webkit-details-marker { display: none; }
+.art-toc summary::after { content: "＋"; color: var(--primary); }
+.art-toc details[open] summary::after { content: "－"; }
+.art-toc ol { margin: 0; padding: 0 18px 16px 2.4em; }
+.art-toc li { line-height: 1.6; margin: 0; }
+/* 整行可點、高度 ≥44px,手機上不易點錯 */
+.art-toc a { display: block; padding: 11px 0; color: var(--art-link); text-decoration: none; }
+.art-toc a:hover, .art-toc a:focus-visible { text-decoration: underline; }
+
+/* ── 內文排版 ── */
+.art-body { font-size: 1.06rem; color: #3b2c1a; }
+.art-body section { scroll-margin-top: 80px; margin-bottom: 36px; }
+.art-body h2 {
+  font-size: clamp(1.28rem, 3.6vw, 1.55rem);
+  color: var(--dark); font-weight: bold; line-height: 1.5;
+  margin: 0 0 16px; padding-bottom: 10px;
+  border-bottom: 2px solid var(--art-line);
+}
+.art-body h3 { font-size: 1.15rem; color: var(--dark); font-weight: bold; margin: 24px 0 10px; }
+.art-body p { line-height: 1.95; margin: 0 0 16px; }
+.art-body ul, .art-body ol { line-height: 1.9; margin: 0 0 16px; padding-left: 1.4em; }
+.art-body li { margin-bottom: 8px; }
+.art-body strong { color: #2b1f12; }
+.art-body a { color: var(--art-link); text-decoration: underline; text-underline-offset: 3px; }
+.art-body a:hover { color: #0b4648; }
+.art-body blockquote {
+  margin: 0 0 16px; padding: 12px 18px;
+  border-left: 4px solid var(--secondary); background: var(--art-soft); color: var(--art-muted);
+}
+
+/* 表格:手機可橫向捲動,不撐破版面 */
+.table-wrap { overflow-x: auto; -webkit-overflow-scrolling: touch; margin: 0 0 18px; border-radius: 10px; border: 1px solid var(--art-line); }
+.art-body table { width: 100%; min-width: 520px; border-collapse: collapse; font-size: .96rem; background: #fff; }
+.art-body th { background: #f3eadb; color: var(--dark); font-weight: bold; text-align: left; padding: 12px 14px; white-space: nowrap; }
+.art-body td { padding: 12px 14px; border-top: 1px solid var(--art-line); vertical-align: top; line-height: 1.7; }
+
+/* ── 常見問題 ── */
+.art-faq { margin: 8px 0 36px; scroll-margin-top: 80px; }
+.art-faq h2 { font-size: clamp(1.28rem, 3.6vw, 1.55rem); color: var(--dark); font-weight: bold; margin: 0 0 16px; }
+.art-faq details { background: #fff; border: 1px solid var(--art-line); border-radius: 10px; margin-bottom: 10px; }
+.art-faq summary {
+  cursor: pointer; list-style: none;
+  padding: 14px 44px 14px 18px; min-height: 48px; position: relative;
+  font-weight: bold; color: var(--dark); line-height: 1.6;
+}
+.art-faq summary::-webkit-details-marker { display: none; }
+.art-faq summary::after { content: "＋"; position: absolute; right: 18px; top: 14px; color: var(--primary); }
+.art-faq details[open] summary::after { content: "－"; }
+.art-faq details p { margin: 0; padding: 0 18px 16px; line-height: 1.9; color: #3b2c1a; }
+
+/* ── 體驗課 CTA ── */
+.art-main .art-cta {
+  background: linear-gradient(135deg, #116466 0%, #1a8587 100%);
+  color: #fff; border-radius: 14px;
+  padding: 28px 24px; margin: 0 0 36px; text-align: center;
+}
+.art-cta h2 { font-size: 1.4rem; margin: 0 0 10px; color: #fff; font-weight: bold; }
+.art-cta p { margin: 0 auto 10px; max-width: 560px; line-height: 1.8; }
+.art-cta .art-cta-note { font-size: .86rem; opacity: .88; }
+.art-cta-btns { display: flex; flex-wrap: wrap; gap: 12px; justify-content: center; margin-top: 18px; }
+.art-btn {
+  display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+  min-height: 48px; padding: 12px 24px; border-radius: 30px;
+  font-weight: bold; text-decoration: none; transition: transform .15s, background .2s;
+}
+.art-btn:hover { transform: translateY(-2px); }
+.art-btn:focus-visible { outline: 3px solid #fff; outline-offset: 2px; }
+.art-btn-primary { background: #fdf3e6; color: #4A3520; }
+.art-btn-primary:hover { background: #fff; color: #4A3520; }
+.art-btn-line { background: rgba(255,255,255,.14); color: #fff; border: 1px solid rgba(255,255,255,.55); }
+.art-btn-line:hover { background: rgba(255,255,255,.24); color: #fff; }
+
+/* ── 參考資料 ── */
+.art-sources { margin-bottom: 36px; }
+.art-sources h2 { font-size: 1.15rem; color: var(--dark); font-weight: bold; margin: 0 0 10px; }
+.art-sources ol { padding-left: 1.4em; margin: 0; font-size: .92rem; }
+.art-sources li { line-height: 1.8; margin-bottom: 4px; word-break: break-word; }
+.art-sources a { color: var(--art-link); }
+
+/* ── 延伸閱讀 ── */
+.art-related h2 { font-size: 1.3rem; color: var(--dark); font-weight: bold; margin: 0 0 14px; }
+.art-related-links { list-style: none; padding: 0; margin: 0 0 22px; display: grid; gap: 10px; }
+.art-related-links a {
+  display: flex; align-items: center; gap: 10px;
+  min-height: 48px; padding: 12px 16px;
+  background: #fff; border: 1px solid var(--art-line); border-radius: 10px;
+  color: var(--dark); text-decoration: none; font-weight: bold; line-height: 1.5;
+}
+.art-related-links a:hover, .art-related-links a:focus-visible { border-color: var(--primary); color: var(--primary); }
+.art-related-links i { color: var(--art-link); }
+.art-grid-small { margin-bottom: 22px; }
+.art-back { margin: 8px 0 0; }
+.art-back a { display: inline-flex; align-items: center; gap: 8px; min-height: 44px; color: var(--art-link); font-weight: bold; text-decoration: none; }
+
+/* ── 專欄首頁:分類篩選 ── */
+.art-filter { display: flex; flex-wrap: wrap; gap: 10px; margin: 0 0 26px; }
+.art-chip {
+  min-height: 44px; padding: 8px 18px;
+  border: 1px solid var(--secondary); background: #fff; color: var(--dark);
+  border-radius: 24px; font-weight: bold; cursor: pointer; transition: all .15s;
+}
+.art-chip:hover { border-color: var(--primary); color: var(--primary); }
+.art-chip.is-active { background: var(--primary); border-color: var(--primary); color: #fff; }
+.art-chip:focus-visible { outline: 3px solid var(--art-link); outline-offset: 2px; }
+.art-empty { text-align: center; color: var(--art-muted); padding: 30px 0; }
+.art-learning-link {
+  margin-top: 40px; padding: 18px 20px;
+  background: var(--art-soft); border: 1px solid var(--art-line); border-radius: 10px;
+}
+.art-learning-link p { margin: 0; line-height: 1.8; }
+.art-learning-link a { color: var(--art-link); font-weight: bold; }
+
+/* ── 平板與電腦 ── */
+@media (min-width: 768px) {
+  .art-hero { padding: 60px 0 52px; }
+  .art-main { padding: 44px 0 80px; }
+  .art-main .art-cta { padding: 36px 40px; }
+  .art-related-links { grid-template-columns: 1fr 1fr; }
+}
+
+/* ── 手機 ── */
+@media (max-width: 480px) {
+  .art-body { font-size: 1.02rem; }
+  .art-summary { padding: 16px 16px 14px; }
+  .art-btn { width: 100%; }
+}
+
+/* ── 手機:表格改為卡片式堆疊(每格前顯示欄名),不需要左右滑動 ── */
+@media (max-width: 600px) {
+  .table-wrap { overflow: visible; border: 0; border-radius: 0; }
+  .art-body table { min-width: 0; background: transparent; }
+  .art-body table, .art-body tbody, .art-body tr, .art-body td { display: block; width: 100%; }
+  .art-body thead {
+    position: absolute; width: 1px; height: 1px; overflow: hidden;
+    clip: rect(0 0 0 0); white-space: nowrap;
+  }
+  .art-body tr {
+    background: #fff; border: 1px solid var(--art-line); border-radius: 10px;
+    padding: 6px 0; margin-bottom: 12px;
+  }
+  .art-body td { border-top: 0; padding: 6px 16px; }
+  .art-body td::before {
+    content: attr(data-label);
+    display: block; font-size: .8rem; font-weight: bold;
+    color: var(--primary); margin-bottom: 2px;
+  }
+  .art-body td:first-child { font-weight: bold; color: var(--dark); font-size: 1.02rem; }
+}

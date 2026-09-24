@@ -109,7 +109,9 @@ nav ul li a {
 /* 響應式設計 - 導航選單 */
 @media (max-width: 768px) {
   .nav-container {
-    padding: 15px 0;
+    /* 只設上下;原本的 15px 0 會把左右留白歸零,手機上網站名稱貼齊螢幕邊緣 */
+    padding-top: 15px;
+    padding-bottom: 15px;
   }
   
   .logo-container {

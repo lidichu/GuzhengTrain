@@ -208,7 +208,8 @@ window.addEventListener('resize', function() {
     let isPlaying = false;
     let audioInterval;
     
-    audioPlayBtn.addEventListener('click', function() {
+    // 音樂播放器目前已停用(上方建立程式碼已註解),元素不存在時略過,避免拋出錯誤
+    if (audioPlayBtn) audioPlayBtn.addEventListener('click', function() {
         if (isPlaying) {
             // 暫停
             clearInterval(audioInterval);

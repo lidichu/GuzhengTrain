@@ -1,0 +1,14 @@
+{
+  "name": "guzhengtrain-articles",
+  "private": true,
+  "type": "module",
+  "description": "古箏知識專欄:產圖、建置與檢查工具",
+  "scripts": {
+    "image": "node image.mjs",
+    "build": "node build.mjs",
+    "validate": "node validate.mjs"
+  },
+  "dependencies": {
+    "sharp": "^0.34.3"
+  }
+}

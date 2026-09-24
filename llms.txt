@@ -1,0 +1,36 @@
+# 新莊箏心古箏音樂教室
+
+> 位於新北市新莊區（鄰近新莊體育場、新泰國中）的古箏與琵琶音樂教室，提供一對一教學、考級輔導與 $350 體驗課。採預約制，為確保上課品質平日不開放參觀，體驗課預約成功後提供詳細交通資訊。
+
+## 教室資訊
+
+- 地點：新北市新莊區，鄰近新莊體育場、新泰國中（不公開門牌，預約後提供交通資訊）
+- 營業時間：週一至週日 09:00–22:00
+- 課程：古箏一對一教學、琵琶課程、考級輔導、$350 體驗課
+- 師資：創辦人廖美華老師（15 年教學經驗、經營 YouTube 古箏教學頻道），以及科班出身的古箏與琵琶教師群；其中軒軒老師曾獲黃鐘獎世界古箏大賽特鐘特獎
+- 預約方式：官方 LINE @swn8120u，或填寫體驗課報名表
+- 網站：https://guzhengtrain.com/
+
+## 古箏知識專欄（每週更新）
+
+- [古箏好學嗎？零基礎、自學與找老師的差別](https://guzhengtrain.com/articles/is-guzheng-easy-to-learn.html)：古箏好學嗎？古箏以五聲音階定弦，入門比許多樂器容易，但要彈得好聽需要紮實的基本功。本篇整理初學最常卡關的地方、學到能彈一首曲子大約要多久，以及自學與找老師各自的優缺點。
+
+## 古箏學習指南（系統化課程）
+
+- [認識古箏](https://guzhengtrain.com/learning/01-introduction.html)：古箏是什麼？從先秦到現代的歷史演變、21 弦古箏的構造與材質、五聲音階的定弦方式，到各地箏派的風格特色，一篇帶你完整認識古箏這項傳統樂器。
+- [基本坐姿與手型](https://guzhengtrain.com/learning/02-posture.html)：學習正確的古箏坐姿與手型，掌握指甲佩戴技巧，為彈奏古箏打下堅實基礎。
+- [古箏基礎指法練習](https://guzhengtrain.com/learning/03-basic-techniques.html)：全面詳解古箏基本指法技巧，包括托、勾、抹、挑、摘等指法的正確姿勢與練習方法。
+- [古箏初級彈奏技巧](https://guzhengtrain.com/learning/04-beginner-techniques.html)：全面學習古箏初級彈奏技巧，從滾音到輪指，掌握演奏基礎技巧。
+- [中級古箏彈奏技巧](https://guzhengtrain.com/learning/05-intermediate-techniques.html)：全面介紹古箏中級演奏技巧，包括顫音、搖指、按音等進階指法的詳細講解，幫助學習者邁向專業演奏。
+- [古箏高級演奏技巧](https://guzhengtrain.com/learning/06-advanced-techniques.html)：深入學習古箏高級演奏技巧，包括花指、大撮、劈扫等技巧的詳細講解，幫助您進階古箏演奏水平。
+- [如何選購古箏](https://guzhengtrain.com/learning/08-buying-guzheng.html)：古箏價格從入門級約 NT$8,000 到專業級 NT$50,000 以上都有。本篇整理各價位古箏的材質與音色差異、新琴與二手琴比較、試琴技巧與必備配件，幫你用對預算買對琴。
+- [如何尋找適合的古箏老師](https://guzhengtrain.com/learning/09-finding-teacher.html)：全面的古箏教師選擇指南，幫助您找到最適合自己學習風格和目標的古箏老師。
+- [古箏等級考試與證照須知](https://guzhengtrain.com/learning/10-certification.html)：詳細介紹台灣三大古箏檢定系統的比較分析與報考指南，幫助您選擇適合的考級系統。
+- [古箏保養與調音](https://guzhengtrain.com/learning/11-maintenance.html)：專業的古箏保養與調音指南，幫助您延長古箏壽命並保持最佳音質。
+- [為什麼我們要辦成果發表會？](https://guzhengtrain.com/learning/12-recital-importance.html)：古箏成果發表會不只是展示技巧，更是一種自我肯定的旅程，了解為何這對每位學習者都有深遠的意義。
+
+## 其他
+
+- [2026 古箏考級與比賽情報](https://guzhengtrain.com/Certificates/)：國樂學會檢定、黃鐘獎全國音樂考級與各大古箏比賽時程，每月更新
+- [古箏能力測驗](https://guzhengtrain.com/quiz/)：線上測驗了解自己的古箏程度
+- [RSS 訂閱](https://guzhengtrain.com/articles/feed.xml)
