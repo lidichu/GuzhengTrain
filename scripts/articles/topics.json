@@ -27,7 +27,8 @@
       ],
       "why": "「新莊音樂教室」526 次曝光、排名約 8",
       "note": "不可寫出教室路名門牌;不可逐區開頁;可比較上課形式、師資、試上、交通考量等通用挑選原則,最後介紹本教室",
-      "status": "pending"
+      "status": "published",
+      "publishedAt": "2026-09-24"
     },
     {
       "slug": "huangzhong-exam-repertoire",
