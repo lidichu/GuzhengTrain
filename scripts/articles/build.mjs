@@ -361,6 +361,8 @@ function updateHomepage() {
 }
 
 /* ── 全站導覽與頁尾加入專欄連結(可重複執行) ───────────────── */
+// 導覽列:「知識專欄」是上方選單的獨立一項(放在「古箏測驗」前),不放在「學習指南」下拉裡。
+// 992–1199px 寬度靠 styles.css 縮小選單間距才放得下,若再增加選單項目需重新量測。
 function ensureSiteLinks() {
   const pages = execSync('git ls-files "*.html"', { cwd: ROOT }).toString().trim().split('\n')
     .concat(fs.existsSync(path.join(ROOT, 'articles')) ? fs.readdirSync(path.join(ROOT, 'articles')).filter(f => f.endsWith('.html')).map(f => 'articles/' + f) : [])
@@ -368,8 +370,11 @@ function ensureSiteLinks() {
   let changed = 0;
   for (const rel of pages) {
     let h = rd(rel).replace(/\r\n/g, '\n'); const before = h;
-    h = h.replace(/(\n(\s*)<a class="dropdown-item" href="\/learning\/">學習總覽<\/a>)(?!\n\s*<a class="dropdown-item" href="\/articles\/">)/,
-      '$1\n$2<a class="dropdown-item" href="/articles/">古箏知識專欄</a>');
+    h = h.replace(/\n\s*<a class="dropdown-item" href="\/articles\/">古箏知識專欄<\/a>/, '');
+    if (!h.includes('<a class="nav-link" href="/articles/">')) {
+      h = h.replace(/\n([ \t]*)(<li class="nav-item"><a class="nav-link" href="\/quiz\/">古箏測驗<\/a><\/li>)/,
+        '\n$1<li class="nav-item"><a class="nav-link" href="/articles/">知識專欄</a></li>\n$1$2');
+    }
     h = h.replace(/(\n(\s*)<li><a href="\/learning\/">學習指南<\/a><\/li>)(?!\n\s*<li><a href="\/articles\/">)/,
       '$1\n$2<li><a href="/articles/">古箏知識專欄</a></li>');
     if (h !== before) { writeKeepEol(rel, h); changed++; }

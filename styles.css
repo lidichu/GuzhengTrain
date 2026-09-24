@@ -136,8 +136,17 @@ nav.navbar {
   color: var(--secondary);
 }
 
-/* ----------- 電腦版選單邏輯 ( > 768px ) ----------- */
-@media (min-width: 769px) {
+/* 992–1199px:Bootstrap 在此寬度替選單連結加上左右 8px 內距,縮成 3px 才放得下 9 個項目(含「知識專欄」)
+   (已實測 992/1024/1140/1141/1199px,含 Windows 捲軸寬度) */
+@media (min-width: 992px) and (max-width: 1199.98px) {
+  .navbar-expand-lg .navbar-nav .nav-link {
+    padding-left: 3px;
+    padding-right: 3px;
+  }
+}
+
+/* ----------- 電腦版選單邏輯 ( >= 992px,與 Bootstrap navbar-expand-lg 一致 ) ----------- */
+@media (min-width: 992px) {
   /* 電腦版隱藏漢堡按鈕 */
   .menu-icon {
     display: none !important;
@@ -174,36 +183,29 @@ nav.navbar {
   }
 
   ul.desktop-menu li {
-    padding: 15px 14px;
+    padding: 15px 9px;
     display: flex;
     align-items: center;
   }
 
   ul.desktop-menu li a {
-    font-size: 1.05rem;
+    font-size: 0.98rem;
     line-height: 1;
     white-space: nowrap;
   }
 
-  /* 視窗較窄(平板橫向、小筆電)時逐階壓縮,
-     讓「品牌名稱(回首頁入口)+ 8 個選單項」能同列不換行、不溢出 */
-  @media (max-width: 1250px) {
-    .logo-container .brand-text {
-      font-size: 1.05rem;
-    }
-    ul.desktop-menu li {
-      padding: 15px 9px;
-    }
-    ul.desktop-menu li a {
-      font-size: 0.98rem;
-    }
-    ul.desktop-menu .nav-cta {
-      padding: 7px 14px !important;
-      font-size: 0.95rem;
-    }
+  /* 讓「品牌名稱(回首頁入口)+ 9 個選單項」能同列不換行、不溢出。
+     .container 最寬 1200px,所以大螢幕的選單可用寬度與 1200px 相同,一律用這一級尺寸;
+     更窄時再由下方 1140px 與 992–1199px 的規則逐階壓縮 */
+  .logo-container .brand-text {
+    font-size: 1.05rem;
+  }
+  ul.desktop-menu .nav-cta {
+    padding: 7px 14px !important;
+    font-size: 0.95rem;
   }
 
-  @media (max-width: 1080px) {
+  @media (max-width: 1140px) {
     .logo-container .brand-text {
       font-size: 0.95rem;
     }
@@ -282,8 +284,9 @@ nav.navbar {
   }
 }
 
-/* ----------- 手機版選單邏輯 ( <= 768px ) ----------- */
-@media (max-width: 768px) {
+/* ----------- 手機/平板選單邏輯 ( < 992px ) ----------- */
+/* 769–991px 原本顯示電腦版選單,但 Bootstrap 在 992px 以下會把選單改成直排,平板直向時選單佔滿整個畫面;改用漢堡選單 */
+@media (max-width: 991.98px) {
   /* 顯示 Logo 和 漢堡按鈕 */
   .logo-container { display: block; }
   .menu-icon {
@@ -939,7 +942,7 @@ footer {
 }
 
 /* 桌機版 Navbar 的 CTA 按鈕 */
-@media (min-width: 769px) {
+@media (min-width: 992px) {
   ul.desktop-menu .nav-cta-item {
     padding-left: 12px;
   }

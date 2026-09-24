@@ -47,7 +47,7 @@ document.addEventListener('DOMContentLoaded', function() {
         if (dropdownToggle && dropdownParent) {
             dropdownToggle.addEventListener('click', function(e) {
                 // 僅在手機版接管;桌機版用 CSS hover 顯示
-                if (window.innerWidth > 768) return;
+                if (window.innerWidth >= 992) return;
                 e.preventDefault();
                 dropdownParent.classList.toggle('open');
             });
@@ -56,7 +56,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // --- 視窗大小切換時重置狀態 ---
     window.addEventListener('resize', function() {
-        if (window.innerWidth > 768) {
+        if (window.innerWidth >= 992) {
             if (primaryNav) primaryNav.classList.remove('active');
             const openDropdown = primaryNav && primaryNav.querySelector('.dropdown.open');
             if (openDropdown) openDropdown.classList.remove('open');
