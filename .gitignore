@@ -1,0 +1,11 @@
+# 機密:任何金鑰檔一律不進 repo(本 repo 為公開)
+.env
+.env.*
+*.env
+secrets*
+*.key
+
+# 暫存
+node_modules/
+.tmp.driveupload/
+scripts/articles/.cache/
