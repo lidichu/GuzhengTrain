@@ -9,7 +9,7 @@
 
 ## 絕對規則
 
-1. **本 repo 是公開的。** Replicate 金鑰存在雲端環境的「API 憑證」中，由代理在請求送出後才附加，**你在環境中看不到金鑰是正常的**，直接執行 `node image.mjs` 即可。**絕不**嘗試尋找、印出或把任何金鑰寫進檔案、commit 或 log。
+1. **本 repo 是公開的。** Replicate 金鑰存在雲端環境的「API 憑證」中，由代理在請求送出後才附加，**你在環境中看不到金鑰是正常的**，直接執行 `node image.mjs` 即可（程式偵測到沙箱代理時會自動加上 `NODE_USE_ENV_PROXY=1` 走代理）。**絕不**嘗試尋找、印出或把任何金鑰寫進檔案、commit 或 log。也不要用 curl 另外呼叫 Replicate 測試：每次呼叫都會產圖計費。
 2. 只能新增或修改以下路徑：
    - `scripts/articles/content/<slug>.json`（新文章）
    - `scripts/articles/topics.json`

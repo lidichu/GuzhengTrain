@@ -18,6 +18,17 @@ import fs from 'node:fs';
 import path from 'node:path';
 import os from 'node:os';
 import { fileURLToPath } from 'node:url';
+import { spawnSync } from 'node:child_process';
+
+// 雲端沙箱:Node 內建 fetch 預設不走 HTTPS_PROXY,請求沒經過代理,API 憑證就附加不上(Replicate 回 401)。
+// 偵測到代理時,以 NODE_USE_ENV_PROXY=1(Node ≥ 22.21)重新執行自己。
+if ((process.env.HTTPS_PROXY || process.env.https_proxy) && process.env.NODE_USE_ENV_PROXY !== '1') {
+  const r = spawnSync(process.execPath, process.argv.slice(1), {
+    stdio: 'inherit',
+    env: { ...process.env, NODE_USE_ENV_PROXY: '1', NODE_NO_WARNINGS: '1' }
+  });
+  process.exit(r.status ?? 1);
+}
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const ROOT = path.resolve(__dirname, '..', '..');
@@ -43,11 +54,16 @@ const sleep = ms => new Promise(r => setTimeout(r, ms));
 const authHeaders = token => (token ? { Authorization: `Bearer ${token}` } : {});
 
 async function predict(token, model, input) {
-  const res = await fetch(`https://api.replicate.com/v1/models/${model}/predictions`, {
-    method: 'POST',
-    headers: { ...authHeaders(token), 'Content-Type': 'application/json', Prefer: 'wait=60' },
-    body: JSON.stringify({ input })
-  });
+  let res;
+  try {
+    res = await fetch(`https://api.replicate.com/v1/models/${model}/predictions`, {
+      method: 'POST',
+      headers: { ...authHeaders(token), 'Content-Type': 'application/json', Prefer: 'wait=60' },
+      body: JSON.stringify({ input })
+    });
+  } catch (e) {
+    throw new Error(`無法連線到 api.replicate.com(${(e.cause && e.cause.code) || e.message}):請確認網路存取設定`);
+  }
   const raw = await res.text();
   let p = {};
   try { p = JSON.parse(raw); } catch { /* 非 JSON:多半是網路代理擋下的回應 */ }
