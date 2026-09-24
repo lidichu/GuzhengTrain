@@ -7,8 +7,10 @@
  *   node image.mjs <slug> --model openai/gpt-image-2.5-flare --quality high
  *   node image.mjs <slug> --out /tmp/test.jpg   只輸出到指定位置(測試用,不改 JSON)
  *
- * 金鑰:只從環境變數 REPLICATE_API_TOKEN 讀取;本機若未設定,
- *       改讀 repo 以外的 ~/.guzhengtrain/.env。本 repo 為公開,金鑰絕不可寫入 repo。
+ * 金鑰(本 repo 為公開,金鑰絕不可寫入 repo):
+ *   - 雲端排程:金鑰存在雲端環境的「API 憑證」,由代理在請求離開沙箱後才附加到
+ *     api.replicate.com 的 Authorization 標頭。程式讀不到金鑰是正常的,不帶標頭直接送出即可。
+ *   - 本機:讀環境變數 REPLICATE_API_TOKEN,或 repo 以外的 ~/.guzhengtrain/.env。
  *
  * 產出:articles/images/<slug>.jpg(分享圖/後備)與 <slug>.webp(網頁用)
  */
@@ -26,6 +28,7 @@ function arg(name, def) {
   return i > -1 ? process.argv[i + 1] : def;
 }
 
+// 回傳 null 代表由雲端環境的 API 憑證代理附加金鑰
 function loadToken() {
   if (process.env.REPLICATE_API_TOKEN) return process.env.REPLICATE_API_TOKEN.trim();
   const f = path.join(os.homedir(), '.guzhengtrain', '.env');
@@ -33,24 +36,30 @@ function loadToken() {
     const m = fs.readFileSync(f, 'utf8').match(/^REPLICATE_API_TOKEN=(.+)$/m);
     if (m) return m[1].trim();
   }
-  throw new Error('找不到 REPLICATE_API_TOKEN(請設定環境變數;切勿寫入 repo)');
+  return null;
 }
 
 const sleep = ms => new Promise(r => setTimeout(r, ms));
+const authHeaders = token => (token ? { Authorization: `Bearer ${token}` } : {});
 
 async function predict(token, model, input) {
   const res = await fetch(`https://api.replicate.com/v1/models/${model}/predictions`, {
     method: 'POST',
-    headers: { Authorization: `Bearer ${token}`, 'Content-Type': 'application/json', Prefer: 'wait=60' },
+    headers: { ...authHeaders(token), 'Content-Type': 'application/json', Prefer: 'wait=60' },
     body: JSON.stringify({ input })
   });
-  let p = await res.json();
+  let p = await res.json().catch(() => ({}));
+  if (res.status === 401 || res.status === 403) {
+    throw new Error(`Replicate 拒絕授權(HTTP ${res.status})。` + (token
+      ? '請確認金鑰是否有效。'
+      : '找不到本機金鑰,且雲端環境的 API 憑證沒有附加上去:請確認雲端環境已設定 api.replicate.com 的 API 憑證。'));
+  }
   if (!res.ok) throw new Error(`Replicate 回應 ${res.status}:${p.detail || JSON.stringify(p).slice(0, 200)}`);
   const t0 = Date.now();
   while (!['succeeded', 'failed', 'canceled'].includes(p.status)) {
     if (Date.now() - t0 > 300000) throw new Error('產圖逾時(5 分鐘)');
     await sleep(3000);
-    p = await (await fetch(p.urls.get, { headers: { Authorization: `Bearer ${token}` } })).json();
+    p = await (await fetch(p.urls.get, { headers: authHeaders(token) })).json();
   }
   if (p.status !== 'succeeded') throw new Error(`產圖失敗:${p.error || p.status}`);
   const out = Array.isArray(p.output) ? p.output[0] : p.output;
@@ -80,7 +89,11 @@ async function main() {
   const token = loadToken();
   console.log(`產圖中:${model}(quality=${quality})…`);
   const r = await predict(token, model, input);
-  const buf = Buffer.from(await (await fetch(r.url)).arrayBuffer());
+  let dl;
+  try { dl = await fetch(r.url); }
+  catch (e) { throw new Error(`圖片已產生但無法下載(${new URL(r.url).host}):請確認雲端環境的網路存取有允許 replicate.delivery`); }
+  if (!dl.ok) throw new Error(`圖片下載失敗 HTTP ${dl.status}`);
+  const buf = Buffer.from(await dl.arrayBuffer());
 
   const jpgPath = outArg ? path.resolve(outArg) : path.join(ROOT, 'articles', 'images', slug + '.jpg');
   fs.mkdirSync(path.dirname(jpgPath), { recursive: true });

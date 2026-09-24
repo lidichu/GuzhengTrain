@@ -9,7 +9,7 @@
 
 ## 絕對規則
 
-1. **本 repo 是公開的。** `REPLICATE_API_TOKEN` 只存在環境變數中。**絕不**印出、寫入任何檔案、放進 commit 或 log。
+1. **本 repo 是公開的。** Replicate 金鑰存在雲端環境的「API 憑證」中，由代理在請求送出後才附加，**你在環境中看不到金鑰是正常的**，直接執行 `node image.mjs` 即可。**絕不**嘗試尋找、印出或把任何金鑰寫進檔案、commit 或 log。
 2. 只能新增或修改以下路徑：
    - `scripts/articles/content/<slug>.json`（新文章）
    - `scripts/articles/topics.json`
@@ -103,7 +103,7 @@ git push
 Commit 前再確認一次：`git diff --cached` 裡沒有任何 `r8_` 開頭的字串。
 
 ### 9. 上線驗證
-GitHub Pages 通常 1–3 分鐘更新。每 30 秒檢查一次，最多 10 分鐘：
+GitHub Pages 通常 1–3 分鐘更新。每 30 秒檢查一次，最多 10 分鐘（若沙箱網路連不到 guzhengtrain.com，改用網頁讀取工具開啟文章網址確認）：
 ```bash
 curl -s -o /dev/null -w "%{http_code}" https://guzhengtrain.com/articles/<slug>.html
 ```
