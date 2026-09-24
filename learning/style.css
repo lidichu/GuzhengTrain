@@ -67,6 +67,16 @@ a:hover {
     opacity: 0.9;
 }
 
+/* 作者與最後更新日期(E-E-A-T 與新鮮度訊號) */
+.page-title p.article-byline {
+    font-size: 0.92rem;
+    margin-top: 14px;
+    opacity: 0.85;
+    letter-spacing: 0.02em;
+}
+.page-title p.article-byline .sep { margin: 0 6px; opacity: 0.6; }
+.page-title p.article-byline i { margin-right: 4px; }
+
 /* 介紹區塊 */
 .intro-section {
     padding: 60px 0;

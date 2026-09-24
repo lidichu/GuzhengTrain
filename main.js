@@ -70,4 +70,16 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         }
     });
+
+    // --- YouTube 延遲載入:點擊縮圖才換成播放器 ---
+    document.querySelectorAll('.yt-lite').forEach(function(btn) {
+        btn.addEventListener('click', function() {
+            const frame = document.createElement('iframe');
+            frame.src = btn.dataset.embed;
+            frame.title = btn.dataset.title || 'YouTube 影片';
+            frame.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture';
+            frame.allowFullscreen = true;
+            btn.replaceWith(frame);
+        });
+    });
 });
