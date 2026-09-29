@@ -41,7 +41,8 @@
       ],
       "why": "考級是最強主題,曲目類查詢仍排第 8 名",
       "note": "曲目與級別必須引用黃鐘獎官方公告;查不到官方最新曲目就改寫「準備重點」並連回 /Certificates/",
-      "status": "pending"
+      "status": "published",
+      "publishedAt": "2026-09-29"
     },
     {
       "slug": "guzheng-vs-guqin",
