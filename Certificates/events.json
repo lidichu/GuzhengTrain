@@ -209,42 +209,6 @@
     "note": "跨年度場次"
   },
   {
-    "id": "comp-hz-world-liuqin-2027",
-    "title": "2027 黃鐘獎-柳葉琴世界大賽",
-    "type": "competition",
-    "location": "線上",
-    "examDates": [
-      "2027-02-15"
-    ],
-    "link": "https://www.beclass.com/default.php?name=Search&op=relation&v=VQJWVwk=&f",
-    "officialSite": "https://ambitious-watermelon-ddjt20.mystrikingly.com/4",
-    "note": "黃鐘獎舉辦之線上單項樂器世界大賽"
-  },
-  {
-    "id": "comp-hz-world-yangqin-2027",
-    "title": "2027 黃鐘獎-揚琴世界大賽",
-    "type": "competition",
-    "location": "線上",
-    "examDates": [
-      "2027-04-15"
-    ],
-    "link": "https://www.beclass.com/default.php?name=Search&op=relation&v=VQJWVwk=&f",
-    "officialSite": "https://ambitious-watermelon-ddjt20.mystrikingly.com/4",
-    "note": "黃鐘獎舉辦之線上單項樂器世界大賽"
-  },
-  {
-    "id": "comp-hz-world-ruan-2027",
-    "title": "2027 黃鐘獎-阮咸世界大賽",
-    "type": "competition",
-    "location": "線上",
-    "examDates": [
-      "2027-06-15"
-    ],
-    "link": "https://www.beclass.com/default.php?name=Search&op=relation&v=VQJWVwk=&f",
-    "officialSite": "https://ambitious-watermelon-ddjt20.mystrikingly.com/4",
-    "note": "黃鐘獎舉辦之線上單項樂器世界大賽"
-  },
-  {
     "id": "exam-pccu-social-music-exam",
     "title": "文化大學社會音樂考級 (2025起停辦)",
     "type": "exam",

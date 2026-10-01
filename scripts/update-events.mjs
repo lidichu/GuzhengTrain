@@ -372,6 +372,18 @@ if (expired.length > 0) {
   expired.forEach(e => console.log(`   - [${e.type}] ${e.title} (${e.id})`));
 }
 
+// ─── 4d. 排除其他樂器的單項賽事 ──────────────────────────────────────
+// prompt 已要求排除,但 Gemini 仍會把同主辦單位的揚琴/柳葉琴/阮咸等單項大賽一併收錄(2026-10 實例)。
+// 標題明確是其他樂器、且沒提到古箏/琵琶的才排除;「全國器樂大賽」這類不限樂器的不受影響
+const OTHER_INSTRUMENT_RE = /柳葉琴|柳琴|揚琴|扬琴|阮咸|中阮|大阮|二胡|高胡|古琴|笛|簫|嗩吶|笙|三弦|鋼琴|小提琴|大提琴|長笛|單簧管|薩克斯|吉他/;
+const GUZHENG_PIPA_RE = /古箏|古筝|琵琶/;
+const offTopic = parsed.filter(e => OTHER_INSTRUMENT_RE.test(e.title) && !GUZHENG_PIPA_RE.test(e.title));
+if (offTopic.length > 0) {
+  parsed = parsed.filter(e => !offTopic.includes(e));
+  console.log(`\n🚫 排除 ${offTopic.length} 筆非古箏/琵琶的單項賽事:`);
+  offTopic.forEach(e => console.log(`   - [${e.type}] ${e.title} (${e.id})`));
+}
+
 // ─── 5. Sanity check:變動規模 ───────────────────────────────────────
 const oldIds = new Set(existing.map(e => e.id));
 const newIds = new Set(parsed.map(e => e.id));
