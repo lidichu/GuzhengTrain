@@ -376,7 +376,12 @@ if (expired.length > 0) {
 const oldIds = new Set(existing.map(e => e.id));
 const newIds = new Set(parsed.map(e => e.id));
 const added = parsed.filter(e => !oldIds.has(e.id));
-const removed = existing.filter(e => !newIds.has(e.id));
+const gone = existing.filter(e => !newIds.has(e.id));
+// 既有事件本來就全部日期已過 → 自然下架,不算「被移除」;
+// 只有「還沒過期卻不見了」才計入 30% 防護,否則每月過期的場次一多就必定誤判中止
+const expiredOld = gone.filter(e => !hasAnyFutureDate(e));
+const removed = gone.filter(e => hasAnyFutureDate(e));
+const activeExisting = existing.filter(e => hasAnyFutureDate(e));
 const kept = parsed.filter(e => oldIds.has(e.id));
 
 const changed = [];
@@ -389,7 +394,8 @@ console.log("");
 console.log("📊 變動摘要:");
 console.log(`  ➕ 新增  ${added.length} 筆`);
 console.log(`  🔄 更新  ${changed.length} 筆`);
-console.log(`  ➖ 移除  ${removed.length} 筆`);
+console.log(`  ➖ 移除  ${removed.length} 筆(未過期卻不見)`);
+console.log(`  🗑  下架  ${expiredOld.length} 筆(日期已過)`);
 console.log(`  ✅ 無動  ${kept.length - changed.length} 筆`);
 console.log(`  📦 總計  ${parsed.length} 筆(原 ${existing.length})`);
 
@@ -405,15 +411,19 @@ if (removed.length > 0) {
   console.log("\n移除的事件:");
   removed.forEach(e => console.log(`  - [${e.type}] ${e.title} (${e.id})`));
 }
+if (expiredOld.length > 0) {
+  console.log("\n過期下架的事件:");
+  expiredOld.forEach(e => console.log(`  🗑 [${e.type}] ${e.title} (${e.id})`));
+}
 
-// 防 hallucination
-if (removed.length > existing.length * 0.3) {
-  console.error(`\n❌ 移除筆數 ${removed.length} 超過原資料 30%,疑似異常,中止寫檔`);
+// 防 hallucination:分母也只算未過期的既有事件
+if (removed.length > activeExisting.length * 0.3) {
+  console.error(`\n❌ 移除筆數 ${removed.length} 超過未過期既有事件(${activeExisting.length} 筆)的 30%,疑似異常,中止寫檔`);
   process.exit(3);
 }
 
 // ─── 6. 寫檔 ─────────────────────────────────────────────────────────
-if (added.length === 0 && changed.length === 0 && removed.length === 0 && expired.length === 0) {
+if (added.length === 0 && changed.length === 0 && removed.length === 0 && expiredOld.length === 0 && expired.length === 0) {
   console.log("\n✨ 沒有任何變動,不需要更新 events.json");
   process.exit(0);
 }
@@ -446,7 +456,7 @@ try {
 // 寫進 GitHub Actions step output
 if (process.env.GITHUB_OUTPUT) {
   await fs.appendFile(process.env.GITHUB_OUTPUT,
-    `added=${added.length}\nupdated=${changed.length}\nremoved=${removed.length}\ntotal=${parsed.length}\nhas_changes=true\n`);
+    `added=${added.length}\nupdated=${changed.length}\nremoved=${removed.length + expiredOld.length}\ntotal=${parsed.length}\nhas_changes=true\n`);
 }
 
 if (process.env.GITHUB_STEP_SUMMARY) {
@@ -457,7 +467,7 @@ if (process.env.GITHUB_STEP_SUMMARY) {
     `|---|---:|`,
     `| 新增 | ${added.length} |`,
     `| 更新 | ${changed.length} |`,
-    `| 移除 (含過期) | ${removed.length + expired.length} |`,
+    `| 移除 (含過期) | ${removed.length + expiredOld.length} |`,
     `| 總計 | ${parsed.length}(原 ${existing.length})|`,
     "",
     `🔍 googleSearch 引用網路來源:**${groundingChunks.length}** 個`,
@@ -468,9 +478,9 @@ if (process.env.GITHUB_STEP_SUMMARY) {
     changed.length > 0 ? "### 更新" : "",
     ...changed.map(id => `- \`${id}\``),
     "",
-    (removed.length > 0 || expired.length > 0) ? "### 移除/過期" : "",
+    (removed.length > 0 || expiredOld.length > 0) ? "### 移除/過期" : "",
     ...removed.map(e => `- ⏹ [${e.type}] ${e.title}`),
-    ...expired.map(e => `- 🗑 [${e.type}] ${e.title}(過期)`),
+    ...expiredOld.map(e => `- 🗑 [${e.type}] ${e.title}(過期)`),
   ].filter(Boolean).join("\n");
   await fs.appendFile(process.env.GITHUB_STEP_SUMMARY, md);
 }
