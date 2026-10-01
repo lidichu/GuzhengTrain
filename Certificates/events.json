@@ -1,35 +1,5 @@
 [
   {
-    "id": "comp-culture-cup-2026",
-    "title": "2026 文化盃音樂大賽",
-    "type": "competition",
-    "location": "台灣各區 (台北/新竹/台中等)",
-    "regStart": "2026-05-01",
-    "regEnd": "2026-05-18",
-    "examDates": [
-      "2026-07-06",
-      "2026-08-06"
-    ],
-    "link": "https://www.taiwanmusic.org/",
-    "officialSite": "https://www.taiwanmusic.org/",
-    "note": "報名已截止，台灣夏季大型賽事"
-  },
-  {
-    "id": "comp-scm-instrumental-2026-north",
-    "title": "2026 全國器樂大賽 (北區)",
-    "type": "competition",
-    "location": "台北 (國立臺灣戲曲學院)",
-    "regStart": "2026-05-04",
-    "regEnd": "2026-05-31",
-    "examDates": [
-      "2026-07-25",
-      "2026-08-02"
-    ],
-    "link": "https://scm-event.tw/",
-    "officialSite": "https://www.facebook.com/scm.org.tw/",
-    "note": "報名已截止。含個人、重奏、絲竹合奏賽"
-  },
-  {
     "id": "comp-prague-2026",
     "title": "2026 布拉格音樂大賽",
     "type": "competition",
@@ -47,112 +17,7 @@
     ],
     "link": "https://pragues.com.tw/",
     "officialSite": "https://pragues.com.tw/",
-    "note": "夏季場次報名已截止，秋冬場次請洽官網"
-  },
-  {
-    "id": "comp-datong-yungang-cup-2026",
-    "title": "首屆古箏文化藝術節暨「云冈杯」展演",
-    "type": "competition",
-    "location": "大同 (中國)",
-    "regStart": "2026-01-16",
-    "regEnd": "2026-06-01",
-    "examDates": [
-      "2026-06-30",
-      "2026-08-31"
-    ],
-    "link": "https://www.huain.com/news/guzheng/2026/0119/8433.html",
-    "note": "報名已截止。初賽為線上，決賽為現場"
-  },
-  {
-    "id": "comp-6th-macau-guzheng-invitation-2026",
-    "title": "2026第六屆澳門古箏邀請賽",
-    "type": "competition",
-    "location": "澳門",
-    "examDates": [
-      "2026-08-01"
-    ],
-    "link": "https://www.guzheng.cn/news/293760.html",
-    "note": "總決賽於8月舉行，各賽區6-7月進行選拔"
-  },
-  {
-    "id": "comp-scm-instrumental-2026-south",
-    "title": "2026 全國器樂大賽 (南區)",
-    "type": "competition",
-    "location": "台南 (台南應用科技大學)",
-    "regStart": "2026-05-04",
-    "regEnd": "2026-05-31",
-    "examDates": [
-      "2026-08-08",
-      "2026-08-09"
-    ],
-    "link": "https://scm-event.tw/",
-    "officialSite": "https://www.facebook.com/scm.org.tw/",
-    "note": "報名已截止。含個人、重奏、絲竹合奏賽"
-  },
-  {
-    "id": "exam-hz-2026-08-09-yuanlin",
-    "title": "黃鐘獎全國音樂檢定 - 08/09 員林場",
-    "type": "exam",
-    "location": "員林 (現場)",
-    "regEnd": "2026-08-06",
-    "examDates": [
-      "2026-08-09"
-    ],
-    "link": "https://www.beclass.com/default.php?name=Search&op=relation&v=VQJWVwk=&f",
-    "officialSite": "https://ambitious-watermelon-ddjt20.mystrikingly.com/4",
-    "note": "報名即將截止"
-  },
-  {
-    "id": "exam-hz-2026-08-16-taipei",
-    "title": "黃鐘獎全國音樂檢定 - 08/16 台北場",
-    "type": "exam",
-    "location": "台北 (現場)",
-    "regEnd": "2026-08-13",
-    "examDates": [
-      "2026-08-16"
-    ],
-    "link": "https://www.beclass.com/default.php?name=Search&op=relation&v=VQJWVwk=&f",
-    "officialSite": "https://ambitious-watermelon-ddjt20.mystrikingly.com/4",
-    "note": "報名即將截止"
-  },
-  {
-    "id": "exam-hz-2026-08-30-taichung",
-    "title": "黃鐘獎全國音樂檢定 - 08/30 台中場",
-    "type": "exam",
-    "location": "台中 (現場)",
-    "regEnd": "2026-08-27",
-    "examDates": [
-      "2026-08-30"
-    ],
-    "link": "https://www.beclass.com/default.php?name=Search&op=relation&v=VQJWVwk=&f",
-    "officialSite": "https://ambitious-watermelon-ddjt20.mystrikingly.com/4",
-    "note": "8月下旬截止報名"
-  },
-  {
-    "id": "exam-hz-2026-09-06-zhongli",
-    "title": "黃鐘獎全國音樂檢定 - 09/06 中壢場",
-    "type": "exam",
-    "location": "中壢 (現場)",
-    "regEnd": "2026-09-03",
-    "examDates": [
-      "2026-09-06"
-    ],
-    "link": "https://www.beclass.com/default.php?name=Search&op=relation&v=VQJWVwk=&f",
-    "officialSite": "https://ambitious-watermelon-ddjt20.mystrikingly.com/4",
-    "note": "9月初截止報名"
-  },
-  {
-    "id": "exam-hz-2026-09-20-chiayi",
-    "title": "黃鐘獎全國音樂檢定 - 09/20 嘉義場",
-    "type": "exam",
-    "location": "嘉義 (現場)",
-    "regEnd": "2026-09-17",
-    "examDates": [
-      "2026-09-20"
-    ],
-    "link": "https://www.beclass.com/default.php?name=Search&op=relation&v=VQJWVwk=&f",
-    "officialSite": "https://ambitious-watermelon-ddjt20.mystrikingly.com/4",
-    "note": "9月中旬截止報名"
+    "note": "夏季場已結束，秋冬新竹、台南、台中場次"
   },
   {
     "id": "exam-hz-2026-09-23-net",
@@ -165,21 +30,7 @@
     ],
     "link": "https://www.beclass.com/default.php?name=Search&op=relation&v=VQJWVwk=&f",
     "officialSite": "https://ambitious-watermelon-ddjt20.mystrikingly.com/4",
-    "note": "10月初截止報名"
-  },
-  {
-    "id": "exam-scm-sep-net",
-    "title": "國樂學會考級 - 9月場 (網路)",
-    "type": "exam",
-    "location": "線上錄影上傳",
-    "regStart": "2026-08-03",
-    "regEnd": "2026-09-03",
-    "examDates": [
-      "2026-09-26"
-    ],
-    "link": "https://scm-event.tw/",
-    "officialSite": "https://www.facebook.com/scm.org.tw/",
-    "note": "下半年網路考級"
+    "note": "報名已截止"
   },
   {
     "id": "exam-scm-oct-site",
@@ -189,12 +40,11 @@
     "regStart": "2026-08-17",
     "regEnd": "2026-09-17",
     "examDates": [
-      "2026-10-17",
       "2026-10-18"
     ],
     "link": "https://scm-event.tw/",
     "officialSite": "https://www.facebook.com/scm.org.tw/",
-    "note": "下半年中桃場次"
+    "note": "報名已截止"
   },
   {
     "id": "comp-superior-culture-autumn-2026",
@@ -208,21 +58,30 @@
     "resultDate": "2026-11-15"
   },
   {
-    "id": "exam-scm-nov-site",
-    "title": "國樂學會考級 - 11月場 (北/南/高/竹)",
+    "id": "exam-scm-nov-site-1",
+    "title": "國樂學會考級 - 11月場 (北/南)",
     "type": "exam",
-    "location": "台北、台南、高雄、新竹",
-    "regStart": "2026-09-07",
-    "regEnd": "2026-10-21",
+    "location": "台北、台南",
+    "regEnd": "2026-10-08",
     "examDates": [
-      "2026-11-07",
-      "2026-11-08",
-      "2026-11-21",
+      "2026-11-08"
+    ],
+    "link": "https://scm-event.tw/",
+    "officialSite": "https://www.facebook.com/scm.org.tw/",
+    "note": "11月上旬場次，報名即將截止"
+  },
+  {
+    "id": "exam-scm-nov-site-2",
+    "title": "國樂學會考級 - 11月場 (高/竹)",
+    "type": "exam",
+    "location": "高雄、新竹",
+    "regEnd": "2026-10-22",
+    "examDates": [
       "2026-11-22"
     ],
     "link": "https://scm-event.tw/",
     "officialSite": "https://www.facebook.com/scm.org.tw/",
-    "note": "下半年場次"
+    "note": "11月下旬場次"
   },
   {
     "id": "comp-faya-cup-2026",
@@ -239,6 +98,19 @@
     "note": "含國樂、鋼琴、弦樂、管樂等多種項目"
   },
   {
+    "id": "exam-hz-2026-11-25-net",
+    "title": "黃鐘獎全國音樂檢定 - 11/25 網路考級",
+    "type": "exam",
+    "location": "線上",
+    "regEnd": "2026-11-06",
+    "examDates": [
+      "2026-11-25"
+    ],
+    "link": "https://www.beclass.com/default.php?name=Search&op=relation&v=VQJWVwk=&f",
+    "officialSite": "https://ambitious-watermelon-ddjt20.mystrikingly.com/4",
+    "note": "11月初截止報名"
+  },
+  {
     "id": "exam-scm-dec-net",
     "title": "國樂學會考級 - 12月場 (網路)",
     "type": "exam",
@@ -251,6 +123,32 @@
     "link": "https://scm-event.tw/",
     "officialSite": "https://www.facebook.com/scm.org.tw/",
     "note": "年底網路考級"
+  },
+  {
+    "id": "exam-hz-2026-12-20-new-taipei",
+    "title": "黃鐘獎全國音樂檢定 - 12/20 新北場",
+    "type": "exam",
+    "location": "新北 (現場)",
+    "regEnd": "2026-11-21",
+    "examDates": [
+      "2026-12-20"
+    ],
+    "link": "https://www.beclass.com/default.php?name=Search&op=relation&v=VQJWVwk=&f",
+    "officialSite": "https://ambitious-watermelon-ddjt20.mystrikingly.com/4",
+    "note": "11月下旬截止報名"
+  },
+  {
+    "id": "exam-hz-2026-12-20-pingtung",
+    "title": "黃鐘獎全國音樂檢定 - 12/20 屏東場",
+    "type": "exam",
+    "location": "屏東 (現場)",
+    "regEnd": "2026-11-21",
+    "examDates": [
+      "2026-12-20"
+    ],
+    "link": "https://www.beclass.com/default.php?name=Search&op=relation&v=VQJWVwk=&f",
+    "officialSite": "https://ambitious-watermelon-ddjt20.mystrikingly.com/4",
+    "note": "11月下旬截止報名"
   },
   {
     "id": "comp-dream-chasing-guzheng-2026",
@@ -311,6 +209,42 @@
     "note": "跨年度場次"
   },
   {
+    "id": "comp-hz-world-liuqin-2027",
+    "title": "2027 黃鐘獎-柳葉琴世界大賽",
+    "type": "competition",
+    "location": "線上",
+    "examDates": [
+      "2027-02-15"
+    ],
+    "link": "https://www.beclass.com/default.php?name=Search&op=relation&v=VQJWVwk=&f",
+    "officialSite": "https://ambitious-watermelon-ddjt20.mystrikingly.com/4",
+    "note": "黃鐘獎舉辦之線上單項樂器世界大賽"
+  },
+  {
+    "id": "comp-hz-world-yangqin-2027",
+    "title": "2027 黃鐘獎-揚琴世界大賽",
+    "type": "competition",
+    "location": "線上",
+    "examDates": [
+      "2027-04-15"
+    ],
+    "link": "https://www.beclass.com/default.php?name=Search&op=relation&v=VQJWVwk=&f",
+    "officialSite": "https://ambitious-watermelon-ddjt20.mystrikingly.com/4",
+    "note": "黃鐘獎舉辦之線上單項樂器世界大賽"
+  },
+  {
+    "id": "comp-hz-world-ruan-2027",
+    "title": "2027 黃鐘獎-阮咸世界大賽",
+    "type": "competition",
+    "location": "線上",
+    "examDates": [
+      "2027-06-15"
+    ],
+    "link": "https://www.beclass.com/default.php?name=Search&op=relation&v=VQJWVwk=&f",
+    "officialSite": "https://ambitious-watermelon-ddjt20.mystrikingly.com/4",
+    "note": "黃鐘獎舉辦之線上單項樂器世界大賽"
+  },
+  {
     "id": "exam-pccu-social-music-exam",
     "title": "文化大學社會音樂考級 (2025起停辦)",
     "type": "exam",
@@ -318,18 +252,6 @@
     "link": "https://www.sce.pccu.edu.tw/",
     "officialSite": "https://www.sce.pccu.edu.tw/",
     "note": "官方公告自2025年起停辦"
-  },
-  {
-    "id": "exam-ccom-2026-overseas",
-    "title": "中央音樂學院音樂水平等級考試 (海外)",
-    "type": "exam",
-    "location": "各地 (海外)",
-    "examDates": [
-      "2026-07-14",
-      "2026-08-01"
-    ],
-    "link": "https://www.hkeaa.edu.hk/tc/ipe/ccm/ccompractical/",
-    "note": "日期依各海外考區公告為準，此為香港考區參考"
   },
   {
     "id": "exam-chinese-musicians-association-2026",
