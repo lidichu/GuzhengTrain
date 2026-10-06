@@ -55,7 +55,8 @@
       ],
       "why": "出現「古琴是什麼」「古琴尺寸」等查詢",
       "note": "",
-      "status": "pending"
+      "status": "published",
+      "publishedAt": "2026-10-06"
     },
     {
       "slug": "guzheng-care-dry-season",
