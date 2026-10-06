@@ -190,6 +190,16 @@ footer a{color:var(--primary)}
         <a class="btn btn-sub" id="parkNav" href="#" target="_blank" rel="noopener">從停車場走過來</a>
       </div>
     </div>
+    <div class="card">
+      <h3>離教室最近：嘟嘟房停車場－中平全聯站</h3>
+      <p>走到教室只要 3～4 分鐘，是離教室最近的停車場。</p>
+      <p>這是與全聯配合的停車場，剛好要順路買東西的話，在全聯消費可以折抵停車費。</p>
+      <p><span class="price">收費請以現場公告為準</span></p>
+      <div class="btns">
+        <a class="btn btn-main" href="https://maps.app.goo.gl/BK4UDR7DW31TFMKR7" target="_blank" rel="noopener">停車場位置</a>
+        <a class="btn btn-sub" id="parkNav2" href="#" target="_blank" rel="noopener">從停車場走過來</a>
+      </div>
+    </div>
   </section>
 
   <!-- 步行 -->
@@ -221,6 +231,7 @@ footer a{color:var(--primary)}
 
   var ADDR = "新北市新莊區中平路46巷15號1樓";
   var PARK = "正好停-新莊運動公園地下停車場";
+  var PARK2 = "嘟嘟房停車場-中平全聯站";
 
   // 走路時間換算:以 80 公尺/分鐘,再乘 1.3 的繞路係數
   function walkMin(m){ return Math.max(1, Math.round(m * 1.3 / 80)); }
@@ -338,6 +349,7 @@ footer a{color:var(--primary)}
   document.getElementById("navBtn").href =
     "https://www.google.com/maps/dir/?api=1&destination=" + encodeURIComponent(ADDR);
   document.getElementById("parkNav").href = mapsDir(PARK, ADDR, "walking");
+  document.getElementById("parkNav2").href = mapsDir(PARK2, ADDR, "walking");
 
   // ---- 自由輸入 ----
   function goFree(){
