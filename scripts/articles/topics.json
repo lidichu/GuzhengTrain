@@ -69,7 +69,8 @@
       ],
       "why": "季節性題目,10 月底發布最適合",
       "note": "避免與 /learning/11-maintenance.html 重疊:聚焦季節與濕度",
-      "status": "pending"
+      "status": "published",
+      "publishedAt": "2026-10-13"
     },
     {
       "slug": "cost-of-learning-guzheng",
