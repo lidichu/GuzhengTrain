@@ -254,13 +254,6 @@ ${a.faq.map(f => `        <details>
         </div>
       </section>
 
-${a.sources && a.sources.length ? `      <section class="art-sources">
-        <h2>參考資料</h2>
-        <ol>
-${a.sources.map(s => `          <li><a href="${esc(s.url)}" target="_blank" rel="noopener${s.nofollow ? ' nofollow' : ''}">${esc(s.title)}</a></li>`).join('\n')}
-        </ol>
-      </section>
-` : ''}
       <section class="art-related">
         <h2>延伸閱讀</h2>
 ${related.length ? `        <ul class="art-related-links">${related.join('')}</ul>\n` : ''}${more.length ? `        <div class="art-grid art-grid-small">

@@ -161,6 +161,11 @@ section.art-hero { background-color: transparent; }
 .art-related-links a:hover, .art-related-links a:focus-visible { border-color: var(--primary); color: var(--primary); }
 .art-related-links i { color: var(--art-link); }
 .art-grid-small { margin-bottom: 22px; }
+/* auto-fit 計算欄數時以 minmax() 的「最大值」而非「最小值」為準,而本頁內文欄寬只有約 740px,
+   放不下兩欄 360px 上限的卡片,導致平板/電腦也被迫擠成單欄;這裡在夠寬時直接改成固定兩欄 */
+@media (min-width: 768px) {
+  .art-grid-small { grid-template-columns: repeat(2, 1fr); }
+}
 .art-back { margin: 8px 0 0; }
 .art-back a { display: inline-flex; align-items: center; gap: 8px; min-height: 44px; color: var(--art-link); font-weight: bold; text-decoration: none; }
 
