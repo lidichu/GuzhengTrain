@@ -18,6 +18,8 @@
 | 體驗課 | $350，報名表：https://docs.google.com/forms/d/e/1FAIpQLScCXuof2G7AZ5258bL7v1T0-A2l0_ziNdBSSIgzxMO6FNgppg/viewform |
 | 官方 LINE | @swn8120u（https://line.me/ti/p/~@swn8120u） |
 | 成果發表會 | 每兩年舉辦一次 |
+| 古箏出租 | 限正式學員，3 個月 3,600 元；季繳學員免押金，月繳學員押金 5,000 元 |
+| 買琴建議 | 不販售、不建議入門琴（約一年就要換），建議直接買演奏箏，約 NT$50,000–70,000；下訂到交琴期間教室提供古箏，租琴學員付訂金後該期間租金不另收 |
 
 ### 地址規則（嚴格）
 - **絕對不可寫出路名、巷弄、門牌**。只能寫「新北市新莊區，鄰近新莊體育場、新泰國中」。
@@ -35,7 +37,7 @@
 ### 禁止事項
 - 不可捏造老師的發言、引述或個人經歷。
 - 不可捏造學員見證、學員人數、升級率、得獎率等任何數字。
-- 不可宣稱教室「提供樂器租借」「有停車場」「免費試聽」等未經確認的服務。
+- 不可宣稱教室「有停車場」「免費試聽」等未經確認的服務（樂器租借已確認，依上表寫）。
 - 作者一律署名「箏心古箏教室編輯部」。
 
 ---
@@ -84,7 +86,7 @@
 | /learning/04-beginner-techniques.html | 初級技巧：滾奏、輪指、雙音、顫音、琶音 |
 | /learning/05-intermediate-techniques.html | 中級技巧：搖指、顫音、按音、滑音、泛音 |
 | /learning/06-advanced-techniques.html | 高級技巧：花指、大撮、劈掃、雙手交叉 |
-| /learning/08-buying-guzheng.html | 古箏價格與選購指南（入門約 NT$8,000–15,000） |
+| /learning/08-buying-guzheng.html | 古箏價格與選購指南（本教室建議：不買入門琴，直接選演奏箏約 NT$50,000–70,000） |
 | /learning/09-finding-teacher.html | 如何選擇古箏老師 |
 | /learning/10-certification.html | 古箏考級與證照 |
 | /learning/11-maintenance.html | 古箏保養與調音 |
