@@ -83,7 +83,8 @@
       ],
       "why": "價格類查詢合計 2,963 次曝光",
       "note": "學費只能給市場區間並註明來源與日期;本教室除 50 體驗課外不寫價格;樂器價格連回 08 篇",
-      "status": "pending"
+      "status": "published",
+      "publishedAt": "2026-10-20"
     },
     {
       "slug": "how-to-use-guzheng-tuner",
