@@ -1,5 +1,5 @@
 {
-  "updated": "2026-09-24",
+  "updated": "2026-10-27",
   "rule": "依序取第一個 status=pending 的題目;剩餘 pending 少於 6 題時,依 facts.md 的主題策略補新題目(不可與既有文章或已發布題目重疊)",
   "topics": [
     {
@@ -97,7 +97,8 @@
       ],
       "why": "「古箏調音器怎麼用」73 次、「古箏調音」295 次曝光",
       "note": "",
-      "status": "pending"
+      "status": "published",
+      "publishedAt": "2026-10-27"
     },
     {
       "slug": "adults-learning-guzheng",
