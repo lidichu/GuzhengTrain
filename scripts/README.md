@@ -56,8 +56,8 @@ GEMINI_API_KEY=AIzaXXX DRY_RUN=1 node update-events.mjs
 # Verbose:額外印出完整 prompt 與 Gemini 原始回應 + 引用來源
 GEMINI_API_KEY=AIzaXXX VERBOSE=1 node update-events.mjs
 
-# 想換模型(預設 gemini-2.5-pro,可改成 gemini-3-pro 等)
-GEMINI_API_KEY=AIzaXXX GEMINI_MODEL=gemini-3-pro node update-events.mjs
+# 想換模型(預設 gemini-2.5-flash,可改成 gemini-2.5-pro 等)
+GEMINI_API_KEY=AIzaXXX GEMINI_MODEL=gemini-2.5-pro node update-events.mjs
 ```
 
 ## 工具腳本
@@ -109,5 +109,5 @@ CI 失敗時會自動開 GitHub Issue 通知。
 |---|---|
 | 排程頻率(改成每週/每兩週) | `.github/workflows/update-events.yml` 的 `cron:` |
 | 搜尋範圍(納入更多樂器/地區) | `update-events.mjs` 的 `systemPrompt` |
-| 換模型(2.5-pro / 3-pro / flash) | 環境變數 `GEMINI_MODEL` |
+| 換模型(預設 2.5-flash,模型下架時要換) | 本機:環境變數 `GEMINI_MODEL`;GitHub Actions:repo Settings → Secrets and variables → Actions → Variables 新增 `GEMINI_MODEL` |
 | 欄位 schema | `update-events.mjs` 的 `REQUIRED_FIELDS`、`DATE_RE`、`VALID_TYPES` |

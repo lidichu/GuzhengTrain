@@ -46,7 +46,10 @@ jobs:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
           DRY_RUN: ${{ inputs.dry_run && '1' || '' }}
           VERBOSE: ${{ inputs.verbose && '1' || '' }}
-        run: node update-events.mjs
+          # 留空 = 用腳本預設 (gemini-2.5-flash);模型下架時到 repo Variables 設 GEMINI_MODEL 即可換
+          GEMINI_MODEL: ${{ vars.GEMINI_MODEL }}
+        # 保留輸出給失敗 issue 引用錯誤訊息(預設 bash 有 pipefail,失敗仍會中止)
+        run: node update-events.mjs 2>&1 | tee "$RUNNER_TEMP/update.log"
 
       - name: Commit changes
         if: steps.update.outputs.has_changes == 'true' && inputs.dry_run != true
@@ -72,6 +75,13 @@ jobs:
         with:
           script: |
             const runUrl = `${context.serverUrl}/${context.repo.owner}/${context.repo.repo}/actions/runs/${context.runId}`;
+            const fs = require("fs");
+            let errLines = "(沒有抓到錯誤訊息,請看 Workflow run)";
+            try {
+              const log = fs.readFileSync(`${process.env.RUNNER_TEMP}/update.log`, "utf8").trim().split("\n");
+              const hits = log.filter(l => /❌|⚠️|error|Error/.test(l));
+              errLines = (hits.length ? hits : log).slice(-10).join("\n");
+            } catch {}
             await github.rest.issues.create({
               owner: context.repo.owner,
               repo: context.repo.repo,
@@ -80,8 +90,15 @@ jobs:
                 "本月排程的 events.json 更新失敗,請檢查:",
                 "",
                 `- [Workflow run](${runUrl})`,
+                "- 錯誤訊息:",
+                "",
+                "```",
+                errLines,
+                "```",
+                "",
                 "- 常見原因:",
-                "  - Gemini API key 失效 / 免費額度用完",
+                "  - Gemini API key 失效 / 免費額度用完 / 預付額度用完(402)",
+                "  - Gemini 模型已下架或改名(404 not found):到 repo Settings → Secrets and variables → Actions → Variables 新增 `GEMINI_MODEL` 指定新模型",
                 "  - Gemini 回傳格式錯誤(驗證失敗)",
                 "  - 變動規模過大(> 30% 移除,被防護中止)",
                 "",
