@@ -46,10 +46,10 @@ jobs:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
           DRY_RUN: ${{ inputs.dry_run && '1' || '' }}
           VERBOSE: ${{ inputs.verbose && '1' || '' }}
-          # 留空 = 用腳本預設 (gemini-2.5-flash);模型下架時到 repo Variables 設 GEMINI_MODEL 即可換
+          # 留空 = 用腳本預設 (gemini-3.8-flash);模型下架時到 repo Variables 設 GEMINI_MODEL 即可換
           GEMINI_MODEL: ${{ vars.GEMINI_MODEL }}
-        # 保留輸出給失敗 issue 引用錯誤訊息(預設 bash 有 pipefail,失敗仍會中止)
-        run: node update-events.mjs 2>&1 | tee "$RUNNER_TEMP/update.log"
+        # 保留輸出給失敗 issue 引用錯誤訊息;pipefail 讓腳本失敗時這步仍判定失敗(預設 shell 沒開)
+        run: set -o pipefail; node update-events.mjs 2>&1 | tee "$RUNNER_TEMP/update.log"
 
       - name: Commit changes
         if: steps.update.outputs.has_changes == 'true' && inputs.dry_run != true

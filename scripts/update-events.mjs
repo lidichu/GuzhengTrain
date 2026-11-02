@@ -15,7 +15,7 @@
  *
  * 環境變數:
  *   GEMINI_API_KEY  必填(從 https://aistudio.google.com/app/apikey 申請)
- *   GEMINI_MODEL    選填,預設 "gemini-2.5-flash"
+ *   GEMINI_MODEL    選填,預設 "gemini-3.8-flash"
  *   DRY_RUN=1       不寫檔,只印出 diff
  *   VERBOSE=1       印出完整 prompt 與 Gemini 原始回應
  *
@@ -34,7 +34,7 @@ import { fileURLToPath } from "node:url";
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const EVENTS_FILE = path.resolve(__dirname, "..", "Certificates", "events.json");
 const INDEX_FILE = path.resolve(__dirname, "..", "Certificates", "index.html");
-const MODEL = process.env.GEMINI_MODEL || "gemini-2.5-flash";
+const MODEL = process.env.GEMINI_MODEL || "gemini-3.8-flash";
 const DRY_RUN = process.env.DRY_RUN === "1";
 const VERBOSE = process.env.VERBOSE === "1";
 
