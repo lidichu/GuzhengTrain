@@ -20,33 +20,6 @@
     "note": "夏季場已結束，秋冬新竹、台南、台中場次"
   },
   {
-    "id": "exam-hz-2026-09-23-net",
-    "title": "黃鐘獎全國音樂檢定 - 09/23 網路考級",
-    "type": "exam",
-    "location": "線上",
-    "regEnd": "2026-10-01",
-    "examDates": [
-      "2026-09-23"
-    ],
-    "link": "https://www.beclass.com/default.php?name=Search&op=relation&v=VQJWVwk=&f",
-    "officialSite": "https://ambitious-watermelon-ddjt20.mystrikingly.com/4",
-    "note": "報名已截止"
-  },
-  {
-    "id": "exam-scm-oct-site",
-    "title": "國樂學會考級 - 10月場 (中/桃)",
-    "type": "exam",
-    "location": "台中、桃園 (現場)",
-    "regStart": "2026-08-17",
-    "regEnd": "2026-09-17",
-    "examDates": [
-      "2026-10-18"
-    ],
-    "link": "https://scm-event.tw/",
-    "officialSite": "https://www.facebook.com/scm.org.tw/",
-    "note": "報名已截止"
-  },
-  {
     "id": "comp-superior-culture-autumn-2026",
     "title": "2026 深秋中樂節",
     "type": "competition",
@@ -68,7 +41,7 @@
     ],
     "link": "https://scm-event.tw/",
     "officialSite": "https://www.facebook.com/scm.org.tw/",
-    "note": "11月上旬場次，報名即將截止"
+    "note": "11月上旬場次，報名已截止"
   },
   {
     "id": "exam-scm-nov-site-2",
@@ -81,7 +54,7 @@
     ],
     "link": "https://scm-event.tw/",
     "officialSite": "https://www.facebook.com/scm.org.tw/",
-    "note": "11月下旬場次"
+    "note": "11月下旬場次，報名已截止"
   },
   {
     "id": "comp-faya-cup-2026",
@@ -106,7 +79,7 @@
     "examDates": [
       "2026-11-25"
     ],
-    "link": "https://www.beclass.com/default.php?name=Search&op=relation&v=VQJWVwk=&f",
+    "link": "https://www.beclass.com/rid=30528366aac9dc28e489",
     "officialSite": "https://ambitious-watermelon-ddjt20.mystrikingly.com/4",
     "note": "11月初截止報名"
   },
@@ -115,10 +88,10 @@
     "title": "國樂學會考級 - 12月場 (網路)",
     "type": "exam",
     "location": "線上錄影上傳",
-    "regStart": "2026-11-03",
-    "regEnd": "2026-12-03",
+    "regStart": "2026-11-04",
+    "regEnd": "2026-12-04",
     "examDates": [
-      "2026-12-26"
+      "2026-12-27"
     ],
     "link": "https://scm-event.tw/",
     "officialSite": "https://www.facebook.com/scm.org.tw/",
@@ -133,7 +106,7 @@
     "examDates": [
       "2026-12-20"
     ],
-    "link": "https://www.beclass.com/default.php?name=Search&op=relation&v=VQJWVwk=&f",
+    "link": "https://www.beclass.com/rid=305282f6aa403ce1d68b",
     "officialSite": "https://ambitious-watermelon-ddjt20.mystrikingly.com/4",
     "note": "11月下旬截止報名"
   },
@@ -146,7 +119,7 @@
     "examDates": [
       "2026-12-20"
     ],
-    "link": "https://www.beclass.com/default.php?name=Search&op=relation&v=VQJWVwk=&f",
+    "link": "https://www.beclass.com/rid=305282f6aa4043298947",
     "officialSite": "https://ambitious-watermelon-ddjt20.mystrikingly.com/4",
     "note": "11月下旬截止報名"
   },
@@ -233,5 +206,126 @@
     "location": "各賽區/成都(總決賽)",
     "link": "https://mp.weixin.qq.com/s/3G5i2n3W2f-XwZ2qY0z9fQ",
     "note": "分為各賽區選拔賽與總決賽"
+  },
+  {
+    "id": "comp-taiwan-new-generation-2026",
+    "title": "2026 台灣新世代國際音樂比賽",
+    "type": "competition",
+    "location": "台北 (台北生技園區)",
+    "regStart": "2026-10-01",
+    "regEnd": "2026-11-27",
+    "examDates": [
+      "2026-12-26",
+      "2026-12-27"
+    ],
+    "link": "https://www.kfem.info/taiwanmusic-ch",
+    "officialSite": "https://www.kfem.info/",
+    "note": "含古箏、琵琶等民族傳統樂器獨奏"
+  },
+  {
+    "id": "comp-hksmsa-guzheng-2027",
+    "title": "第79屆香港學校音樂節 (古箏項目)",
+    "type": "competition",
+    "location": "香港",
+    "regStart": "2026-09-29",
+    "regEnd": "2026-10-28",
+    "examDates": [
+      "2027-01-19",
+      "2027-02-22"
+    ],
+    "link": "https://www.hksmsa.org.hk/",
+    "officialSite": "https://www.hksmsa.org.hk/",
+    "note": "含初級至深造組古箏獨奏，報名已截止"
+  },
+  {
+    "id": "exam-hz-2027-01-17-taichung",
+    "title": "黃鐘獎全國音樂檢定 - 2027年01/17 台中場",
+    "type": "exam",
+    "location": "台中 (現場)",
+    "regEnd": "2026-12-19",
+    "examDates": [
+      "2027-01-17"
+    ],
+    "link": "https://www.beclass.com/rid=315289d6ad7a4b79896b",
+    "officialSite": "https://ambitious-watermelon-ddjt20.mystrikingly.com/4",
+    "note": "2027年初現場考級，開放報名中"
+  },
+  {
+    "id": "exam-hz-2027-01-17-douliu",
+    "title": "黃鐘獎全國音樂檢定 - 2027年01/17 斗六場",
+    "type": "exam",
+    "location": "雲林斗六 (現場)",
+    "regEnd": "2026-12-19",
+    "examDates": [
+      "2027-01-17"
+    ],
+    "link": "https://www.beclass.com/rid=315289d6ad7a652dc79b",
+    "officialSite": "https://ambitious-watermelon-ddjt20.mystrikingly.com/4",
+    "note": "2027年初現場考級，開放報名中"
+  },
+  {
+    "id": "exam-hz-2027-01-20-net",
+    "title": "黃鐘獎全國音樂檢定 - 2027年01/20 網路考級",
+    "type": "exam",
+    "location": "線上",
+    "regEnd": "2026-12-31",
+    "examDates": [
+      "2027-01-20"
+    ],
+    "link": "https://www.beclass.com/rid=315289c6ad6ccaa1f622",
+    "officialSite": "https://ambitious-watermelon-ddjt20.mystrikingly.com/4",
+    "note": "2027年初網路考級，考前20天截止"
+  },
+  {
+    "id": "exam-hz-2027-01-24-hsinchu",
+    "title": "黃鐘獎全國音樂檢定 - 2027年01/24 新竹場",
+    "type": "exam",
+    "location": "新竹 (現場)",
+    "regEnd": "2026-12-26",
+    "examDates": [
+      "2027-01-24"
+    ],
+    "link": "https://www.beclass.com/rid=315289d6ad7a684bee22",
+    "officialSite": "https://ambitious-watermelon-ddjt20.mystrikingly.com/4",
+    "note": "2027年初現場考級，開放報名中"
+  },
+  {
+    "id": "exam-hz-2027-01-24-kaohsiung",
+    "title": "黃鐘獎全國音樂檢定 - 2027年01/24 高雄場",
+    "type": "exam",
+    "location": "高雄 (現場)",
+    "regEnd": "2026-12-26",
+    "examDates": [
+      "2027-01-24"
+    ],
+    "link": "https://www.beclass.com/rid=315289d6ad7a6a4c75fe",
+    "officialSite": "https://ambitious-watermelon-ddjt20.mystrikingly.com/4",
+    "note": "2027年初現場考級，開放報名中"
+  },
+  {
+    "id": "exam-hz-2027-01-31-yilan",
+    "title": "黃鐘獎全國音樂檢定 - 2027年01/31 宜蘭場",
+    "type": "exam",
+    "location": "宜蘭 (現場)",
+    "regEnd": "2027-01-02",
+    "examDates": [
+      "2027-01-31"
+    ],
+    "link": "https://www.beclass.com/rid=315289d6ad7a6e383b2d",
+    "officialSite": "https://ambitious-watermelon-ddjt20.mystrikingly.com/4",
+    "note": "2027年初現場考級，開放報名中"
+  },
+  {
+    "id": "exam-hz-2027-01-31-tainan",
+    "title": "黃鐘獎全國音樂檢定 - 2027年01/31 台南場",
+    "type": "exam",
+    "location": "台南 (現場)",
+    "regEnd": "2027-01-02",
+    "examDates": [
+      "2027-01-31"
+    ],
+    "link": "https://www.beclass.com/rid=315289d6ad7a70ad5ae9",
+    "officialSite": "https://ambitious-watermelon-ddjt20.mystrikingly.com/4",
+    "note": "2027年初現場考級，開放報名中"
   }
 ]
