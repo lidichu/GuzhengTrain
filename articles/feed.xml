@@ -6,7 +6,15 @@
     <atom:link href="https://guzhengtrain.com/articles/feed.xml" rel="self" type="application/rss+xml"/>
     <description>每週一篇古箏學習實用知識</description>
     <language>zh-TW</language>
-    <lastBuildDate>Tue, 03 Nov 2026 01:00:00 GMT</lastBuildDate>
+    <lastBuildDate>Tue, 10 Nov 2026 01:00:00 GMT</lastBuildDate>
+    <item>
+      <title>古箏21弦音階位置圖解：從簡譜找到對應的弦</title>
+      <link>https://guzhengtrain.com/articles/guzheng-scale-positions.html</link>
+      <guid isPermaLink="true">https://guzhengtrain.com/articles/guzheng-scale-positions.html</guid>
+      <pubDate>Tue, 10 Nov 2026 01:00:00 GMT</pubDate>
+      <category>樂器知識</category>
+      <description>古箏的21條弦要怎麼對應簡譜上的數字？本文說明古箏弦序的編號方向、D大調五聲音階（Do Re Mi Sol La）只用1、2、3、5、6五個音級的原因，以及簡譜八度點的看法，教你用清楚的邏輯推算任何一個音符大概落在哪一段弦上，不必死背21條弦各自叫什麼名字。</description>
+    </item>
     <item>
       <title>成人學古箏會太晚嗎？上班族的學習節奏與心態</title>
       <link>https://guzhengtrain.com/articles/adults-learning-guzheng.html</link>

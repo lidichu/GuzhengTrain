@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-03",
+  "updated": "2026-11-10",
   "rule": "依序取第一個 status=pending 的題目;剩餘 pending 少於 6 題時,依 facts.md 的主題策略補新題目(不可與既有文章或已發布題目重疊)",
   "topics": [
     {
@@ -125,7 +125,8 @@
       ],
       "why": "「古箏音階位置」167 次曝光",
       "note": "",
-      "status": "pending"
+      "status": "published",
+      "publishedAt": "2026-11-10"
     },
     {
       "slug": "best-age-for-kids-guzheng",
